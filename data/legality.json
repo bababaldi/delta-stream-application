@@ -1,0 +1,11 @@
+{
+  "regulation": "champions-regulation-mb",
+  "allowedPokemon": [],
+  "allowedItems": [],
+  "allowedTeraTypes": [],
+  "restrictedPokemon": [],
+  "maxRestricted": 0,
+  "allowedMoves": {},
+  "allowedAbilities": {},
+  "speciesClauseKeys": {}
+}

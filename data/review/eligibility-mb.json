@@ -1,0 +1,1192 @@
+{
+  "status": "pending-owner-approval",
+  "generatedAt": "2026-09-06T21:20:43.809Z",
+  "regulation": "champions-regulation-mb",
+  "rankedStartsAt": "2026-06-17T02:00:00Z",
+  "rankedEndsAtExclusive": "2026-09-09T02:00:00Z",
+  "sourceUrl": "https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178066986988lmoqpm/en/pokemon.html",
+  "sourceSha256": "8b0c6db8dcd403bb1f5453c1c6f9ac35c80192762219a308c80023375a93d617",
+  "regulationSource": "https://news.pokemon-home.com/en/page/776.html",
+  "pokemon": [
+    {
+      "formId": "0003-000",
+      "nationalDex": 3,
+      "name": "Venusaur"
+    },
+    {
+      "formId": "0006-000",
+      "nationalDex": 6,
+      "name": "Charizard"
+    },
+    {
+      "formId": "0009-000",
+      "nationalDex": 9,
+      "name": "Blastoise"
+    },
+    {
+      "formId": "0015-000",
+      "nationalDex": 15,
+      "name": "Beedrill"
+    },
+    {
+      "formId": "0018-000",
+      "nationalDex": 18,
+      "name": "Pidgeot"
+    },
+    {
+      "formId": "0024-000",
+      "nationalDex": 24,
+      "name": "Arbok"
+    },
+    {
+      "formId": "0025-000",
+      "nationalDex": 25,
+      "name": "Pikachu"
+    },
+    {
+      "formId": "0026-000",
+      "nationalDex": 26,
+      "name": "Raichu"
+    },
+    {
+      "formId": "0026-001",
+      "nationalDex": 26,
+      "name": "Raichu (Alolan Form)"
+    },
+    {
+      "formId": "0036-000",
+      "nationalDex": 36,
+      "name": "Clefable"
+    },
+    {
+      "formId": "0038-000",
+      "nationalDex": 38,
+      "name": "Ninetales"
+    },
+    {
+      "formId": "0038-001",
+      "nationalDex": 38,
+      "name": "Ninetales (Alolan Form)"
+    },
+    {
+      "formId": "0045-000",
+      "nationalDex": 45,
+      "name": "Vileplume"
+    },
+    {
+      "formId": "0059-000",
+      "nationalDex": 59,
+      "name": "Arcanine"
+    },
+    {
+      "formId": "0059-001",
+      "nationalDex": 59,
+      "name": "Arcanine (Hisuian Form)"
+    },
+    {
+      "formId": "0065-000",
+      "nationalDex": 65,
+      "name": "Alakazam"
+    },
+    {
+      "formId": "0068-000",
+      "nationalDex": 68,
+      "name": "Machamp"
+    },
+    {
+      "formId": "0071-000",
+      "nationalDex": 71,
+      "name": "Victreebel"
+    },
+    {
+      "formId": "0080-000",
+      "nationalDex": 80,
+      "name": "Slowbro"
+    },
+    {
+      "formId": "0080-002",
+      "nationalDex": 80,
+      "name": "Slowbro (Galarian Form)"
+    },
+    {
+      "formId": "0094-000",
+      "nationalDex": 94,
+      "name": "Gengar"
+    },
+    {
+      "formId": "0115-000",
+      "nationalDex": 115,
+      "name": "Kangaskhan"
+    },
+    {
+      "formId": "0121-000",
+      "nationalDex": 121,
+      "name": "Starmie"
+    },
+    {
+      "formId": "0127-000",
+      "nationalDex": 127,
+      "name": "Pinsir"
+    },
+    {
+      "formId": "0128-000",
+      "nationalDex": 128,
+      "name": "Tauros"
+    },
+    {
+      "formId": "0128-001",
+      "nationalDex": 128,
+      "name": "Tauros (Paldean Form (Combat Breed))"
+    },
+    {
+      "formId": "0128-002",
+      "nationalDex": 128,
+      "name": "Tauros (Paldean Form (Blaze Breed))"
+    },
+    {
+      "formId": "0128-003",
+      "nationalDex": 128,
+      "name": "Tauros (Paldean Form (Aqua Breed))"
+    },
+    {
+      "formId": "0130-000",
+      "nationalDex": 130,
+      "name": "Gyarados"
+    },
+    {
+      "formId": "0132-000",
+      "nationalDex": 132,
+      "name": "Ditto"
+    },
+    {
+      "formId": "0134-000",
+      "nationalDex": 134,
+      "name": "Vaporeon"
+    },
+    {
+      "formId": "0135-000",
+      "nationalDex": 135,
+      "name": "Jolteon"
+    },
+    {
+      "formId": "0136-000",
+      "nationalDex": 136,
+      "name": "Flareon"
+    },
+    {
+      "formId": "0142-000",
+      "nationalDex": 142,
+      "name": "Aerodactyl"
+    },
+    {
+      "formId": "0143-000",
+      "nationalDex": 143,
+      "name": "Snorlax"
+    },
+    {
+      "formId": "0149-000",
+      "nationalDex": 149,
+      "name": "Dragonite"
+    },
+    {
+      "formId": "0154-000",
+      "nationalDex": 154,
+      "name": "Meganium"
+    },
+    {
+      "formId": "0157-000",
+      "nationalDex": 157,
+      "name": "Typhlosion"
+    },
+    {
+      "formId": "0157-001",
+      "nationalDex": 157,
+      "name": "Typhlosion (Hisuian Form)"
+    },
+    {
+      "formId": "0160-000",
+      "nationalDex": 160,
+      "name": "Feraligatr"
+    },
+    {
+      "formId": "0168-000",
+      "nationalDex": 168,
+      "name": "Ariados"
+    },
+    {
+      "formId": "0181-000",
+      "nationalDex": 181,
+      "name": "Ampharos"
+    },
+    {
+      "formId": "0184-000",
+      "nationalDex": 184,
+      "name": "Azumarill"
+    },
+    {
+      "formId": "0186-000",
+      "nationalDex": 186,
+      "name": "Politoed"
+    },
+    {
+      "formId": "0196-000",
+      "nationalDex": 196,
+      "name": "Espeon"
+    },
+    {
+      "formId": "0197-000",
+      "nationalDex": 197,
+      "name": "Umbreon"
+    },
+    {
+      "formId": "0199-000",
+      "nationalDex": 199,
+      "name": "Slowking"
+    },
+    {
+      "formId": "0199-001",
+      "nationalDex": 199,
+      "name": "Slowking (Galarian Form)"
+    },
+    {
+      "formId": "0205-000",
+      "nationalDex": 205,
+      "name": "Forretress"
+    },
+    {
+      "formId": "0208-000",
+      "nationalDex": 208,
+      "name": "Steelix"
+    },
+    {
+      "formId": "0211-000",
+      "nationalDex": 211,
+      "name": "Qwilfish"
+    },
+    {
+      "formId": "0212-000",
+      "nationalDex": 212,
+      "name": "Scizor"
+    },
+    {
+      "formId": "0214-000",
+      "nationalDex": 214,
+      "name": "Heracross"
+    },
+    {
+      "formId": "0227-000",
+      "nationalDex": 227,
+      "name": "Skarmory"
+    },
+    {
+      "formId": "0229-000",
+      "nationalDex": 229,
+      "name": "Houndoom"
+    },
+    {
+      "formId": "0248-000",
+      "nationalDex": 248,
+      "name": "Tyranitar"
+    },
+    {
+      "formId": "0254-000",
+      "nationalDex": 254,
+      "name": "Sceptile"
+    },
+    {
+      "formId": "0257-000",
+      "nationalDex": 257,
+      "name": "Blaziken"
+    },
+    {
+      "formId": "0260-000",
+      "nationalDex": 260,
+      "name": "Swampert"
+    },
+    {
+      "formId": "0279-000",
+      "nationalDex": 279,
+      "name": "Pelipper"
+    },
+    {
+      "formId": "0282-000",
+      "nationalDex": 282,
+      "name": "Gardevoir"
+    },
+    {
+      "formId": "0302-000",
+      "nationalDex": 302,
+      "name": "Sableye"
+    },
+    {
+      "formId": "0303-000",
+      "nationalDex": 303,
+      "name": "Mawile"
+    },
+    {
+      "formId": "0306-000",
+      "nationalDex": 306,
+      "name": "Aggron"
+    },
+    {
+      "formId": "0308-000",
+      "nationalDex": 308,
+      "name": "Medicham"
+    },
+    {
+      "formId": "0310-000",
+      "nationalDex": 310,
+      "name": "Manectric"
+    },
+    {
+      "formId": "0319-000",
+      "nationalDex": 319,
+      "name": "Sharpedo"
+    },
+    {
+      "formId": "0323-000",
+      "nationalDex": 323,
+      "name": "Camerupt"
+    },
+    {
+      "formId": "0324-000",
+      "nationalDex": 324,
+      "name": "Torkoal"
+    },
+    {
+      "formId": "0334-000",
+      "nationalDex": 334,
+      "name": "Altaria"
+    },
+    {
+      "formId": "0350-000",
+      "nationalDex": 350,
+      "name": "Milotic"
+    },
+    {
+      "formId": "0351-000",
+      "nationalDex": 351,
+      "name": "Castform"
+    },
+    {
+      "formId": "0354-000",
+      "nationalDex": 354,
+      "name": "Banette"
+    },
+    {
+      "formId": "0358-000",
+      "nationalDex": 358,
+      "name": "Chimecho"
+    },
+    {
+      "formId": "0359-000",
+      "nationalDex": 359,
+      "name": "Absol"
+    },
+    {
+      "formId": "0362-000",
+      "nationalDex": 362,
+      "name": "Glalie"
+    },
+    {
+      "formId": "0376-000",
+      "nationalDex": 376,
+      "name": "Metagross"
+    },
+    {
+      "formId": "0389-000",
+      "nationalDex": 389,
+      "name": "Torterra"
+    },
+    {
+      "formId": "0392-000",
+      "nationalDex": 392,
+      "name": "Infernape"
+    },
+    {
+      "formId": "0395-000",
+      "nationalDex": 395,
+      "name": "Empoleon"
+    },
+    {
+      "formId": "0398-000",
+      "nationalDex": 398,
+      "name": "Staraptor"
+    },
+    {
+      "formId": "0405-000",
+      "nationalDex": 405,
+      "name": "Luxray"
+    },
+    {
+      "formId": "0407-000",
+      "nationalDex": 407,
+      "name": "Roserade"
+    },
+    {
+      "formId": "0409-000",
+      "nationalDex": 409,
+      "name": "Rampardos"
+    },
+    {
+      "formId": "0411-000",
+      "nationalDex": 411,
+      "name": "Bastiodon"
+    },
+    {
+      "formId": "0428-000",
+      "nationalDex": 428,
+      "name": "Lopunny"
+    },
+    {
+      "formId": "0442-000",
+      "nationalDex": 442,
+      "name": "Spiritomb"
+    },
+    {
+      "formId": "0445-000",
+      "nationalDex": 445,
+      "name": "Garchomp"
+    },
+    {
+      "formId": "0448-000",
+      "nationalDex": 448,
+      "name": "Lucario"
+    },
+    {
+      "formId": "0450-000",
+      "nationalDex": 450,
+      "name": "Hippowdon"
+    },
+    {
+      "formId": "0454-000",
+      "nationalDex": 454,
+      "name": "Toxicroak"
+    },
+    {
+      "formId": "0460-000",
+      "nationalDex": 460,
+      "name": "Abomasnow"
+    },
+    {
+      "formId": "0461-000",
+      "nationalDex": 461,
+      "name": "Weavile"
+    },
+    {
+      "formId": "0464-000",
+      "nationalDex": 464,
+      "name": "Rhyperior"
+    },
+    {
+      "formId": "0470-000",
+      "nationalDex": 470,
+      "name": "Leafeon"
+    },
+    {
+      "formId": "0471-000",
+      "nationalDex": 471,
+      "name": "Glaceon"
+    },
+    {
+      "formId": "0472-000",
+      "nationalDex": 472,
+      "name": "Gliscor"
+    },
+    {
+      "formId": "0473-000",
+      "nationalDex": 473,
+      "name": "Mamoswine"
+    },
+    {
+      "formId": "0475-000",
+      "nationalDex": 475,
+      "name": "Gallade"
+    },
+    {
+      "formId": "0478-000",
+      "nationalDex": 478,
+      "name": "Froslass"
+    },
+    {
+      "formId": "0479-000",
+      "nationalDex": 479,
+      "name": "Rotom (Rotom)"
+    },
+    {
+      "formId": "0479-001",
+      "nationalDex": 479,
+      "name": "Rotom (Heat Rotom)"
+    },
+    {
+      "formId": "0479-002",
+      "nationalDex": 479,
+      "name": "Rotom (Wash Rotom)"
+    },
+    {
+      "formId": "0479-003",
+      "nationalDex": 479,
+      "name": "Rotom (Frost Rotom)"
+    },
+    {
+      "formId": "0479-004",
+      "nationalDex": 479,
+      "name": "Rotom (Fan Rotom)"
+    },
+    {
+      "formId": "0479-005",
+      "nationalDex": 479,
+      "name": "Rotom (Mow Rotom)"
+    },
+    {
+      "formId": "0497-000",
+      "nationalDex": 497,
+      "name": "Serperior"
+    },
+    {
+      "formId": "0500-000",
+      "nationalDex": 500,
+      "name": "Emboar"
+    },
+    {
+      "formId": "0503-000",
+      "nationalDex": 503,
+      "name": "Samurott"
+    },
+    {
+      "formId": "0503-001",
+      "nationalDex": 503,
+      "name": "Samurott (Hisuian Form)"
+    },
+    {
+      "formId": "0505-000",
+      "nationalDex": 505,
+      "name": "Watchog"
+    },
+    {
+      "formId": "0510-000",
+      "nationalDex": 510,
+      "name": "Liepard"
+    },
+    {
+      "formId": "0512-000",
+      "nationalDex": 512,
+      "name": "Simisage"
+    },
+    {
+      "formId": "0514-000",
+      "nationalDex": 514,
+      "name": "Simisear"
+    },
+    {
+      "formId": "0516-000",
+      "nationalDex": 516,
+      "name": "Simipour"
+    },
+    {
+      "formId": "0518-000",
+      "nationalDex": 518,
+      "name": "Musharna"
+    },
+    {
+      "formId": "0530-000",
+      "nationalDex": 530,
+      "name": "Excadrill"
+    },
+    {
+      "formId": "0531-000",
+      "nationalDex": 531,
+      "name": "Audino"
+    },
+    {
+      "formId": "0534-000",
+      "nationalDex": 534,
+      "name": "Conkeldurr"
+    },
+    {
+      "formId": "0545-000",
+      "nationalDex": 545,
+      "name": "Scolipede"
+    },
+    {
+      "formId": "0547-000",
+      "nationalDex": 547,
+      "name": "Whimsicott"
+    },
+    {
+      "formId": "0553-000",
+      "nationalDex": 553,
+      "name": "Krookodile"
+    },
+    {
+      "formId": "0560-000",
+      "nationalDex": 560,
+      "name": "Scrafty"
+    },
+    {
+      "formId": "0563-000",
+      "nationalDex": 563,
+      "name": "Cofagrigus"
+    },
+    {
+      "formId": "0569-000",
+      "nationalDex": 569,
+      "name": "Garbodor"
+    },
+    {
+      "formId": "0571-000",
+      "nationalDex": 571,
+      "name": "Zoroark"
+    },
+    {
+      "formId": "0571-001",
+      "nationalDex": 571,
+      "name": "Zoroark (Hisuian Form)"
+    },
+    {
+      "formId": "0579-000",
+      "nationalDex": 579,
+      "name": "Reuniclus"
+    },
+    {
+      "formId": "0584-000",
+      "nationalDex": 584,
+      "name": "Vanilluxe"
+    },
+    {
+      "formId": "0587-000",
+      "nationalDex": 587,
+      "name": "Emolga"
+    },
+    {
+      "formId": "0604-000",
+      "nationalDex": 604,
+      "name": "Eelektross"
+    },
+    {
+      "formId": "0609-000",
+      "nationalDex": 609,
+      "name": "Chandelure"
+    },
+    {
+      "formId": "0614-000",
+      "nationalDex": 614,
+      "name": "Beartic"
+    },
+    {
+      "formId": "0618-000",
+      "nationalDex": 618,
+      "name": "Stunfisk"
+    },
+    {
+      "formId": "0618-001",
+      "nationalDex": 618,
+      "name": "Stunfisk (Galarian Form)"
+    },
+    {
+      "formId": "0623-000",
+      "nationalDex": 623,
+      "name": "Golurk"
+    },
+    {
+      "formId": "0635-000",
+      "nationalDex": 635,
+      "name": "Hydreigon"
+    },
+    {
+      "formId": "0637-000",
+      "nationalDex": 637,
+      "name": "Volcarona"
+    },
+    {
+      "formId": "0652-000",
+      "nationalDex": 652,
+      "name": "Chesnaught"
+    },
+    {
+      "formId": "0655-000",
+      "nationalDex": 655,
+      "name": "Delphox"
+    },
+    {
+      "formId": "0658-000",
+      "nationalDex": 658,
+      "name": "Greninja"
+    },
+    {
+      "formId": "0660-000",
+      "nationalDex": 660,
+      "name": "Diggersby"
+    },
+    {
+      "formId": "0663-000",
+      "nationalDex": 663,
+      "name": "Talonflame"
+    },
+    {
+      "formId": "0666-018",
+      "nationalDex": 666,
+      "name": "Vivillon"
+    },
+    {
+      "formId": "0668-000",
+      "nationalDex": 668,
+      "name": "Pyroar"
+    },
+    {
+      "formId": "0670-005",
+      "nationalDex": 670,
+      "name": "Floette"
+    },
+    {
+      "formId": "0671-000",
+      "nationalDex": 671,
+      "name": "Florges"
+    },
+    {
+      "formId": "0675-000",
+      "nationalDex": 675,
+      "name": "Pangoro"
+    },
+    {
+      "formId": "0676-000",
+      "nationalDex": 676,
+      "name": "Furfrou"
+    },
+    {
+      "formId": "0678-000",
+      "nationalDex": 678,
+      "name": "Meowstic (Male)"
+    },
+    {
+      "formId": "0678-001",
+      "nationalDex": 678,
+      "name": "Meowstic (Female)"
+    },
+    {
+      "formId": "0681-000",
+      "nationalDex": 681,
+      "name": "Aegislash"
+    },
+    {
+      "formId": "0683-000",
+      "nationalDex": 683,
+      "name": "Aromatisse"
+    },
+    {
+      "formId": "0685-000",
+      "nationalDex": 685,
+      "name": "Slurpuff"
+    },
+    {
+      "formId": "0687-000",
+      "nationalDex": 687,
+      "name": "Malamar"
+    },
+    {
+      "formId": "0689-000",
+      "nationalDex": 689,
+      "name": "Barbaracle"
+    },
+    {
+      "formId": "0691-000",
+      "nationalDex": 691,
+      "name": "Dragalge"
+    },
+    {
+      "formId": "0693-000",
+      "nationalDex": 693,
+      "name": "Clawitzer"
+    },
+    {
+      "formId": "0695-000",
+      "nationalDex": 695,
+      "name": "Heliolisk"
+    },
+    {
+      "formId": "0697-000",
+      "nationalDex": 697,
+      "name": "Tyrantrum"
+    },
+    {
+      "formId": "0699-000",
+      "nationalDex": 699,
+      "name": "Aurorus"
+    },
+    {
+      "formId": "0700-000",
+      "nationalDex": 700,
+      "name": "Sylveon"
+    },
+    {
+      "formId": "0701-000",
+      "nationalDex": 701,
+      "name": "Hawlucha"
+    },
+    {
+      "formId": "0702-000",
+      "nationalDex": 702,
+      "name": "Dedenne"
+    },
+    {
+      "formId": "0706-000",
+      "nationalDex": 706,
+      "name": "Goodra"
+    },
+    {
+      "formId": "0706-001",
+      "nationalDex": 706,
+      "name": "Goodra (Hisuian Form)"
+    },
+    {
+      "formId": "0707-000",
+      "nationalDex": 707,
+      "name": "Klefki"
+    },
+    {
+      "formId": "0709-000",
+      "nationalDex": 709,
+      "name": "Trevenant"
+    },
+    {
+      "formId": "0711-000",
+      "nationalDex": 711,
+      "name": "Gourgeist (Medium Variety)"
+    },
+    {
+      "formId": "0711-001",
+      "nationalDex": 711,
+      "name": "Gourgeist (Small Variety)"
+    },
+    {
+      "formId": "0711-002",
+      "nationalDex": 711,
+      "name": "Gourgeist (Large Variety)"
+    },
+    {
+      "formId": "0711-003",
+      "nationalDex": 711,
+      "name": "Gourgeist (Jumbo Variety)"
+    },
+    {
+      "formId": "0713-000",
+      "nationalDex": 713,
+      "name": "Avalugg"
+    },
+    {
+      "formId": "0713-001",
+      "nationalDex": 713,
+      "name": "Avalugg (Hisuian Form)"
+    },
+    {
+      "formId": "0715-000",
+      "nationalDex": 715,
+      "name": "Noivern"
+    },
+    {
+      "formId": "0724-000",
+      "nationalDex": 724,
+      "name": "Decidueye"
+    },
+    {
+      "formId": "0724-001",
+      "nationalDex": 724,
+      "name": "Decidueye (Hisuian Form)"
+    },
+    {
+      "formId": "0727-000",
+      "nationalDex": 727,
+      "name": "Incineroar"
+    },
+    {
+      "formId": "0730-000",
+      "nationalDex": 730,
+      "name": "Primarina"
+    },
+    {
+      "formId": "0733-000",
+      "nationalDex": 733,
+      "name": "Toucannon"
+    },
+    {
+      "formId": "0740-000",
+      "nationalDex": 740,
+      "name": "Crabominable"
+    },
+    {
+      "formId": "0745-000",
+      "nationalDex": 745,
+      "name": "Lycanroc (Midday Form)"
+    },
+    {
+      "formId": "0745-001",
+      "nationalDex": 745,
+      "name": "Lycanroc (Midnight Form)"
+    },
+    {
+      "formId": "0745-002",
+      "nationalDex": 745,
+      "name": "Lycanroc (Dusk Form)"
+    },
+    {
+      "formId": "0748-000",
+      "nationalDex": 748,
+      "name": "Toxapex"
+    },
+    {
+      "formId": "0750-000",
+      "nationalDex": 750,
+      "name": "Mudsdale"
+    },
+    {
+      "formId": "0752-000",
+      "nationalDex": 752,
+      "name": "Araquanid"
+    },
+    {
+      "formId": "0758-000",
+      "nationalDex": 758,
+      "name": "Salazzle"
+    },
+    {
+      "formId": "0763-000",
+      "nationalDex": 763,
+      "name": "Tsareena"
+    },
+    {
+      "formId": "0765-000",
+      "nationalDex": 765,
+      "name": "Oranguru"
+    },
+    {
+      "formId": "0766-000",
+      "nationalDex": 766,
+      "name": "Passimian"
+    },
+    {
+      "formId": "0778-000",
+      "nationalDex": 778,
+      "name": "Mimikyu"
+    },
+    {
+      "formId": "0780-000",
+      "nationalDex": 780,
+      "name": "Drampa"
+    },
+    {
+      "formId": "0784-000",
+      "nationalDex": 784,
+      "name": "Kommo-o"
+    },
+    {
+      "formId": "0823-000",
+      "nationalDex": 823,
+      "name": "Corviknight"
+    },
+    {
+      "formId": "0841-000",
+      "nationalDex": 841,
+      "name": "Flapple"
+    },
+    {
+      "formId": "0842-000",
+      "nationalDex": 842,
+      "name": "Appletun"
+    },
+    {
+      "formId": "0844-000",
+      "nationalDex": 844,
+      "name": "Sandaconda"
+    },
+    {
+      "formId": "0855-000",
+      "nationalDex": 855,
+      "name": "Polteageist"
+    },
+    {
+      "formId": "0858-000",
+      "nationalDex": 858,
+      "name": "Hatterene"
+    },
+    {
+      "formId": "0861-000",
+      "nationalDex": 861,
+      "name": "Grimmsnarl"
+    },
+    {
+      "formId": "0866-000",
+      "nationalDex": 866,
+      "name": "Mr. Rime"
+    },
+    {
+      "formId": "0867-000",
+      "nationalDex": 867,
+      "name": "Runerigus"
+    },
+    {
+      "formId": "0869-000",
+      "nationalDex": 869,
+      "name": "Alcremie"
+    },
+    {
+      "formId": "0870-000",
+      "nationalDex": 870,
+      "name": "Falinks"
+    },
+    {
+      "formId": "0877-000",
+      "nationalDex": 877,
+      "name": "Morpeko"
+    },
+    {
+      "formId": "0887-000",
+      "nationalDex": 887,
+      "name": "Dragapult"
+    },
+    {
+      "formId": "0899-000",
+      "nationalDex": 899,
+      "name": "Wyrdeer"
+    },
+    {
+      "formId": "0900-000",
+      "nationalDex": 900,
+      "name": "Kleavor"
+    },
+    {
+      "formId": "0902-000",
+      "nationalDex": 902,
+      "name": "Basculegion (Male)"
+    },
+    {
+      "formId": "0902-001",
+      "nationalDex": 902,
+      "name": "Basculegion (Female)"
+    },
+    {
+      "formId": "0903-000",
+      "nationalDex": 903,
+      "name": "Sneasler"
+    },
+    {
+      "formId": "0904-000",
+      "nationalDex": 904,
+      "name": "Overqwil"
+    },
+    {
+      "formId": "0908-000",
+      "nationalDex": 908,
+      "name": "Meowscarada"
+    },
+    {
+      "formId": "0911-000",
+      "nationalDex": 911,
+      "name": "Skeledirge"
+    },
+    {
+      "formId": "0914-000",
+      "nationalDex": 914,
+      "name": "Quaquaval"
+    },
+    {
+      "formId": "0925-000",
+      "nationalDex": 925,
+      "name": "Maushold"
+    },
+    {
+      "formId": "0934-000",
+      "nationalDex": 934,
+      "name": "Garganacl"
+    },
+    {
+      "formId": "0936-000",
+      "nationalDex": 936,
+      "name": "Armarouge"
+    },
+    {
+      "formId": "0937-000",
+      "nationalDex": 937,
+      "name": "Ceruledge"
+    },
+    {
+      "formId": "0939-000",
+      "nationalDex": 939,
+      "name": "Bellibolt"
+    },
+    {
+      "formId": "0952-000",
+      "nationalDex": 952,
+      "name": "Scovillain"
+    },
+    {
+      "formId": "0956-000",
+      "nationalDex": 956,
+      "name": "Espathra"
+    },
+    {
+      "formId": "0959-000",
+      "nationalDex": 959,
+      "name": "Tinkaton"
+    },
+    {
+      "formId": "0964-000",
+      "nationalDex": 964,
+      "name": "Palafin"
+    },
+    {
+      "formId": "0968-000",
+      "nationalDex": 968,
+      "name": "Orthworm"
+    },
+    {
+      "formId": "0970-000",
+      "nationalDex": 970,
+      "name": "Glimmora"
+    },
+    {
+      "formId": "0972-000",
+      "nationalDex": 972,
+      "name": "Houndstone"
+    },
+    {
+      "formId": "0979-000",
+      "nationalDex": 979,
+      "name": "Annihilape"
+    },
+    {
+      "formId": "0981-000",
+      "nationalDex": 981,
+      "name": "Farigiraf"
+    },
+    {
+      "formId": "0983-000",
+      "nationalDex": 983,
+      "name": "Kingambit"
+    },
+    {
+      "formId": "1000-000",
+      "nationalDex": 1000,
+      "name": "Gholdengo"
+    },
+    {
+      "formId": "1013-000",
+      "nationalDex": 1013,
+      "name": "Sinistcha"
+    },
+    {
+      "formId": "1018-000",
+      "nationalDex": 1018,
+      "name": "Archaludon"
+    },
+    {
+      "formId": "1019-000",
+      "nationalDex": 1019,
+      "name": "Hydrapple"
+    }
+  ],
+  "limitations": [
+    "Not a complete legality catalog: move learnsets, abilities and items still need verification",
+    "Official form names must be mapped explicitly to Poképaste/calculator aliases",
+    "Ranked dates do not establish any tournament's regulation"
+  ]
+}

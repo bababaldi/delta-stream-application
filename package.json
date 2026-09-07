@@ -1,0 +1,36 @@
+{
+  "name": "delta-stream-vgc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "data:discover": "tsx scripts/discover.ts",
+    "data:review": "tsx scripts/prepare-review.ts",
+    "data:build": "tsx scripts/build-data.ts",
+    "data:validate": "tsx scripts/validate-data.ts",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "tsx --test test/**/*.test.ts",
+    "test:ui": "tsx scripts/check-ui.ts",
+    "typecheck": "tsc --noEmit",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "cap open android",
+    "android:debug": "npm run android:sync && sh scripts/build-android.sh assembleDebug",
+    "android:verify": "npm run android:sync && sh scripts/build-android.sh lintDebug testDebugUnitTest assembleDebug",
+    "release:check": "npm run data:build && npm run data:validate && npm test && npm run typecheck && npm run test:ui && npm run android:verify"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.4.3",
+    "@types/node": "^24.13.3",
+    "playwright": "^1.63.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/core": "^8.5.1"
+  }
+}

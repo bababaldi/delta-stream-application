@@ -1,0 +1,10 @@
+node_modules/
+dist/
+android/.gradle/
+android/app/build/
+*.keystore
+*.jks
+android/local.properties
+data/snapshot.*.tmp
+.env
+.impeccable/review/

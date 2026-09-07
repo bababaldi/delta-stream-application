@@ -1,0 +1,4762 @@
+{
+  "status": "pending-owner-approval",
+  "generatedAt": "2026-09-06T21:20:43.809Z",
+  "tournament": {
+    "event": {
+      "id": "WCS02wAQpCIaqFmXxER4",
+      "name": "2026 Pokémon World Championships — Masters",
+      "date": "2026-08-28",
+      "regulation": "champions-regulation-mb",
+      "tier": "worlds",
+      "region": "NA",
+      "source": "rk9",
+      "sourceUrl": "https://rk9.gg/tournament/WCS02wAQpCIaqFmXxER4"
+    },
+    "teams": [
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Victor Jimenez Coll",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Moonblast",
+              "Encore",
+              "Tailwind"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Protect",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Moonblast"
+            ]
+          },
+          {
+            "pokemon": "Glimmora",
+            "ability": "Toxic Debris",
+            "item": "Shuca Berry",
+            "moves": [
+              "Spiky Shield",
+              "Power Gem",
+              "Sludge Bomb",
+              "Earth Power"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Low Kick",
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Protect",
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/0CjQWDWCYYYZXP1XE99P"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Nils Dunlop",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Leaf Storm",
+              "Sludge Bomb",
+              "Sleep Powder",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Mudsdale",
+            "ability": "Inner Focus",
+            "item": "Life Orb",
+            "moves": [
+              "High Horsepower",
+              "Rock Slide",
+              "Heavy Slam",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Chople Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Darkest Lariat",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Dazzling Gleam",
+              "Moonblast",
+              "Light of Ruin",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/1TXYC3Cm137UFYFAfhA5"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Brandon Davis",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Life Orb",
+            "moves": [
+              "Detect",
+              "Quick Attack",
+              "Hyper Voice",
+              "Hyper Beam"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "White Herb",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Darkest Lariat",
+              "Close Combat"
+            ]
+          },
+          {
+            "pokemon": "Abomasnow",
+            "ability": "Snow Warning",
+            "item": "Abomasite",
+            "moves": [
+              "Ice Shard",
+              "Blizzard",
+              "Energy Ball",
+              "Earth Power"
+            ]
+          },
+          {
+            "pokemon": "Maushold [Family of Four]",
+            "ability": "Technician",
+            "item": "Wide Lens",
+            "moves": [
+              "Protect",
+              "Follow Me",
+              "After You",
+              "Population Bomb"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Trick Room",
+              "Helping Hand",
+              "Twin Beam",
+              "Thunderbolt"
+            ]
+          },
+          {
+            "pokemon": "Camerupt",
+            "ability": "Solid Rock",
+            "item": "Cameruptite",
+            "moves": [
+              "Protect",
+              "Earth Power",
+              "Heat Wave",
+              "Ancient Power"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/1XshTgaMbnnhxeGUUG6t"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Taran Birdee",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Last Respects",
+              "Wave Crash",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Stomping Tantrum",
+              "Dragon Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Drought",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Tailwind",
+              "Moonblast",
+              "Encore",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Sucker Punch",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/20BBPUcTPXn4DavHPvAX"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Jiseok Lee",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Stomping Tantrum",
+              "Dragon Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Encore",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Low Kick",
+              "Sucker Punch"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/5sppK6n3gpQBwBwjbCTo"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Caleb Wijesinha",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Protect",
+              "Swords Dance",
+              "Sucker Punch"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Hospitality",
+            "item": "Colbur Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Rage Powder",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Helping Hand",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Fake Out",
+              "Quick Guard",
+              "Dire Claw"
+            ]
+          },
+          {
+            "pokemon": "Delphox",
+            "ability": "Blaze",
+            "item": "Delphoxite",
+            "moves": [
+              "Protect",
+              "Psychic",
+              "Nasty Plot",
+              "Heat Wave"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Dazzling Gleam",
+              "Protect",
+              "Draining Kiss",
+              "Calm Mind"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/5vMHhUzrMs1NcQNkxCKB"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Jonathan Marston",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Occa Berry",
+            "moves": [
+              "Moonblast",
+              "Tickle",
+              "Tailwind",
+              "Encore"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
+            "moves": [
+              "Last Respects",
+              "Wave Crash",
+              "Soak",
+              "Flip Turn"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Close Combat",
+              "Dual Wingbeat",
+              "Roost",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kleavor",
+            "ability": "Sharpness",
+            "item": "Focus Sash",
+            "moves": [
+              "Stone Axe",
+              "Protect",
+              "X-Scissor",
+              "Close Combat"
+            ]
+          },
+          {
+            "pokemon": "Maushold [Family of Four]",
+            "ability": "Friend Guard",
+            "item": "Chople Berry",
+            "moves": [
+              "Follow Me",
+              "Protect",
+              "Super Fang",
+              "Charm"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/69BxE6b5XTrnYPlrd87y"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Enrique Grimaldo",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Sinistcha [Masterpiece Form]",
+            "ability": "Hospitality",
+            "item": "Kasib Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Rage Powder",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Soak",
+              "Flip Turn"
+            ]
+          },
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Electro Shot",
+              "Dragon Pulse",
+              "Protect",
+              "Flash Cannon"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Calm Mind",
+              "Moonblast",
+              "Dazzling Gleam",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Focus Sash",
+            "moves": [
+              "Hurricane",
+              "Weather Ball",
+              "Tailwind",
+              "Wide Guard"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Flare Blitz",
+              "Fake Out",
+              "Parting Shot",
+              "Throat Chop"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/6mVyGz9GM87LQq6y9MsC"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Kiran Singh",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Gholdengo",
+            "ability": "Good as Gold",
+            "item": "Life Orb",
+            "moves": [
+              "Make It Rain",
+              "Shadow Ball",
+              "Nasty Plot",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Milotic",
+            "ability": "Competitive",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Scald",
+              "Ice Beam",
+              "Haze",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Excadrill",
+            "ability": "Sand Rush",
+            "item": "Focus Sash",
+            "moves": [
+              "Iron Head",
+              "High Horsepower",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Tyranitar",
+            "ability": "Sand Stream",
+            "item": "Tyranitarite",
+            "moves": [
+              "Rock Slide",
+              "Knock Off",
+              "Dragon Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Hospitality",
+            "item": "Colbur Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Rage Powder",
+              "Trick Room",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/6sBndU9kxVMGrWdJm3AB"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Justin Tang",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Fake Out",
+              "Close Combat",
+              "Poison Jab",
+              "Quick Guard"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Masterpiece Form]",
+            "ability": "Hospitality",
+            "item": "Colbur Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Rage Powder",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Swords Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Blastoise",
+            "ability": "Rain Dish",
+            "item": "Blastoisinite",
+            "moves": [
+              "Water Spout",
+              "Dark Pulse",
+              "Shell Smash",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Delphox",
+            "ability": "Blaze",
+            "item": "Delphoxite",
+            "moves": [
+              "Heat Wave",
+              "Psychic",
+              "Nasty Plot",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Parting Shot",
+              "Flare Blitz",
+              "Throat Chop",
+              "Fake Out"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/7tsOodrZiVvZCXsx3J4n"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Raghav Malaviya",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Swampertite",
+            "moves": [
+              "Wave Crash",
+              "Earthquake",
+              "Ice Punch",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Grimmsnarl",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+              "Spirit Break",
+              "Reflect",
+              "Light Screen",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Electro Shot",
+              "Dragon Pulse",
+              "Flash Cannon",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Leaf Storm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Hurricane",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Weather Ball",
+              "Hurricane",
+              "Wide Guard",
+              "Tailwind"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/85sGqTzxJKFZFEiA5Qq9"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Stefano Greppi",
+        "placement": 8,
+        "roster": [
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Aerodactylite",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Tailwind",
+              "Ice Fang"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Earthquake",
+              "Rock Tomb",
+              "Dragon Claw",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Focus Sash",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Solar Beam",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/9Rhiqn5hn9fJWpxAHMun"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Stefano De Maria",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Protect",
+              "Hurricane",
+              "Weather Ball"
+            ]
+          },
+          {
+            "pokemon": "Grimmsnarl",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+              "Spirit Break",
+              "Reflect",
+              "Light Screen",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Leaf Storm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Swampertite",
+            "moves": [
+              "Ice Punch",
+              "Wave Crash",
+              "Protect",
+              "Earthquake"
+            ]
+          },
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Flash Cannon",
+              "Protect",
+              "Electro Shot",
+              "Dragon Pulse"
+            ]
+          },
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Tailwind",
+              "Weather Ball",
+              "Hurricane",
+              "Wide Guard"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/9UZH56Pe8mEysl136tYQ"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Emilio Forbes",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Aerodactylite",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Swords Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Yawn",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Tsareena",
+            "ability": "Queenly Majesty",
+            "item": "Focus Sash",
+            "moves": [
+              "Power Whip",
+              "Triple Axel",
+              "Low Kick",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "White Herb",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Fake Out",
+              "Feint"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/AmoQsYxgV7fJaoGXPygS"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Yuya Tada",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "moves": [
+              "Dragon Claw",
+              "Stomping Tantrum",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Mystic Water",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Low Kick",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Encore",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Solar Power",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/BnenWELa2OQnRS6m8NiN"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Marco Hemantha Kaludura Silva",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Aerodactylite",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Ice Fang",
+              "Tailwind"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Rock Tomb",
+              "Dragon Claw",
+              "Earthquake",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Protect",
+              "Solar Beam",
+              "Weather Ball"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Quick Attack",
+              "Detect",
+              "Yawn"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Focus Sash",
+            "moves": [
+              "Kowtow Cleave",
+              "Low Kick",
+              "Sucker Punch",
+              "Iron Head"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/DX0z6BNJGBGLffnND84R"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Carson St Denis",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Earthquake",
+              "Rock Slide",
+              "Dragon Claw",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "White Herb",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Rock Tomb",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Low Kick",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Mystic Water",
+            "moves": [
+              "Aqua Jet",
+              "Wave Crash",
+              "Last Respects",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Solar Beam",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Encore",
+              "Moonblast",
+              "Tailwind",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/EGp8eA5hvuA1avDC2QBw"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "William Brown",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Leaf Storm"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Swampertite",
+            "moves": [
+              "Protect",
+              "Wave Crash",
+              "Earthquake",
+              "Ice Punch"
+            ]
+          },
+          {
+            "pokemon": "Grimmsnarl",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+              "Spirit Break",
+              "Reflect",
+              "Light Screen",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Protect",
+              "Weather Ball",
+              "Hurricane",
+              "Heat Wave"
+            ]
+          },
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Hurricane",
+              "Weather Ball",
+              "Tailwind",
+              "Wide Guard"
+            ]
+          },
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Protect",
+              "Electro Shot",
+              "Dragon Pulse",
+              "Flash Cannon"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/Es48rqCUdpvyeWHafOvr"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Paul Chua",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Quick Attack",
+              "Yawn",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Throat Chop",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Life Orb",
+            "moves": [
+              "Leaf Storm",
+              "Protect",
+              "Earth Power",
+              "Sludge Bomb"
+            ]
+          },
+          {
+            "pokemon": "Toxapex",
+            "ability": "Regenerator",
+            "item": "Leftovers",
+            "moves": [
+              "Toxic",
+              "Infestation",
+              "Wide Guard",
+              "Baneful Bunker"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Choice Scarf",
+            "moves": [
+              "Dragon Claw",
+              "Earthquake",
+              "Rock Slide",
+              "Stomping Tantrum"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/FOsr7FJPo1NoYZPSJ04i"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Daniel Quek",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Electro Shot",
+              "Flash Cannon",
+              "Dragon Pulse",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Grimmsnarl",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+              "Spirit Break",
+              "Parting Shot",
+              "Reflect",
+              "Light Screen"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Leaf Storm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Tailwind",
+              "Weather Ball",
+              "Hurricane",
+              "Wide Guard"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Swampertite",
+            "moves": [
+              "Protect",
+              "Ice Punch",
+              "Wave Crash",
+              "Earthquake"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Hurricane",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/FPcROo3Ly4Nlm7VRD3Wb"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Naoto Mizobuchi",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Ancient Power",
+              "Weather Ball",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Focus Sash",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Dragon Claw",
+              "Rock Slide",
+              "Earthquake",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Throat Chop",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Wide Lens",
+            "moves": [
+              "Sleep Powder",
+              "Leaf Storm",
+              "Sludge Bomb",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/FbJBMmDw7JQtlDncZ35C"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "ALEX UNDERHILL",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Grimmsnarl",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+              "Spirit Break",
+              "Light Screen",
+              "Parting Shot",
+              "Reflect"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Swampertite",
+            "moves": [
+              "Earthquake",
+              "Protect",
+              "Wave Crash",
+              "Ice Punch"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Leaf Storm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Weather Ball",
+              "Wide Guard",
+              "Tailwind",
+              "Hurricane"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Protect",
+              "Hurricane",
+              "Weather Ball"
+            ]
+          },
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Protect",
+              "Flash Cannon",
+              "Dragon Pulse",
+              "Electro Shot"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/GfuHbgLUCNpUvb165hRw"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Antonio Sánchez",
+        "placement": 8,
+        "roster": [
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Parting Shot",
+              "Flare Blitz",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Toxapex",
+            "ability": "Regenerator",
+            "item": "Leftovers",
+            "moves": [
+              "Baneful Bunker",
+              "Infestation",
+              "Toxic",
+              "Wide Guard"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Choice Scarf",
+            "moves": [
+              "Stomping Tantrum",
+              "Earthquake",
+              "Dragon Claw",
+              "Rock Slide"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Protect",
+              "Heat Wave",
+              "Solar Beam",
+              "Weather Ball"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Sludge Bomb",
+              "Earth Power",
+              "Sleep Powder"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Detect",
+              "Hyper Voice",
+              "Quick Attack",
+              "Yawn"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/HMsNPyHVD6Hm0d8hzvrO"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Narawitch Naenna",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Pelipper",
+            "ability": "Drizzle",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Hurricane",
+              "Weather Ball",
+              "Wide Guard",
+              "Tailwind"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Hurricane",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Archaludon",
+            "ability": "Stamina",
+            "item": "Leftovers",
+            "moves": [
+              "Protect",
+              "Dragon Pulse",
+              "Flash Cannon",
+              "Electro Shot"
+            ]
+          },
+          {
+            "pokemon": "Grimmsnarl",
+            "ability": "Prankster",
+            "item": "Light Clay",
+            "moves": [
+              "Light Screen",
+              "Spirit Break",
+              "Reflect",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Swampertite",
+            "moves": [
+              "Ice Punch",
+              "Wave Crash",
+              "Earthquake",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Sludge Bomb",
+              "Sleep Powder",
+              "Leaf Storm"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/JvuyphHOimkDlu8Ux2Mn"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Simone Sanvito",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Excadrill",
+            "ability": "Sand Rush",
+            "item": "Focus Sash",
+            "moves": [
+              "High Horsepower",
+              "Iron Head",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Hospitality",
+            "item": "Colbur Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Shadow Ball",
+              "Rage Powder",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Milotic",
+            "ability": "Competitive",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Scald",
+              "Ice Beam",
+              "Icy Wind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Gholdengo",
+            "ability": "Good as Gold",
+            "item": "Life Orb",
+            "moves": [
+              "Make It Rain",
+              "Shadow Ball",
+              "Nasty Plot",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Tyranitar",
+            "ability": "Sand Stream",
+            "item": "Tyranitarite",
+            "moves": [
+              "Rock Slide",
+              "Knock Off",
+              "Low Kick",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/KV4jhkqtTlDnJmyrEZwH"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Cary D'Ortona",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Helping Hand",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Extreme Speed",
+              "Head Smash",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Dual Wingbeat",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Fake Out",
+              "Zap Cannon",
+              "Focus Blast",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Swords Dance",
+              "Sucker Punch",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/LGP3gJvxh6ZVdfkNAiEY"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Rahim Farzan",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Low Kick",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Head Smash",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/NNQXWGUodf8vZnZx1Xdw"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Ryoma Okamoto",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Wide Lens",
+            "moves": [
+              "Leaf Storm",
+              "Sludge Bomb",
+              "Protect",
+              "Sleep Powder"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Flare Blitz",
+              "Darkest Lariat",
+              "Fake Out",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Focus Sash",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Protect",
+              "Tailwind"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Dragon Claw",
+              "Earthquake",
+              "Stomping Tantrum",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/OJNicPn3fwdxVMr7r02E"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Hirofumi Kimura",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Parting Shot",
+              "Helping Hand"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Hospitality",
+            "item": "Colbur Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Rage Powder",
+              "Protect",
+              "Trick Room"
+            ]
+          },
+          {
+            "pokemon": "Blastoise",
+            "ability": "Torrent",
+            "item": "Blastoisinite",
+            "moves": [
+              "Water Spout",
+              "Dark Pulse",
+              "Protect",
+              "Shell Smash"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Quick Guard",
+              "Fake Out"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Black Glasses",
+            "moves": [
+              "Sucker Punch",
+              "Kowtow Cleave",
+              "Protect",
+              "Swords Dance"
+            ]
+          },
+          {
+            "pokemon": "Delphox",
+            "ability": "Blaze",
+            "item": "Delphoxite",
+            "moves": [
+              "Heat Wave",
+              "Nasty Plot",
+              "Psychic",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/ORtDPT569t4jDEZV3jaH"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Giovanni Piscitelli",
+        "placement": 8,
+        "roster": [
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Earthquake",
+              "Dragon Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Sucker Punch",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Encore",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Mystic Water",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/PZvi1hgblWVj9obq5Fcj"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Ryan Kenrick Chua",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Extreme Speed",
+              "Rock Slide",
+              "Flare Blitz"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Protect",
+              "Tailwind",
+              "Brave Bird",
+              "Close Combat"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Protect",
+              "Fake Out",
+              "Focus Blast",
+              "Zap Cannon"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Swords Dance",
+              "Sucker Punch",
+              "Kowtow Cleave"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Detect",
+              "Quick Attack",
+              "Yawn",
+              "Hyper Voice"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Protect",
+              "Helping Hand",
+              "Trick Room",
+              "Psychic"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/PyMV5Dmb5LbNwORND4IM"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Patrick Cheng",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Camerupt",
+            "ability": "Solid Rock",
+            "item": "Cameruptite",
+            "moves": [
+              "Heat Wave",
+              "Earth Power",
+              "Protect",
+              "Ancient Power"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Hyper Voice",
+              "Trick Room",
+              "Helping Hand",
+              "Psychic Fangs"
+            ]
+          },
+          {
+            "pokemon": "Vanilluxe",
+            "ability": "Snow Warning",
+            "item": "Never-Melt Ice",
+            "moves": [
+              "Blizzard",
+              "Ice Shard",
+              "Protect",
+              "Freeze-Dry"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Choice Scarf",
+            "moves": [
+              "Close Combat",
+              "Brave Bird",
+              "Final Gambit",
+              "U-turn"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Protect",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Blastoise",
+            "ability": "Rain Dish",
+            "item": "Blastoisinite",
+            "moves": [
+              "Water Spout",
+              "Dark Pulse",
+              "Fake Out",
+              "Aura Sphere"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/QN45w75s3Dj8WY56jAXr"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Justin Cerioni",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Aegislash",
+            "ability": "Stance Change",
+            "item": "Focus Sash",
+            "moves": [
+              "Poltergeist",
+              "Shadow Sneak",
+              "Close Combat",
+              "Wide Guard"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Quick Attack",
+              "Yawn",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "moves": [
+              "Leaf Storm",
+              "Sludge Bomb",
+              "Earth Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Weather Ball",
+              "Heat Wave",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Choice Scarf",
+            "moves": [
+              "Earthquake",
+              "Rock Slide",
+              "Dragon Claw",
+              "Stomping Tantrum"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Darkest Lariat",
+              "Parting Shot"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/QfCpnS9KtpMQobl6H2Tm"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Oliver Eskolin",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Tyranitar",
+            "ability": "Sand Stream",
+            "item": "Tyranitarite",
+            "moves": [
+              "Rock Slide",
+              "Knock Off",
+              "Dragon Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Milotic",
+            "ability": "Competitive",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Scald",
+              "Ice Beam",
+              "Haze",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Hospitality",
+            "item": "Colbur Berry",
+            "moves": [
+              "Matcha Gotcha",
+              "Trick Room",
+              "Rage Powder",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Gholdengo",
+            "ability": "Good as Gold",
+            "item": "Life Orb",
+            "moves": [
+              "Make It Rain",
+              "Shadow Ball",
+              "Nasty Plot",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Close Combat",
+              "Brave Bird",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Excadrill",
+            "ability": "Sand Rush",
+            "item": "Focus Sash",
+            "moves": [
+              "Iron Head",
+              "High Horsepower",
+              "Rock Slide",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/SVKQY06vgnrsWpyHXPX2"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Yan Sym",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Helping Hand",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Head Smash",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Swords Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/StKPIjW22QA3HDOCw2Yf"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Nader El bacha",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Glimmora",
+            "ability": "Toxic Debris",
+            "item": "Life Orb",
+            "moves": [
+              "Sludge Bomb",
+              "Power Gem",
+              "Earth Power",
+              "Spiky Shield"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Flip Turn"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Sucker Punch",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Protect",
+              "Encore"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Close Combat",
+              "Brave Bird",
+              "Roost",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Tyranitar",
+            "ability": "Sand Stream",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Rock Slide",
+              "Knock Off",
+              "Protect",
+              "Earthquake"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/TMYXT9ZDl3EaHgAUZTwW"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Louis Markl",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Protect",
+              "Dazzling Gleam",
+              "Calm Mind",
+              "Draining Kiss"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Black Glasses",
+            "moves": [
+              "Protect",
+              "Sucker Punch",
+              "Kowtow Cleave",
+              "Swords Dance"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Hospitality",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Rage Powder",
+              "Matcha Gotcha",
+              "Shadow Ball"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
+            "moves": [
+              "Flip Turn",
+              "Wave Crash",
+              "Aqua Jet",
+              "Last Respects"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Parting Shot",
+              "Flare Blitz",
+              "Helping Hand"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "White Herb",
+            "moves": [
+              "Protect",
+              "Fake Out",
+              "Dire Claw",
+              "Close Combat"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/U1iYQBbN5GLTGgftwXzh"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "KOTA KAWABE",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Delphox",
+            "ability": "Blaze",
+            "item": "Delphoxite",
+            "moves": [
+              "Heat Wave",
+              "Psychic",
+              "Will-O-Wisp",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Encore",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Stomping Tantrum",
+              "Dragon Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
+            "moves": [
+              "Wave Crash",
+              "Aqua Jet",
+              "Flip Turn",
+              "Last Respects"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/Urr5B8d6Q2QHRYrOrBPG"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Caelan Brown",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Dragonite",
+            "ability": "Inner Focus",
+            "item": "Life Orb",
+            "moves": [
+              "Dragon Claw",
+              "Superpower",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Ninetales [Alolan Form]",
+            "ability": "Snow Warning",
+            "item": "Choice Scarf",
+            "moves": [
+              "Blizzard",
+              "Icy Wind",
+              "Freeze-Dry",
+              "Encore"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Leftovers",
+            "moves": [
+              "High Horsepower",
+              "Flip Turn",
+              "Yawn",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Gengar",
+            "ability": "Cursed Body",
+            "item": "Gengarite",
+            "moves": [
+              "Shadow Ball",
+              "Sludge Bomb",
+              "Substitute",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Flare Blitz",
+              "Throat Chop",
+              "Fake Out",
+              "Parting Shot"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/X5Q7iBoFsLWpBYCNXFXd"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Dorian Quiñonez",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Dragonite",
+            "ability": "Inner Focus",
+            "item": "Life Orb",
+            "moves": [
+              "Dragon Claw",
+              "Superpower",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Parting Shot",
+              "Flare Blitz",
+              "Throat Chop",
+              "Fake Out"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Black Glasses",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Protect",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Ninetales [Alolan Form]",
+            "ability": "Snow Warning",
+            "item": "Choice Scarf",
+            "moves": [
+              "Blizzard",
+              "Freeze-Dry",
+              "Icy Wind",
+              "Encore"
+            ]
+          },
+          {
+            "pokemon": "Gengar",
+            "ability": "Cursed Body",
+            "item": "Gengarite",
+            "moves": [
+              "Shadow Ball",
+              "Sludge Bomb",
+              "Substitute",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/XcIf4jPnmEoOfPu1eKU9"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Zachary Weed",
+        "placement": 4,
+        "roster": [
+          {
+            "pokemon": "Froslass",
+            "ability": "Cursed Body",
+            "item": "Froslassite",
+            "moves": [
+              "Blizzard",
+              "Shadow Ball",
+              "Aurora Veil",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "White Herb",
+            "moves": [
+              "Close Combat",
+              "Gunk Shot",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Lycanroc [Dusk Form]",
+            "ability": "Tough Claws",
+            "item": "Focus Sash",
+            "moves": [
+              "Rock Slide",
+              "Close Combat",
+              "Accelerock",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Black Glasses",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Swords Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Scovillain",
+            "ability": "Moody",
+            "item": "Scovillainite",
+            "moves": [
+              "Overheat",
+              "Giga Drain",
+              "Rage Powder",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/bunpK59QyZm9f4p9Ryty"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Joji Kaieda",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Low Kick",
+              "Sucker Punch",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Encore",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Dragon Claw",
+              "Rock Slide",
+              "Earthquake",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/c2rYFj1jtZIh0s5QJU4x"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Chloe Bourke",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Protect",
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Kleavor",
+            "ability": "Sharpness",
+            "item": "Focus Sash",
+            "moves": [
+              "Protect",
+              "Stone Axe",
+              "X-Scissor",
+              "Feint"
+            ]
+          },
+          {
+            "pokemon": "Metagross",
+            "ability": "Clear Body",
+            "item": "Metagrossite",
+            "moves": [
+              "Protect",
+              "Iron Head",
+              "Psychic Fangs",
+              "Ice Punch"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Fairy Feather",
+            "moves": [
+              "Protect",
+              "Moonblast",
+              "Tailwind",
+              "Encore"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Protect",
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/cAIFNA2GizO2hGzTqn1Y"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "João Felipe Leite",
+        "placement": 4,
+        "roster": [
+          {
+            "pokemon": "Froslass",
+            "ability": "Cursed Body",
+            "item": "Froslassite",
+            "moves": [
+              "Blizzard",
+              "Shadow Ball",
+              "Aurora Veil",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Black Glasses",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Swords Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "White Herb",
+            "moves": [
+              "Fake Out",
+              "Close Combat",
+              "Dire Claw",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Lycanroc [Dusk Form]",
+            "ability": "Tough Claws",
+            "item": "Focus Sash",
+            "moves": [
+              "Accelerock",
+              "Close Combat",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Scovillain",
+            "ability": "Moody",
+            "item": "Scovillainite",
+            "moves": [
+              "Overheat",
+              "Giga Drain",
+              "Rage Powder",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/cdj4Zi0xQo0jiJ4lnkHh"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Navjit Joshi",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Occa Berry",
+            "moves": [
+              "Tailwind",
+              "Grass Knot",
+              "Moonblast",
+              "Charm"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Head Smash",
+              "Flare Blitz",
+              "Protect",
+              "Extreme Speed"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Focus Blast",
+              "Zap Cannon",
+              "Protect",
+              "Fake Out"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Iron Head",
+              "Sucker Punch",
+              "Kowtow Cleave"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Protect",
+              "Close Combat",
+              "Roost",
+              "Brave Bird"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Detect",
+              "Calm Mind",
+              "Hyper Beam",
+              "Hyper Voice"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/d4ZKTwwEstUlBWT6mhWa"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Nikolaj Høj Nielsen",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Camerupt",
+            "ability": "Solid Rock",
+            "item": "Cameruptite",
+            "moves": [
+              "Protect",
+              "Earth Power",
+              "Heat Wave",
+              "Ancient Power"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Expert Belt",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Sucker Punch",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kangaskhan",
+            "ability": "Scrappy",
+            "item": "Life Orb",
+            "moves": [
+              "Double-Edge",
+              "Fake Out",
+              "Hammer Arm",
+              "Ice Punch"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Trick Room",
+              "Helping Hand"
+            ]
+          },
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Aerodactylite",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Ice Fang",
+              "Tailwind"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/g6iUcXDtjHIObjAp40Ps"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Mattie Morgan",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Light of Ruin",
+              "Moonblast",
+              "Dazzling Gleam",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Mystic Water",
+            "moves": [
+              "Wave Crash",
+              "Aqua Jet",
+              "Last Respects",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Earthquake",
+              "Dragon Claw",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Encore",
+              "Tailwind",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/hZM3PtY8DOMcM2LgfcSe"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "聡太 嶋谷",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Tailwind",
+              "Close Combat",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Quick Attack",
+              "Yawn",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Head Smash",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Trick Room",
+              "Helping Hand",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/iROixrm1HhPy3MGgPm9w"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "YUYA WAKASUGI",
+        "placement": 8,
+        "roster": [
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Encore",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Dragonite",
+            "ability": "Inner Focus",
+            "item": "Dragoninite",
+            "moves": [
+              "Dragon Pulse",
+              "Heat Wave",
+              "Thunderbolt",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Unburden",
+            "item": "White Herb",
+            "moves": [
+              "Dire Claw",
+              "Close Combat",
+              "Rock Slide",
+              "Fake Out"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Low Kick",
+              "Sucker Punch"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/j478dNnHDS9DrcZL2p9g"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Markus Hamann",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Head Smash",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Low Kick",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/lZUjyO0qFBGgyhO18c1t"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "alexander canseco salas",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Rock Slide",
+              "Dire Claw",
+              "Fake Out"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Beam",
+              "Quick Attack",
+              "Hyper Voice",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Thunderbolt",
+              "Psychic",
+              "Protect",
+              "Trick Room"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Rock Slide",
+              "Stomping Tantrum",
+              "Dragon Claw",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/llgco5mDXzbG5rXqaKby"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Jannik Koch",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Head Smash",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Sucker Punch",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Raichu",
+            "ability": "Lightning Rod",
+            "item": "Raichunite Y",
+            "moves": [
+              "Zap Cannon",
+              "Focus Blast",
+              "Fake Out",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Close Combat",
+              "Brave Bird",
+              "Tailwind",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/nF9ngsHiUNiZ0r7pRAqP"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Shohei Kimura",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Charizard",
+            "ability": "Solar Power",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Black Glasses",
+            "moves": [
+              "Kowtow Cleave",
+              "Iron Head",
+              "Sucker Punch",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Encore",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Dragon Claw",
+              "Earthquake",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Colbur Berry",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/nPQpjlarWDebvFTp14hK"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Behzad Muntazir",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Helping Hand",
+              "Trick Room",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Torkoal",
+            "ability": "Drought",
+            "item": "Charcoal",
+            "moves": [
+              "Eruption",
+              "Weather Ball",
+              "Protect",
+              "Ancient Power"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Black Glasses",
+            "moves": [
+              "Flare Blitz",
+              "Darkest Lariat",
+              "Fake Out",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "moves": [
+              "Leaf Storm",
+              "Sludge Bomb",
+              "Earth Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Brave Bird",
+              "Close Combat",
+              "Roost",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Fake Out",
+              "Dire Claw",
+              "Close Combat",
+              "Rock Slide"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/paT4eNDj7iVA2rJ8Iq7y"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Filip Woźniak",
+        "placement": 16,
+        "roster": [
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Occa Berry",
+            "moves": [
+              "Leaf Storm",
+              "Sludge Bomb",
+              "Sleep Powder",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Primarina",
+            "ability": "Liquid Voice",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Hyper Voice",
+              "Moonblast",
+              "Aqua Jet"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Focus Sash",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Protect",
+              "Trick Room"
+            ]
+          },
+          {
+            "pokemon": "Torkoal",
+            "ability": "Drought",
+            "item": "Charcoal",
+            "moves": [
+              "Weather Ball",
+              "Helping Hand",
+              "Eruption",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Blaziken",
+            "ability": "Speed Boost",
+            "item": "Blazikenite",
+            "moves": [
+              "Flare Blitz",
+              "Close Combat",
+              "Rock Slide",
+              "Detect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/piCswbIfODrBTXSzkT1V"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Liam Shorter",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Arcanine [Hisuian Form]",
+            "ability": "Rock Head",
+            "item": "Focus Sash",
+            "moves": [
+              "Flare Blitz",
+              "Head Smash",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Maushold [Family of Four]",
+            "ability": "Friend Guard",
+            "item": "Chople Berry",
+            "moves": [
+              "Follow Me",
+              "Super Fang",
+              "Charm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Gholdengo",
+            "ability": "Good as Gold",
+            "item": "Life Orb",
+            "moves": [
+              "Shadow Ball",
+              "Make It Rain",
+              "Nasty Plot",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sinistcha [Unremarkable Form]",
+            "ability": "Heatproof",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Rage Powder",
+              "Trick Room",
+              "Leaf Storm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Close Combat",
+              "Brave Bird",
+              "Roost",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/uVCBhENy0WUS3ZeJm6ua"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Adrien Hurley",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Detect"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Parting Shot",
+              "Throat Chop"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Choice Scarf",
+            "moves": [
+              "Dragon Claw",
+              "Earthquake",
+              "Stomping Tantrum",
+              "Rock Slide"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Solar Power",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Ancient Power",
+              "Weather Ball",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Focus Sash",
+            "moves": [
+              "Sleep Powder",
+              "Sludge Bomb",
+              "Leaf Storm",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Aerodactylite",
+            "moves": [
+              "Rock Slide",
+              "Ice Fang",
+              "Tailwind",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/urESTx41WiLPlSczcUmU"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Dawei Si",
+        "placement": 32,
+        "roster": [
+          {
+            "pokemon": "Sinistcha [Masterpiece Form]",
+            "ability": "Hospitality",
+            "item": "Kasib Berry",
+            "moves": [
+              "Protect",
+              "Matcha Gotcha",
+              "Rage Powder",
+              "Life Dew"
+            ]
+          },
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Darkest Lariat",
+              "Flare Blitz",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Delphox",
+            "ability": "Blaze",
+            "item": "Delphoxite",
+            "moves": [
+              "Protect",
+              "Heat Wave",
+              "Psychic",
+              "Nasty Plot"
+            ]
+          },
+          {
+            "pokemon": "Vanilluxe",
+            "ability": "Snow Warning",
+            "item": "Choice Scarf",
+            "moves": [
+              "Blizzard",
+              "Freeze-Dry",
+              "Sheer Cold",
+              "Icy Wind"
+            ]
+          },
+          {
+            "pokemon": "Milotic",
+            "ability": "Competitive",
+            "item": "Leftovers",
+            "moves": [
+              "Hypnosis",
+              "Coil",
+              "Protect",
+              "Muddy Water"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Protect",
+              "Dazzling Gleam",
+              "Calm Mind",
+              "Moonblast"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/uzDKzXEQ7V49A8kynuq2"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Wolfe Glick",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Trick Room",
+              "Thunderbolt",
+              "Nasty Plot"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Encore",
+              "Charm"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Protect",
+              "Brave Bird",
+              "Close Combat",
+              "Tailwind"
+            ]
+          },
+          {
+            "pokemon": "Gholdengo",
+            "ability": "Good as Gold",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Shadow Ball",
+              "Make It Rain",
+              "Power Gem"
+            ]
+          },
+          {
+            "pokemon": "Tyranitar",
+            "ability": "Sand Stream",
+            "item": "Chople Berry",
+            "moves": [
+              "Protect",
+              "Rock Slide",
+              "Knock Off",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Excadrill",
+            "ability": "Sand Rush",
+            "item": "Expert Belt",
+            "moves": [
+              "Protect",
+              "High Horsepower",
+              "Iron Head",
+              "Earthquake"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/vHdwDjNZLJYwBDQm1Dd7"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Takuma Yamazaki",
+        "placement": 1,
+        "roster": [
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Chople Berry",
+            "moves": [
+              "Sucker Punch",
+              "Kowtow Cleave",
+              "Low Kick",
+              "Iron Head"
+            ]
+          },
+          {
+            "pokemon": "Dragonite",
+            "ability": "Multiscale",
+            "item": "Dragoninite",
+            "moves": [
+              "Dragon Pulse",
+              "Heat Wave",
+              "Extreme Speed",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Choice Scarf",
+            "moves": [
+              "Dragon Claw",
+              "Stomping Tantrum",
+              "Earthquake",
+              "Rock Slide"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Fake Out",
+              "Feint"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/vNFhoueupPbBpYYYSUPK"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Tom Winter",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Incineroar",
+            "ability": "Intimidate",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Fake Out",
+              "Flare Blitz",
+              "Helping Hand",
+              "Parting Shot"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Choice Scarf",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Flip Turn",
+              "Aqua Jet"
+            ]
+          },
+          {
+            "pokemon": "Venusaur",
+            "ability": "Chlorophyll",
+            "item": "Wide Lens",
+            "moves": [
+              "Leaf Storm",
+              "Earth Power",
+              "Sleep Powder",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Life Orb",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Swords Dance",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sneasler",
+            "ability": "Poison Touch",
+            "item": "Focus Sash",
+            "moves": [
+              "Close Combat",
+              "Dire Claw",
+              "Protect",
+              "Fake Out"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/wy4ORyRhlHUc9HjJbYWA"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "이 찬민",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Hydreigon",
+            "ability": "Levitate",
+            "item": "Choice Scarf",
+            "moves": [
+              "Snarl",
+              "Dark Pulse",
+              "Draco Meteor",
+              "Earth Power"
+            ]
+          },
+          {
+            "pokemon": "Ceruledge",
+            "ability": "Flash Fire",
+            "item": "Colbur Berry",
+            "moves": [
+              "Protect",
+              "Bulk Up",
+              "Bitter Blade",
+              "Shadow Sneak"
+            ]
+          },
+          {
+            "pokemon": "Gholdengo",
+            "ability": "Good as Gold",
+            "item": "Life Orb",
+            "moves": [
+              "Protect",
+              "Nasty Plot",
+              "Shadow Ball",
+              "Make It Rain"
+            ]
+          },
+          {
+            "pokemon": "Swampert",
+            "ability": "Torrent",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Protect",
+              "Wave Crash",
+              "Earthquake",
+              "Ice Punch"
+            ]
+          },
+          {
+            "pokemon": "Staraptor",
+            "ability": "Intimidate",
+            "item": "Staraptite",
+            "moves": [
+              "Protect",
+              "Roost",
+              "Close Combat",
+              "Brave Bird"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Tailwind",
+              "Charm",
+              "Encore",
+              "Moonblast"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/xriHcUqPenruZgIW4cDn"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Pok Yin Evan Choi",
+        "placement": 64,
+        "roster": [
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Solar Beam",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Focus Sash",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Aerodactyl",
+            "ability": "Unnerve",
+            "item": "Aerodactylite",
+            "moves": [
+              "Rock Slide",
+              "Dual Wingbeat",
+              "Tailwind",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Sylveon",
+            "ability": "Pixilate",
+            "item": "Fairy Feather",
+            "moves": [
+              "Hyper Voice",
+              "Hyper Beam",
+              "Quick Attack",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Farigiraf",
+            "ability": "Armor Tail",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Psychic",
+              "Thunderbolt",
+              "Trick Room",
+              "Helping Hand"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Life Orb",
+            "moves": [
+              "Dragon Claw",
+              "Stomping Tantrum",
+              "Earthquake",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/yPC01ZR5rzMyBMZ60kyV"
+      },
+      {
+        "eventId": "WCS02wAQpCIaqFmXxER4",
+        "player": "Hiroshi Onishi",
+        "placement": 2,
+        "roster": [
+          {
+            "pokemon": "Kingambit",
+            "ability": "Defiant",
+            "item": "Occa Berry",
+            "moves": [
+              "Kowtow Cleave",
+              "Sucker Punch",
+              "Iron Head",
+              "Low Kick"
+            ]
+          },
+          {
+            "pokemon": "Basculegion [Male]",
+            "ability": "Adaptability",
+            "item": "Life Orb",
+            "moves": [
+              "Wave Crash",
+              "Last Respects",
+              "Aqua Jet",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Garchomp",
+            "ability": "Rough Skin",
+            "item": "Sitrus Berry",
+            "moves": [
+              "Dragon Claw",
+              "Earthquake",
+              "Rock Slide",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Charizard",
+            "ability": "Blaze",
+            "item": "Charizardite Y",
+            "moves": [
+              "Heat Wave",
+              "Weather Ball",
+              "Ancient Power",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Whimsicott",
+            "ability": "Prankster",
+            "item": "Focus Sash",
+            "moves": [
+              "Moonblast",
+              "Tailwind",
+              "Encore",
+              "Protect"
+            ]
+          },
+          {
+            "pokemon": "Floette [Eternal Flower]",
+            "ability": "Flower Veil",
+            "item": "Floettite",
+            "moves": [
+              "Moonblast",
+              "Dazzling Gleam",
+              "Light of Ruin",
+              "Protect"
+            ]
+          }
+        ],
+        "sourceUrl": "https://rk9.gg/teamlist/public/WCS02wAQpCIaqFmXxER4/zQSjw85uxlz690ShQNiG"
+      }
+    ]
+  },
+  "errors": [],
+  "missingDetails": [],
+  "corroboratingSources": [
+    "https://www.pokemon.com/us/play-pokemon/worlds/2026/event-results",
+    "https://worlds.pokemon.com/en-us/coverage-rewards/live-updates/",
+    "https://www.pokemon.com/us/features/pokemon-champions-regulation-m-b-double-battles-overview"
+  ],
+  "limitations": [
+    "Masters Top 64 only; public sheets are not proof of move/ability legality",
+    "Player names and results require comparison with official final standings before approval"
+  ]
+}

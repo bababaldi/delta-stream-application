@@ -1,0 +1,3266 @@
+[
+  {
+    "id": "PB002-r871Zfmc4WQbIO",
+    "name": "2027 Puebla Pokémon Regional Championships",
+    "date": "2026-10-24",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/PB002-r871Zfmc4WQbIO",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "NC002-zBMwK69ABS7RRV",
+    "name": "2027 Nice Pokémon Regional Championships",
+    "date": "2026-10-17",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/NC002-zBMwK69ABS7RRV",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "LO002-drfp6esCSpyU3s",
+    "name": "2027 Louisville Pokémon Regional Championships",
+    "date": "2026-10-09",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/LO002-drfp6esCSpyU3s",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "RE002-wN97aUf4Psz0ZJ",
+    "name": "2027 Recife Pokémon Regional Championships",
+    "date": "2026-10-03",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/RE002-wN97aUf4Psz0ZJ",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "BR002-IU5yO1W76UpdyA",
+    "name": "2027 Brisbane Pokémon Regional Championships",
+    "date": "2026-09-26",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/BR002-IU5yO1W76UpdyA",
+    "suggestedTier": "regional",
+    "suggestedRegion": "OCE",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "FR002-fiunEHp9wx4mh4",
+    "name": "2027 Frankfurt Pokémon Regional Championships",
+    "date": "2026-09-26",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/FR002-fiunEHp9wx4mh4",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "BA002-JL3KVbvivVKNAc",
+    "name": "2027 Baltimore Pokémon Regional Championships",
+    "date": "2026-09-18",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/BA002-JL3KVbvivVKNAc",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "hit-flash-2-pok-mon-champions-8a4a92",
+    "name": "🇧🇷 Hit Flash #2 | Pokémon Champions",
+    "date": "2026-09-05",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hit-flash-2-pok-mon-champions-8a4a92",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "cusca-champions-weekly-10-pcvgc-51d7c7",
+    "name": "Cusca Champions Weekly ⚡ #10 (PCVGC)",
+    "date": "2026-09-05",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/cusca-champions-weekly-10-pcvgc-51d7c7",
+    "players": 16,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "fort-tournaments-debut-20-usd-for-1st-8a563b",
+    "name": "FORT TOURNAMENTS DEBUT $20 USD FOR 1ST",
+    "date": "2026-09-05",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/fort-tournaments-debut-20-usd-for-1st-8a563b",
+    "players": 130,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pwc-battle-in-the-colosseum-25-51cf8f",
+    "name": "PWC - Battle in the Colosseum #25",
+    "date": "2026-09-05",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pwc-battle-in-the-colosseum-25-51cf8f",
+    "players": 38,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-celadon-series-invitational-22238a",
+    "name": "The Celadon Series Invitational",
+    "date": "2026-09-05",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-celadon-series-invitational-22238a",
+    "players": 15,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "valkrixvgc-champions-monotype-challenge-01-5fb133",
+    "name": "ValkrixVGC Champions MonoType Challenge #01",
+    "date": "2026-09-05",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/valkrixvgc-champions-monotype-challenge-01-5fb133",
+    "players": 31,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "astral-s-special-event-m-b-farewell-reg-m-b-7f7d30",
+    "name": "Astral's Special Event - M-B Farewell | Reg M-B",
+    "date": "2026-09-04",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/astral-s-special-event-m-b-farewell-reg-m-b-7f7d30",
+    "players": 10,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-reg-m-b-crown-fight-bo3-tour-84-22056b",
+    "name": "CHAMPIONS REG. M-B |👑CROWN FIGHT Bo3 TOUR #84👑",
+    "date": "2026-09-04",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-reg-m-b-crown-fight-bo3-tour-84-22056b",
+    "players": 88,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "friday-fight-night-71-reg-m-b-bo3-8a4a41",
+    "name": "Friday Fight Night #71 Reg M-B Bo3",
+    "date": "2026-09-04",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/friday-fight-night-71-reg-m-b-bo3-8a4a41",
+    "players": 34,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "x1-remote-battle-league-7-edi-o-reg-m-b-51dae7",
+    "name": "X1 Remote Battle League 7ª Edição - Reg M-B",
+    "date": "2026-09-04",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/x1-remote-battle-league-7-edi-o-reg-m-b-51dae7",
+    "players": 35,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pomelo-late-night-tour-7f8551",
+    "name": "˗ˋˏ❤︎ˎˊ˗ Pomelo Late Night Tour",
+    "date": "2026-09-03",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pomelo-late-night-tour-7f8551",
+    "players": 7,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "fork-the-meta-ftm-season-1-2226e5",
+    "name": "Fork the Meta (FTM) Season 1",
+    "date": "2026-09-03",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/fork-the-meta-ftm-season-1-2226e5",
+    "players": 195,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-40-reg-m-b-7f898c",
+    "name": "Intimidators Champions Challenge #40 REG M-B",
+    "date": "2026-09-03",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-40-reg-m-b-7f898c",
+    "players": 41,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "mi-rcoles-4f-7f8716",
+    "name": "Miércoles 4f",
+    "date": "2026-09-03",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/mi-rcoles-4f-7f8716",
+    "players": 4,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "talon-s-fight-club-100-pokemon-champions-d48535",
+    "name": "Talon's FIGHT CLUB #100 POKEMON CHAMPIONS",
+    "date": "2026-09-03",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/talon-s-fight-club-100-pokemon-champions-d48535",
+    "players": 93,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "alpensee-tour-reg-m-b-73-570102",
+    "name": "Alpensee Tour (Reg M-B) #73",
+    "date": "2026-09-02",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/alpensee-tour-reg-m-b-73-570102",
+    "players": 88,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hatterene-series-weekly-1-2027-7pm-edt-m-b-575885",
+    "name": "Hatterene Series Weekly #1 2027 - 7PM EDT - M-B",
+    "date": "2026-09-02",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hatterene-series-weekly-1-2027-7pm-edt-m-b-575885",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "heroictitan-s-vgc-battle-arena-5048d0",
+    "name": "HeroicTitan’s VGC Battle Arena",
+    "date": "2026-09-02",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/heroictitan-s-vgc-battle-arena-5048d0",
+    "players": 77,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "nexus-challenge-3-pok-mon-champions-50484a",
+    "name": "🧿 Nexus Challenge #3 • Pokémon Champions 🇧🇷",
+    "date": "2026-09-01",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/nexus-challenge-3-pok-mon-champions-50484a",
+    "players": 9,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "4fun-dominguito-5044d4",
+    "name": "4fun dominguito",
+    "date": "2026-08-31",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/4fun-dominguito-5044d4",
+    "players": 7,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-39-reg-m-b-50472e",
+    "name": "Intimidators Champions Challenge #39 REG M-B",
+    "date": "2026-08-31",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-39-reg-m-b-50472e",
+    "players": 67,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokepal-smackdown-156-champions-reg-m-b-64e640",
+    "name": "Pokepal Smackdown #156 (Champions) (Reg M-B)",
+    "date": "2026-08-31",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokepal-smackdown-156-champions-reg-m-b-64e640",
+    "players": 46,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sketch-academy-sunday-regulation-m-b-tournament-d4671b",
+    "name": "Sketch Academy Sunday Regulation M-B Tournament",
+    "date": "2026-08-31",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sketch-academy-sunday-regulation-m-b-tournament-d4671b",
+    "players": 46,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "mn-pokecon-2026-pokemon-vgc-champions-tournament-5f8fa7",
+    "name": "MN Pokecon 2026 - Pokemon VGC Champions Tournament",
+    "date": "2026-08-30",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/mn-pokecon-2026-pokemon-vgc-champions-tournament-5f8fa7",
+    "players": 19,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sunday-sabong-3-51d44a",
+    "name": "Sunday Sabong #3",
+    "date": "2026-08-30",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sunday-sabong-3-51d44a",
+    "players": 18,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "galaxy-cup-1-autum-season-26-572dc3",
+    "name": "Galaxy Cup #1| Autum Season 26",
+    "date": "2026-08-29",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/galaxy-cup-1-autum-season-26-572dc3",
+    "players": 6,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "valkrixvgc-pokemon-champions-league-02-5fa2ea",
+    "name": "ValkrixVGC Pokemon Champions League #02",
+    "date": "2026-08-29",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/valkrixvgc-pokemon-champions-league-02-5fa2ea",
+    "players": 44,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "reg-m-b-bo3-thursday-night-throwdown-2-51d4a0",
+    "name": "[Reg M-B Bo3] THURSDAY NIGHT THROWDOWN #2",
+    "date": "2026-08-28",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/reg-m-b-bo3-thursday-night-throwdown-2-51d4a0",
+    "players": 24,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "WCS02wAQpCIaqFmXxER4",
+    "name": "2026 Pokémon World Championships",
+    "date": "2026-08-28",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/WCS02wAQpCIaqFmXxER4",
+    "suggestedTier": "worlds",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "champions-reg-m-b-crown-fight-bo3-tour-83-b461ae",
+    "name": "CHAMPIONS REG. M-B |👑CROWN FIGHT Bo3 TOUR #83👑",
+    "date": "2026-08-28",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-reg-m-b-crown-fight-bo3-tour-83-b461ae",
+    "players": 63,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "devils-den-tournaments-87-51e398",
+    "name": "Devils Den Tournaments #87",
+    "date": "2026-08-28",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/devils-den-tournaments-87-51e398",
+    "players": 21,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "torneo-kurami-road-to-worlds-ii-420331",
+    "name": "Torneo KURAMI Road to WORLDS II",
+    "date": "2026-08-28",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/torneo-kurami-road-to-worlds-ii-420331",
+    "players": 3,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "yosh-tournament-8-rp-1-300-000-no-item-51cd27",
+    "name": "Yosh Tournament #8 ( Rp 1.300.000 ) No Item",
+    "date": "2026-08-28",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/yosh-tournament-8-rp-1-300-000-no-item-51cd27",
+    "players": 89,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "reg-f-auction-group-a-4202f6",
+    "name": "REG F AUCTION GROUP A",
+    "date": "2026-08-27",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/reg-f-auction-group-a-4202f6",
+    "players": 6,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "reg-f-auction-group-b-13f706",
+    "name": "REG F AUCTION GROUP B",
+    "date": "2026-08-27",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/reg-f-auction-group-b-13f706",
+    "players": 6,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tayo-s-monotype-tour-4-bo3-cts-30-15-b4f72c",
+    "name": "TAYO'S MONOTYPE TOUR #4- BO3 CTS - $30/15",
+    "date": "2026-08-27",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tayo-s-monotype-tour-4-bo3-cts-30-15-b4f72c",
+    "players": 47,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "torneo-kurami-road-to-worlds-13f2aa",
+    "name": "Torneo KURAMI Road to WORLDS",
+    "date": "2026-08-27",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/torneo-kurami-road-to-worlds-13f2aa",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hit-flash-1-pok-mon-champions-644d8e",
+    "name": "🇧🇷 Hit Flash #1 | Pokémon Champions",
+    "date": "2026-08-25",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hit-flash-1-pok-mon-champions-644d8e",
+    "players": 9,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekly-nexus-3-pok-mon-champions-575df8",
+    "name": "🧿 Weekly Nexus #3 • Pokémon Champions 🇧🇷",
+    "date": "2026-08-25",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekly-nexus-3-pok-mon-champions-575df8",
+    "players": 17,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tartan-takedown-37-champions-reg-m-b-22307c",
+    "name": "TARTAN TAKEDOWN #37! - [CHAMPIONS REG M-B]",
+    "date": "2026-08-25",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tartan-takedown-37-champions-reg-m-b-22307c",
+    "players": 52,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "amyverse-vgc-arena-7-pok-mon-champions-5fa9fd",
+    "name": "Amyverse VGC Arena #7 ❤️ Pokémon Champions",
+    "date": "2026-08-24",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/amyverse-vgc-arena-7-pok-mon-champions-5fa9fd",
+    "players": 78,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-38-reg-m-b-51d8d6",
+    "name": "Intimidators Champions Challenge #38 REG M-B",
+    "date": "2026-08-24",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-38-reg-m-b-51d8d6",
+    "players": 75,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokepal-smackdown-155-champions-reg-m-b-d47749",
+    "name": "Pokepal Smackdown #155 (Champions) (Reg M-B)",
+    "date": "2026-08-24",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokepal-smackdown-155-champions-reg-m-b-d47749",
+    "players": 30,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sketch-academy-sunday-regulation-m-b-tournament-64d619",
+    "name": "Sketch Academy Sunday Regulation M-B Tournament",
+    "date": "2026-08-24",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sketch-academy-sunday-regulation-m-b-tournament-64d619",
+    "players": 66,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chateau-knockout-21feb0",
+    "name": "🏰 Chateau Knockout 💥",
+    "date": "2026-08-23",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chateau-knockout-21feb0",
+    "players": 71,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-tour-3-574480",
+    "name": "Champions 🇨🇷 tour #3",
+    "date": "2026-08-23",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-tour-3-574480",
+    "players": 42,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-collective-invitational-ii-31296f",
+    "name": "Champions Collective Invitational II",
+    "date": "2026-08-23",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-collective-invitational-ii-31296f",
+    "players": 19,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chaos-league-sunday-slam-110-51c3d8",
+    "name": "Chaos League Sunday Slam #110",
+    "date": "2026-08-23",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chaos-league-sunday-slam-110-51c3d8",
+    "players": 27,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "finisterrae-series-vgc-2-b47fcd",
+    "name": "FINISTERRAE SERIES VGC #2",
+    "date": "2026-08-23",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/finisterrae-series-vgc-2-b47fcd",
+    "players": 7,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekend-qualifier-for-rookideevgc-grand-tourney-572987",
+    "name": "Weekend Qualifier for RookideeVGC Grand Tourney",
+    "date": "2026-08-23",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekend-qualifier-for-rookideevgc-grand-tourney-572987",
+    "players": 66,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "cusca-champions-weekly-8-pcvgc-b47d3b",
+    "name": "Cusca Champions Weekly ⚡ #8 (PCVGC)",
+    "date": "2026-08-22",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/cusca-champions-weekly-8-pcvgc-b47d3b",
+    "players": 16,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "ingage-frontier-series-3-25-prize-reg-m-b-a5e2cf",
+    "name": "INGAGE FRONTIER SERIES #3 | $25 PRIZE | Reg M-B",
+    "date": "2026-08-22",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/ingage-frontier-series-3-25-prize-reg-m-b-a5e2cf",
+    "players": 60,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pok-mon-champions-classic-5723b0",
+    "name": "Pokémon Champions Classic",
+    "date": "2026-08-22",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pok-mon-champions-classic-5723b0",
+    "players": 43,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "professor-toast-s-newbie-championship-647289",
+    "name": "Professor Toast's Newbie Championship",
+    "date": "2026-08-22",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/professor-toast-s-newbie-championship-647289",
+    "players": 10,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "valkrixvgc-pokemon-champions-league-01-b4c5c8",
+    "name": "ValkrixVGC Pokemon Champions League #01",
+    "date": "2026-08-22",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/valkrixvgc-pokemon-champions-league-01-b4c5c8",
+    "players": 65,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-uu-regulation-m-b-weekly-5-220ca8",
+    "name": "VGC UU Regulation M-B Weekly #5",
+    "date": "2026-08-22",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-uu-regulation-m-b-weekly-5-220ca8",
+    "players": 9,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-reg-m-b-crown-fight-bo3-tour-82-b461ac",
+    "name": "CHAMPIONS REG. M-B |👑CROWN FIGHT Bo3 TOUR #82👑",
+    "date": "2026-08-21",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-reg-m-b-crown-fight-bo3-tour-82-b461ac",
+    "players": 118,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "x1-remote-battle-league-6-edi-o-reg-m-b-21f713",
+    "name": "X1 Remote Battle League 6ª Edição - Reg M-B",
+    "date": "2026-08-21",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/x1-remote-battle-league-6-edi-o-reg-m-b-21f713",
+    "players": 29,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-37-reg-m-b-222170",
+    "name": "Intimidators Champions Challenge #37 REG M-B",
+    "date": "2026-08-20",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-37-reg-m-b-222170",
+    "players": 29,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "london-corviknights-vgc-weekly-tour-10-b4884b",
+    "name": "London Corviknights VGC Weekly Tour 10!",
+    "date": "2026-08-20",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/london-corviknights-vgc-weekly-tour-10-b4884b",
+    "players": 47,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "talon-s-fight-club-98-pokemon-champions-d48520",
+    "name": "Talon's FIGHT CLUB #98 POKEMON CHAMPIONS",
+    "date": "2026-08-20",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/talon-s-fight-club-98-pokemon-champions-d48520",
+    "players": 59,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekly-qualifier-for-rookideevgc-grand-tourney-b53747",
+    "name": "Weekly Qualifier for RookideeVGC Grand Tourney",
+    "date": "2026-08-20",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekly-qualifier-for-rookideevgc-grand-tourney-b53747",
+    "players": 32,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hatterene-series-w34-2026-7pm-edt-m-b-bd662f",
+    "name": "Hatterene Series W34/2026 - 7pm EDT - M-B",
+    "date": "2026-08-19",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hatterene-series-w34-2026-7pm-edt-m-b-bd662f",
+    "players": 14,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "heroictitan-s-vgc-battle-arena-221ef6",
+    "name": "HeroicTitan’s VGC Battle Arena",
+    "date": "2026-08-19",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/heroictitan-s-vgc-battle-arena-221ef6",
+    "players": 40,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "m1-champions-s-ries-6-572e79",
+    "name": "M1 Champions Séries #6",
+    "date": "2026-08-19",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/m1-champions-s-ries-6-572e79",
+    "players": 5,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "mid-week-smoke-9-571c9c",
+    "name": "Mid-Week Smoke #9",
+    "date": "2026-08-19",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/mid-week-smoke-9-571c9c",
+    "players": 32,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hit-break-1-pok-mon-champions-64a4e7",
+    "name": "🇧🇷 Hit Break #1 | Pokémon Champions",
+    "date": "2026-08-18",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hit-break-1-pok-mon-champions-64a4e7",
+    "players": 16,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "nexus-challenge-2-pok-mon-champions-a65561",
+    "name": "🧿 Nexus Challenge #2 • Pokémon Champions 🇧🇷",
+    "date": "2026-08-18",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/nexus-challenge-2-pok-mon-champions-a65561",
+    "players": 22,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-36-reg-m-b-572755",
+    "name": "Intimidators Champions Challenge #36 REG M-B",
+    "date": "2026-08-17",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-36-reg-m-b-572755",
+    "players": 39,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokepal-smackdown-154-champions-reg-m-b-64e63d",
+    "name": "Pokepal Smackdown #154 (Champions) (Reg M-B)",
+    "date": "2026-08-17",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokepal-smackdown-154-champions-reg-m-b-64e63d",
+    "players": 42,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "bfi-26-frontier-blitz-4-a61d9a",
+    "name": "BFI'26 - Frontier Blitz #4",
+    "date": "2026-08-15",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/bfi-26-frontier-blitz-4-a61d9a",
+    "players": 41,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "cusca-champions-weekly-7-pcvgc-64d538",
+    "name": "Cusca Champions Weekly ⚡ #7 (PCVGC)",
+    "date": "2026-08-15",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/cusca-champions-weekly-7-pcvgc-64d538",
+    "players": 12,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokemon-dominicana-champions-league-12-b5057d",
+    "name": "Pokemon Dominicana - Champions League #12",
+    "date": "2026-08-15",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokemon-dominicana-champions-league-12-b5057d",
+    "players": 15,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokevents-summer-tour-a62d66",
+    "name": "Pokevents Summer Tour",
+    "date": "2026-08-15",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokevents-summer-tour-a62d66",
+    "players": 11,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pwc-battle-in-the-colosseum-23-b5351b",
+    "name": "PWC - Battle in the Colosseum #23",
+    "date": "2026-08-15",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pwc-battle-in-the-colosseum-23-b5351b",
+    "players": 27,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-uu-regulation-m-b-weekly-4-a63485",
+    "name": "VGC UU Regulation M-B Weekly #4",
+    "date": "2026-08-15",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-uu-regulation-m-b-weekly-4-a63485",
+    "players": 11,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "banned-a-tournament-for-the-less-desired-b4d733",
+    "name": "BANNED: A Tournament for the Less Desired",
+    "date": "2026-08-14",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/banned-a-tournament-for-the-less-desired-b4d733",
+    "players": 17,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-reg-m-b-crown-fight-bo3-tour-81-a584ff",
+    "name": "CHAMPIONS REG. M-B |👑CROWN FIGHT Bo3 TOUR #81👑",
+    "date": "2026-08-14",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-reg-m-b-crown-fight-bo3-tour-81-a584ff",
+    "players": 112,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "b50100",
+    "name": "𝗡𝗲𝗺𝗲 𝗪𝗲𝗲𝗸𝗹𝘆 𝗠-𝗕 𝗧𝗼𝘂𝗿 🏆 #𝟲𝟵",
+    "date": "2026-08-14",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/b50100",
+    "players": 29,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "thalera-champions-cheese-14-sem-golpe-coisinha-b4d672",
+    "name": "Thalera Champions Cheese #14 - SEM GOLPE COISINHA",
+    "date": "2026-08-14",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/thalera-champions-cheese-14-sem-golpe-coisinha-b4d672",
+    "players": 17,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-35-reg-m-b-b50055",
+    "name": "Intimidators Champions Challenge #35 REG M-B",
+    "date": "2026-08-13",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-35-reg-m-b-b50055",
+    "players": 28,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "london-corviknights-vgc-weekly-tour-9-b4882e",
+    "name": "London Corviknights VGC Weekly Tour 9!",
+    "date": "2026-08-13",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/london-corviknights-vgc-weekly-tour-9-b4882e",
+    "players": 48,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "talon-s-fight-club-97-pokemon-champions-d4851f",
+    "name": "Talon's FIGHT CLUB #97 POKEMON CHAMPIONS",
+    "date": "2026-08-13",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/talon-s-fight-club-97-pokemon-champions-d4851f",
+    "players": 55,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "alpensee-x-smogon-vgc-tour-reg-m-b-70-d3b322",
+    "name": "Alpensee x Smogon VGC Tour (Reg M-B) #70",
+    "date": "2026-08-12",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/alpensee-x-smogon-vgc-tour-reg-m-b-70-d3b322",
+    "players": 103,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "circuito-vgc-6-glimmora-shiny-prize-z2-gaming-a5fc9b",
+    "name": "Circuito VGC #6 Glimmora Shiny Prize | Z2 Gaming",
+    "date": "2026-08-12",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/circuito-vgc-6-glimmora-shiny-prize-z2-gaming-a5fc9b",
+    "players": 43,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "heroictitan-s-vgc-battle-arena-b4f6e1",
+    "name": "HeroicTitan’s VGC Battle Arena",
+    "date": "2026-08-12",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/heroictitan-s-vgc-battle-arena-b4f6e1",
+    "players": 47,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "m1-champions-s-ries-5-b52482",
+    "name": "M1 Champions Séries #5",
+    "date": "2026-08-12",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/m1-champions-s-ries-5-b52482",
+    "players": 9,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "dark-storm-team-testing-12-b5119f",
+    "name": "Dark Storm Team Testing #12",
+    "date": "2026-08-11",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/dark-storm-team-testing-12-b5119f",
+    "players": 4,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "snt-reg-m-b-tour-6-a605ed",
+    "name": "SNT Reg M-B Tour #6",
+    "date": "2026-08-11",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/snt-reg-m-b-tour-6-a605ed",
+    "players": 17,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tartan-takedown-35-champions-reg-m-b-b4a00d",
+    "name": "TARTAN TAKEDOWN #35! - [CHAMPIONS REG M-B]",
+    "date": "2026-08-11",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tartan-takedown-35-champions-reg-m-b-b4a00d",
+    "players": 25,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokemon-scarlet-violet-singles-tournament-a614e6",
+    "name": "⛩️Pokemon Scarlet 🔥 Violet Singles Tournament!⛩️",
+    "date": "2026-08-10",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokemon-scarlet-violet-singles-tournament-a614e6",
+    "players": 5,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "4fun-dominguito-home-b4f700",
+    "name": "4fun dominguito home",
+    "date": "2026-08-10",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/4fun-dominguito-home-b4f700",
+    "players": 6,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "intimidators-champions-challenge-34-reg-m-b-a62a51",
+    "name": "Intimidators Champions Challenge #34 REG M-B",
+    "date": "2026-08-10",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/intimidators-champions-challenge-34-reg-m-b-a62a51",
+    "players": 45,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokepal-smackdown-153-champions-reg-m-b-d4772d",
+    "name": "Pokepal Smackdown #153 (Champions) (Reg M-B)",
+    "date": "2026-08-10",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokepal-smackdown-153-champions-reg-m-b-d4772d",
+    "players": 35,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-drywalls-series-15-b4e7c9",
+    "name": "The Drywalls Series #15",
+    "date": "2026-08-10",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-drywalls-series-15-b4e7c9",
+    "players": 72,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-reg-m-b-ingame-tour-4-shiny-raichu-for-1st-b49557",
+    "name": "VGC Reg M-B Ingame Tour #4 (Shiny Raichu for 1st!)",
+    "date": "2026-08-10",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-reg-m-b-ingame-tour-4-shiny-raichu-for-1st-b49557",
+    "players": 114,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "cebulowy-kr-ek-4-ostatni-qualifier-648f66",
+    "name": "🧅Cebulowy Krążek #4 (ostatni qualifier❗)",
+    "date": "2026-08-09",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/cebulowy-kr-ek-4-ostatni-qualifier-648f66",
+    "players": 34,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-uu-regulation-m-b-weekly-3-a5bf81",
+    "name": "VGC UU Regulation M-B Weekly #3",
+    "date": "2026-08-09",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-uu-regulation-m-b-weekly-3-a5bf81",
+    "players": 11,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "women-s-league-vgc-8-b498f2",
+    "name": "Women's League VGC #8",
+    "date": "2026-08-09",
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/women-s-league-vgc-8-b498f2",
+    "players": 7,
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "NA02wgUPFDXKmQmqILwS",
+    "name": "2026 North America Pokémon International Championships",
+    "date": "2026-06-12",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/NA02wgUPFDXKmQmqILwS",
+    "suggestedTier": "international",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "TU02wKzv4cT2BBiI9dEg",
+    "name": "2026 Turin Pokémon Special Championships",
+    "date": "2026-06-06",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/TU02wKzv4cT2BBiI9dEg",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "IN02wbUMQOt2eNv12cgC",
+    "name": "2026 Indianapolis Pokémon Regional Championships",
+    "date": "2026-05-29",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/IN02wbUMQOt2eNv12cgC",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "MB02w71HQZzTvTOYLtXb",
+    "name": "2026 Melbourne Pokémon Regional Championships",
+    "date": "2026-05-23",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/MB02w71HQZzTvTOYLtXb",
+    "suggestedTier": "regional",
+    "suggestedRegion": "OCE",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "CA02wLAJ2mRyQI5kryVw",
+    "name": "2026 Campinas Pokémon Regional Championships",
+    "date": "2026-05-16",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/CA02wLAJ2mRyQI5kryVw",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "UT02wFHDCjnKgZ9Gscu7",
+    "name": "2026 Utrecht Pokémon Regional Championships",
+    "date": "2026-05-16",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/UT02wFHDCjnKgZ9Gscu7",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "LS02w5lpCOiMwPPo7QWD",
+    "name": "2026 Los Angeles Pokémon Regional Championships",
+    "date": "2026-05-08",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/LS02w5lpCOiMwPPo7QWD",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "PR02wayEt6qQBnpFi6cp",
+    "name": "2026 Prague Pokémon Regional Championships",
+    "date": "2026-04-25",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/PR02wayEt6qQBnpFi6cp",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "QT02wgHCgGOEh4NP4jLE",
+    "name": "2026 Querétaro Pokémon Regional Championships",
+    "date": "2026-04-04",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/QT02wgHCgGOEh4NP4jLE",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "OR02wF0GhaiorROTkFlu",
+    "name": "2026 Orlando Pokémon Regional Championships",
+    "date": "2026-04-03",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/OR02wF0GhaiorROTkFlu",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "SV02wtoHf5SDBUM0ntB2",
+    "name": "2026 Seville Pokémon Special Championships",
+    "date": "2026-03-28",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/SV02wtoHf5SDBUM0ntB2",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Official event tier not detected",
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "HO02w2PgpC7mWHP8zYRI",
+    "name": "2026 Houston Pokémon Regional Championships",
+    "date": "2026-03-20",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/HO02w2PgpC7mWHP8zYRI",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "CU02wOcwtjVNH6QdhfNE",
+    "name": "2026 Curitiba Pokémon Regional Championships",
+    "date": "2026-03-14",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/CU02wOcwtjVNH6QdhfNE",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "EU02mADIyxk2QHCU8dqx",
+    "name": "2026 Europe Pokémon International Championships",
+    "date": "2026-02-13",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/EU02mADIyxk2QHCU8dqx",
+    "suggestedTier": "international",
+    "suggestedRegion": "OTHER",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "ST02KJ5wqNl34q3KGE8N",
+    "name": "2026 Santiago Pokémon Regional Championships",
+    "date": "2026-02-07",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/ST02KJ5wqNl34q3KGE8N",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "SY02sMDp6JmCcnCynSLn",
+    "name": "2026 Sydney Pokémon Regional Championships",
+    "date": "2026-02-07",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/SY02sMDp6JmCcnCynSLn",
+    "suggestedTier": "regional",
+    "suggestedRegion": "OCE",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "BH02mBOy0UgfISzHnNdU",
+    "name": "2026 Birmingham Pokémon Regional Championships",
+    "date": "2026-01-24",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/BH02mBOy0UgfISzHnNdU",
+    "suggestedTier": "regional",
+    "suggestedRegion": "OTHER",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "ME02w00ChbJUX07ROH4K",
+    "name": "2026 Mérida Pokémon Regional Championships",
+    "date": "2026-01-24",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/ME02w00ChbJUX07ROH4K",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "TO027Rvi7XmbN1f355Nc",
+    "name": "2026 Toronto Pokémon Regional Championships",
+    "date": "2026-01-16",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/TO027Rvi7XmbN1f355Nc",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "SG02gVKM38QMVGTcAiZN",
+    "name": "2026 Stuttgart Pokémon Regional Championships",
+    "date": "2025-11-29",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/SG02gVKM38QMVGTcAiZN",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "LA0226md2zDgZtmvexIY",
+    "name": "2026 Latin America Pokémon International Championships",
+    "date": "2025-11-21",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/LA0226md2zDgZtmvexIY",
+    "suggestedTier": "international",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "LV02kSgge3zYTKAwlomv",
+    "name": "2026 Las Vegas Pokémon Regional Championships",
+    "date": "2025-11-14",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/LV02kSgge3zYTKAwlomv",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "BR02nX95OUm3tbvzmSPv",
+    "name": "2026 Brisbane Pokémon Regional Championships",
+    "date": "2025-11-01",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/BR02nX95OUm3tbvzmSPv",
+    "suggestedTier": "regional",
+    "suggestedRegion": "OCE",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "GD02yFCaTDuKwnIR9IKd",
+    "name": "2026 Gdańsk Pokémon Regional Championships",
+    "date": "2025-11-01",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/GD02yFCaTDuKwnIR9IKd",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "LL02aDtPZHuHLDewaIqy",
+    "name": "2026 Lille Pokémon Regional Championships",
+    "date": "2025-10-25",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/LL02aDtPZHuHLDewaIqy",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "BE02wX9mUPbgJsSba2pR",
+    "name": "2026 Belo Horizonte Pokémon Regional Championships",
+    "date": "2025-10-11",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/BE02wX9mUPbgJsSba2pR",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "MK02mx9kmM49UZ5g4JxH",
+    "name": "2026 Milwaukee Pokémon Regional Championships",
+    "date": "2025-10-10",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/MK02mx9kmM49UZ5g4JxH",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "PT02mMVCgJGPQcHccDoy",
+    "name": "2026 Pittsburgh Pokémon Regional Championships",
+    "date": "2025-09-19",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/PT02mMVCgJGPQcHccDoy",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "FR02mk9EZ28MWiUNIsTN",
+    "name": "2026 Frankfurt Pokémon Regional Championships",
+    "date": "2025-09-13",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/FR02mk9EZ28MWiUNIsTN",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "MT02mEWqwYNpTSVPcblx",
+    "name": "2026 Monterrey Pokémon Regional Championships",
+    "date": "2025-09-13",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/MT02mEWqwYNpTSVPcblx",
+    "suggestedTier": "regional",
+    "suggestedRegion": "LATAM",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "GD002-0AEzTp3tRJXkux",
+    "name": "2027 Gdansk Pokémon Regional Championships",
+    "date": "2001-11-30",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/GD002-0AEzTp3tRJXkux",
+    "suggestedTier": "regional",
+    "suggestedRegion": "EU",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "SE027LIri9yqbewCPonE",
+    "name": "2026 Seattle Pokémon Regional Championships",
+    "date": "2001-03-26",
+    "source": "rk9",
+    "sourceUrl": "https://rk9.gg/tournament/SE027LIri9yqbewCPonE",
+    "suggestedTier": "regional",
+    "suggestedRegion": "NA",
+    "approved": false,
+    "notes": [
+      "Regulation and completion status require approval"
+    ]
+  },
+  {
+    "id": "25-for-1st-thursday-night-throwdown-1-a6288c",
+    "name": "[$25 FOR 1ST] THURSDAY NIGHT THROWDOWN #1",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/25-for-1st-thursday-night-throwdown-1-a6288c",
+    "players": 66,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pomelo-late-night-tour-7f9651",
+    "name": "˗ˋˏ❤︎ˎˊ˗ Pomelo Late Night Tour",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pomelo-late-night-tour-7f9651",
+    "players": 40,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pomelo-late-night-tour-7f8850",
+    "name": "˗ˋˏ❤︎ˎˊ˗ Pomelo Late Night Tour",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pomelo-late-night-tour-7f8850",
+    "players": 31,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pomelo-late-night-tour-7f7855",
+    "name": "˗ˋˏ❤︎ˎˊ˗ Pomelo Late Night Tour",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pomelo-late-night-tour-7f7855",
+    "players": 10,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "10-chadweezy95-vgc-champ-tournament-ep-5-a6489c",
+    "name": "⛩️🔥$10 Chadweezy95 VGC Champ Tournament Ep 5!🔥⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/10-chadweezy95-vgc-champ-tournament-ep-5-a6489c",
+    "players": 70,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "25-pok-mon-vgc-champions-tournament-ep-4-a61894",
+    "name": "⛩️🔥$25 Pokémon VGC Champions Tournament Ep 4!🔥⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/25-pok-mon-vgc-champions-tournament-ep-4-a61894",
+    "players": 68,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pok-mon-doubles-champions-tournament-ep-3-b4e7b5",
+    "name": "⛩️🔥Pokémon Doubles Champions Tournament Ep 3!🔥⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pok-mon-doubles-champions-tournament-ep-3-b4e7b5",
+    "players": 19,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "100-chadweezy95-vgc-champ-tournament-ep-6-b52308",
+    "name": "⛩️$100 Chadweezy95 VGC Champ Tournament Ep 6!⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/100-chadweezy95-vgc-champ-tournament-ep-6-b52308",
+    "players": 143,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chadweezy95-pok-showdown-vgc-tournament-a62da4",
+    "name": "⛩️Chadweezy95 Poké Showdown VGC Tournament!⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chadweezy95-pok-showdown-vgc-tournament-a62da4",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chadweezy95-vgc-champions-tournament-ep-7-51d184",
+    "name": "⛩️Chadweezy95 VGC Champions Tournament Ep 7!⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chadweezy95-vgc-champions-tournament-ep-7-51d184",
+    "players": 18,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chadweezy95-vgc-champions-tournament-ep-8-51dc2c",
+    "name": "⛩️Chadweezy95 VGC Champions Tournament Ep 8!⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chadweezy95-vgc-champions-tournament-ep-8-51dc2c",
+    "players": 16,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chadweezy95-vgc-champions-tournament-ep-9-8a5f7a",
+    "name": "⛩️Chadweezy95 VGC Champions Tournament Ep 9!⛩️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chadweezy95-vgc-champions-tournament-ep-9-8a5f7a",
+    "players": 22,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hit-break-2-pok-mon-champions-502fbe",
+    "name": "🇧🇷 Hit Break #2 | Pokémon Champions",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hit-break-2-pok-mon-champions-502fbe",
+    "players": 14,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sitrus-series-champions-mb-71-d490d7",
+    "name": "🍋Sitrus-Series🍋|Champions-MB|#71",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sitrus-series-champions-mb-71-d490d7",
+    "players": 132,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sitrus-series-champions-mb-72-b4c89c",
+    "name": "🍋Sitrus-Series🍋|Champions-MB|#72",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sitrus-series-champions-mb-72-b4c89c",
+    "players": 107,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sitrus-series-champions-mb-73-a6551e",
+    "name": "🍋Sitrus-Series🍋|Champions-MB|#73",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sitrus-series-champions-mb-73-a6551e",
+    "players": 131,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sitrus-series-champions-mb-74-5f9fe0",
+    "name": "🍋Sitrus-Series🍋|Champions-MB|#74",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sitrus-series-champions-mb-74-5f9fe0",
+    "players": 129,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-league-vgc-august-d4026e",
+    "name": "🏆 Champions League VGC August ⚔️",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-league-vgc-august-d4026e",
+    "players": 162,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-island-classic-900-prize-pool-64d50c",
+    "name": "🏝️ THE ISLAND CLASSIC 🏝️ (900$ PRIZE POOL)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-island-classic-900-prize-pool-64d50c",
+    "players": 65,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "austinmcfraud-s-regf-showdown-3-5fbe06",
+    "name": "🟊 AustinMcfraud's REGF Showdown #3 🟊",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/austinmcfraud-s-regf-showdown-3-5fbe06",
+    "players": 38,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "4to-torneo-bimestral-copa-santa-fe-2026-d49278",
+    "name": "4to Torneo Bimestral - Copa Santa Fe 2026",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/4to-torneo-bimestral-copa-santa-fe-2026-d49278",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "afternoon-champion-2-6463bd",
+    "name": "Afternoon champion #2",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/afternoon-champion-2-6463bd",
+    "players": 5,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "alpensee-tour-reg-m-b-71-5700f0",
+    "name": "Alpensee Tour (Reg M-B) #71",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/alpensee-tour-reg-m-b-71-5700f0",
+    "players": 62,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "alpensee-tour-reg-m-b-72-5700f2",
+    "name": "Alpensee Tour (Reg M-B) #72",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/alpensee-tour-reg-m-b-72-5700f2",
+    "players": 43,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "alpensee-worlds-celebration-573a37",
+    "name": "Alpensee Worlds Celebration",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/alpensee-worlds-celebration-573a37",
+    "players": 83,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "alphabet-cup-a5cb37",
+    "name": "Alphabet Cup",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/alphabet-cup-a5cb37",
+    "players": 26,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "amyverse-vgc-arena-5-pok-mon-champions-b493bb",
+    "name": "Amyverse VGC Arena #5 ❤️ Pokémon Champions",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/amyverse-vgc-arena-5-pok-mon-champions-b493bb",
+    "players": 28,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "amyverse-vgc-arena-6-pok-mon-champions-a63462",
+    "name": "Amyverse VGC Arena #6 ❤️ Pokémon Champions",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/amyverse-vgc-arena-6-pok-mon-champions-a63462",
+    "players": 73,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "amyverse-vgc-champions-arena-8-cash-prize-8a561a",
+    "name": "Amyverse VGC Champions Arena #8 ❤️ Cash Prize!",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/amyverse-vgc-champions-arena-8-cash-prize-8a561a",
+    "players": 104,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "bfi-26-frontier-tournament-5-224780",
+    "name": "BFI'26 - Frontier Tournament #5",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/bfi-26-frontier-tournament-5-224780",
+    "players": 35,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "bk-cup-2-5-para-el-ganador-a64ab5",
+    "name": "BK Cup #2 | 5€ Para el ganador",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/bk-cup-2-5-para-el-ganador-a64ab5",
+    "players": 48,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "champions-collective-19-30d402",
+    "name": "Champions Collective #19",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/champions-collective-19-30d402",
+    "players": 39,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chaos-cup-cash-prize-21f0ce",
+    "name": "Chaos Cup ($Cash Prize$)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chaos-cup-cash-prize-21f0ce",
+    "players": 27,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chaos-league-sunday-slam-108-b4f1c3",
+    "name": "Chaos League Sunday Slam #108",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chaos-league-sunday-slam-108-b4f1c3",
+    "players": 15,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chaos-league-sunday-slam-109-572446",
+    "name": "Chaos League Sunday Slam #109",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chaos-league-sunday-slam-109-572446",
+    "players": 21,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "chaos-league-sunday-slam-111-5f9d12",
+    "name": "Chaos League Sunday Slam #111",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/chaos-league-sunday-slam-111-5f9d12",
+    "players": 18,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "devils-den-tournaments-86-b51555",
+    "name": "Devils Den Tournaments #86",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/devils-den-tournaments-86-b51555",
+    "players": 30,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "devils-den-tournaments-88-25-for-first-8a7824",
+    "name": "Devils Den Tournaments #88 | $25 For First",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/devils-den-tournaments-88-25-for-first-8a7824",
+    "players": 128,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "fake-mmp-reg-h-auction-league-7f7ab5",
+    "name": "FAKE MMP (REG-H) AUCTION LEAGUE",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/fake-mmp-reg-h-auction-league-7f7ab5",
+    "players": 3,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "free-entry-250-global-vgc-welcome-tour-p2-64c2dc",
+    "name": "Free entry! $250 Global VGC Welcome Tour! P2",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/free-entry-250-global-vgc-welcome-tour-p2-64c2dc",
+    "players": 392,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "friday-fight-night-68-reg-m-b-bo3-b4d9ef",
+    "name": "Friday Fight Night #68 Reg M-B Bo3",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/friday-fight-night-68-reg-m-b-bo3-b4d9ef",
+    "players": 30,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "friday-fight-night-69-reg-m-b-bo3-21fc94",
+    "name": "Friday Fight Night #69 Reg M-B Bo3",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/friday-fight-night-69-reg-m-b-bo3-21fc94",
+    "players": 45,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "friday-fight-night-70-reg-m-b-bo3-51b934",
+    "name": "Friday Fight Night #70 Reg M-B Bo3",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/friday-fight-night-70-reg-m-b-bo3-51b934",
+    "players": 25,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hatterene-series-w33-2026-6pm-utc-m-b-bd662e",
+    "name": "Hatterene Series W33/2026 - 6pm UTC - M-B",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hatterene-series-w33-2026-6pm-utc-m-b-bd662e",
+    "players": 13,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "hatterene-series-w35-2026-6pm-utc-m-b-3153f6",
+    "name": "Hatterene Series W35/2026 - 6pm UTC - M-B",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/hatterene-series-w35-2026-6pm-utc-m-b-3153f6",
+    "players": 19,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "heroictitan-s-vgc-battle-arena-51d4e4",
+    "name": "HeroicTitan’s VGC Battle Arena",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/heroictitan-s-vgc-battle-arena-51d4e4",
+    "players": 36,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "imperium-champions-tournament-3-b4b6bb",
+    "name": "IMPERIUM CHAMPIONS TOURNAMENT #3",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/imperium-champions-tournament-3-b4b6bb",
+    "players": 73,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "imperium-champions-tournament-4-b530ed",
+    "name": "IMPERIUM CHAMPiONS TOURNAMENT #4",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/imperium-champions-tournament-4-b530ed",
+    "players": 88,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "khun-champions-cup-3-647e75",
+    "name": "Khun Champions Cup #3",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/khun-champions-cup-3-647e75",
+    "players": 255,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "maddo-s-cup-11-100-for-the-winner-reg-m-b-b4e153",
+    "name": "Maddo's Cup #11 | 100€ for the Winner | Reg M-B",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/maddo-s-cup-11-100-for-the-winner-reg-m-b-b4e153",
+    "players": 253,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "222ab3",
+    "name": "𝗡𝗲𝗺𝗲 𝗪𝗲𝗲𝗸𝗹𝘆 𝗠-𝗕 𝗧𝗼𝘂𝗿 🏆 #𝟕𝟎",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/222ab3",
+    "players": 20,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "off-meta-fight-club-4201a0",
+    "name": "Off Meta Fight Club",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/off-meta-fight-club-4201a0",
+    "players": 50,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "one-type-to-rule-them-all-57411f",
+    "name": "One Type To Rule Them All",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/one-type-to-rule-them-all-57411f",
+    "players": 44,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "open-champions-league-4-60-prize-pool-5fb21c",
+    "name": "Open Champions League #4 - $60 Prize Pool",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/open-champions-league-4-60-prize-pool-5fb21c",
+    "players": 201,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "palafin-pals-regualation-h-edition-13ff3e",
+    "name": "Palafin Pals Regualation H Edition 🌊👊",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/palafin-pals-regualation-h-edition-13ff3e",
+    "players": 5,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pok-folk-champions-battle-night-4-223693",
+    "name": "PokéFolk Champions Battle Night #4",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pok-folk-champions-battle-night-4-223693",
+    "players": 39,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pokeinstinct-vgc-2-20-usd-for-the-winner-2228f7",
+    "name": "PokeInstinct VGC #2 ($20 USD for the Winner)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pokeinstinct-vgc-2-20-usd-for-the-winner-2228f7",
+    "players": 88,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "pwc-battle-in-the-colosseum-24-5752a1",
+    "name": "PWC - Battle in the Colosseum #24",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/pwc-battle-in-the-colosseum-24-5752a1",
+    "players": 30,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "raichu-rumble-5-b4f96f",
+    "name": "Raichu Rumble #5",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/raichu-rumble-5-b4f96f",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "ratorneo-6-champions-2026-reg-mb-a65544",
+    "name": "Ratorneo #6 Champions 2026 | Reg MB",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/ratorneo-6-champions-2026-reg-mb-a65544",
+    "players": 36,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "ratorneo-7-champions-2026-reg-mb-645c75",
+    "name": "Ratorneo #7 Champions 2026 | Reg MB",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/ratorneo-7-champions-2026-reg-mb-645c75",
+    "players": 58,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "rising-stars-s2-single-battle-10d6b1",
+    "name": "Rising Stars - S2 (Single Battle)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/rising-stars-s2-single-battle-10d6b1",
+    "players": 14,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "road-to-area-229-6-b4d3c2",
+    "name": "Road to Area 229 #6",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/road-to-area-229-6-b4d3c2",
+    "players": 25,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sketch-academy-sunday-regulation-m-b-tournament-d46718",
+    "name": "Sketch Academy Sunday Regulation M-B Tournament",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sketch-academy-sunday-regulation-m-b-tournament-d46718",
+    "players": 52,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sketch-academy-sunday-regulation-m-b-tournament-64d617",
+    "name": "Sketch Academy Sunday Regulation M-B Tournament",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sketch-academy-sunday-regulation-m-b-tournament-64d617",
+    "players": 80,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "snt-reg-m-b-tour-7-42085a",
+    "name": "SNT Reg M-B Tour #7",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/snt-reg-m-b-tour-7-42085a",
+    "players": 52,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "sunday-nightmare-invitational-01-5f9f1d",
+    "name": "Sunday Nightmare Invitational 01",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/sunday-nightmare-invitational-01-5f9f1d",
+    "players": 12,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "synchronized-worlds-2-a654e6",
+    "name": "Synchronized Worlds #2",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/synchronized-worlds-2-a654e6",
+    "players": 14,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "talon-s-fight-club-99-pokemon-champions-d48521",
+    "name": "Talon's FIGHT CLUB #99 POKEMON CHAMPIONS",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/talon-s-fight-club-99-pokemon-champions-d48521",
+    "players": 68,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tartan-takedown-36-champions-reg-m-b-a6423a",
+    "name": "TARTAN TAKEDOWN #36! - [CHAMPIONS REG M-B]",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tartan-takedown-36-champions-reg-m-b-a6423a",
+    "players": 33,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tartan-takedown-38-champions-reg-m-b-13fd34",
+    "name": "TARTAN TAKEDOWN #38! - [CHAMPIONS REG M-B]",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tartan-takedown-38-champions-reg-m-b-13fd34",
+    "players": 63,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tenki-s-cart-weekly-113-reg-mb-b4e002",
+    "name": "Tenki's Cart Weekly #113 - Reg MB",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tenki-s-cart-weekly-113-reg-mb-b4e002",
+    "players": 86,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tenki-s-cart-weekly-114-reg-mb-221625",
+    "name": "Tenki's Cart Weekly #114 - Reg MB",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tenki-s-cart-weekly-114-reg-mb-221625",
+    "players": 65,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tenki-s-cart-weekly-115-reg-mb-572448",
+    "name": "Tenki's Cart Weekly #115 - Reg MB",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tenki-s-cart-weekly-115-reg-mb-572448",
+    "players": 71,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "tenki-s-cart-weekly-116-reg-mb-8a5dec",
+    "name": "Tenki's Cart Weekly #116- Reg MB",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/tenki-s-cart-weekly-116-reg-mb-8a5dec",
+    "players": 105,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "thavorian-trials-7-222e92",
+    "name": "Thavorian Trials - 7",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/thavorian-trials-7-222e92",
+    "players": 21,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "thavorian-trials-6-a637e1",
+    "name": "Thavorian Trials 6",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/thavorian-trials-6-a637e1",
+    "players": 46,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "thavorian-trials-celebration-5fa7ff",
+    "name": "Thavorian Trials celebration!",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/thavorian-trials-celebration-5fa7ff",
+    "players": 57,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-drywalls-series-16-570ee5",
+    "name": "The Drywalls Series #16",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-drywalls-series-16-570ee5",
+    "players": 56,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-drywalls-series-17-5f97c2",
+    "name": "The Drywalls Series #17",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-drywalls-series-17-5f97c2",
+    "players": 76,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-drywalls-series-18-503e1d",
+    "name": "The Drywalls Series #18",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-drywalls-series-18-503e1d",
+    "players": 59,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-grim-team-special-worlds-draft-5033c8",
+    "name": "The Grim Team Special Worlds Draft",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-grim-team-special-worlds-draft-5033c8",
+    "players": 7,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "the-wide-league-saturday-night-rumble-89-reg-m-b-a653ac",
+    "name": "The Wide League Saturday Night Rumble #89 REG M-B",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/the-wide-league-saturday-night-rumble-89-reg-m-b-a653ac",
+    "players": 70,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "torneio-dos-apoiadores-4-r-300-d3ebf9",
+    "name": "Torneio dos Apoiadores #4 (R$ 300)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/torneio-dos-apoiadores-4-r-300-d3ebf9",
+    "players": 12,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "torneo-clausura-m-b-64655b",
+    "name": "Torneo Clausura M-B",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/torneo-clausura-m-b-64655b",
+    "players": 30,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "torneo-pre-mundial-sarox-games-vgc-572ef9",
+    "name": "Torneo Pre-Mundial | Sarox Games VGC",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/torneo-pre-mundial-sarox-games-vgc-572ef9",
+    "players": 21,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "trinity-championship-10-double-format-573bf3",
+    "name": "Trinity Championship 10 (Double Format)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/trinity-championship-10-double-format-573bf3",
+    "players": 21,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "trinity-championship-11-double-format-13f927",
+    "name": "Trinity Championship 11 (Double Format)",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/trinity-championship-11-double-format-13f927",
+    "players": 78,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "underdog-cup-quadro-pok-mon-in-regalo-224f75",
+    "name": "Underdog Cup - Quadro Pokémon in regalo!",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/underdog-cup-quadro-pok-mon-in-regalo-224f75",
+    "players": 52,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "unova-champions-league-13-50-prizepool-140796",
+    "name": "Unova Champions League #13 [50 € Prizepool]",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/unova-champions-league-13-50-prizepool-140796",
+    "players": 128,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-rs-8a5519",
+    "name": "VGC RS",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-rs-8a5519",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-umbrenews-01-09-2026-30-champion-13fddb",
+    "name": "VGC UmbreNews 01.09.2026 #30 - Champion",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-umbrenews-01-09-2026-30-champion-13fddb",
+    "players": 49,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-umbrenews-11-08-2026-27-champion-a5e920",
+    "name": "VGC UmbreNews 11.08.2026 #27 - Champion",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-umbrenews-11-08-2026-27-champion-a5e920",
+    "players": 71,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-umbrenews-18-08-2026-27-champion-21f5a2",
+    "name": "VGC UmbreNews 18.08.2026 #27 - Champion",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-umbrenews-18-08-2026-27-champion-21f5a2",
+    "players": 75,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-umbrenews-25-08-2026-29-champion-223686",
+    "name": "VGC UmbreNews 25.08.2026 #29 - Champion",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-umbrenews-25-08-2026-29-champion-223686",
+    "players": 103,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgc-uu-regulation-m-b-prague-regional-2026-571ad7",
+    "name": "VGC UU Regulation M-B \"Prague Regional 2026\"",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgc-uu-regulation-m-b-prague-regional-2026-571ad7",
+    "players": 16,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "vgca-battle-hall-27-a5f59f",
+    "name": "VGCA Battle Hall #27",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/vgca-battle-hall-27-a5f59f",
+    "players": 80,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "warwick-online-vgc-tournament-13fe3e",
+    "name": "Warwick Online VGC Tournament",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/warwick-online-vgc-tournament-13fe3e",
+    "players": 130,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekend-qualifier-for-rookideevgc-grand-tourney-a62b54",
+    "name": "Weekend Qualifier for RookideeVGC Grand Tourney",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekend-qualifier-for-rookideevgc-grand-tourney-a62b54",
+    "players": 88,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekly-qualifier-for-rookideevgc-grand-tourney-421988",
+    "name": "Weekly Qualifier for RookideeVGC Grand Tourney",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekly-qualifier-for-rookideevgc-grand-tourney-421988",
+    "players": 49,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekly-qualifier-for-rookideevgc-grand-tourney-224e9b",
+    "name": "Weekly Qualifier for RookideeVGC Grand Tourney",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekly-qualifier-for-rookideevgc-grand-tourney-224e9b",
+    "players": 37,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "weekly-qualifier-for-rookideevgc-grand-tourney-a5ee7b",
+    "name": "Weekly Qualifier for RookideeVGC Grand Tourney",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/weekly-qualifier-for-rookideevgc-grand-tourney-a5ee7b",
+    "players": 35,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "women-s-league-vgc-10-575b1d",
+    "name": "Women's League VGC #10",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/women-s-league-vgc-10-575b1d",
+    "players": 8,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "women-s-league-vgc-11-51b1f1",
+    "name": "Women's League VGC #11",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/women-s-league-vgc-11-51b1f1",
+    "players": 6,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  },
+  {
+    "id": "women-s-league-vgc-9-5708b4",
+    "name": "Women's League VGC #9",
+    "date": null,
+    "source": "pikalytics",
+    "sourceUrl": "https://www.pikalytics.com/ai/tournaments/limitless/women-s-league-vgc-9-5708b4",
+    "players": 9,
+    "approved": false,
+    "notes": [
+      "Date missing",
+      "Official event tier not detected",
+      "Regulation and region require approval"
+    ]
+  }
+]

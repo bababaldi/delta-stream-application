@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Delta Stream VGC</string>
+    <string name="title_activity_main">Delta Stream VGC</string>
+    <string name="package_name">team.deltastream.vgc</string>
+    <string name="custom_url_scheme">team.deltastream.vgc</string>
+</resources>
