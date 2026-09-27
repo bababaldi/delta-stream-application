@@ -1,0 +1,64 @@
+name: Publish reviewed GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      approved:
+        description: "I reviewed this version and approve its publication"
+        required: true
+        default: false
+        type: boolean
+      snapshot_sha256:
+        description: "snapshotSha256 from npm run data:preview"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/main' && inputs.approved
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Verify the reviewed snapshot
+        env:
+          EXPECTED: ${{ inputs.snapshot_sha256 }}
+        run: |
+          [[ "$EXPECTED" =~ ^[0-9a-f]{64}$ ]]
+          printf '%s  data/snapshot.json\n' "$EXPECTED" | sha256sum --check --status
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      # No data collection here: only the locally reviewed, committed snapshot.
+      - run: npm run release:check
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: dist
+
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+      - name: Deploy reviewed artifact
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

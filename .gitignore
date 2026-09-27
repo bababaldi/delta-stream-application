@@ -8,3 +8,4 @@ android/local.properties
 data/snapshot.*.tmp
 .env
 .impeccable/review/
+typesafe_key

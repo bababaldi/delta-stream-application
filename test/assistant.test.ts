@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   recommendTeam,
+  tournamentSetEvidence,
   type RoleProfile,
   type SetEvidence,
 } from "../src/assistant.js";
@@ -125,6 +126,20 @@ test("assistant deterministically ranks legal completions and prefers tournament
       reason.includes("missing role"),
     ),
   );
+});
+
+test("assistant set evidence gets the same Victory Road record and recency bonus as rankings", () => {
+  const now = new Date("2026-09-27T12:00:00Z");
+  const snapshot = { generatedAt: now.toISOString(), activeRegulation: "test", pikalyticsUsage: {}, tournaments: [
+    { event: { id: "recent", name: "Recent", date: "2026-09-20", regulation: "test",
+        tier: "online" as const, region: "EU" as const, source: "victoryroad" as const,
+        sourceUrl: "https://victoryroad.pro/vr-sep26-2/", recordRounds: 10 },
+      teams: [{ eventId: "recent", player: "A", placement: 1 as const,
+        record: { wins: 10, losses: 0 }, sourceUrl: "https://victoryroad.pro/vr-sep26-2/",
+        roster: Array.from({ length: 6 }, (_, index) => ({ pokemon: `P${index}` })) }] },
+  ] };
+  assert.equal(tournamentSetEvidence(snapshot, "test", now)[0]?.evidenceScore, 96);
+  assert.equal(tournamentSetEvidence(snapshot, "other", now).length, 0);
 });
 
 test("assistant explains invalid or impossible requests", () => {

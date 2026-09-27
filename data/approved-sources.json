@@ -1,0 +1,13 @@
+[
+  {
+    "regulation": "champions-regulation-mc",
+    "scope": "eligibility-source-only",
+    "approvedBy": "owner",
+    "approvedAt": "2026-09-20T17:05:49.607Z",
+    "sourceUrl": "https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178713870219xeaaio/en/pokemon.html",
+    "sourceSha256": "122529cebbc15cd2a22c781e0fb43ca814be86a18951f1ceaf37cf65297a3627",
+    "rosterSha256": "658779edceeb2a9608c5c7c4819e5a53b0146e2f2fa2372f46adb3889a8e4a16",
+    "entryCount": 262,
+    "excludes": ["form and alias mappings", "moves", "abilities", "items", "roles", "tournament results", "publication"]
+  }
+]

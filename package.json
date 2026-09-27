@@ -7,19 +7,26 @@
   "scripts": {
     "data:discover": "tsx scripts/discover.ts",
     "data:review": "tsx scripts/prepare-review.ts",
+    "data:import-pokedata": "tsx scripts/import-pokedata.ts",
+    "data:import-italian-locals": "tsx scripts/import-italian-locals.ts",
     "data:build": "tsx scripts/build-data.ts",
     "data:validate": "tsx scripts/validate-data.ts",
+    "data:preview": "tsx scripts/preview-data.ts",
     "dev": "vite",
     "build": "vite build",
+    "build:pages": "vite build --mode pages",
     "preview": "vite preview",
+    "preview:pages": "vite preview --mode pages --host 127.0.0.1",
     "test": "tsx --test test/**/*.test.ts",
     "test:ui": "tsx scripts/check-ui.ts",
+    "test:pwa": "tsx scripts/check-pwa.ts",
     "typecheck": "tsc --noEmit",
     "android:sync": "npm run build && cap sync android",
     "android:open": "cap open android",
-    "android:debug": "npm run android:sync && sh scripts/build-android.sh assembleDebug",
-    "android:verify": "npm run android:sync && sh scripts/build-android.sh lintDebug testDebugUnitTest assembleDebug",
-    "release:check": "npm run data:build && npm run data:validate && npm test && npm run typecheck && npm run test:ui && npm run android:verify"
+    "android:debug": "npm run android:sync && sh scripts/build-android.sh :app:assembleDebug",
+    "android:verify": "npm run android:sync && sh scripts/build-android.sh :app:lintDebug :app:assembleDebug :app:assembleDebugAndroidTest",
+    "android:test": "npm run android:sync && sh scripts/build-android.sh :app:connectedDebugAndroidTest",
+    "release:check": "npm run data:validate && npm test && npm run typecheck && npm run test:ui && npm run build:pages && npm run test:pwa"
   },
   "devDependencies": {
     "@capacitor/cli": "8.4.3",
@@ -31,6 +38,7 @@
   },
   "dependencies": {
     "@capacitor/android": "^8.5.1",
-    "@capacitor/core": "^8.5.1"
+    "@capacitor/core": "^8.5.1",
+    "system-one-core": "^0.2.1"
   }
 }

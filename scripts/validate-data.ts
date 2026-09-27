@@ -22,7 +22,7 @@ try {
     errors.push("Unresolved quarantined events");
   if (errors.length) throw new Error(errors.join("\n"));
   console.log(
-    "Data preflight passed. Native, accessibility and independent calculator checks are still required before release.",
+    "Data preflight passed. Mobile accessibility, offline/update behavior and independent calculator checks are still required before publication.",
   );
 } catch (error) {
   console.error(error instanceof Error ? error.message : error);

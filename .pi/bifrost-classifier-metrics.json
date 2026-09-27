@@ -1,0 +1,1 @@
+{"version":1,"model":"jev-1.13.0","total":8,"outcomes":{"success":2,"low_confidence":5,"timeout":1},"tiers":{"frontier":1,"general":3,"quick":3},"confidenceBands":{"0.8-0.9":1,"<0.8":5,"0.9-1.0":1},"latencyBuckets":{"<=500ms":6,"<=1000ms":1,"<=10000ms":1},"totalLatencyMs":6095,"totalAttempts":8,"lastObservedAt":1790526999898}

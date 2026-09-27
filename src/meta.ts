@@ -1,7 +1,7 @@
-export type EventTier = "worlds" | "international" | "regional";
+export type EventTier = "worlds" | "international" | "regional" | "online" | "local";
 export type Region = "NA" | "EU" | "LATAM" | "OCE" | "ASIA" | "OTHER";
 export type Placement = 1 | 2 | 4 | 8 | 16 | 32 | 64;
-export type TournamentSource = "pikalytics" | "rk9";
+export type TournamentSource = "pikalytics" | "rk9" | "victoryroad" | "pokedata" | "italianlocals";
 
 export interface TournamentEvent {
   id: string;
@@ -12,6 +12,7 @@ export interface TournamentEvent {
   region: Region;
   source: TournamentSource;
   sourceUrl: string;
+  recordRounds?: number;
 }
 
 export interface TeamMember {
@@ -26,6 +27,7 @@ export interface PlacedTeam {
   eventId: string;
   player: string;
   placement: Placement;
+  record?: { wins: number; losses: number };
   roster: TeamMember[];
   sourceUrl: string;
 }
@@ -51,6 +53,7 @@ export interface RankedEntry {
   eventCount: number;
   confidence: "strong" | "emerging";
   pikalyticsUsage?: number;
+  localEvidenceTeams?: number;
 }
 
 export interface MetaRankings {
@@ -73,6 +76,8 @@ const TIER_MULTIPLIERS: Record<EventTier, number> = {
   worlds: 2,
   international: 1.5,
   regional: 1,
+  online: 0.75,
+  local: 0.125,
 };
 
 export function placementBucket(position: number): Placement | undefined {
@@ -98,22 +103,35 @@ export function recencyWeight(eventDate: string, now = new Date()): number {
   return 0.25;
 }
 
+function recordMultiplier(
+  event: Pick<TournamentEvent, "recordRounds"> & Partial<Pick<TournamentEvent, "source">>,
+  record?: PlacedTeam["record"],
+): number {
+  if (event.source !== "victoryroad" || !event.recordRounds || !record ||
+      record.wins + record.losses !== event.recordRounds ||
+      record.wins < event.recordRounds - 1) return 1;
+  if (record.losses === 0) return 2;
+  if (record.losses === 1) return 1.75;
+  return 1;
+}
+
 export function teamScore(
   placement: Placement,
-  event: Pick<TournamentEvent, "tier" | "date">,
+  event: Pick<TournamentEvent, "tier" | "date" | "recordRounds"> &
+    Partial<Pick<TournamentEvent, "source">>,
   now = new Date(),
+  record?: PlacedTeam["record"],
 ): number {
-  return (
-    PLACEMENT_POINTS[placement] *
-    TIER_MULTIPLIERS[event.tier] *
-    recencyWeight(event.date, now)
-  );
+  return PLACEMENT_POINTS[placement] * TIER_MULTIPLIERS[event.tier] *
+    recencyWeight(event.date, now) * recordMultiplier(event, record);
 }
 
 export function canonicalPokemonName(name: string): string {
   let normalized = name
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/♀/g, " female")
+    .replace(/♂/g, " male")
     .trim()
     .toLowerCase();
   const regional = normalized.match(
@@ -161,6 +179,10 @@ interface Aggregate {
   score: number;
   teams: number;
   events: Set<string>;
+  establishedEvents: Set<string>;
+  localTeams: number;
+  establishedTeams: number;
+  exceptionalRecord: boolean;
 }
 
 function addAggregate(
@@ -168,6 +190,8 @@ function addAggregate(
   names: string[],
   score: number,
   eventId: string,
+  exceptionalRecord = false,
+  localEvidence = false,
 ): void {
   const canonical = names.map(canonicalPokemonName).sort();
   const key = canonical.join("+");
@@ -176,6 +200,12 @@ function addAggregate(
     existing.score += score;
     existing.teams += 1;
     existing.events.add(eventId);
+    if (localEvidence) existing.localTeams += 1;
+    else {
+      existing.establishedTeams += 1;
+      existing.establishedEvents.add(eventId);
+    }
+    existing.exceptionalRecord ||= exceptionalRecord;
     return;
   }
   aggregates.set(key, {
@@ -183,6 +213,10 @@ function addAggregate(
     score,
     teams: 1,
     events: new Set([eventId]),
+    establishedEvents: localEvidence ? new Set() : new Set([eventId]),
+    localTeams: Number(localEvidence),
+    establishedTeams: Number(!localEvidence),
+    exceptionalRecord,
   });
 }
 
@@ -194,16 +228,17 @@ function finishRanking(
   return [...aggregates.entries()]
     .map(([key, value]) => {
       const eventCount = value.events.size;
-      const strong =
-        kind === "core"
-          ? value.teams >= 3 && eventCount >= 2
-          : value.teams >= 2;
+      const strong = value.exceptionalRecord ||
+        (kind === "core"
+          ? value.establishedTeams >= 3 && value.establishedEvents.size >= 2
+          : value.establishedTeams >= 2);
       return {
         key,
         pokemon: value.names,
         score: value.score,
         teamCount: value.teams,
         eventCount,
+        localEvidenceTeams: value.localTeams,
         confidence: strong ? "strong" : "emerging",
         ...(kind === "pokemon"
           ? { pikalyticsUsage: usage[value.names[0] as string] }
@@ -236,14 +271,16 @@ export function rankMeta(
       continue;
     for (const team of tournament.teams) {
       const names = team.roster.map(({ pokemon: name }) => name);
-      const score = teamScore(team.placement, tournament.event, now);
+      const score = teamScore(team.placement, tournament.event, now, team.record);
+      const exceptional = recordMultiplier(tournament.event, team.record) > 1;
+      const localEvidence = tournament.event.tier === "local";
       for (const name of names)
-        addAggregate(pokemon, [name], score, team.eventId);
+        addAggregate(pokemon, [name], score, team.eventId, exceptional, localEvidence);
       for (let size = 2; size <= 4; size += 1) {
         for (const core of combinations(names, size))
-          addAggregate(cores, core, score, team.eventId);
+          addAggregate(cores, core, score, team.eventId, exceptional, localEvidence);
       }
-      addAggregate(teams, names, score, team.eventId);
+      addAggregate(teams, names, score, team.eventId, exceptional, localEvidence);
     }
   }
 
@@ -282,6 +319,9 @@ export function validateTournamentData(
 
   if (!data.teams.length)
     errors.push("event must contain at least one placed team");
+  if (data.event.recordRounds !== undefined &&
+      (!Number.isInteger(data.event.recordRounds) || data.event.recordRounds < 1 || data.event.recordRounds > 20))
+    errors.push("event.recordRounds must be from 1 to 20");
   if (!(data.event.tier in TIER_MULTIPLIERS))
     errors.push("event.tier is unsupported");
   const players = new Set<string>();
@@ -291,6 +331,13 @@ export function validateTournamentData(
       errors.push(`${prefix}.eventId does not match event.id`);
     if (!PLACEMENT_POINTS[team.placement])
       errors.push(`${prefix}.placement is unsupported`);
+    if (team.record && (!data.event.recordRounds ||
+        !Number.isInteger(team.record.wins) || !Number.isInteger(team.record.losses) ||
+        team.record.wins < 0 || team.record.losses < 0 ||
+        team.record.wins + team.record.losses !== data.event.recordRounds))
+      errors.push(`${prefix}.record does not match event.recordRounds`);
+    if (!team.sourceUrl.startsWith("https://"))
+      errors.push(`${prefix}.sourceUrl must use HTTPS`);
     if (team.roster.length !== 6)
       errors.push(`${prefix}.roster must contain exactly six Pokemon`);
     const names = team.roster.map(({ pokemon }) =>

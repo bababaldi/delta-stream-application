@@ -7,7 +7,7 @@
     "noUncheckedIndexedAccess": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   },
   "include": ["src/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "capacitor.config.ts", "vite.config.ts"]
 }

@@ -1,4 +1,5 @@
 import "./styles.css";
+import { startOfflineApp } from "./pwa.js";
 import snapshotData from "../data/snapshot.json" with { type: "json" };
 import legalityData from "../data/legality.json" with { type: "json" };
 import roleData from "../data/roles.json" with { type: "json" };
@@ -13,6 +14,7 @@ import {
   type StatTable,
 } from "./calculator.js";
 import { rankMeta, type MetaSnapshot, type Region } from "./meta.js";
+import { CHAMPIONS_ITEMS } from "./items.js";
 import {
   recommendTeam,
   tournamentSetEvidence,
@@ -86,7 +88,7 @@ const state: {
 } = {
   tab: "meta",
   rankingKind: "pokemon",
-  regions: new Set(["NA", "EU"]),
+  regions: new Set(["NA", "EU", "OCE", "OTHER"]),
   teamText: readDraft("delta-stream-team"),
   team: [],
   assistantText: readDraft("delta-stream-assist"),
@@ -153,7 +155,7 @@ function shell(content: string): string {
         `<button class="nav-item" type="button" data-tab="${tab}" ${state.tab === tab ? 'aria-current="page"' : ""}>${icon[tab]}<span>${label}</span></button>`,
     )
     .join("");
-  return `<div class="app-shell"><header class="app-bar"><img src="/delta-stream.jpg" alt="" width="48" height="48"><div><strong>Delta Stream VGC</strong><span>${escapeHtml(snapshot.activeRegulation.replaceAll("-", " "))}</span></div><span class="offline-badge">Offline</span></header><nav class="primary-nav" aria-label="Primary">${nav}</nav><main id="main" tabindex="-1"><p id="storage-feedback" role="status" class="status-line warning" ${storageError ? "" : "hidden"}>${escapeHtml(storageError)}</p><p id="feedback" role="status" ${state.message ? "" : "hidden"}>${escapeHtml(state.message)}</p>${content}</main></div>`;
+  return `<div class="app-shell"><header class="app-bar"><img src="${import.meta.env.BASE_URL}delta-stream.jpg" alt="" width="48" height="48"><div><strong>Delta Stream VGC</strong><span>${escapeHtml(snapshot.activeRegulation.replaceAll("-", " "))}</span></div><span class="offline-badge">Local data</span></header><nav class="primary-nav" aria-label="Primary">${nav}</nav><main id="main" tabindex="-1"><p id="storage-feedback" role="status" class="status-line warning" ${storageError ? "" : "hidden"}>${escapeHtml(storageError)}</p><p id="feedback" role="status" ${state.message ? "" : "hidden"}>${escapeHtml(state.message)}</p>${content}</main></div>`;
 }
 
 function emptyState(title: string, body: string): string {
@@ -183,10 +185,10 @@ function metaView(): string {
   const rows = entries
     .map(
       (entry, index) =>
-        `<details class="ranking-row"><summary><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="rank-name">${entry.pokemon.map(escapeHtml).join(" + ")}<small>${entry.teamCount} team${entry.teamCount === 1 ? "" : "s"} · ${entry.eventCount} event${entry.eventCount === 1 ? "" : "s"}</small></span><span class="rank-score">${entry.score.toFixed(1)}<small>score</small></span><span class="confidence ${entry.confidence}">${entry.confidence === "strong" ? "● Strong" : "○ Emerging"}</span></summary><div class="evidence"><p><strong>Evidence</strong> Placement × event tier × recency. Regulations never mix.</p>${entry.pikalyticsUsage === undefined ? "" : `<p>Pikalytics usage: ${entry.pikalyticsUsage.toFixed(1)}% (tie-break only).</p>`}</div></details>`,
+        `<details class="ranking-row"><summary><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="rank-name">${entry.pokemon.map(escapeHtml).join(" + ")}<small>${entry.teamCount} team${entry.teamCount === 1 ? "" : "s"} · ${entry.eventCount} event${entry.eventCount === 1 ? "" : "s"}${entry.localEvidenceTeams ? ` · ${entry.localEvidenceTeams} Italian local` : ""}</small></span><span class="rank-score">${entry.score.toFixed(1)}<small>score</small></span><span class="confidence ${entry.confidence}">${entry.confidence === "strong" ? "● Strong" : "○ Emerging"}</span></summary><div class="evidence"><p><strong>Evidence</strong> Placement × event tier × recency. Verified Victory Road x-0/x-1 records use 2×/1.75×; Italian VG Cup/Challenge winners are low-weight (0.125×) potential x-2 evidence only. Regulations never mix. Roster-only results do not provide usable moves, abilities or items.</p>${entry.pikalyticsUsage === undefined ? "" : `<p>Pikalytics usage: ${entry.pikalyticsUsage.toFixed(1)}% (tie-break only).</p>`}</div></details>`,
     )
     .join("");
-  return `<section aria-labelledby="meta-title"><div class="screen-heading"><div><p class="board-status">Meta updated · ${escapeHtml(formatDate(snapshot.generatedAt))}</p><h1 id="meta-title">Tournament board</h1></div><span class="reg-stamp">${escapeHtml(snapshot.activeRegulation.replace("champions-regulation-", "REG ").toUpperCase())}</span></div><div class="toolbar"><div class="segmented" aria-label="Ranking type">${categories}</div><fieldset class="filter-row"><legend>Regions</legend>${filters}</fieldset></div>${entries.length ? `<div class="ranking-board">${rows}</div>` : emptyState(snapshot.tournaments.length ? "No results for these filters" : "No approved results", snapshot.tournaments.length ? "Select at least one region with approved results." : "The owner needs to approve completed events and rebuild the APK. No results have been invented.")}</section>`;
+  return `<section aria-labelledby="meta-title"><div class="screen-heading"><div><p class="board-status">Meta updated · ${escapeHtml(formatDate(snapshot.generatedAt))}</p><h1 id="meta-title">Tournament board</h1></div><span class="reg-stamp">${escapeHtml(snapshot.activeRegulation.replace("champions-regulation-", "REG ").toUpperCase())}</span></div><div class="toolbar"><div class="segmented" aria-label="Ranking type">${categories}</div><fieldset class="filter-row"><legend>Regions</legend>${filters}</fieldset></div>${entries.length ? `<div class="ranking-board">${rows}</div>` : emptyState(snapshot.tournaments.length ? "No results for these filters" : "No approved results", snapshot.tournaments.length ? "Select at least one region with approved results." : "The owner needs to approve completed events and publish a new data snapshot. No results have been invented.")}</section>`;
 }
 
 function inputField(
@@ -199,13 +201,19 @@ function inputField(
   return `<label><span>${label}</span><input type="number" name="${name}" value="${value}" min="${min}" max="${max}" inputmode="numeric" required></label>`;
 }
 
+function itemOptions(): string {
+  return `<option value="">None</option>${CHAMPIONS_ITEMS.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(item)}</option>`).join("")}`;
+}
+
+const pokemonTypes = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy"];
+
 function moveFields(number: 1 | 2): string {
   const prefix = `move${number}`;
-  return `<fieldset class="move-step"><legend>Attack ${number}</legend><div class="form-grid"><label><span>Category</span><select name="${prefix}Category"><option value="physical">Physical</option><option value="special">Special</option></select></label>${inputField("Power", `${prefix}Power`, 100, 1, 999)}${inputField("Attack stage", `${prefix}AttackStage`, 0, -6, 6)}${inputField("Defense stage", `${prefix}DefenseStage`, 0, -6, 6)}<label><span>STAB</span><select name="${prefix}Stab"><option value="1">None</option><option value="1.2">1.2×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option></select></label><label><span>Effectiveness</span><select name="${prefix}Effectiveness"><option value="0">Immune</option><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label><span>Weather</span><select name="${prefix}Weather"><option value="1">Neutral</option><option value="1.5">Boosted</option><option value="0.5">Reduced</option></select></label><label class="check-row"><input type="checkbox" name="${prefix}Spread"><span>Spread move</span></label><label class="check-row"><input type="checkbox" name="${prefix}Burned"><span>Attacker burned</span></label></div></fieldset>`;
+  return `<fieldset class="move-step"><legend>Attack ${number}</legend><div class="form-grid"><label><span>Move name (optional)</span><input name="${prefix}Name" maxlength="60"></label><label><span>Move type</span><select name="${prefix}Type"><option value="">Unknown / not set</option>${pokemonTypes.map((type) => `<option>${type}</option>`).join("")}</select></label><label><span>Category</span><select name="${prefix}Category"><option value="physical">Physical</option><option value="special">Special</option></select></label>${inputField("Power", `${prefix}Power`, 100, 1, 999)}${inputField("Attack stage", `${prefix}AttackStage`, 0, -6, 6)}${inputField("Defense stage", `${prefix}DefenseStage`, 0, -6, 6)}<label><span>STAB</span><select name="${prefix}Stab"><option value="1">None</option><option value="1.2">1.2×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option></select></label><label><span>Effectiveness</span><select name="${prefix}Effectiveness"><option value="0">Immune</option><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label><span>Weather</span><select name="${prefix}Weather"><option value="1">Neutral</option><option value="1.5">Boosted</option><option value="0.5">Reduced</option></select></label><label class="check-row"><input type="checkbox" name="${prefix}Spread"><span>Spread move</span></label><label class="check-row"><input type="checkbox" name="${prefix}Burned"><span>Attacker burned</span></label><label class="check-row"><input type="checkbox" name="${prefix}HelpingHand"><span>Helping Hand</span></label></div></fieldset>`;
 }
 
 function calcView(): string {
-  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Two-step calculator</h1></div></div><p class="status-line warning">Manual formula mode: level 50, neutral natures, full HP. No automatic abilities, items, recovery, recoil or triggered effects. Guarantees apply only to the entered static conditions.</p><form id="calc-form"><div class="goal-row"><label><span>Solver goal</span><select name="goal"><option value="survive">Survive both maximum rolls</option><option value="ko">Guarantee knockout with both minimum rolls</option></select></label></div><section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}</div></section><div class="move-grid">${moveFields(1)}${moveFields(2)}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
+  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Two-step calculator</h1></div></div><p class="status-line warning">Manual formula mode: level 50, neutral natures, full HP. Item list follows NCP Champions; direct damage support covers type boosters, Normal Gem, Muscle Band, Wise Glasses, Expert Belt, Life Orb, Light Ball (Pikachu), resist berries, Air Balloon and active terrain seeds. Stat/form changes, speed, accuracy, healing, recoil and other triggered effects are not simulated.</p><form id="calc-form"><div class="goal-row"><label><span>Solver goal</span><select name="goal"><option value="survive">Survive both maximum rolls</option><option value="ko">Guarantee knockout with both minimum rolls</option></select></label></div><section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}<label><span>Attacker species (for item rules)</span><input name="attackerName" value="Attacker" maxlength="60"></label><label><span>Defender species</span><input name="defenderName" value="Defender" maxlength="60"></label><label><span>Attacker ability</span><select name="attackerAbility"><option value="">None / manual</option><option>Technician</option></select></label><label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label><label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label><label><span>Terrain (for seeds)</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><div class="move-grid">${moveFields(1)}${moveFields(2)}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
 }
 
 function baseStats(partial: Partial<StatTable>): StatTable {
@@ -234,8 +242,9 @@ function moveFromForm(
   const prefix = `move${number}`;
   return {
     move: {
-      name: `Attack ${number}`,
+      name: String(data.get(`${prefix}Name`) || `Attack ${number}`),
       category: String(data.get(`${prefix}Category`)) as "physical" | "special",
+      ...(String(data.get(`${prefix}Type`)) ? { type: String(data.get(`${prefix}Type`)) as Move["type"] } : {}),
       power: numberValue(data, `${prefix}Power`),
       spread: data.has(`${prefix}Spread`),
     },
@@ -246,6 +255,8 @@ function moveFromForm(
       effectiveness: numberValue(data, `${prefix}Effectiveness`),
       weather: numberValue(data, `${prefix}Weather`) as 0.5 | 1 | 1.5,
       burned: data.has(`${prefix}Burned`),
+      helpingHand: data.has(`${prefix}HelpingHand`),
+      ...(String(data.get("terrain")) ? { terrain: String(data.get("terrain")) as DamageModifiers["terrain"] } : {}),
     },
   };
 }
@@ -254,9 +265,13 @@ function pokemon(
   name: string,
   stats: Partial<StatTable>,
   points: Partial<StatTable>,
+  ability?: ChampionsPokemon["ability"],
+  item?: ChampionsPokemon["item"],
 ): ChampionsPokemon {
   return {
     name,
+    ability,
+    item,
     baseStats: baseStats(stats),
     statPoints: points,
     nature: NEUTRAL_NATURE,
@@ -286,14 +301,18 @@ function calculateFromForm(form: HTMLFormElement): string {
     specialDefense: numberValue(data, "specialDefensePoints"),
   };
   const attacker = pokemon(
-    "Attacker",
+    String(data.get("attackerName") || "Attacker"),
     attackerStats,
     goal === "survive" ? attackerPoints : {},
+    String(data.get("attackerAbility")) as ChampionsPokemon["ability"],
+    (String(data.get("attackerItem")) || undefined) as ChampionsPokemon["item"],
   );
   const defender = pokemon(
-    "Defender",
+    String(data.get("defenderName") || "Defender"),
     defenderStats,
     goal === "ko" ? defenderPoints : {},
+    undefined,
+    (String(data.get("defenderItem")) || undefined) as ChampionsPokemon["item"],
   );
   const direct = moves.map(({ move, modifiers }) =>
     calculateDamage({ attacker, defender, move, modifiers }),
@@ -301,7 +320,7 @@ function calculateFromForm(form: HTMLFormElement): string {
   const result =
     goal === "survive"
       ? solveDefensiveSpread({
-          defender: { name: defender.name, baseStats: defender.baseStats },
+          defender: { name: defender.name, baseStats: defender.baseStats, item: defender.item },
           attacks: moves.map(({ move, modifiers }) => ({
             attacker,
             move,
@@ -312,7 +331,7 @@ function calculateFromForm(form: HTMLFormElement): string {
           ],
         })
       : solveOffensiveSpread({
-          attacker: { name: attacker.name, baseStats: attacker.baseStats },
+          attacker: { name: attacker.name, baseStats: attacker.baseStats, ability: attacker.ability, item: attacker.item },
           attacks: moves.map(({ move, modifiers }) => ({
             defender,
             move,
@@ -323,8 +342,12 @@ function calculateFromForm(form: HTMLFormElement): string {
           ],
         });
   const summary = `<p>Baseline damage with zero investment on the optimized side (not the spreads below).</p><div class="damage-summary"><div><strong>${direct[0]?.min}–${direct[0]?.max}</strong><span>Attack 1</span></div><div><strong>${direct[1]?.min}–${direct[1]?.max}</strong><span>Attack 2</span></div><div><strong>${goal === "survive" ? (direct[0]?.max ?? 0) + (direct[1]?.max ?? 0) : (direct[0]?.min ?? 0) + (direct[1]?.min ?? 0)}</strong><span>${goal === "survive" ? "Maximum total" : "Minimum total"}</span></div></div>`;
+  const notes = [...new Set(direct.flatMap(({ notes }) => notes))];
+  const itemNotice = notes.length
+    ? `<p class="status-line warning">${notes.map(escapeHtml).join(" · ")}</p>`
+    : "";
   if (!result.possible)
-    return `${summary}<div class="inline-alert" role="status"><strong>Impossible</strong><span>${escapeHtml(result.reason)}</span></div>`;
+    return `${summary}${itemNotice}<div class="inline-alert" role="status"><strong>Impossible</strong><span>${escapeHtml(result.reason)}</span></div>`;
   const rows = result.options
     .map(
       (option) =>
@@ -337,7 +360,7 @@ function calculateFromForm(form: HTMLFormElement): string {
           )}</td><td>${option.totalInvested}</td><td>${option.remaining}</td><td>${option.margin}</td></tr>`,
     )
     .join("");
-  return `${summary}<div class="result-table"><h2>Non-dominated spreads</h2><div class="table-scroll"><table><thead><tr><th>Nature</th><th>Stat points</th><th>Used</th><th>Left</th><th>Margin</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+  return `${summary}${itemNotice}<div class="result-table"><h2>Non-dominated spreads</h2><div class="table-scroll"><table><thead><tr><th>Nature</th><th>Stat points</th><th>Used</th><th>Left</th><th>Margin</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
 }
 
 function teamRows(team: readonly TeamSlot[]): string {
@@ -587,3 +610,4 @@ function bindEvents(): void {
 }
 
 render();
+if (import.meta.env.PROD && !Capacitor.isNativePlatform()) void startOfflineApp(import.meta.env.BASE_URL);

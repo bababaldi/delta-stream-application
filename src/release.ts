@@ -18,6 +18,11 @@ export interface RoleCatalog {
   profiles: RoleProfile[];
 }
 
+const ROSTER_ONLY_SOURCES = new Set(["victoryroad", "italianlocals"]);
+const ROSTER_ONLY_ISSUES = new Set([
+  "team-size", "species-required", "species-clause", "pokemon-illegal", "restricted-limit",
+]);
+
 /** Data preflight only. Passing does not certify calculator accuracy or Android accessibility. */
 export function releaseDataErrors(
   snapshot: MetaSnapshot,
@@ -55,11 +60,10 @@ export function releaseDataErrors(
         species: pokemon,
         moves: set.moves ?? [],
       }));
-      errors.push(
-        ...validateTeam(slots, rules).map(
-          (issue) => `${event.id}: ${issue.message}`,
-        ),
+      const issues = validateTeam(slots, rules).filter(
+        (issue) => !ROSTER_ONLY_SOURCES.has(event.source) || ROSTER_ONLY_ISSUES.has(issue.code),
       );
+      errors.push(...issues.map((issue) => `${event.id}: ${issue.message}`));
       for (const slot of slots)
         rosterNames.add(canonicalPokemonName(slot.species));
     }

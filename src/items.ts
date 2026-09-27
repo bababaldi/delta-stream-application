@@ -1,0 +1,24 @@
+// ITEMS_CHAMPIONS from NCP VGC Damage Calculator, MIT, commit 1369b359b85f0a6343df006acde92cc4a7d07805.
+// https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator/blob/1369b359b85f0a6343df006acde92cc4a7d07805/script_res/item_data.js
+export const CHAMPIONS_ITEMS = [
+  "Cheri Berry", "Chesto Berry", "Pecha Berry", "Rawst Berry", "Aspear Berry", "Oran Berry", "Persim Berry", "Leppa Berry",
+  "Lum Berry", "Sitrus Berry", "Occa Berry", "Passho Berry", "Wacan Berry", "Rindo Berry", "Yache Berry", "Chople Berry", "Kebia Berry", "Shuca Berry", "Coba Berry",
+  "Payapa Berry", "Tanga Berry", "Charti Berry", "Kasib Berry", "Haban Berry", "Colbur Berry", "Babiri Berry", "Chilan Berry", "White Herb", "Quick Claw", "King's Rock",
+  "Silver Powder", "Focus Band", "Scope Lens", "Metal Coat", "Leftovers", "Light Ball", "Soft Sand", "Hard Stone", "Miracle Seed", "Black Glasses", "Black Belt", "Magnet",
+  "Mystic Water", "Sharp Beak", "Poison Barb", "Never-Melt Ice", "Spell Tag", "Twisted Spoon", "Charcoal", "Dragon Fang", "Silk Scarf", "Shell Bell", "Choice Scarf", "Focus Sash", "Bright Powder", "Mental Herb",
+  "Gengarite", "Gardevoirite", "Ampharosite", "Venusaurite", "Charizardite X", "Blastoisinite", "Medichamite", "Houndoominite", "Aggronite", "Banettite", "Tyranitarite", "Scizorite", "Pinsirite",
+  "Aerodactylite", "Lucarionite", "Abomasite", "Kangaskhanite", "Gyaradosite", "Absolite", "Charizardite Y", "Alakazite", "Heracronite", "Manectite", "Garchompite", "Roseli Berry", "Steelixite", "Pidgeotite", "Glalitite",
+  "Sablenite", "Altarianite", "Galladite", "Audinite", "Sharpedonite", "Slowbronite", "Cameruptite", "Lopunnite", "Beedrillite", "Fairy Feather", "Clefablite", "Victreebelite", "Starminite",
+  "Dragoninite", "Meganiumite", "Feraligite", "Skarmorite", "Froslassite", "Emboarite", "Excadrite", "Chandelurite", "Chesnaughtite", "Delphoxite", "Greninjite", "Floettite", "Hawluchanite",
+  "Drampanite", "Chimechite", "Golurkite", "Meowsticite", "Crabominite", "Scovillainite", "Glimmoranite",
+  "Big Root", "Damp Rock", "Expert Belt", "Heat Rock", "Icy Rock", "Iron Ball", "Life Orb", "Light Clay", "Metronome", "Muscle Band", "Shed Shell", "Smooth Rock", "Wide Lens", "Wise Glasses", "Zoom Lens",
+  "Raichunite X", "Raichunite Y", "Falinksite", "Staraptite", "Blazikenite", "Mawilite", "Swampertite", "Sceptilite", "Metagrossite", "Scolipite", "Scraftinite", "Eelektrossite", "Pyroarite", "Malamarite", "Barbaracite", "Dragalgite",
+  "Leek", "Rocky Helmet", "Air Balloon", "Red Card", "Binding Band", "Eject Button", "Normal Gem", "Salamencite", "Terrain Extender", "Electric Seed", "Psychic Seed", "Misty Seed", "Grassy Seed",
+  "Absolite Z", "Garchompite Z", "Lucarionite Z", "Golisopite", "Baxcalibrite",
+] as const;
+
+export type ChampionsItem = (typeof CHAMPIONS_ITEMS)[number];
+
+export function isChampionsItem(item: string | undefined): item is ChampionsItem {
+  return item !== undefined && item !== "" && CHAMPIONS_ITEMS.includes(item as ChampionsItem);
+}

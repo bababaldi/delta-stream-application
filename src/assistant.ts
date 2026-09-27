@@ -46,7 +46,7 @@ export function tournamentSetEvidence(
             moves: member.moves ?? [],
           },
           source: "tournament" as const,
-          evidenceScore: teamScore(team.placement, tournament.event, now),
+          evidenceScore: teamScore(team.placement, tournament.event, now, team.record),
         })),
       ),
     );

@@ -15,7 +15,7 @@ const DATA_DIR = new URL("../data/", import.meta.url);
 
 interface DataConfig {
   activeRegulation: string;
-  pikalyticsFormat: string;
+  pikalyticsFormat: string | null;
 }
 
 interface QuarantinedEvent {
@@ -31,10 +31,11 @@ function parseJson<T>(text: string, label: string): T {
   }
 }
 
-function assertConfig(value: DataConfig): void {
-  if (!value.activeRegulation?.trim() || !value.pikalyticsFormat?.trim()) {
+export function assertConfig(value: DataConfig): void {
+  if (!value || typeof value.activeRegulation !== "string" || !value.activeRegulation.trim() ||
+      (value.pikalyticsFormat !== null && (typeof value.pikalyticsFormat !== "string" || !/^[a-z0-9-]+$/i.test(value.pikalyticsFormat)))) {
     throw new Error(
-      "data/config.json requires activeRegulation and pikalyticsFormat",
+      "data/config.json requires activeRegulation and a pikalyticsFormat slug, or null to disable unverified usage data",
     );
   }
 }
@@ -46,7 +47,7 @@ function manifestErrors(
   const errors: string[] = [];
   if (!event.id?.trim() || !event.name?.trim())
     errors.push("id and name are required");
-  if (!(["worlds", "international", "regional"] as const).includes(event.tier))
+  if (!(["worlds", "international", "regional", "online", "local"] as const).includes(event.tier))
     errors.push("tier is invalid");
   if (
     !(["NA", "EU", "LATAM", "OCE", "ASIA", "OTHER"] as const).includes(
@@ -95,9 +96,10 @@ async function loadTournament(
 }
 
 async function main(): Promise<void> {
-  const [configText, approvedText] = await Promise.all([
+  const [configText, approvedText, reviewedText] = await Promise.all([
     readFile(new URL("config.json", DATA_DIR), "utf8"),
     readFile(new URL("approved-tournaments.json", DATA_DIR), "utf8"),
+    readFile(new URL("reviewed-results.json", DATA_DIR), "utf8"),
   ]);
   const config = parseJson<DataConfig>(configText, "data/config.json");
   const approved = parseJson<TournamentEvent[]>(
@@ -105,19 +107,41 @@ async function main(): Promise<void> {
     "data/approved-tournaments.json",
   );
   assertConfig(config);
-  if (!Array.isArray(approved) || approved.length === 0) {
-    throw new Error(
-      "No approved tournaments. Run npm run data:discover and approve at least one completed event.",
-    );
-  }
+  const reviewed = parseJson<TournamentData[]>(reviewedText, "data/reviewed-results.json");
+  if (!Array.isArray(approved) || !Array.isArray(reviewed) ||
+      approved.length + reviewed.length === 0)
+    throw new Error("No approved or reviewed completed tournaments");
 
-  if (new Set(approved.map((event) => event.id)).size !== approved.length) {
+  if (new Set([...approved.map((event) => event.id), ...reviewed.map(({ event }) => event.id)]).size !== approved.length + reviewed.length) {
     throw new Error(
       "Duplicate approved event IDs would inflate ranking scores",
     );
   }
   const accepted: TournamentData[] = [];
   const quarantined: QuarantinedEvent[] = [];
+  for (const data of reviewed) {
+    let url: URL | undefined;
+    try { url = new URL(data.event.sourceUrl); } catch { /* reported below */ }
+    const verifiedSource =
+      (data.event.source === "victoryroad" && data.event.tier === "online" &&
+        url?.hostname === "victoryroad.pro" && /^\/vr-sep26(?:-2)?\/$/.test(url.pathname)) ||
+      (data.event.source === "pokedata" && data.event.tier === "regional" &&
+        url?.hostname === "www.pokedata.ovh" && [
+          "/standingsVGC/0000192/masters/0000192_Masters.json",
+          "/standingsVGC/0000193/masters/0000193_Masters.json",
+          "/standingsVGC/0000194/masters/0000194_Masters.json",
+        ].includes(url.pathname)) ||
+      (data.event.source === "italianlocals" && data.event.tier === "local" &&
+        url?.hostname === "shairaba.github.io" &&
+        url.pathname === "/vgc-locals-italia/data/tournaments.json");
+    const errors = [
+      ...validateTournamentData(data),
+      ...(verifiedSource && data.event.regulation === config.activeRegulation
+        ? [] : ["reviewed event source, tier or regulation is invalid"]),
+    ];
+    if (errors.length) quarantined.push({ event: data.event, errors });
+    else accepted.push(data);
+  }
   for (const event of approved) {
     const result = await loadTournament(event, config.activeRegulation);
     if (result.data) accepted.push(result.data);
@@ -125,15 +149,19 @@ async function main(): Promise<void> {
   }
 
   let pikalyticsUsage: Record<string, number> = {};
-  try {
-    const page = await fetchText(
-      `https://www.pikalytics.com/ai/pokedex/${config.pikalyticsFormat}`,
-    );
-    pikalyticsUsage = parsePikalyticsUsage(page);
-  } catch (error) {
-    console.warn(
-      `Pikalytics usage unavailable: ${error instanceof Error ? error.message : error}`,
-    );
+  if (config.pikalyticsFormat !== null) {
+    try {
+      const page = await fetchText(
+        `https://www.pikalytics.com/ai/pokedex/${config.pikalyticsFormat}`,
+      );
+      pikalyticsUsage = parsePikalyticsUsage(page);
+    } catch (error) {
+      console.warn(
+        `Pikalytics usage unavailable: ${error instanceof Error ? error.message : error}`,
+      );
+    }
+  } else {
+    console.log("Pikalytics usage disabled: no unverified or previous-regulation usage will be included.");
   }
 
   const snapshot: MetaSnapshot = {
@@ -150,7 +178,7 @@ async function main(): Promise<void> {
     `Accepted ${accepted.length} tournament(s); quarantined ${quarantined.length}.`,
   );
   if (quarantined.length) {
-    console.error("Fix data/quarantine.json findings before building an APK.");
+    console.error("Fix data/quarantine.json findings before publishing a snapshot.");
     process.exitCode = 1;
     return; // Keep the last valid snapshot when an update is quarantined.
   }
@@ -159,7 +187,7 @@ async function main(): Promise<void> {
   await rename(temporary, new URL("snapshot.json", DATA_DIR));
 }
 
-main().catch((error: unknown) => {
+if (import.meta.main) main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : error);
   process.exitCode = 1;
 });

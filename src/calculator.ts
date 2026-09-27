@@ -12,6 +12,12 @@ export type BattleStat =
   | "speed";
 export type DamageStat = Exclude<BattleStat, "hp">;
 export type MoveCategory = "physical" | "special" | "status";
+export type PokemonType =
+  | "Normal" | "Fire" | "Water" | "Electric" | "Grass" | "Ice"
+  | "Fighting" | "Poison" | "Ground" | "Flying" | "Psychic" | "Bug"
+  | "Rock" | "Ghost" | "Dragon" | "Dark" | "Steel" | "Fairy";
+
+import { isChampionsItem, type ChampionsItem } from "./items.js";
 
 export interface StatTable {
   hp: number;
@@ -30,6 +36,8 @@ export interface Nature {
 
 export interface ChampionsPokemon {
   name: string;
+  ability?: "Technician";
+  item?: ChampionsItem | "";
   baseStats: StatTable;
   statPoints?: Partial<StatTable>;
   nature: Nature;
@@ -39,6 +47,7 @@ export interface Move {
   name: string;
   power: number;
   category: MoveCategory;
+  type?: PokemonType;
   hits?: number;
   spread?: boolean;
   fixedDamage?: number;
@@ -55,6 +64,8 @@ export interface DamageModifiers {
   stab?: number;
   effectiveness?: number;
   burned?: boolean;
+  helpingHand?: boolean;
+  terrain?: "Electric" | "Grassy" | "Misty" | "Psychic";
 }
 
 export interface DamageInput {
@@ -71,6 +82,7 @@ export interface DamageResult {
   defenderHp: number;
   minPercent: number;
   maxPercent: number;
+  notes: string[];
 }
 
 export interface IncomingAttack {
@@ -103,7 +115,7 @@ export const MOD = {
   HALF: 0x800,
   THREE_QUARTERS: 0xc00,
   ONE: 0x1000,
-  ONE_POINT_ONE: 0x119a,
+  ONE_POINT_ONE: 0x1199,
   ONE_POINT_TWO: 0x1333,
   ONE_POINT_THREE: 0x14cd,
   FOUR_THIRDS: 0x1555,
@@ -210,6 +222,90 @@ function multiplierMod(multiplier: number): number {
   return Math.round(multiplier * MOD.ONE);
 }
 
+const TYPE_BOOST_ITEMS: Partial<Record<ChampionsItem, PokemonType>> = {
+  "Black Glasses": "Dark", "Black Belt": "Fighting", Charcoal: "Fire",
+  "Dragon Fang": "Dragon", "Hard Stone": "Rock", Magnet: "Electric",
+  "Metal Coat": "Steel", "Miracle Seed": "Grass", "Mystic Water": "Water",
+  "Never-Melt Ice": "Ice", "Poison Barb": "Poison", "Sharp Beak": "Flying",
+  "Silver Powder": "Bug", "Soft Sand": "Ground", "Spell Tag": "Ghost",
+  "Twisted Spoon": "Psychic", "Silk Scarf": "Normal", "Fairy Feather": "Fairy",
+};
+const RESIST_BERRIES: Partial<Record<ChampionsItem, PokemonType>> = {
+  "Chilan Berry": "Normal", "Occa Berry": "Fire", "Passho Berry": "Water",
+  "Wacan Berry": "Electric", "Rindo Berry": "Grass", "Yache Berry": "Ice",
+  "Chople Berry": "Fighting", "Kebia Berry": "Poison", "Shuca Berry": "Ground",
+  "Coba Berry": "Flying", "Payapa Berry": "Psychic", "Tanga Berry": "Bug",
+  "Charti Berry": "Rock", "Kasib Berry": "Ghost", "Haban Berry": "Dragon",
+  "Colbur Berry": "Dark", "Babiri Berry": "Steel", "Roseli Berry": "Fairy",
+};
+const SEED_TERRAINS: Partial<Record<ChampionsItem, DamageModifiers["terrain"]>> = {
+  "Electric Seed": "Electric", "Grassy Seed": "Grassy",
+  "Misty Seed": "Misty", "Psychic Seed": "Psychic",
+};
+
+type ItemSide = "Attacker" | "Defender";
+
+function modeledItemEffect(
+  side: ItemSide,
+  pokemon: ChampionsPokemon,
+  item: ChampionsItem,
+  move: Move,
+  terrain: DamageModifiers["terrain"],
+): boolean {
+  if (side === "Attacker") {
+    return TYPE_BOOST_ITEMS[item] === move.type ||
+      item === "Expert Belt" || item === "Life Orb" ||
+      item === "Light Ball" && pokemon.name.toLowerCase() === "pikachu" ||
+      item === "Muscle Band" && move.category === "physical" ||
+      item === "Wise Glasses" && move.category === "special" ||
+      item === "Normal Gem" && move.type === "Normal";
+  }
+  return RESIST_BERRIES[item] === move.type ||
+    item === "Air Balloon" && move.type === "Ground" ||
+    SEED_TERRAINS[item] === terrain;
+}
+
+function itemNote(
+  side: ItemSide,
+  pokemon: ChampionsPokemon,
+  item: ChampionsItem,
+  move: Move,
+  terrain: DamageModifiers["terrain"],
+): string | undefined {
+  const typeDependent = TYPE_BOOST_ITEMS[item] || RESIST_BERRIES[item] ||
+    item === "Normal Gem" || item === "Air Balloon";
+  if (typeDependent && !move.type) return `${side} ${item} needs a move type to apply its effect.`;
+  if (item.endsWith("ite")) return `${side} ${item}: enter the transformed form's stats and ability manually.`;
+  if (item === "Life Orb") return "Life Orb recoil is not included in this damage roll.";
+  if (item === "Normal Gem" && move.type === "Normal")
+    return "Normal Gem is consumed after this hit; the two-hit solvers carry that state forward.";
+  if (item === "Air Balloon" && move.type === "Ground")
+    return "Air Balloon grants Ground immunity until popped; the two-hit solvers carry that state forward.";
+  if (RESIST_BERRIES[item] === move.type && move.type !== undefined)
+    return `${item} is consumed after this hit; the two-hit solvers carry that state forward.`;
+  if (!modeledItemEffect(side, pokemon, item, move, terrain))
+    return `${side} ${item}: its stateful or non-damage effect is not modeled in this roll.`;
+  return undefined;
+}
+
+function itemNotes(
+  attacker: ChampionsPokemon,
+  defender: ChampionsPokemon,
+  move: Move,
+  terrain: DamageModifiers["terrain"],
+): string[] {
+  const notes: string[] = [];
+  for (const { side, pokemon } of [
+    { side: "Attacker" as const, pokemon: attacker },
+    { side: "Defender" as const, pokemon: defender },
+  ]) {
+    if (!pokemon.item) continue;
+    const note = itemNote(side, pokemon, pokemon.item, move, terrain);
+    if (note) notes.push(note);
+  }
+  return [...new Set(notes)];
+}
+
 export function calculateDamage(input: DamageInput): DamageResult {
   const { attacker, defender, move } = input;
   const modifiers = input.modifiers ?? {};
@@ -234,6 +330,8 @@ export function calculateDamage(input: DamageInput): DamageResult {
   }
   if (![0.5, 1, 1.5].includes(modifiers.weather ?? 1))
     throw new RangeError("Invalid weather modifier");
+  if (move.type && !["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy"].includes(move.type))
+    throw new RangeError("Invalid move type");
   modifiedStat(1, modifiers.attackStage);
   modifiedStat(1, modifiers.defenseStage);
   for (const values of [
@@ -243,12 +341,23 @@ export function calculateDamage(input: DamageInput): DamageResult {
     modifiers.final,
   ])
     chainModifiers(values ?? []);
+  // Unsupported abilities fail closed; non-damage items are intentionally neutral in a damage-only calculation.
+  if ((attacker.item && !isChampionsItem(attacker.item)) ||
+      (defender.item && !isChampionsItem(defender.item)))
+    throw new RangeError("Unknown Champions item");
+  if ((attacker.ability && attacker.ability !== "Technician") || defender.ability)
+    throw new RangeError("Unsupported ability interaction");
+  if (modifiers.helpingHand !== undefined && typeof modifiers.helpingHand !== "boolean")
+    throw new RangeError("Invalid Helping Hand state");
   championsStats(attacker);
   const defenderHp = championsStats(defender).hp;
+  const effectiveness = defender.item === "Air Balloon" && move.type === "Ground" && move.name !== "Thousand Arrows"
+    ? 0 : modifiers.effectiveness ?? 1;
   const hits = move.hits ?? 1;
   if (!Number.isInteger(hits) || hits < 1 || hits > 10)
     throw new RangeError("move hits must be an integer from 1 to 10");
-  if (move.category === "status" || modifiers.effectiveness === 0) {
+  const notes = itemNotes(attacker, defender, move, modifiers.terrain);
+  if (move.category === "status" || effectiveness === 0) {
     return {
       rolls: [0],
       min: 0,
@@ -256,6 +365,7 @@ export function calculateDamage(input: DamageInput): DamageResult {
       defenderHp,
       minPercent: 0,
       maxPercent: 0,
+      notes,
     };
   }
   if (move.fixedDamage !== undefined) {
@@ -268,6 +378,7 @@ export function calculateDamage(input: DamageInput): DamageResult {
       defenderHp,
       minPercent: percent,
       maxPercent: percent,
+      notes,
     };
   }
   if (!Number.isFinite(move.power) || move.power < 1)
@@ -278,13 +389,32 @@ export function calculateDamage(input: DamageInput): DamageResult {
   const attackKey = move.category === "physical" ? "attack" : "specialAttack";
   const defenseKey =
     move.category === "physical" ? "defense" : "specialDefense";
-  const basePower = applyChained(move.power, modifiers.basePower ?? []);
+  const bpModifiers = [
+    ...(move.type && TYPE_BOOST_ITEMS[attacker.item as ChampionsItem] === move.type ? [MOD.ONE_POINT_TWO] : []),
+    ...(attacker.item === "Muscle Band" && move.category === "physical" ? [MOD.ONE_POINT_ONE] : []),
+    ...(attacker.item === "Wise Glasses" && move.category === "special" ? [MOD.ONE_POINT_ONE] : []),
+    ...(attacker.item === "Normal Gem" && move.type === "Normal" ? [MOD.ONE_POINT_THREE] : []),
+    ...modifiers.basePower ?? [],
+  ];
+  const technicianBoost = attacker.ability === "Technician" &&
+    applyChained(move.power, bpModifiers) <= 60;
+  const basePower = applyChained(move.power, [
+    ...bpModifiers,
+    ...(technicianBoost ? [MOD.ONE_POINT_FIVE] : []),
+    ...(modifiers.helpingHand ? [MOD.ONE_POINT_FIVE] : []),
+  ]);
+  const attackBoost = attacker.item === "Light Ball" && attacker.name.toLowerCase() === "pikachu";
+  const seedTerrain = defender.item ? SEED_TERRAINS[defender.item] : undefined;
+  const seedStat = defender.item === "Electric Seed" || defender.item === "Grassy Seed" ? "defense" : "specialDefense";
+  const seedBoost = seedTerrain !== undefined && seedTerrain === modifiers.terrain &&
+    defenseKey === seedStat;
+  const defenseStage = Math.min(6, (modifiers.defenseStage ?? 0) + Number(seedBoost));
   const attack = applyChained(
     modifiedStat(attackerStats[attackKey], modifiers.attackStage),
-    modifiers.attack ?? [],
+    [...(attackBoost ? [MOD.TWO] : []), ...modifiers.attack ?? []],
   );
   const defense = applyChained(
-    modifiedStat(defenderStats[defenseKey], modifiers.defenseStage),
+    modifiedStat(defenderStats[defenseKey], defenseStage),
     modifiers.defense ?? [],
   );
   let baseDamage = Math.floor(
@@ -295,16 +425,29 @@ export function calculateDamage(input: DamageInput): DamageResult {
   baseDamage = pokeRound(baseDamage * (modifiers.weather ?? 1));
 
   const stab = modifiers.stab ?? 1;
-  const effectiveness = modifiers.effectiveness ?? 1;
-  const finalModifier = chainModifiers(modifiers.final ?? []);
+  const expertBelt = attacker.item === "Expert Belt" && effectiveness > 1;
+  const lifeOrb = attacker.item === "Life Orb";
+  const berryType = defender.item && RESIST_BERRIES[defender.item as ChampionsItem];
+  const resistBerry = move.type !== undefined && berryType === move.type &&
+    (effectiveness > 1 || move.type === "Normal");
+  const finalModifiers = [
+    ...(expertBelt ? [MOD.ONE_POINT_TWO] : []),
+    ...(lifeOrb ? [0x14cc] : []),
+    ...modifiers.final ?? [],
+  ];
   const rolls = Array.from({ length: 16 }, (_, index) => {
-    let damage = Math.floor((baseDamage * (85 + index)) / 100);
-    damage = pokeRound((damage * multiplierMod(stab)) / MOD.ONE);
-    damage = Math.floor(damage * effectiveness);
-    if (modifiers.burned && move.category === "physical")
-      damage = Math.floor(damage / 2);
-    damage = pokeRound((damage * finalModifier) / MOD.ONE);
-    return Math.max(1, damage) * hits;
+    let total = 0;
+    for (let hit = 0; hit < hits; hit += 1) {
+      let damage = Math.floor((baseDamage * (85 + index)) / 100);
+      damage = pokeRound((damage * multiplierMod(stab)) / MOD.ONE);
+      damage = Math.floor(damage * effectiveness);
+      if (modifiers.burned && move.category === "physical")
+        damage = Math.floor(damage / 2);
+      const hitModifiers = hit === 0 && resistBerry ? [...finalModifiers, MOD.HALF] : finalModifiers;
+      damage = pokeRound((damage * chainModifiers(hitModifiers)) / MOD.ONE);
+      total += Math.max(1, damage);
+    }
+    return total;
   });
   const min = rolls[0] as number;
   const max = rolls.at(-1) as number;
@@ -315,7 +458,39 @@ export function calculateDamage(input: DamageInput): DamageResult {
     defenderHp,
     minPercent: (min * 100) / defenderHp,
     maxPercent: (max * 100) / defenderHp,
+    notes,
   };
+}
+
+function advanceConsumedItems<T extends IncomingAttack | OutgoingAttack>(first: T, next: T): T {
+  const firstAttacker = "attacker" in first ? first.attacker : undefined;
+  const firstDefender = "defender" in first ? first.defender : undefined;
+  const nextAttacker = "attacker" in next ? next.attacker : undefined;
+  const nextDefender = "defender" in next ? next.defender : undefined;
+  const gemUsed = firstAttacker?.item === "Normal Gem" && first.move.type === "Normal" && first.move.category !== "status";
+  const berryType = firstDefender?.item && RESIST_BERRIES[firstDefender.item as ChampionsItem];
+  const berryUsed = first.move.type !== undefined && berryType === first.move.type &&
+    ((first.modifiers?.effectiveness ?? 1) > 1 || first.move.type === "Normal");
+  const seedType = firstDefender?.item ? SEED_TERRAINS[firstDefender.item] : undefined;
+  const seedUsed = seedType !== undefined && seedType === first.modifiers?.terrain;
+  const damagingMove = first.move.category !== "status" &&
+    (first.move.fixedDamage !== undefined ? first.move.fixedDamage > 0 : first.move.power > 0) &&
+    (first.modifiers?.effectiveness ?? 1) > 0;
+  const balloonPopped = firstDefender?.item === "Air Balloon" && damagingMove &&
+    (first.move.type !== "Ground" || first.move.name === "Thousand Arrows");
+  const updatedAttacker = gemUsed && nextAttacker?.name === firstAttacker?.name && nextAttacker.item === "Normal Gem"
+    ? { ...nextAttacker, item: undefined } : nextAttacker;
+  const updatedDefender = (berryUsed || seedUsed || balloonPopped) && nextDefender
+    ? { ...nextDefender, item: undefined } : nextDefender;
+  const updatedModifiers = seedUsed
+    ? { ...next.modifiers, defenseStage: Math.min(6, (next.modifiers?.defenseStage ?? 0) + 1) }
+    : next.modifiers;
+  return {
+    ...next,
+    ...(updatedAttacker ? { attacker: updatedAttacker } : {}),
+    ...(updatedDefender ? { defender: updatedDefender } : {}),
+    ...(updatedModifiers ? { modifiers: updatedModifiers } : {}),
+  } as T;
 }
 
 function pointTotal(points: Partial<StatTable>): number {
@@ -415,11 +590,14 @@ export function solveDefensiveSpread(input: {
       options: [],
       reason: "Locked stat points are illegal",
     };
-  for (const attack of input.attacks)
-    calculateDamage({
-      ...attack,
-      defender: buildPokemon(input.defender, NEUTRAL_NATURE, locked, {}),
-    });
+  const firstAttack = { ...input.attacks[0], defender: input.defender };
+  const secondAttack = advanceConsumedItems(
+    firstAttack,
+    { ...input.attacks[1], defender: input.defender },
+  );
+  const attacks = [firstAttack, secondAttack] as const;
+  for (const attack of attacks)
+    calculateDamage({ ...attack, defender: buildPokemon(attack.defender, NEUTRAL_NATURE, locked, {}) });
   const optimizedStats = (["hp", "defense", "specialDefense"] as const).filter(
     (stat) => locked[stat] === undefined,
   );
@@ -435,13 +613,13 @@ export function solveDefensiveSpread(input: {
       const cached = cache.get(value);
       if (cached !== undefined) return cached;
       const category = stat === "defense" ? "physical" : "special";
-      const defender = buildPokemon(input.defender, nature, locked, {
-        [stat]: value,
-      });
-      const damage = input.attacks
+      const damage = attacks
         .filter((attack) => attack.move.category === category)
         .reduce(
-          (sum, attack) => sum + calculateDamage({ ...attack, defender }).max,
+          (sum, attack) => sum + calculateDamage({
+            ...attack,
+            defender: buildPokemon(attack.defender, nature, locked, { [stat]: value }),
+          }).max,
           0,
         );
       cache.set(value, damage);
@@ -510,11 +688,12 @@ export function solveOffensiveSpread(input: {
       "Sequential attacks must target the same defender; use stages for changes between steps",
     );
   }
-  for (const attack of input.attacks)
-    calculateDamage({
-      ...attack,
-      attacker: buildPokemon(input.attacker, NEUTRAL_NATURE, locked, {}),
-    });
+  const attacks = [input.attacks[0], advanceConsumedItems(input.attacks[0], input.attacks[1])] as const;
+  const normalGemUsed = input.attacker.item === "Normal Gem" &&
+    attacks[0].move.type === "Normal" && attacks[0].move.category !== "status";
+  const baseline = buildPokemon(input.attacker, NEUTRAL_NATURE, locked, {});
+  for (const [index, attack] of attacks.entries())
+    calculateDamage({ ...attack, attacker: index === 1 && normalGemUsed ? { ...baseline, item: undefined } : baseline });
   const optimizedStats = (["attack", "specialAttack"] as const).filter(
     (stat) => locked[stat] === undefined,
   );
@@ -533,12 +712,13 @@ export function solveOffensiveSpread(input: {
       const attacker = buildPokemon(input.attacker, nature, locked, {
         [stat]: value,
       });
-      const damage = input.attacks
-        .filter((attack) => attack.move.category === category)
-        .reduce(
-          (sum, attack) => sum + calculateDamage({ ...attack, attacker }).min,
-          0,
-        );
+      const damage = attacks.reduce((sum, attack, index) => {
+        if (attack.move.category !== category) return sum;
+        const stepAttacker = index === 1 && normalGemUsed
+          ? { ...attacker, item: undefined }
+          : attacker;
+        return sum + calculateDamage({ ...attack, attacker: stepAttacker }).min;
+      }, 0);
       cache.set(value, damage);
       return damage;
     };

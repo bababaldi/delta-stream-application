@@ -129,6 +129,33 @@ body {
   transform: translateY(0);
 }
 
+.pwa-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem max(1rem, env(safe-area-inset-right)) 0.75rem
+    max(1rem, env(safe-area-inset-left));
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-size: 0.875rem;
+}
+
+.pwa-status span {
+  max-width: 70ch;
+}
+
+.pwa-status button {
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--outline);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
 .app-shell {
   min-height: 100vh;
   min-height: 100dvh;

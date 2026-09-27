@@ -1,6 +1,2942 @@
 {
-  "generatedAt": "1970-01-01T00:00:00.000Z",
-  "activeRegulation": "champions-regulation-mb",
-  "tournaments": [],
+  "generatedAt": "2026-09-27T16:15:18.594Z",
+  "activeRegulation": "champions-regulation-mc",
+  "tournaments": [
+    {
+      "event": {
+        "id": "vr-sep26",
+        "name": "VR September Challenge #1",
+        "date": "2026-09-13",
+        "regulation": "champions-regulation-mc",
+        "tier": "online",
+        "region": "OTHER",
+        "source": "victoryroad",
+        "sourceUrl": "https://victoryroad.pro/vr-sep26/",
+        "recordRounds": 11
+      },
+      "teams": [
+        {
+          "eventId": "vr-sep26",
+          "player": "Michael Kelsch",
+          "placement": 1,
+          "record": {
+            "wins": 10,
+            "losses": 1
+          },
+          "sourceUrl": "https://www.vrpastes.com/yQEqG2ZC",
+          "roster": [
+            {
+              "pokemon": "Raichu Mega Y"
+            },
+            {
+              "pokemon": "Staraptor Mega"
+            },
+            {
+              "pokemon": "Arcanine Hisui"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Sylveon"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        },
+        {
+          "eventId": "vr-sep26",
+          "player": "Marco Silva",
+          "placement": 8,
+          "record": {
+            "wins": 10,
+            "losses": 1
+          },
+          "sourceUrl": "https://www.vrpastes.com/TnW54AiH",
+          "roster": [
+            {
+              "pokemon": "Gengar Mega"
+            },
+            {
+              "pokemon": "Froslass Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Archaludon"
+            },
+            {
+              "pokemon": "Politoed"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        },
+        {
+          "eventId": "vr-sep26",
+          "player": "Louis Markl",
+          "placement": 2,
+          "record": {
+            "wins": 9,
+            "losses": 2
+          },
+          "sourceUrl": "https://www.vrpastes.com/QjCtWRZD",
+          "roster": [
+            {
+              "pokemon": "Salamence Mega"
+            },
+            {
+              "pokemon": "Floette Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "vr-sep26-2",
+        "name": "VR September Challenge #2",
+        "date": "2026-09-20",
+        "regulation": "champions-regulation-mc",
+        "tier": "online",
+        "region": "OTHER",
+        "source": "victoryroad",
+        "sourceUrl": "https://victoryroad.pro/vr-sep26-2/",
+        "recordRounds": 10
+      },
+      "teams": [
+        {
+          "eventId": "vr-sep26-2",
+          "player": "Théotime Massaut",
+          "placement": 1,
+          "record": {
+            "wins": 10,
+            "losses": 0
+          },
+          "sourceUrl": "https://vrpastes.com/kIEGcPwD",
+          "roster": [
+            {
+              "pokemon": "Dragonite Mega"
+            },
+            {
+              "pokemon": "Floette Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        },
+        {
+          "eventId": "vr-sep26-2",
+          "player": "Louis Markl",
+          "placement": 2,
+          "record": {
+            "wins": 9,
+            "losses": 1
+          },
+          "sourceUrl": "https://www.vrpastes.com/gujmAprA",
+          "roster": [
+            {
+              "pokemon": "Salamence Mega"
+            },
+            {
+              "pokemon": "Floette Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        },
+        {
+          "eventId": "vr-sep26-2",
+          "player": "Yvar Vlieger",
+          "placement": 4,
+          "record": {
+            "wins": 9,
+            "losses": 1
+          },
+          "sourceUrl": "https://www.vrpastes.com/k0ne6pUd",
+          "roster": [
+            {
+              "pokemon": "Charizard Mega Y"
+            },
+            {
+              "pokemon": "Meowstic F Mega"
+            },
+            {
+              "pokemon": "Kommo O"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Indeedee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "baltimore-2027",
+        "name": "2027 Baltimore Regional Masters",
+        "date": "2026-09-20",
+        "region": "NA",
+        "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+        "recordRounds": 17,
+        "tier": "regional",
+        "regulation": "champions-regulation-mc",
+        "source": "pokedata"
+      },
+      "teams": [
+        {
+          "eventId": "baltimore-2027",
+          "player": "Joseph Ugarte [US]",
+          "placement": 1,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "record": {
+            "wins": 15,
+            "losses": 2
+          },
+          "roster": [
+            {
+              "pokemon": "Excadrill",
+              "ability": "Sand Rush",
+              "item": "Focus Sash",
+              "moves": [
+                "Iron Head",
+                "High Horsepower",
+                "Rock Slide",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Salamence",
+              "ability": "Intimidate",
+              "item": "Salamencite",
+              "moves": [
+                "Hyper Voice",
+                "Draco Meteor",
+                "Flamethrower",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Tyranitar",
+              "ability": "Sand Stream",
+              "item": "Tyranitarite",
+              "moves": [
+                "Rock Slide",
+                "Knock Off",
+                "Low Kick",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Indeedee [Male]",
+              "ability": "Psychic Surge",
+              "item": "Choice Scarf",
+              "moves": [
+                "Expanding Force",
+                "Mystical Fire",
+                "Trick",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Corviknight",
+              "ability": "Mirror Armor",
+              "item": "Psychic Seed",
+              "moves": [
+                "Brave Bird",
+                "Power Trip",
+                "Bulk Up",
+                "Roost"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Dire Claw",
+                "Close Combat",
+                "Coaching",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Aditya Subramanian [US]",
+          "placement": 2,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "record": {
+            "wins": 15,
+            "losses": 2
+          },
+          "roster": [
+            {
+              "pokemon": "Golisopod",
+              "ability": "Emergency Exit",
+              "item": "Golisopite",
+              "moves": [
+                "Leech Life",
+                "Drill Run",
+                "Iron Head",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Charizard",
+              "ability": "Blaze",
+              "item": "Charizardite Y",
+              "moves": [
+                "Heat Wave",
+                "Hurricane",
+                "Weather Ball",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Politoed",
+              "ability": "Drizzle",
+              "item": "Mystic Water",
+              "moves": [
+                "Muddy Water",
+                "Ice Beam",
+                "Weather Ball",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Archaludon",
+              "ability": "Stamina",
+              "item": "Leftovers",
+              "moves": [
+                "Dragon Pulse",
+                "Snarl",
+                "Electro Shot",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Grimmsnarl",
+              "ability": "Prankster",
+              "item": "Light Clay",
+              "moves": [
+                "Light Screen",
+                "Reflect",
+                "Parting Shot",
+                "Spirit Break"
+              ]
+            },
+            {
+              "pokemon": "Farigiraf",
+              "ability": "Armor Tail",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Psychic",
+                "Trick Room",
+                "Protect",
+                "Grass Knot"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Brady Smith [US]",
+          "placement": 4,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Archaludon",
+              "ability": "Stamina",
+              "item": "Leftovers",
+              "moves": [
+                "Dragon Pulse",
+                "Flash Cannon",
+                "Electro Shot",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Passho Berry",
+              "moves": [
+                "Fake Out",
+                "Parting Shot",
+                "Darkest Lariat",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Politoed",
+              "ability": "Drizzle",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Perish Song",
+                "Weather Ball",
+                "Encore",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Vivillon",
+              "ability": "Compound Eyes",
+              "item": "Focus Sash",
+              "moves": [
+                "Sleep Powder",
+                "Rage Powder",
+                "Hurricane",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Eject Button",
+              "moves": [
+                "Fake Out",
+                "Grassy Glide",
+                "U-turn",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Gengar",
+              "ability": "Cursed Body",
+              "item": "Gengarite",
+              "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Perish Song",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Blaik Thompson [US]",
+          "placement": 4,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Salamence",
+              "ability": "Intimidate",
+              "item": "Salamencite",
+              "moves": [
+                "Heat Wave",
+                "Draco Meteor",
+                "Hyper Voice",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Arcanine [Hisuian Form]",
+              "ability": "Rock Head",
+              "item": "Focus Sash",
+              "moves": [
+                "Flare Blitz",
+                "Head Smash",
+                "Extreme Speed",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Indeedee [Male]",
+              "ability": "Psychic Surge",
+              "item": "Choice Scarf",
+              "moves": [
+                "Expanding Force",
+                "Trick",
+                "Trick Room",
+                "Imprison"
+              ]
+            },
+            {
+              "pokemon": "Milotic",
+              "ability": "Competitive",
+              "item": "Leftovers",
+              "moves": [
+                "Scald",
+                "Ice Beam",
+                "Icy Wind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Metagross",
+              "ability": "Clear Body",
+              "item": "Metagrossite",
+              "moves": [
+                "Steel Roller",
+                "Psychic Fangs",
+                "Body Press",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "Psychic Seed",
+              "moves": [
+                "Throat Chop",
+                "Close Combat",
+                "Rock Slide",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Lorenzo Arce [US]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Milotic",
+              "ability": "Competitive",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Coil",
+                "Hypnosis",
+                "Ice Beam",
+                "Muddy Water"
+              ]
+            },
+            {
+              "pokemon": "Raichu",
+              "ability": "Lightning Rod",
+              "item": "Raichunite Y",
+              "moves": [
+                "Zap Cannon",
+                "Protect",
+                "Fake Out",
+                "Focus Blast"
+              ]
+            },
+            {
+              "pokemon": "Ceruledge",
+              "ability": "Flash Fire",
+              "item": "Grassy Seed",
+              "moves": [
+                "Protect",
+                "Bitter Blade",
+                "Swords Dance",
+                "Shadow Sneak"
+              ]
+            },
+            {
+              "pokemon": "Staraptor",
+              "ability": "Intimidate",
+              "item": "Staraptite",
+              "moves": [
+                "Brave Bird",
+                "Tailwind",
+                "Protect",
+                "Close Combat"
+              ]
+            },
+            {
+              "pokemon": "Gholdengo",
+              "ability": "Good as Gold",
+              "item": "Life Orb",
+              "moves": [
+                "Shadow Ball",
+                "Nasty Plot",
+                "Make It Rain",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "Fake Out",
+                "High Horsepower",
+                "Grassy Glide"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Esa Ishaque [CA]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Froslass",
+              "ability": "Cursed Body",
+              "item": "Froslassite",
+              "moves": [
+                "Blizzard",
+                "Shadow Ball",
+                "Aurora Veil",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Raichu",
+              "ability": "Lightning Rod",
+              "item": "Raichunite Y",
+              "moves": [
+                "Zap Cannon",
+                "Focus Blast",
+                "Encore",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Fake Out",
+                "Grassy Glide",
+                "Wood Hammer",
+                "High Horsepower"
+              ]
+            },
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Life Orb",
+              "moves": [
+                "Kowtow Cleave",
+                "Sucker Punch",
+                "Swords Dance",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Close Combat",
+                "Dire Claw",
+                "Fake Out",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Arcanine [Hisuian Form]",
+              "ability": "Rock Head",
+              "item": "Focus Sash",
+              "moves": [
+                "Flare Blitz",
+                "Head Smash",
+                "Extreme Speed",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Conner Pietrusinski [US]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Arcanine [Hisuian Form]",
+              "ability": "Rock Head",
+              "item": "Focus Sash",
+              "moves": [
+                "Flare Blitz",
+                "Head Smash",
+                "Extreme Speed",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "Grassy Glide",
+                "High Horsepower",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Gholdengo",
+              "ability": "Good as Gold",
+              "item": "Life Orb",
+              "moves": [
+                "Make It Rain",
+                "Shadow Ball",
+                "Nasty Plot",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Staraptor",
+              "ability": "Intimidate",
+              "item": "Staraptite",
+              "moves": [
+                "Close Combat",
+                "Protect",
+                "Brave Bird",
+                "Tailwind"
+              ]
+            },
+            {
+              "pokemon": "Raichu",
+              "ability": "Lightning Rod",
+              "item": "Raichunite Y",
+              "moves": [
+                "Zap Cannon",
+                "Focus Blast",
+                "Fake Out",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sylveon",
+              "ability": "Pixilate",
+              "item": "Fairy Feather",
+              "moves": [
+                "Hyper Beam",
+                "Hyper Voice",
+                "Quick Attack",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "baltimore-2027",
+          "player": "Cole Basham [US]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Dazzling Gleam",
+                "Draining Kiss",
+                "Calm Mind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Life Orb",
+              "moves": [
+                "Kowtow Cleave",
+                "Sucker Punch",
+                "Swords Dance",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "Grassy Glide",
+                "Fake Out",
+                "High Horsepower"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Poison Touch",
+              "item": "Focus Sash",
+              "moves": [
+                "Poison Jab",
+                "Close Combat",
+                "Fake Out",
+                "Quick Guard"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Passho Berry",
+              "moves": [
+                "Flare Blitz",
+                "Throat Chop",
+                "Fake Out",
+                "Parting Shot"
+              ]
+            },
+            {
+              "pokemon": "Delphox",
+              "ability": "Blaze",
+              "item": "Delphoxite",
+              "moves": [
+                "Heat Wave",
+                "Psychic",
+                "Nasty Plot",
+                "Protect"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "brisbane-2027",
+        "name": "2027 Brisbane Regional Masters",
+        "date": "2026-09-27",
+        "region": "OCE",
+        "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+        "recordRounds": 15,
+        "tier": "regional",
+        "regulation": "champions-regulation-mc",
+        "source": "pokedata"
+      },
+      "teams": [
+        {
+          "eventId": "brisbane-2027",
+          "player": "Kiran Singh [AU]",
+          "placement": 1,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "record": {
+            "wins": 14,
+            "losses": 1
+          },
+          "roster": [
+            {
+              "pokemon": "Archaludon",
+              "ability": "Stamina",
+              "item": "Leftovers",
+              "moves": [
+                "Electro Shot",
+                "Flash Cannon",
+                "Dragon Pulse",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Pelipper",
+              "ability": "Drizzle",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Hurricane",
+                "Weather Ball",
+                "Tailwind",
+                "Wide Guard"
+              ]
+            },
+            {
+              "pokemon": "Grimmsnarl",
+              "ability": "Prankster",
+              "item": "Light Clay",
+              "moves": [
+                "Spirit Break",
+                "Light Screen",
+                "Reflect",
+                "Parting Shot"
+              ]
+            },
+            {
+              "pokemon": "Charizard",
+              "ability": "Blaze",
+              "item": "Charizardite Y",
+              "moves": [
+                "Heat Wave",
+                "Weather Ball",
+                "Hurricane",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Garchomp",
+              "ability": "Rough Skin",
+              "item": "Garchompite Z",
+              "moves": [
+                "Draco Meteor",
+                "Earth Power",
+                "Power Gem",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Venusaur",
+              "ability": "Chlorophyll",
+              "item": "Focus Sash",
+              "moves": [
+                "Leaf Storm",
+                "Sludge Bomb",
+                "Sleep Powder",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Haruki Sato [JP]",
+          "placement": 2,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "record": {
+            "wins": 12,
+            "losses": 3
+          },
+          "roster": [
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Moonblast",
+                "Protect",
+                "Calm Mind",
+                "Dazzling Gleam"
+              ]
+            },
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Chople Berry",
+              "moves": [
+                "Sucker Punch",
+                "Protect",
+                "Kowtow Cleave",
+                "Iron Head"
+              ]
+            },
+            {
+              "pokemon": "Basculegion [Male]",
+              "ability": "Adaptability",
+              "item": "Colbur Berry",
+              "moves": [
+                "Last Respects",
+                "Aqua Jet",
+                "Protect",
+                "Wave Crash"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Grassy Glide",
+                "Fake Out",
+                "Wood Hammer",
+                "High Horsepower"
+              ]
+            },
+            {
+              "pokemon": "Salamence",
+              "ability": "Intimidate",
+              "item": "Salamencite",
+              "moves": [
+                "Flamethrower",
+                "Protect",
+                "Tailwind",
+                "Hyper Voice"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Poison Touch",
+              "item": "Focus Sash",
+              "moves": [
+                "Protect",
+                "Dire Claw",
+                "Fake Out",
+                "Close Combat"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Jude Gerard Lee Wei Cong [SG]",
+          "placement": 4,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Garchomp",
+              "ability": "Rough Skin",
+              "item": "Garchompite",
+              "moves": [
+                "Stomping Tantrum",
+                "Scale Shot",
+                "Protect",
+                "Rock Slide"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Poison Touch",
+              "item": "Focus Sash",
+              "moves": [
+                "Dire Claw",
+                "Fake Out",
+                "Close Combat",
+                "Coaching"
+              ]
+            },
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Dazzling Gleam",
+                "Draining Kiss",
+                "Calm Mind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Flare Blitz",
+                "Fake Out",
+                "Parting Shot",
+                "Helping Hand"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "High Horsepower",
+                "Fake Out",
+                "Grassy Glide"
+              ]
+            },
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Life Orb",
+              "moves": [
+                "Kowtow Cleave",
+                "Swords Dance",
+                "Sucker Punch",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Joshua Sutherland-Smith [AU]",
+          "placement": 4,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Dire Claw",
+                "Close Combat",
+                "Fake Out",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Basculegion [Male]",
+              "ability": "Adaptability",
+              "item": "Choice Scarf",
+              "moves": [
+                "Wave Crash",
+                "Last Respects",
+                "Flip Turn",
+                "Aqua Jet"
+              ]
+            },
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Moonblast",
+                "Dazzling Gleam",
+                "Calm Mind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Archaludon",
+              "ability": "Stamina",
+              "item": "Leftovers",
+              "moves": [
+                "Flash Cannon",
+                "Dragon Pulse",
+                "Electro Shot",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Pelipper",
+              "ability": "Drizzle",
+              "item": "Focus Sash",
+              "moves": [
+                "Weather Ball",
+                "Hurricane",
+                "Tailwind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Flare Blitz",
+                "Snarl",
+                "Fake Out",
+                "Parting Shot"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Matthew Henry [AU]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "Grassy Glide",
+                "High Horsepower",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Gengar",
+              "ability": "Cursed Body",
+              "item": "Gengarite",
+              "moves": [
+                "Protect",
+                "Sludge Bomb",
+                "Substitute",
+                "Shadow Ball"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Flare Blitz",
+                "Darkest Lariat",
+                "Parting Shot",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Life Orb",
+              "moves": [
+                "Kowtow Cleave",
+                "Sucker Punch",
+                "Swords Dance",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "Grassy Seed",
+              "moves": [
+                "Dire Claw",
+                "Rock Slide",
+                "Protect",
+                "Close Combat"
+              ]
+            },
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Calm Mind",
+                "Draining Kiss",
+                "Dazzling Gleam",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Daniel walker [AU]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Salamence",
+              "ability": "Intimidate",
+              "item": "Salamencite",
+              "moves": [
+                "Double-Edge",
+                "Tailwind",
+                "Roost",
+                "Rain Dance"
+              ]
+            },
+            {
+              "pokemon": "Armarouge",
+              "ability": "Weak Armor",
+              "item": "Focus Sash",
+              "moves": [
+                "Armor Cannon",
+                "Expanding Force",
+                "Wide Guard",
+                "Sunny Day"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Protect",
+                "Swords Dance",
+                "Close Combat",
+                "Throat Chop"
+              ]
+            },
+            {
+              "pokemon": "Indeedee [Female]",
+              "ability": "Psychic Surge",
+              "item": "Psychic Seed",
+              "moves": [
+                "Psyshock",
+                "Follow Me",
+                "Baton Pass",
+                "Trick Room"
+              ]
+            },
+            {
+              "pokemon": "Politoed",
+              "ability": "Drizzle",
+              "item": "Choice Scarf",
+              "moves": [
+                "Weather Ball",
+                "Muddy Water",
+                "Ice Beam",
+                "Icy Wind"
+              ]
+            },
+            {
+              "pokemon": "Archaludon",
+              "ability": "Stamina",
+              "item": "Leftovers",
+              "moves": [
+                "Protect",
+                "Electro Shot",
+                "Dragon Pulse",
+                "Snarl"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Keigo Tanizawa [JP]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Focus Sash",
+              "moves": [
+                "Sucker Punch",
+                "Iron Head",
+                "Kowtow Cleave",
+                "Low Kick"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Close Combat",
+                "Dire Claw",
+                "Rock Slide",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Garchomp",
+              "ability": "Rough Skin",
+              "item": "Garchompite Z",
+              "moves": [
+                "Draco Meteor",
+                "Earth Power",
+                "Power Gem",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Moonblast",
+                "Dazzling Gleam",
+                "Calm Mind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Grassy Glide",
+                "High Horsepower",
+                "Wood Hammer",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Volcarona",
+              "ability": "Flame Body",
+              "item": "Rocky Helmet",
+              "moves": [
+                "Overheat",
+                "Rage Powder",
+                "Tailwind",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "brisbane-2027",
+          "player": "Daniel Quek [AU]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Archaludon",
+              "ability": "Stamina",
+              "item": "Leftovers",
+              "moves": [
+                "Electro Shot",
+                "Flash Cannon",
+                "Dragon Pulse",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Grimmsnarl",
+              "ability": "Prankster",
+              "item": "Light Clay",
+              "moves": [
+                "Spirit Break",
+                "Parting Shot",
+                "Reflect",
+                "Light Screen"
+              ]
+            },
+            {
+              "pokemon": "Venusaur",
+              "ability": "Chlorophyll",
+              "item": "Focus Sash",
+              "moves": [
+                "Sleep Powder",
+                "Sludge Bomb",
+                "Leaf Storm",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Pelipper",
+              "ability": "Drizzle",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Tailwind",
+                "Weather Ball",
+                "Hurricane",
+                "Wide Guard"
+              ]
+            },
+            {
+              "pokemon": "Swampert",
+              "ability": "Torrent",
+              "item": "Swampertite",
+              "moves": [
+                "Protect",
+                "Ice Punch",
+                "Wave Crash",
+                "Earthquake"
+              ]
+            },
+            {
+              "pokemon": "Charizard",
+              "ability": "Blaze",
+              "item": "Charizardite Y",
+              "moves": [
+                "Heat Wave",
+                "Weather Ball",
+                "Hurricane",
+                "Protect"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "frankfurt-2027",
+        "name": "2027 Frankfurt Regional Masters",
+        "date": "2026-09-27",
+        "region": "EU",
+        "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+        "recordRounds": 17,
+        "tier": "regional",
+        "regulation": "champions-regulation-mc",
+        "source": "pokedata"
+      },
+      "teams": [
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Eric Rios [ES]",
+          "placement": 1,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "record": {
+            "wins": 17,
+            "losses": 0
+          },
+          "roster": [
+            {
+              "pokemon": "Gholdengo",
+              "ability": "Good as Gold",
+              "item": "Life Orb",
+              "moves": [
+                "Protect",
+                "Shadow Ball",
+                "Nasty Plot",
+                "Make It Rain"
+              ]
+            },
+            {
+              "pokemon": "Volcarona",
+              "ability": "Flame Body",
+              "item": "Rocky Helmet",
+              "moves": [
+                "Overheat",
+                "Struggle Bug",
+                "Rage Powder",
+                "Tailwind"
+              ]
+            },
+            {
+              "pokemon": "Garchomp",
+              "ability": "Rough Skin",
+              "item": "Garchompite Z",
+              "moves": [
+                "Dragon Pulse",
+                "Earth Power",
+                "Power Gem",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Parting Shot",
+                "Fake Out",
+                "Flare Blitz",
+                "Darkest Lariat"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Grassy Glide",
+                "Wood Hammer",
+                "Fake Out",
+                "U-turn"
+              ]
+            },
+            {
+              "pokemon": "Raichu",
+              "ability": "Lightning Rod",
+              "item": "Raichunite Y",
+              "moves": [
+                "Zap Cannon",
+                "Focus Blast",
+                "Fake Out",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Sebastian Liu Li [NL]",
+          "placement": 2,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "record": {
+            "wins": 14,
+            "losses": 3
+          },
+          "roster": [
+            {
+              "pokemon": "Farigiraf",
+              "ability": "Armor Tail",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Psychic",
+                "Trick Room",
+                "Helping Hand",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Garchomp",
+              "ability": "Rough Skin",
+              "item": "Garchompite Z",
+              "moves": [
+                "Draco Meteor",
+                "Flamethrower",
+                "Power Gem",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Close Combat",
+                "Gunk Shot",
+                "Fake Out",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Torkoal",
+              "ability": "Drought",
+              "item": "Charcoal",
+              "moves": [
+                "Eruption",
+                "Earth Power",
+                "Weather Ball",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sylveon",
+              "ability": "Pixilate",
+              "item": "Fairy Feather",
+              "moves": [
+                "Hyper Voice",
+                "Hyper Beam",
+                "Yawn",
+                "Detect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Chople Berry",
+              "moves": [
+                "Flare Blitz",
+                "Darkest Lariat",
+                "Parting Shot",
+                "Fake Out"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Yvar Vlieger [NL]",
+          "placement": 4,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Charizard",
+              "ability": "Blaze",
+              "item": "Charizardite Y",
+              "moves": [
+                "Heat Wave",
+                "Weather Ball",
+                "Ancient Power",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Kingambit",
+              "ability": "Defiant",
+              "item": "Chople Berry",
+              "moves": [
+                "Kowtow Cleave",
+                "Sucker Punch",
+                "Iron Head",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Meowstic [Female]",
+              "ability": "Competitive",
+              "item": "Meowsticite",
+              "moves": [
+                "Expanding Force",
+                "Thunderbolt",
+                "Fake Out",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "Psychic Seed",
+              "moves": [
+                "Close Combat",
+                "Dire Claw",
+                "Rock Slide",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Indeedee [Male]",
+              "ability": "Psychic Surge",
+              "item": "Focus Sash",
+              "moves": [
+                "Expanding Force",
+                "Energy Ball",
+                "Imprison",
+                "Trick Room"
+              ]
+            },
+            {
+              "pokemon": "Kommo-o",
+              "ability": "Soundproof",
+              "item": "Leftovers",
+              "moves": [
+                "Clanging Scales",
+                "Aura Sphere",
+                "Clangorous Soul",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Eden Batchelor [UK]",
+          "placement": 4,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Gholdengo",
+              "ability": "Good as Gold",
+              "item": "Life Orb",
+              "moves": [
+                "Make It Rain",
+                "Shadow Ball",
+                "Nasty Plot",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Dragonite",
+              "ability": "Inner Focus",
+              "item": "Dragoninite",
+              "moves": [
+                "Dragon Pulse",
+                "Heat Wave",
+                "Tailwind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Flare Blitz",
+                "Throat Chop",
+                "Parting Shot",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Grassy Glide",
+                "Wood Hammer",
+                "High Horsepower",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Close Combat",
+                "Dire Claw",
+                "Rock Tomb",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Draining Kiss",
+                "Dazzling Gleam",
+                "Calm Mind",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Anthony Liuzzo [FR]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Vivillon",
+              "ability": "Compound Eyes",
+              "item": "Focus Sash",
+              "moves": [
+                "Sleep Powder",
+                "Rage Powder",
+                "Hurricane",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Politoed",
+              "ability": "Drizzle",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Weather Ball",
+                "Perish Song",
+                "Encore",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Gengar",
+              "ability": "Cursed Body",
+              "item": "Gengarite",
+              "moves": [
+                "Shadow Ball",
+                "Sludge Bomb",
+                "Perish Song",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Passho Berry",
+              "moves": [
+                "Protect",
+                "Fake Out",
+                "Flare Blitz",
+                "Parting Shot"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Occa Berry",
+              "moves": [
+                "Fake Out",
+                "Grassy Glide",
+                "U-turn",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Kommo-o",
+              "ability": "Soundproof",
+              "item": "Leftovers",
+              "moves": [
+                "Clanging Scales",
+                "Clangorous Soul",
+                "Aura Sphere",
+                "Protect"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Juan Manuel Odriozola [ES]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Toxapex",
+              "ability": "Regenerator",
+              "item": "Leftovers",
+              "moves": [
+                "Baneful Bunker",
+                "Wide Guard",
+                "Toxic",
+                "Infestation"
+              ]
+            },
+            {
+              "pokemon": "Sylveon",
+              "ability": "Pixilate",
+              "item": "Fairy Feather",
+              "moves": [
+                "Detect",
+                "Yawn",
+                "Hyper Voice",
+                "Quick Attack"
+              ]
+            },
+            {
+              "pokemon": "Garchomp",
+              "ability": "Rough Skin",
+              "item": "Choice Scarf",
+              "moves": [
+                "Dragon Claw",
+                "Earthquake",
+                "Stomping Tantrum",
+                "Rock Slide"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Fake Out",
+                "Parting Shot",
+                "Flare Blitz",
+                "Throat Chop"
+              ]
+            },
+            {
+              "pokemon": "Venusaur",
+              "ability": "Chlorophyll",
+              "item": "Life Orb",
+              "moves": [
+                "Protect",
+                "Leaf Storm",
+                "Sludge Bomb",
+                "Earth Power"
+              ]
+            },
+            {
+              "pokemon": "Charizard",
+              "ability": "Blaze",
+              "item": "Charizardite Y",
+              "moves": [
+                "Protect",
+                "Heat Wave",
+                "Weather Ball",
+                "Ancient Power"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Valentijn Visser [NL]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Froslass",
+              "ability": "Cursed Body",
+              "item": "Froslassite",
+              "moves": [
+                "Protect",
+                "Blizzard",
+                "Shadow Ball",
+                "Aurora Veil"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Flare Blitz",
+                "Darkest Lariat",
+                "Fake Out",
+                "Parting Shot"
+              ]
+            },
+            {
+              "pokemon": "Basculegion [Male]",
+              "ability": "Adaptability",
+              "item": "Choice Scarf",
+              "moves": [
+                "Wave Crash",
+                "Last Respects",
+                "Flip Turn",
+                "Aqua Jet"
+              ]
+            },
+            {
+              "pokemon": "Glimmora",
+              "ability": "Toxic Debris",
+              "item": "Glimmoranite",
+              "moves": [
+                "Spiky Shield",
+                "Sludge Bomb",
+                "Power Gem",
+                "Earth Power"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "U-turn",
+                "Grassy Glide",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Volcarona",
+              "ability": "Flame Body",
+              "item": "Grassy Seed",
+              "moves": [
+                "Protect",
+                "Heat Wave",
+                "Giga Drain",
+                "Quiver Dance"
+              ]
+            }
+          ]
+        },
+        {
+          "eventId": "frankfurt-2027",
+          "player": "Giuseppe Musicco [IT]",
+          "placement": 8,
+          "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+          "roster": [
+            {
+              "pokemon": "Floette [Eternal Flower]",
+              "ability": "Flower Veil",
+              "item": "Floettite",
+              "moves": [
+                "Dazzling Gleam",
+                "Draining Kiss",
+                "Calm Mind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Rillaboom",
+              "ability": "Grassy Surge",
+              "item": "Miracle Seed",
+              "moves": [
+                "Wood Hammer",
+                "Grassy Glide",
+                "High Horsepower",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Incineroar",
+              "ability": "Intimidate",
+              "item": "Sitrus Berry",
+              "moves": [
+                "Flare Blitz",
+                "Taunt",
+                "Parting Shot",
+                "Fake Out"
+              ]
+            },
+            {
+              "pokemon": "Dragonite",
+              "ability": "Inner Focus",
+              "item": "Dragoninite",
+              "moves": [
+                "Dragon Pulse",
+                "Heat Wave",
+                "Tailwind",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Gholdengo",
+              "ability": "Good as Gold",
+              "item": "Life Orb",
+              "moves": [
+                "Make It Rain",
+                "Shadow Ball",
+                "Nasty Plot",
+                "Protect"
+              ]
+            },
+            {
+              "pokemon": "Sneasler",
+              "ability": "Unburden",
+              "item": "White Herb",
+              "moves": [
+                "Dire Claw",
+                "Close Combat",
+                "Rock Tomb",
+                "Protect"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-capannori-lu-collectors-mania-2026-09-12",
+        "name": "VG Challenge: Capannori - Collectors Mania",
+        "date": "2026-09-12",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#capannori-lu-collectors-mania-2026-09-12"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-capannori-lu-collectors-mania-2026-09-12",
+          "player": "Emanuele Rugani",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#capannori-lu-collectors-mania-2026-09-12",
+          "roster": [
+            {
+              "pokemon": "Scovillain-Mega"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Espathra"
+            },
+            {
+              "pokemon": "Basculegion"
+            },
+            {
+              "pokemon": "Sableye"
+            },
+            {
+              "pokemon": "Archaludon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-cogoleto-rocca-trecorvi-2026-09-19-challenge",
+        "name": "VG Challenge: Cogoleto - Rocca Trecorvi",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#cogoleto-rocca-trecorvi-2026-09-19-challenge"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-cogoleto-rocca-trecorvi-2026-09-19-challenge",
+          "player": "Francesco Cavallini",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#cogoleto-rocca-trecorvi-2026-09-19-challenge",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Delphox-Mega"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Basculegion"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Alolan Ninetales"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-firenze-game-2026-09-19",
+        "name": "VG Challenge: Firenze - Game",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#firenze-game-2026-09-19"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-firenze-game-2026-09-19",
+          "player": "Riccardo Castellari",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#firenze-game-2026-09-19",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Floette-Mega"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Basculegion"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Incineroar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-fossano-kamehouse-2026-09-19",
+        "name": "VG Challenge: Fossano - Kamehouse",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#fossano-kamehouse-2026-09-19"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-fossano-kamehouse-2026-09-19",
+          "player": "Alessio Gallucci",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#fossano-kamehouse-2026-09-19",
+          "roster": [
+            {
+              "pokemon": "Armarouge"
+            },
+            {
+              "pokemon": "Indeedee ♀"
+            },
+            {
+              "pokemon": "Torkoal"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Gardevoir-Mega"
+            },
+            {
+              "pokemon": "Kingambit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-genova-arcadia-comics-and-games-genova-2026-09-20",
+        "name": "VG Challenge: Genova - Arcadia Comics And Games Genova",
+        "date": "2026-09-20",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#genova-arcadia-comics-and-games-genova-2026-09-20"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-genova-arcadia-comics-and-games-genova-2026-09-20",
+          "player": "Andrea Tedeschi",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#genova-arcadia-comics-and-games-genova-2026-09-20",
+          "roster": [
+            {
+              "pokemon": "Delphox-Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Floette-Mega"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Kingambit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-genova-challenge-fts-games-2026-09-13",
+        "name": "VG Challenge: Genova - F.T.S Games",
+        "date": "2026-09-13",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#genova-challenge-fts-games-2026-09-13"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-genova-challenge-fts-games-2026-09-13",
+          "player": "Federico Isola",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#genova-challenge-fts-games-2026-09-13",
+          "roster": [
+            {
+              "pokemon": "Froslass-Mega"
+            },
+            {
+              "pokemon": "Pawmot"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Garchomp"
+            },
+            {
+              "pokemon": "Volcarona"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-grugliasco-palavillage-2026-09-20",
+        "name": "VG Cup: Grugliasco - Palavillage",
+        "date": "2026-09-20",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#grugliasco-palavillage-2026-09-20"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-grugliasco-palavillage-2026-09-20",
+          "player": "Andrea Piasso",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#grugliasco-palavillage-2026-09-20",
+          "roster": [
+            {
+              "pokemon": "Charizard-Mega-Y"
+            },
+            {
+              "pokemon": "Toxapex"
+            },
+            {
+              "pokemon": "Sylveon"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Venusaur"
+            },
+            {
+              "pokemon": "Garchomp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-gt-fano-september-league-challenge-2026-09-13",
+        "name": "VG Challenge: Fano - Games Time Fano",
+        "date": "2026-09-13",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#gt-fano-september-league-challenge-2026-09-13"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-gt-fano-september-league-challenge-2026-09-13",
+          "player": "Francesco di Biase",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#gt-fano-september-league-challenge-2026-09-13",
+          "roster": [
+            {
+              "pokemon": "Gengar-Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Froslass-Mega"
+            },
+            {
+              "pokemon": "Archaludon"
+            },
+            {
+              "pokemon": "Politoed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-livorno-centro-del-fumetto-2026-09-19-challenge",
+        "name": "VG Challenge: Livorno - Centro Del Fumetto",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#livorno-centro-del-fumetto-2026-09-19-challenge"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-livorno-centro-del-fumetto-2026-09-19-challenge",
+          "player": "Alessandro Cinardi",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#livorno-centro-del-fumetto-2026-09-19-challenge",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Tyranitar-Mega"
+            },
+            {
+              "pokemon": "Excadrill"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Indeedee"
+            },
+            {
+              "pokemon": "Milotic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-milano-dreampull-2026-09-18",
+        "name": "VG Challenge: Milano - Dreampull",
+        "date": "2026-09-18",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#milano-dreampull-2026-09-18"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-milano-dreampull-2026-09-18",
+          "player": "Davide Carrer",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#milano-dreampull-2026-09-18",
+          "roster": [
+            {
+              "pokemon": "Blaziken-Mega"
+            },
+            {
+              "pokemon": "Froslass-Mega"
+            },
+            {
+              "pokemon": "Indeedee"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Garchomp"
+            },
+            {
+              "pokemon": "Sneasler"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-napoli-fuorigrotta-one-card-2026-09-19-challenge",
+        "name": "VG Challenge: Napoli (Fuorigrotta) - One Card",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#napoli-fuorigrotta-one-card-2026-09-19-challenge"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-napoli-fuorigrotta-one-card-2026-09-19-challenge",
+          "player": "Francesco Pio Pero",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#napoli-fuorigrotta-one-card-2026-09-19-challenge",
+          "roster": [
+            {
+              "pokemon": "Gengar-Mega"
+            },
+            {
+              "pokemon": "Incineroar"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Golisopod-Mega"
+            },
+            {
+              "pokemon": "Archaludon"
+            },
+            {
+              "pokemon": "Politoed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-pomezia-moonlight-cards-games-pomezia-2026-09-20",
+        "name": "VG Challenge: Pomezia - Moonlight Cards & Games - Pomezia",
+        "date": "2026-09-20",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#pomezia-moonlight-cards-games-pomezia-2026-09-20"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-pomezia-moonlight-cards-games-pomezia-2026-09-20",
+          "player": "Andrea Fiorini",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#pomezia-moonlight-cards-games-pomezia-2026-09-20",
+          "roster": [
+            {
+              "pokemon": "Charizard-Mega-Y"
+            },
+            {
+              "pokemon": "Aerodactyl-Mega"
+            },
+            {
+              "pokemon": "Garchomp"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Sylveon"
+            },
+            {
+              "pokemon": "Farigiraf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-pomigliano-d-arco-arcanum-fumetteria-2026-09-12",
+        "name": "VG Cup: Pomigliano D'Arco - Arcanum Fumetteria",
+        "date": "2026-09-12",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#pomigliano-d-arco-arcanum-fumetteria-2026-09-12"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-pomigliano-d-arco-arcanum-fumetteria-2026-09-12",
+          "player": "Francesco Pio Pero",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#pomigliano-d-arco-arcanum-fumetteria-2026-09-12",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Raichu-Mega-Y"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Hisuian Arcanine"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Sneasler"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-prato-baratie-collectibles-2026-09-23-challenge",
+        "name": "VG Challenge: Prato - Baratie Collectibles",
+        "date": "2026-09-23",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#prato-baratie-collectibles-2026-09-23-challenge"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-prato-baratie-collectibles-2026-09-23-challenge",
+          "player": "Simone Casini",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#prato-baratie-collectibles-2026-09-23-challenge",
+          "roster": [
+            {
+              "pokemon": "Gengar-Mega"
+            },
+            {
+              "pokemon": "Vivillon"
+            },
+            {
+              "pokemon": "Politoed"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Kommo-o"
+            },
+            {
+              "pokemon": "Incineroar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-roma-playground-2-0-2026-09-18",
+        "name": "VG Challenge: Roma - Playground 2.0",
+        "date": "2026-09-18",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#roma-playground-2-0-2026-09-18"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-roma-playground-2-0-2026-09-18",
+          "player": "Andrea Fiorini",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#roma-playground-2-0-2026-09-18",
+          "roster": [
+            {
+              "pokemon": "Charizard-Mega-Y"
+            },
+            {
+              "pokemon": "Aerodactyl-Mega"
+            },
+            {
+              "pokemon": "Garchomp"
+            },
+            {
+              "pokemon": "Farigiraf"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Sylveon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-treasure-vault-tarquinia-2026-09-12",
+        "name": "VG Challenge: Tarquinia - Treasure Vault",
+        "date": "2026-09-12",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#treasure-vault-tarquinia-2026-09-12"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-treasure-vault-tarquinia-2026-09-12",
+          "player": "Daniel Pioppi",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#treasure-vault-tarquinia-2026-09-12",
+          "roster": [
+            {
+              "pokemon": "Armarouge"
+            },
+            {
+              "pokemon": "Indeedee ♀"
+            },
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Hisuian Arcanine"
+            },
+            {
+              "pokemon": "Milotic"
+            },
+            {
+              "pokemon": "Sneasler"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-vg-challenge-volpiano-2026-09-12",
+        "name": "VG Challenge: Volpiano - Dark Comics",
+        "date": "2026-09-12",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-challenge-volpiano-2026-09-12"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-vg-challenge-volpiano-2026-09-12",
+          "player": "Umberto Lo Giudice",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-challenge-volpiano-2026-09-12",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Charizard-Mega-Y"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Garchomp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-vg-cup-milano-casa-dei-giochi-2026-09-12",
+        "name": "VG Cup: Milano - La Casa Dei Giochi",
+        "date": "2026-09-12",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-cup-milano-casa-dei-giochi-2026-09-12"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-vg-cup-milano-casa-dei-giochi-2026-09-12",
+          "player": "Davide Carrer",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-cup-milano-casa-dei-giochi-2026-09-12",
+          "roster": [
+            {
+              "pokemon": "Indeedee ♀"
+            },
+            {
+              "pokemon": "Espathra"
+            },
+            {
+              "pokemon": "Staraptor-Mega"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Glimmora"
+            },
+            {
+              "pokemon": "Pyroar-Mega"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-vg-cup-milano-joker-2026-09-13",
+        "name": "VG Cup: Milano - Joker - Comics&Games",
+        "date": "2026-09-13",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-cup-milano-joker-2026-09-13"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-vg-cup-milano-joker-2026-09-13",
+          "player": "Davide Carrer",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-cup-milano-joker-2026-09-13",
+          "roster": [
+            {
+              "pokemon": "Indeedee ♀"
+            },
+            {
+              "pokemon": "Espathra"
+            },
+            {
+              "pokemon": "Staraptor-Mega"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Glimmora"
+            },
+            {
+              "pokemon": "Pyroar-Mega"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-vg-league-challenge-gamestime-corciano-2026-09-13",
+        "name": "VG Challenge: Corciano - Games Time Corciano",
+        "date": "2026-09-13",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-league-challenge-gamestime-corciano-2026-09-13"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-vg-league-challenge-gamestime-corciano-2026-09-13",
+          "player": "Simone Tomaiuolo",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#vg-league-challenge-gamestime-corciano-2026-09-13",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Hisuian Arcanine"
+            },
+            {
+              "pokemon": "Rillaboom"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Kingambit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-viterbo-dracarys-viterbo-2026-09-19-challenge",
+        "name": "VG Challenge: Viterbo - Dracarys Viterbo",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#viterbo-dracarys-viterbo-2026-09-19-challenge"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-viterbo-dracarys-viterbo-2026-09-19-challenge",
+          "player": "Alessandro Vallasciani",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#viterbo-dracarys-viterbo-2026-09-19-challenge",
+          "roster": [
+            {
+              "pokemon": "Salamence-Mega"
+            },
+            {
+              "pokemon": "Raichu-Mega-Y"
+            },
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Gholdengo"
+            },
+            {
+              "pokemon": "Hisuian Arcanine"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": {
+        "id": "italian-local-viterbo-dracarys-viterbo-2026-09-19-cup",
+        "name": "VG Cup: Viterbo - Dracarys Viterbo",
+        "date": "2026-09-19",
+        "regulation": "champions-regulation-mc",
+        "tier": "local",
+        "region": "EU",
+        "source": "italianlocals",
+        "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#viterbo-dracarys-viterbo-2026-09-19-cup"
+      },
+      "teams": [
+        {
+          "eventId": "italian-local-viterbo-dracarys-viterbo-2026-09-19-cup",
+          "player": "Nicolò Venturin",
+          "placement": 1,
+          "sourceUrl": "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#viterbo-dracarys-viterbo-2026-09-19-cup",
+          "roster": [
+            {
+              "pokemon": "Sneasler"
+            },
+            {
+              "pokemon": "Kingambit"
+            },
+            {
+              "pokemon": "Basculegion"
+            },
+            {
+              "pokemon": "Froslass-Mega"
+            },
+            {
+              "pokemon": "Blaziken-Mega"
+            },
+            {
+              "pokemon": "Rillaboom"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "pikalyticsUsage": {}
 }

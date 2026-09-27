@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { parseArgs } from "node:util";
 import {
   fetchText,
   parsePikalyticsIndex,
@@ -43,8 +44,10 @@ async function discoverPikalytics(): Promise<TournamentCandidate[]> {
 }
 
 async function main(): Promise<void> {
+  const { values } = parseArgs({ options: { "rk9-only": { type: "boolean", default: false } } });
+  if (values["rk9-only"]) console.log("RK9-only discovery: Pikalytics is not requested. All candidates still require review.");
   const [pikalytics, rk9Html, approvedJson] = await Promise.all([
-    discoverPikalytics(),
+    values["rk9-only"] ? [] : discoverPikalytics(),
     fetchText("https://rk9.gg/events/pokemon"),
     readFile(APPROVED_PATH, "utf8"),
   ]);

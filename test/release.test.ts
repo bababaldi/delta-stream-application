@@ -56,6 +56,19 @@ const roles: RoleCatalog = {
 };
 const now = new Date("2026-06-03T00:00:00Z");
 
+test("roster-only tournament sources validate species without requiring hidden sets", () => {
+  const rosterOnly = structuredClone(snapshot);
+  const tournament = rosterOnly.tournaments[0]!;
+  tournament.event = {
+    ...tournament.event,
+    tier: "local",
+    source: "italianlocals",
+    sourceUrl: "https://shairaba.github.io/vgc-locals-italia/data/tournaments.json#test-event",
+  };
+  tournament.teams[0]!.roster = slots.map(({ species }) => ({ pokemon: species }));
+  assert.deepEqual(releaseDataErrors(rosterOnly, rules, roles, now), []);
+});
+
 test("data preflight rejects missing, cross-regulation, duplicate and empty tournament data", () => {
   assert.deepEqual(releaseDataErrors(snapshot, rules, roles, now), []);
   assert.ok(
