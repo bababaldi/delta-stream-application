@@ -52,11 +52,13 @@ try {
         await page.locator("#feedback").innerText(),
         /malformed stat points/,
     );
-    assert.ok(
-        await page
-            .getByRole("button", { name: "Print / save open PDF", exact: true })
-            .isDisabled(),
-    );
+    const printButton = page.getByRole("button", {
+        name: "Print / save open PDF",
+        exact: true,
+    });
+    assert.ok(!(await printButton.isDisabled()));
+    await printButton.click();
+    assert.match(await page.locator("#team-result").innerText(), /Cannot export/);
     await page.locator("#player-name").fill("PRIVATE REGISTRATION");
     const stored = await page.evaluate(() =>
         Object.values(localStorage).join(" "),

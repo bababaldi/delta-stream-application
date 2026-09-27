@@ -402,13 +402,16 @@ function assistView(): string {
   const readiness = blockers.length
     ? `<p class="status-line warning">▲ Complete data setup before recommending: ${blockers.map(escapeHtml).join(", ")}.</p>`
     : '<p class="status-line success">● Regulation evidence and constraints loaded</p>';
+  const coverageNote = roleData.coverageDefinition
+    ? `<p class="status-line">Coverage scope: ${escapeHtml(roleData.coverageDefinition)}</p>`
+    : "";
   const results = state.completions.length
     ? state.completions.map(completionMarkup).join("")
     : emptyState(
         "No completion yet",
         "Lock one to five Pokémon with Poképaste. Recommendations preserve every supplied field.",
       );
-  return `<section aria-labelledby="assist-title"><div class="screen-heading"><div><p class="board-status">Deterministic · no simulation or LLM</p><h1 id="assist-title">Team assist</h1></div></div>${readiness}<form id="assist-form"><label class="textarea-label"><span>Locked slots (1–5)</span><textarea name="paste" rows="10" spellcheck="false" placeholder="Paste one to five complete sets">${escapeHtml(state.assistantText)}</textarea></label><button class="primary-action" type="submit" ${blockers.length ? "disabled" : ""}>Rank completions</button></form><div id="assist-result" aria-live="polite">${results}</div></section>`;
+  return `<section aria-labelledby="assist-title"><div class="screen-heading"><div><p class="board-status">Deterministic · no simulation or LLM</p><h1 id="assist-title">Team assist</h1></div></div>${readiness}${coverageNote}<form id="assist-form"><label class="textarea-label"><span>Locked slots (1–5)</span><textarea name="paste" rows="10" spellcheck="false" placeholder="Paste one to five complete sets">${escapeHtml(state.assistantText)}</textarea></label><button class="primary-action" type="submit" ${blockers.length ? "disabled" : ""}>Rank completions</button></form><div id="assist-result" aria-live="polite">${results}</div></section>`;
 }
 
 function render(): void {

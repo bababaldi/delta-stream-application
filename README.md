@@ -4,7 +4,7 @@ Mobile-first, offline-capable web toolkit for the Delta Stream Pokémon Champion
 
 ## Current status
 
-Work in progress, **not a release-ready competitive calculator or public site**. The requested current format is Champions M-C; production legality/role data still needs separate owner approval. The snapshot contains six roster-only teams from the two completed September M-C VR Challenges, reviewed Pokédata top eights from Baltimore, Brisbane and Frankfurt, and 22 Italian VG Cup/VG Challenge winner rosters (52 teams across 27 events). Italian locals are low-weight, owner-accepted evidence rather than official Regional results. Pokédata and Italian locals are manually imported only after review; the owner has accepted Brisbane, Frankfurt and the Italian local source for this snapshot. Incomplete production legality/role catalogs still disable exports/recommendations rather than invent data.
+The requested current format is Champions M-C. The owner-approved legality and observed-signal role catalogs cover the current 27-event / 52-team snapshot, and `npm run release:check` passes. The snapshot contains six roster-only teams from the two completed September M-C VR Challenges, reviewed Pokédata top eights from Baltimore, Brisbane and Frankfurt, and 22 Italian VG Cup/VG Challenge winner rosters. Italian locals are low-weight, owner-accepted evidence rather than official Regional results. The calculator remains intentionally fail-closed for unsupported mechanics; real-device accessibility and independent in-game golden checks remain separate publication work.
 
 ```bash
 npm ci
@@ -33,7 +33,7 @@ Owner steps on GitHub:
 3. After completing and approving the data and calculator work, review `npm run data:preview` and the local preview. Only then authorize the commit/push and publication.
 4. **Actions → Publish reviewed GitHub Pages → Run workflow** on `main`; check the approval box and paste `snapshotSha256` from the preview report.
 
-The workflow is **manual only**: a push never deploys. It checks the exact snapshot hash, validates committed data, runs tests, builds the site and uploads only `dist/`. It does not collect new tournament data. A failing check leaves the previous deployment untouched. `npm run release:check` remains blocked while production catalogs/results are incomplete; passing data preflight alone does not certify competitive correctness.
+The workflow is **manual only**: a push never deploys. It checks the exact snapshot hash, validates committed data, runs tests, builds the site and uploads only `dist/`. It does not collect new tournament data. A failing check leaves the previous deployment untouched. `npm run release:check` currently passes; rerun it after every change. Passing automated checks alone does not certify competitive correctness or real-device accessibility.
 
 ### Offline use and privacy
 
@@ -50,6 +50,8 @@ Requirements: Node.js 24 and network access while collecting data. The PWA uses 
 ```bash
 npm ci
 npm run data:review                  # official M-C eligibility, review only
+npm run data:review-legality          # secondary-source legality draft, review only
+npm run data:review-roles             # observed-signal role/threat draft, review only
 npm run data:discover -- --rk9-only  # available public source while Pikalytics returns 403
 ```
 
@@ -86,7 +88,7 @@ npm run preview:pages
 - A fully accepted update atomically replaces `data/snapshot.json`; a quarantined update preserves the last valid snapshot. Duplicate event IDs are rejected.
 - Invalid or conflicting events are written to `data/quarantine.json`.
 - Any quarantined approved or reviewed event makes `data:build` fail. `npm run data:validate` additionally rejects incomplete/mismatched legality and role catalogs, invalid timestamps, duplicate events and missing team details.
-- Populate `data/legality.json` with reviewed Pokémon/items/moves/abilities and species-clause mappings; populate `data/roles.json` with regulation-specific versioned profiles and threat definitions. An empty `allowedTeraTypes` list disables that mechanic. Do not import Scarlet/Violet assumptions as Champions rules.
+- The current `data/legality.json` and `data/roles.json` are owner-approved copies of the exact artifacts in `data/review/`; approval hashes and assumptions are in `data/approved-sources.json`. Regenerating a draft is not a new approval. An empty `allowedTeraTypes` list deliberately disables that mechanic. Do not import Scarlet/Violet assumptions as Champions rules.
 - Scrapers use only public HTTPS pages with a small concurrency limit. Do not bypass authentication, rate limits, or technical controls.
 
 ## Ranking formula
@@ -102,13 +104,13 @@ For each placed team:
 - For Victory Road online events only, a documented complete record that exactly totals `recordRounds` gives x-0 a `2` multiplier and x-1 a `1.75` multiplier; all other records get `1`. These bonuses use the **same recency weight**. Partial or inferred records never receive a bonus.
 - Italian VG Cup/VG Challenge winners are roster-only local evidence at `0.125×` placement value (a conservative potential x-2 Regional/VR signal). They never receive a record bonus or make an entry `Strong` by themselves.
 
-Recency is calculated from the device date. Regulations never mix. Pikalytics usage is displayed separately and only breaks tournament-score ties. Sources for the current snapshot: [Pokédata Baltimore](https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json), [Brisbane](https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json), [Frankfurt](https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json), [VR Sep #1](https://victoryroad.pro/vr-sep26/), [VR Sep #2](https://victoryroad.pro/vr-sep26-2/) and [VGC Locals Italia](https://shairaba.github.io/vgc-locals-italia/data/tournaments.json). `data/reviewed-results.json` is a manually reviewed, versioned source; run `npm run data:build` to rebuild the snapshot. `scripts/import-pokedata.ts` imports the three pinned completed-event top eights; `scripts/import-italian-locals.ts` imports only published local winners, not full top-cut sets. Pokédata's final Frankfurt record is 17-0 for Eric Rios and 14-3 for Sebastian Liu Li; the prior in-progress 16-0/14-2 figures are not retained. VR roster sprites are not full sets. Missing set fields keep team recommendations disabled until legality/role catalogs and actual sets are reviewed.
+Recency is calculated from the device date. Regulations never mix. Pikalytics usage is displayed separately and only breaks tournament-score ties. Sources for the current snapshot: [Pokédata Baltimore](https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json), [Brisbane](https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json), [Frankfurt](https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json), [VR Sep #1](https://victoryroad.pro/vr-sep26/), [VR Sep #2](https://victoryroad.pro/vr-sep26-2/) and [VGC Locals Italia](https://shairaba.github.io/vgc-locals-italia/data/tournaments.json). `data/reviewed-results.json` is a manually reviewed, versioned source; run `npm run data:build` to rebuild the snapshot. `scripts/import-pokedata.ts` imports the three pinned completed-event top eights; `scripts/import-italian-locals.ts` imports only published local winners, not full top-cut sets. Pokédata's final Frankfurt record is 17-0 for Eric Rios and 14-3 for Sebastian Liu Li; the prior in-progress 16-0/14-2 figures are not retained. Roster-only evidence never supplies a recommendable set or an inferred role.
 
 ## Calculator core
 
 `src/calculator.ts` implements Pokémon Champions stat points (0–32 per stat, 66 total), 16 damage rolls, sequential two-attack checks, and Pareto-minimal defensive/offensive spread search. Each attack step has independent field modifiers; defensive checks use both maximum rolls and offensive checks use both minimum rolls. Unsupported move-, ability-, and item-specific effects must be resolved by the future data adapter rather than guessed.
 
-The formula is adapted from NCP under MIT; see `THIRD_PARTY_NOTICES.md`. The UI lists all 166 NCP Champions items. Direct handlers cover type boosters, Normal Gem, Muscle Band, Wise Glasses, Expert Belt, Life Orb, Light Ball (Pikachu), resist berries, Air Balloon and active terrain seeds; `Technician` remains an ability, not an item. Mega form stats/abilities and stateful effects such as recovery, recoil, accuracy, speed and switching remain manual and are called out beside each result. Actual move catalogs, type/ability immunities, changing BP, screens, crits, HP-triggered effects and independent in-game golden validation remain release blockers. Baseline damage is explicitly distinguished from each optimized spread.
+The formula is adapted from NCP under MIT; see `THIRD_PARTY_NOTICES.md`. The UI lists all 166 NCP Champions items. Direct handlers cover type boosters, Normal Gem, Muscle Band, Wise Glasses, Expert Belt, Life Orb, Light Ball (Pikachu), resist berries, Air Balloon and active terrain seeds; `Technician` remains an ability, not an item. Mega form stats/abilities and stateful effects such as recovery, recoil, accuracy, speed and switching remain manual and are called out beside each result. Unsupported interactions fail closed rather than invent a damage result; independent in-game golden validation remains recommended before public competitive use. Baseline damage is explicitly distinguished from each optimized spread.
 
 ## Team tools
 
@@ -124,7 +126,7 @@ App ID: `team.deltastream.vgc`; minimum Android 10 (API 29). **Terminal-only wor
 npm run android:debug     # build a development APK
 npm run android:verify    # app lint + APK + compilation of instrumentation tests
 npm run android:test      # RUN instrumentation tests; needs a connected Android device
-npm run release:check     # still fails until reviewed production data is complete
+npm run release:check     # web release gate; rerun after every change
 ```
 
 APK: `android/app/build/outputs/apk/debug/app-debug.apk`. This is debug-signed, NOT a distributable release. Instrumentation test compilation is not evidence that those tests ran. Real printing, system Back/insets and TalkBack remain unverified.

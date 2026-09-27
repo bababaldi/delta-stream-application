@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { releaseDataErrors, type RoleCatalog } from "../src/release.js";
+import {
+  catalogApprovalErrors,
+  releaseDataErrors,
+  type RoleCatalog,
+} from "../src/release.js";
 import type { MetaSnapshot } from "../src/meta.js";
 import { rulesFor } from "./legality-fixture.js";
 
@@ -55,6 +59,34 @@ const roles: RoleCatalog = {
   })),
 };
 const now = new Date("2026-06-03T00:00:00Z");
+
+test("catalog approval requires an exact owner-approved version and hash", () => {
+  const approvals = [
+    {
+      regulation: "test",
+      scope: "legality-catalog",
+      approvedBy: "owner",
+      approvedAt: "2026-06-01T00:00:00Z",
+      catalogVersion: "v1",
+      catalogSha256: "abc",
+    },
+  ];
+  const input = {
+    regulation: "test",
+    scope: "legality-catalog" as const,
+    version: "v1",
+    sha256: "abc",
+  };
+  assert.deepEqual(catalogApprovalErrors(approvals, input), []);
+  assert.match(
+    catalogApprovalErrors(approvals, { ...input, sha256: "changed" }).join(" "),
+    /does not match/,
+  );
+  assert.match(
+    catalogApprovalErrors([], input).join(" "),
+    /no owner approval/,
+  );
+});
 
 test("roster-only tournament sources validate species without requiring hidden sets", () => {
   const rosterOnly = structuredClone(snapshot);

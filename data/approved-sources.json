@@ -9,5 +9,59 @@
     "rosterSha256": "658779edceeb2a9608c5c7c4819e5a53b0146e2f2fa2372f46adb3889a8e4a16",
     "entryCount": 262,
     "excludes": ["form and alias mappings", "moves", "abilities", "items", "roles", "tournament results", "publication"]
+  },
+  {
+    "regulation": "champions-regulation-mc",
+    "scope": "legality-catalog",
+    "approvedBy": "owner",
+    "approvedAt": "2026-09-27T19:56:46Z",
+    "catalogVersion": "serebii-champions-2026-09-27",
+    "catalogSha256": "91a3d9158184a84aa47721632865ce4680796b284fb0f2251ee8539f0227da15",
+    "sources": [
+      {
+        "url": "https://web-view.app.pokemonchampions.jp/battle/pages/events/rs178713870219xeaaio/en/pokemon.html",
+        "sha256": "122529cebbc15cd2a22c781e0fb43ca814be86a18951f1ceaf37cf65297a3627",
+        "purpose": "official eligible roster"
+      },
+      {
+        "url": "https://www.serebii.net/pokedex-champions/",
+        "sha256": "00f422ac59e379d122c9b45c5c22c429d25af915f320ab1ac7f621b89eb18d7d",
+        "purpose": "Champions move and ability reference"
+      },
+      {
+        "url": "https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator/blob/1369b359b85f0a6343df006acde92cc4a7d07805/script_res/item_data.js",
+        "purpose": "pinned 166-item Champions catalog"
+      }
+    ],
+    "assumptions": [
+      "Official form labels share the mapped base-species Serebii page; reviewed tournament-set values supplement observed aliases only",
+      "Species clause groups forms and Mega display aliases by base species",
+      "No Tera Type catalog is asserted until Champions Tera rules are independently reviewed",
+      "The approved official roster contains no restricted Pokémon, so maxRestricted is zero"
+    ]
+  },
+  {
+    "regulation": "champions-regulation-mc",
+    "scope": "role-threat-catalog",
+    "approvedBy": "owner",
+    "approvedAt": "2026-09-27T19:56:46Z",
+    "catalogVersion": "observed-capabilities-2026-09-27",
+    "catalogSha256": "372c82699452c9c77a5590c78993ba2732d35587bdc7d6db0e5921e072f881f5",
+    "sources": [
+      {
+        "url": "data/snapshot.json",
+        "sha256": "c9b34e127e2bd4f17066ca649e910d683d4abc5461529b99fa381ae3f43b84e4",
+        "purpose": "reviewed tournament-set capability signals and top-five ranking"
+      },
+      {
+        "url": "https://www.serebii.net/attackdex-champions/{type}.shtml",
+        "purpose": "Champions move type and category reference"
+      }
+    ],
+    "assumptions": [
+      "Roles are emitted only from direct ability or move signals in reviewed full sets; roster-only entries deliberately remain unclassified",
+      "Threat coverage means a direct physical or special observed move is super-effective against the threat's base typing, not that the matchup is favorable",
+      "The five threat targets are the snapshot's top five Pokémon rankings at 2026-09-27; rebuilding stops if that ordering changes"
+    ]
   }
 ]

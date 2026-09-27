@@ -7,6 +7,8 @@
   "scripts": {
     "data:discover": "tsx scripts/discover.ts",
     "data:review": "tsx scripts/prepare-review.ts",
+    "data:review-legality": "tsx scripts/build-legality.ts",
+    "data:review-roles": "tsx scripts/build-roles.ts",
     "data:import-pokedata": "tsx scripts/import-pokedata.ts",
     "data:import-italian-locals": "tsx scripts/import-italian-locals.ts",
     "data:build": "tsx scripts/build-data.ts",

@@ -18,6 +18,56 @@ export interface RoleCatalog {
   profiles: RoleProfile[];
 }
 
+export type CatalogApprovalScope = "legality-catalog" | "role-threat-catalog";
+
+export interface CatalogApproval {
+  regulation: string;
+  scope: CatalogApprovalScope;
+  approvedBy: string;
+  approvedAt: string;
+  catalogVersion: string;
+  catalogSha256: string;
+}
+
+function isCatalogApproval(value: unknown): value is CatalogApproval {
+  if (!value || typeof value !== "object") return false;
+  const record = value as Partial<CatalogApproval>;
+  return (
+    typeof record.regulation === "string" &&
+    (record.scope === "legality-catalog" || record.scope === "role-threat-catalog") &&
+    typeof record.approvedBy === "string" &&
+    typeof record.approvedAt === "string" &&
+    typeof record.catalogVersion === "string" &&
+    typeof record.catalogSha256 === "string"
+  );
+}
+
+export function catalogApprovalErrors(
+  records: unknown,
+  input: {
+    regulation: string;
+    scope: CatalogApprovalScope;
+    version: unknown;
+    sha256: string;
+  },
+): string[] {
+  if (typeof input.version !== "string" || !input.version.trim())
+    return [`${input.scope} version is missing`];
+  const approvals = (Array.isArray(records) ? records : []).filter(
+    (record): record is CatalogApproval =>
+      isCatalogApproval(record) &&
+      record.regulation === input.regulation &&
+      record.scope === input.scope &&
+      record.approvedBy === "owner",
+  );
+  if (!approvals.length) return [`${input.scope} has no owner approval`];
+  if (!approvals.some(
+    (approval) =>
+      approval.catalogVersion === input.version && approval.catalogSha256 === input.sha256,
+  )) return [`${input.scope} does not match its approved catalog hash`];
+  return [];
+}
+
 const ROSTER_ONLY_SOURCES = new Set(["victoryroad", "italianlocals"]);
 const ROSTER_ONLY_ISSUES = new Set([
   "team-size", "species-required", "species-clause", "pokemon-illegal", "restricted-limit",

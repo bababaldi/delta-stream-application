@@ -15,13 +15,19 @@ These files are not imported by the app and do not modify its rankings. `npm run
 
 The comparison with the archived M-B extraction has 28 added rows and one removed row (net +27). Maushold changed from source ID `0925-000` to `0925-001`; Squawkabilly appears under two IDs with the same display name. Do **not** infer form bans, aliases or species-clause behavior from these display IDs. Those mappings need separate verification. New names include Salamence, Golisopod, Rillaboom, Indeedee and Baxcalibur; the complete rows are in the JSON.
 
+### Approved M-C catalogs (frozen review artifacts)
+
+`legality-mc-serebii-draft.json` is the exact reviewed artifact copied to `data/legality.json` after owner approval on September 27, 2026. It combines the approved official M-C eligibility list with Serebii's Champions Pokédex (231 base-species pages for move/ability lists), reviewed tournament-set values for observed form aliases, and the pinned NCP calculator item catalog (166 items). Its secondary-source status, hashes, alias/species-clause mapping, no-Tera policy, and zero-restricted assumption are recorded in `data/approved-sources.json`. Regenerating it creates a new artifact that requires another approval.
+
+`roles-mc-observed-signals-draft.json` is the exact reviewed artifact copied to `data/roles.json` after the same approval. Its 42 set-backed profiles use only direct observed move/ability signals; its 24 roster-only profiles deliberately make no role or matchup claim. “Threat coverage” is only a direct observed physical/special super-effective move against a top threat's base typing, not a matchup or damage guarantee.
+
 ### Event and usage blockers
 
 `npm run data:discover -- --rk9-only` retrieved 41 unapproved RK9 candidates. Eight start dates fall within the ranked M-C period, but a date match is not proof of the game's regulation or completion. Baltimore (`BA002-JL3KVbvivVKNAc`, September 18–20) did not yet have verified final results/regulation in this review; later events remain future candidates. No event was promoted.
 
 The Pikalytics AI request returned HTTP 403. No workaround was attempted. `data/config.json` sets `pikalyticsFormat` to `null` so unverified M-C or historical M-B usage cannot silently enter the snapshot. A valid, reviewed M-C feed can be configured when accessible.
 
-`publication-preview.json` records the current snapshot SHA-256 and failed preflight reasons. It is an inspection report, not consent. The active M-C production snapshot has no tournament results; legality and role catalogs remain empty. Their regulation labels were changed, not their contents copied from M-B.
+`publication-preview.json` records a snapshot SHA-256 and preflight state at the time it was generated. It is an inspection report, not consent; regenerate it after any data or catalog change before publishing.
 
 ## Historical Regulation M-B eligibility
 
@@ -49,4 +55,4 @@ One event alone cannot establish a strong cross-event core. This historical M-B 
 
 ## Approval boundary
 
-The owner requested personal approval. Only the specific M-C eligibility source above has been approved; no event, form mapping or production catalog is approved by that decision. Only after separate explicit confirmation may an event be copied to `data/approved-tournaments.json` or mapped eligibility data be promoted. Move/ability/item catalogs and versioned role/threat profiles still need separate review; `data:validate` must continue to fail until they are complete.
+The owner requested personal approval. The exact M-C legality and observed-signal role/threat catalog artifacts listed above have separate approvals in `data/approved-sources.json`; a regenerated artifact is not approved automatically. Only after separate explicit confirmation may an event be copied to `data/approved-tournaments.json`, data artifacts be promoted, or GitHub Pages be published. `data:validate` must pass for the exact production data before publication.
