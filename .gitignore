@@ -9,3 +9,6 @@ data/snapshot.*.tmp
 .env
 .impeccable/review/
 typesafe_key
+.pi/*
+.impeccable/*
+.pi-lens.json
