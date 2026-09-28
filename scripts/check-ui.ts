@@ -104,15 +104,15 @@ Relaxed Nature
     await page.locator('[name="move2Name"]').selectOption("Light of Ruin");
     await page.locator('[name="move1Power"]').fill("80");
     await page.getByRole("button", { name: "Calculate spreads" }).click();
-    assert.match(
-        await page.locator("#calc-result").innerText(),
-        /Non-dominated spreads|Impossible/,
-    );
-    await page.locator('[name="goal"]').selectOption("survive-one");
+    const calcResult = await page.locator("#calc-result").innerText();
+    assert.match(calcResult, /Attacker spread — guaranteed 2HKO/);
+    assert.match(calcResult, /Defender spread — survives two maximum rolls/);
+    await page.locator('[name="attackerSpread"]').uncheck();
+    await page.locator('[name="defenderGoal"]').selectOption("one");
     assert.equal(await page.locator(".move-step").count(), 1);
     assert.match(await page.locator("#calc-form").innerText(), /6\.25%/);
     await page.getByRole("button", { name: "Calculate spreads" }).click();
-    assert.match(await page.locator("#calc-result").textContent() ?? "", /15\/16 roll/);
+    assert.match(await page.locator("#calc-result").textContent() ?? "", /Defender spread — survives one hit/);
     await tab("Assist");
     await page.locator("#assist-form textarea").fill(assistPaste);
     await page.getByRole("button", { name: "Rank completions" }).click();
@@ -123,7 +123,15 @@ Relaxed Nature
     assert.equal(await page.locator('[name="move1Power"]').inputValue(), "80");
     assert.match(
         await page.locator("#calc-result").innerText(),
-        /Non-dominated spreads|Impossible/,
+        /Defender spread — survives one hit/,
+    );
+    await page.locator('[name="attackerSpread"]').check();
+    await page.locator('[name="defenderGoal"]').selectOption("two");
+    assert.equal(await page.locator(".move-step").count(), 2);
+    await page.getByRole("button", { name: "Calculate spreads" }).click();
+    assert.match(
+        await page.locator("#calc-result").innerText(),
+        /Attacker spread — guaranteed 2HKO[\s\S]*Defender spread — survives two maximum rolls/,
     );
     await tab("Meta");
     const firstRanking = page.locator(".ranking-row").first();

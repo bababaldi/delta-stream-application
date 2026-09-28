@@ -50,7 +50,7 @@ import {
 
 type Tab = "meta" | "calc" | "teams" | "assist";
 type RankingKind = "pokemon" | "cores" | "teams";
-type CalcGoal = "survive-one" | "survive-two" | "ko";
+type DefenderGoal = "one" | "two";
 
 const snapshot = snapshotData as MetaSnapshot;
 const rules = legalityData as LegalityRules;
@@ -323,9 +323,16 @@ function itemOptions(): string {
 
 const pokemonTypes = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy"];
 
-function calcGoal(): CalcGoal {
-  if (calcDraft.get("goal") === "survive-one") return "survive-one";
-  return calcDraft.get("goal") === "ko" ? "ko" : "survive-two";
+function calcTargets(): {
+  attacker: boolean;
+  defender: boolean;
+  defenderGoal: DefenderGoal;
+} {
+  return {
+    attacker: calcDraft.get("attackerSpread") !== false,
+    defender: calcDraft.get("defenderSpread") !== false,
+    defenderGoal: calcDraft.get("defenderGoal") === "one" ? "one" : "two",
+  };
 }
 
 function learnedMoves(name: string): readonly string[] {
@@ -368,11 +375,12 @@ function moveFields(number: 1 | 2, moves: readonly string[]): string {
 }
 
 function calcView(): string {
-  const goal = calcGoal();
-  const singleHit = goal === "survive-one";
+  const targets = calcTargets();
+  const needsTwoMoves = targets.attacker ||
+    (targets.defender && targets.defenderGoal === "two");
   const attackerName = String(calcDraft.get("attackerName") ?? "");
   const attackerMoves = reviewedPokemon(attackerName) ? learnedMoves(attackerName) : [];
-  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Damage calculator</h1></div></div><p class="status-line warning">Choose the attacker first, then the defender. Move choices are limited to the attacker’s reviewed legal moves; type, category, and power remain explicit calculator inputs.</p><form id="calc-form">${pokemonOptions()}<section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${pokemonPicker("attacker")}${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}<label><span>Attacker ability</span><select name="attackerAbility"><option value="">None / manual</option><option>Technician</option></select></label><label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label>${pokemonPicker("defender")}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}<label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label><label><span>Terrain (for seeds)</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><div class="goal-row"><label><span>Solver goal</span><select name="goal"><option value="survive-one" ${goal === "survive-one" ? "selected" : ""}>Survive one hit (15/16 rolls)</option><option value="survive-two" ${goal === "survive-two" ? "selected" : ""}>Survive both maximum rolls</option><option value="ko" ${goal === "ko" ? "selected" : ""}>Guarantee knockout with both minimum rolls</option></select></label></div>${singleHit ? '<p class="status-line warning">Single-hit mode accepts the sole 6.25% maximum normal-damage roll; critical hits are not simulated.</p>' : ""}<div class="move-grid">${moveFields(1, attackerMoves)}${singleHit ? "" : moveFields(2, attackerMoves)}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
+  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Damage calculator</h1></div></div><p class="status-line warning">Choose the attacker first, then the defender. Move choices are limited to the attacker’s reviewed legal moves; type, category, and power remain explicit calculator inputs.</p><form id="calc-form">${pokemonOptions()}<section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${pokemonPicker("attacker")}${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}<label><span>Attacker ability</span><select name="attackerAbility"><option value="">None / manual</option><option>Technician</option></select></label><label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label>${pokemonPicker("defender")}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}<label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label><label><span>Terrain (for seeds)</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><fieldset class="goal-row"><legend>Spreads to calculate</legend><div class="form-grid"><label class="check-row"><input type="checkbox" name="attackerSpread" ${targets.attacker ? "checked" : ""}><span>Attacker: guarantee 2HKO</span></label><label class="check-row"><input type="checkbox" name="defenderSpread" ${targets.defender ? "checked" : ""}><span>Defender: survive attacks</span></label><label><span>Defender target</span><select name="defenderGoal" ${targets.defender ? "" : "disabled"}><option value="two" ${targets.defenderGoal === "two" ? "selected" : ""}>Two maximum rolls</option><option value="one" ${targets.defenderGoal === "one" ? "selected" : ""}>One hit (15/16 rolls)</option></select></label></div></fieldset><p class="status-line warning">Entered points stay fixed on the opposing Pokémon while the selected side is optimized.</p>${targets.defender && targets.defenderGoal === "one" ? '<p class="status-line warning">Single-hit mode accepts the sole 6.25% maximum normal-damage roll; critical hits are not simulated.</p>' : ""}<div class="move-grid">${moveFields(1, attackerMoves)}${needsTwoMoves ? moveFields(2, attackerMoves) : ""}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
 }
 
 function baseStats(partial: Partial<StatTable>): StatTable {
@@ -441,13 +449,33 @@ function pokemon(
   };
 }
 
+function spreadResult(title: string, description: string, result: SpreadResult): string {
+  if (!result.possible)
+    return `<section class="result-table"><h2>${title}</h2><p>${description}</p><div class="inline-alert" role="status"><strong>Impossible</strong><span>${escapeHtml(result.reason)}</span></div></section>`;
+  const rows = result.options
+    .map(
+      (option) =>
+        `<tr><td>${escapeHtml(option.nature.name)}</td><td>${Object.entries(
+          option.statPoints,
+        )
+          .map(([stat, points]) => `${escapeHtml(stat)} ${points}`)
+          .join(" · ")}</td><td>${option.totalInvested}</td><td>${option.remaining}</td><td>${option.margin}</td></tr>`,
+    )
+    .join("");
+  return `<section class="result-table"><h2>${title}</h2><p>${description}</p><div class="table-scroll"><table><thead><tr><th>Nature</th><th>Stat points</th><th>Used</th><th>Left</th><th>Margin</th></tr></thead><tbody>${rows}</tbody></table></div></section>`;
+}
+
 function calculateFromForm(form: HTMLFormElement): string {
   const data = new FormData(form);
-  const goal = String(data.get("goal")) as CalcGoal;
-  if (!["survive-one", "survive-two", "ko"].includes(goal))
-    throw new RangeError("Invalid solver goal");
-  const singleHit = goal === "survive-one";
-  const defensive = goal !== "ko";
+  const attackerTarget = data.has("attackerSpread");
+  const defenderTarget = data.has("defenderSpread");
+  if (!attackerTarget && !defenderTarget)
+    throw new RangeError("Choose an attacker or defender spread to calculate");
+  const defenderGoal = String(data.get("defenderGoal"));
+  if (defenderTarget && defenderGoal !== "one" && defenderGoal !== "two")
+    throw new RangeError("Invalid defender survival target");
+  const needsTwoMoves = attackerTarget ||
+    (defenderTarget && defenderGoal === "two");
   const attackerName = String(data.get("attackerName") ?? "").trim();
   const attackerMoves = learnedMoves(attackerName);
   if (!reviewedPokemon(attackerName))
@@ -456,7 +484,7 @@ function calculateFromForm(form: HTMLFormElement): string {
   if (!reviewedPokemon(defenderName))
     throw new RangeError("Choose a defender with reviewed base stats");
   const firstMove = moveFromForm(data, 1, attackerMoves);
-  const secondMove = singleHit ? undefined : moveFromForm(data, 2, attackerMoves);
+  const secondMove = needsTwoMoves ? moveFromForm(data, 2, attackerMoves) : undefined;
   const moves = secondMove ? [firstMove, secondMove] : [firstMove];
   const attackerStats = {
     attack: numberValue(data, "attackBase"),
@@ -479,78 +507,80 @@ function calculateFromForm(form: HTMLFormElement): string {
   const attacker = pokemon(
     attackerName,
     attackerStats,
-    defensive ? attackerPoints : {},
+    attackerPoints,
     String(data.get("attackerAbility")) as ChampionsPokemon["ability"],
     (String(data.get("attackerItem")) || undefined) as ChampionsPokemon["item"],
   );
   const defender = pokemon(
     defenderName,
     defenderStats,
-    goal === "ko" ? defenderPoints : {},
+    defenderPoints,
     undefined,
     (String(data.get("defenderItem")) || undefined) as ChampionsPokemon["item"],
   );
   const direct = moves.map(({ move, modifiers }) =>
     calculateDamage({ attacker, defender, move, modifiers }),
   );
-  let result: SpreadResult;
-  if (defensive) {
-    const attacks: [IncomingAttack] | [IncomingAttack, IncomingAttack] = secondMove
-      ? [
-          { attacker, move: firstMove.move, modifiers: firstMove.modifiers },
-          { attacker, move: secondMove.move, modifiers: secondMove.modifiers },
-        ]
-      : [{ attacker, move: firstMove.move, modifiers: firstMove.modifiers }];
-    result = solveDefensiveSpread({
-      defender: { name: defender.name, baseStats: defender.baseStats, item: defender.item },
-      attacks,
-    });
-  } else {
-    if (!secondMove) throw new RangeError("Knockout mode needs two attacks");
-    result = solveOffensiveSpread({
-      attacker: { name: attacker.name, baseStats: attacker.baseStats, ability: attacker.ability, item: attacker.item },
-      attacks: [
-        { defender, move: firstMove.move, modifiers: firstMove.modifiers },
-        { defender, move: secondMove.move, modifiers: secondMove.modifiers },
-      ],
-    });
-  }
+  const totalMinimum = direct.reduce((sum, damage) => sum + damage.min, 0);
+  const totalMaximum = direct.reduce((sum, damage) => sum + damage.max, 0);
   const firstDamage = direct[0];
   const toleratedSingleRoll = firstDamage?.rolls.length === 16
     ? firstDamage.rolls.at(-2) ?? firstDamage.max
     : firstDamage?.max ?? 0;
-  let checkValue: number;
-  let checkLabel: string;
-  if (singleHit) {
-    checkValue = toleratedSingleRoll;
-    checkLabel = "15/16 roll";
-  } else if (defensive) {
-    checkValue = direct.reduce((sum, damage) => sum + damage.max, 0);
-    checkLabel = "Maximum total";
-  } else {
-    checkValue = direct.reduce((sum, damage) => sum + damage.min, 0);
-    checkLabel = "Minimum total";
-  }
-  const summary = `<p>Baseline damage with zero investment on the optimized side (not the spreads below).</p><div class="damage-summary ${singleHit ? "single-hit-summary" : ""}">${direct.map((damage, index) => `<div><strong>${damage.min}–${damage.max}</strong><span>Attack ${index + 1}</span></div>`).join("")}<div><strong>${checkValue}</strong><span>${checkLabel}</span></div></div>${singleHit ? '<p class="status-line warning">15 of 16 normal damage rolls must survive. The single maximum roll is tolerated; critical hits are not simulated.</p>' : ""}`;
+  const summary = `<p>Baseline damage uses the entered fixed points; the spreads below optimize only their named side.</p><div class="damage-summary ${direct.length === 1 ? "single-hit-summary" : ""}">${direct.map((damage, index) => `<div><strong>${damage.min}–${damage.max}</strong><span>Attack ${index + 1}</span></div>`).join("")}<div><strong>${direct.length === 1 ? toleratedSingleRoll : `${totalMinimum}–${totalMaximum}`}</strong><span>${direct.length === 1 ? "15/16 roll" : "Two-hit total"}</span></div></div>`;
   const notes = [...new Set(direct.flatMap(({ notes }) => notes))];
   const itemNotice = notes.length
     ? `<p class="status-line warning">${notes.map(escapeHtml).join(" · ")}</p>`
     : "";
-  if (!result.possible)
-    return `${summary}${itemNotice}<div class="inline-alert" role="status"><strong>Impossible</strong><span>${escapeHtml(result.reason)}</span></div>`;
-  const rows = result.options
-    .map(
-      (option) =>
-        `<tr><td>${escapeHtml(option.nature.name)}</td><td>${Object.entries(
-          option.statPoints,
-        )
-          .map(([stat, points]) => `${escapeHtml(stat)} ${points}`)
-          .join(
-            " · ",
-          )}</td><td>${option.totalInvested}</td><td>${option.remaining}</td><td>${option.margin}</td></tr>`,
-    )
-    .join("");
-  return `${summary}${itemNotice}<div class="result-table"><h2>Non-dominated spreads</h2><div class="table-scroll"><table><thead><tr><th>Nature</th><th>Stat points</th><th>Used</th><th>Left</th><th>Margin</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+  const results: string[] = [];
+  if (attackerTarget) {
+    if (!secondMove) throw new RangeError("An attacker 2HKO needs two attacks");
+    results.push(spreadResult(
+      "Attacker spread — guaranteed 2HKO",
+      "Both minimum damage rolls must knock out the defender with its entered fixed points.",
+      solveOffensiveSpread({
+        attacker: {
+          name: attacker.name,
+          baseStats: attacker.baseStats,
+          ability: attacker.ability,
+          item: attacker.item,
+        },
+        attacks: [
+          { defender, move: firstMove.move, modifiers: firstMove.modifiers },
+          { defender, move: secondMove.move, modifiers: secondMove.modifiers },
+        ],
+      }),
+    ));
+  }
+  if (defenderTarget) {
+    let attacks: [IncomingAttack] | [IncomingAttack, IncomingAttack] = [
+      { attacker, move: firstMove.move, modifiers: firstMove.modifiers },
+    ];
+    if (defenderGoal === "two") {
+      if (!secondMove) throw new RangeError("Defender survival against two hits needs two attacks");
+      attacks = [
+        attacks[0],
+        { attacker, move: secondMove.move, modifiers: secondMove.modifiers },
+      ];
+    }
+    results.push(spreadResult(
+      defenderGoal === "one"
+        ? "Defender spread — survives one hit"
+        : "Defender spread — survives two maximum rolls",
+      defenderGoal === "one"
+        ? "15 of 16 normal-damage rolls must survive; the maximum roll and critical hits are excluded."
+        : "Both maximum damage rolls must leave the defender standing against the attacker's entered fixed points.",
+      solveDefensiveSpread({
+        defender: {
+          name: defender.name,
+          baseStats: defender.baseStats,
+          item: defender.item,
+        },
+        attacks,
+      }),
+    ));
+  }
+  return `${summary}${itemNotice}${results.join("")}`;
 }
 
 function teamRows(team: readonly TeamSlot[]): string {
@@ -767,17 +797,21 @@ function bindEvents(): void {
   )) {
     picker.addEventListener("input", () => applyPokemonPicker(picker));
   }
-  calcForm?.querySelector<HTMLSelectElement>("[name=goal]")?.addEventListener(
-    "change",
-    (event) => {
-      const goal = event.currentTarget;
-      if (!(goal instanceof HTMLSelectElement)) return;
-      calcDraft.set("goal", goal.value);
+  for (const control of calcForm?.querySelectorAll<
+    HTMLInputElement | HTMLSelectElement
+  >("[name=attackerSpread], [name=defenderSpread], [name=defenderGoal]") ?? []) {
+    control.addEventListener("change", () => {
+      calcDraft.set(
+        control.name,
+        control instanceof HTMLInputElement && control.type === "checkbox"
+          ? control.checked
+          : control.value,
+      );
       calcResult = "";
       render();
-      app.querySelector<HTMLSelectElement>("#calc-form [name=goal]")?.focus();
-    },
-  );
+      app.querySelector<HTMLElement>(`#calc-form [name=${control.name}]`)?.focus();
+    });
+  }
   for (const row of app.querySelectorAll<HTMLDetailsElement>(
     ".ranking-row[data-ranking-index]",
   )) {
