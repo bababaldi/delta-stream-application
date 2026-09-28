@@ -1,9 +1,9 @@
 {
   "regulation": "champions-regulation-mc",
-  "generatedAt": "2026-09-27T16:15:18.594Z",
-  "snapshotSha256": "c9b34e127e2bd4f17066ca649e910d683d4abc5461529b99fa381ae3f43b84e4",
+  "generatedAt": "2026-09-28T10:15:16.049Z",
+  "snapshotSha256": "b10128c4de91a4401824678a147fadb7738ebc0f4840ee307aed3981711582dc",
   "eventCount": 27,
-  "teamCount": 52,
+  "teamCount": 185,
   "events": [
     {
       "id": "vr-sep26",

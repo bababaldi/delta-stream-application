@@ -19,6 +19,7 @@ export interface TeamMember {
   pokemon: string;
   ability?: string;
   item?: string;
+  nature?: string;
   teraType?: string;
   moves?: string[];
 }
@@ -27,6 +28,8 @@ export interface PlacedTeam {
   eventId: string;
   player: string;
   placement: Placement;
+  /** Exact published placing when the source lists it; scoring uses the normalized bucket above. */
+  publishedPlacement?: number;
   record?: { wins: number; losses: number };
   roster: TeamMember[];
   sourceUrl: string;
@@ -331,6 +334,10 @@ export function validateTournamentData(
       errors.push(`${prefix}.eventId does not match event.id`);
     if (!PLACEMENT_POINTS[team.placement])
       errors.push(`${prefix}.placement is unsupported`);
+    if (team.publishedPlacement !== undefined &&
+        (!Number.isInteger(team.publishedPlacement) || team.publishedPlacement < 1 ||
+         team.publishedPlacement > 64 || placementBucket(team.publishedPlacement) !== team.placement))
+      errors.push(`${prefix}.publishedPlacement does not match placement`);
     if (team.record && (!data.event.recordRounds ||
         !Number.isInteger(team.record.wins) || !Number.isInteger(team.record.losses) ||
         team.record.wins < 0 || team.record.losses < 0 ||

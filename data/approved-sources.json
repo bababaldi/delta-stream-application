@@ -63,5 +63,76 @@
       "Threat coverage means a direct physical or special observed move is super-effective against the threat's base typing, not that the matchup is favorable",
       "The five threat targets are the snapshot's top five Pokémon rankings at 2026-09-27; rebuilding stops if that ordering changes"
     ]
+  },
+  {
+    "regulation": "champions-regulation-mc",
+    "scope": "reviewed-tournament-evidence",
+    "approvedBy": "owner",
+    "approvedAt": "2026-09-28T10:12:01Z",
+    "snapshotSha256": "b10128c4de91a4401824678a147fadb7738ebc0f4840ee307aed3981711582dc",
+    "sources": [
+      {
+        "url": "data/review/reviewed-results-mc-top24-draft.json",
+        "sha256": "ec69c092a0cb7af0551aa7adf33fd07fe8f220d2cc1da3a1b7fb06c6b91ec0fe",
+        "purpose": "owner-approved PokeData Top-24 expansion"
+      },
+      {
+        "url": "data/review/victoryroad-mc-open-team-lists-manifest.json",
+        "sha256": "ac1cf1be375c79d499a872dc851ca58b7217866eb93a28178f8b602b294cbac3",
+        "purpose": "owner-approved public Victory Road Open Team Lists"
+      }
+    ],
+    "assumptions": [
+      "Only complete public Victory Road records receive record bonuses",
+      "Open Team Lists publish item, ability, nature and moves but not stat points, IVs or Tera data",
+      "PokeData’s ambiguous records remain without inferred record bonuses"
+    ]
+  },
+  {
+    "regulation": "champions-regulation-mc",
+    "scope": "legality-catalog",
+    "approvedBy": "owner",
+    "approvedAt": "2026-09-28T10:12:01Z",
+    "catalogVersion": "serebii-champions-2026-09-28",
+    "catalogSha256": "a193b15fe274169e807f71f20691e905d002c6ad78fa796a0ef412edf21d39a3",
+    "sources": [
+      {
+        "url": "data/legality.json@91a3d9158184a84aa47721632865ce4680796b284fb0f2251ee8539f0227da15",
+        "purpose": "previous owner-approved Serebii-backed base catalog"
+      },
+      {
+        "url": "data/review/victoryroad-mc-open-team-lists-manifest.json",
+        "sha256": "ac1cf1be375c79d499a872dc851ca58b7217866eb93a28178f8b602b294cbac3",
+        "purpose": "reviewed display aliases"
+      }
+    ],
+    "assumptions": [
+      "The 15 reviewed display aliases inherit only their explicitly mapped base form’s prior approved move, ability and species-clause values",
+      "Serebii was unreachable during this refresh; no new remote rule data was substituted or inferred"
+    ]
+  },
+  {
+    "regulation": "champions-regulation-mc",
+    "scope": "role-threat-catalog",
+    "approvedBy": "owner",
+    "approvedAt": "2026-09-28T10:12:01Z",
+    "catalogVersion": "observed-capabilities-2026-09-28",
+    "catalogSha256": "37f119e6f70144752d949f5a20dea1bab88e92747e5e0b6e3d64fd0197818b7e",
+    "sources": [
+      {
+        "url": "data/snapshot.json",
+        "sha256": "b10128c4de91a4401824678a147fadb7738ebc0f4840ee307aed3981711582dc",
+        "purpose": "reviewed tournament evidence and current top-five ranking"
+      },
+      {
+        "url": "data/roles.json@372c82699452c9c77a5590c78993ba2732d35587bdc7d6db0e5921e072f881f5",
+        "purpose": "previous owner-approved source-backed role profiles"
+      }
+    ],
+    "assumptions": [
+      "Mapped display aliases inherit only their prior approved base profile",
+      "Newly observed species without a prior profile remain deliberately roster-only until Champions move categories can be refreshed from Serebii",
+      "The five threat targets are the expanded snapshot’s top five Pokémon rankings at 2026-09-28"
+    ]
   }
 ]

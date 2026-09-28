@@ -1,7 +1,7 @@
 {
   "regulation": "champions-regulation-mc",
-  "version": "observed-capabilities-2026-09-27",
-  "reviewStatus": "owner-approved-observed-signals-2026-09-27",
+  "version": "observed-capabilities-2026-09-28",
+  "reviewStatus": "owner-approved-2026-09-28",
   "requiredRoles": [
     "offense",
     "speed control",
@@ -11,19 +11,104 @@
     "Rillaboom",
     "Sneasler",
     "Incineroar",
-    "Gholdengo",
-    "Kingambit"
+    "Kingambit",
+    "Gholdengo"
   ],
   "coverageDefinition": "Threat coverage means an observed tournament set has a physical or special move that is super-effective against the threat's base typing; it is not a matchup or damage guarantee.",
   "sources": {
     "setEvidence": "reviewed PokeData tournament sets in data/snapshot.json",
     "moveCategories": "https://www.serebii.net/attackdex-champions/{type}.shtml",
-    "threatSelection": "top five reviewed-snapshot rankings at 2026-09-27"
+    "threatSelection": "top five reviewed-snapshot rankings at 2026-09-28",
+    "observedDisplayAliases": {
+      "source": "owner-approved reviewed PokeData and Victory Road Open Team Lists",
+      "aliases": {
+        "Ampharos Mega": "Ampharos",
+        "Blastoise Mega": "Blastoise",
+        "Camerupt Mega": "Camerupt",
+        "Garchomp Mega Z": "Garchomp",
+        "Glimmora Mega": "Glimmora",
+        "Indeedee F": "Indeedee ♀",
+        "Lucario Mega Z": "Lucario",
+        "Maushold [Family of Three]": "Maushold",
+        "Metagross Mega": "Metagross",
+        "Sinistcha [Masterpiece Form]": "Sinistcha",
+        "Sinistcha [Unremarkable Form]": "Sinistcha",
+        "Sirfetchd": "Sirfetch’d",
+        "Swampert Mega": "Swampert",
+        "Vivillon Fancy": "Vivillon",
+        "Vivillon High Plains": "Vivillon"
+      },
+      "unclassifiedProfiles": [
+        "Indeedee F",
+        "Whimsicott",
+        "Garchomp Mega Z",
+        "Metagross Mega",
+        "Dragapult",
+        "Hatterene",
+        "Camerupt Mega",
+        "Annihilape",
+        "Hydreigon",
+        "Glimmora Mega",
+        "Sinistcha",
+        "Orthworm",
+        "Maushold",
+        "Swampert Mega",
+        "Lycanroc [Dusk Form]",
+        "Vivillon Fancy",
+        "Blastoise",
+        "Sirfetchd",
+        "Blastoise Mega",
+        "Lucario Mega Z",
+        "Aegislash",
+        "Clefable",
+        "Grapploct",
+        "Ampharos Mega",
+        "Hippowdon",
+        "Primarina",
+        "Mamoswine",
+        "Vivillon High Plains",
+        "Aerodactyl",
+        "Sinistcha [Masterpiece Form]",
+        "Lopunny",
+        "Gardevoir",
+        "Klefki",
+        "Altaria",
+        "Sinistcha [Unremarkable Form]",
+        "Pyroar",
+        "Scovillain",
+        "Blaziken",
+        "Mawile",
+        "Maushold [Family of Three]",
+        "Baxcalibur",
+        "Starmie"
+      ],
+      "note": "Mapped aliases inherit their prior base profile; other newly observed species remain roster-only because Serebii move categories were unavailable during this review refresh."
+    }
   },
   "profiles": [
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Aegislash",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Aerodactyl",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Aerodactyl-Mega",
       "roles": [],
       "coversThreats": [],
@@ -33,7 +118,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Alolan Ninetales",
       "roles": [],
       "coversThreats": [],
@@ -43,7 +128,37 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Altaria",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Ampharos Mega",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Annihilape",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Arcanine [Hisuian Form]",
       "roles": [
         "offense"
@@ -67,7 +182,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Arcanine Hisui",
       "roles": [],
       "coversThreats": [],
@@ -77,7 +192,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Archaludon",
       "roles": [
         "disruption",
@@ -97,7 +212,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Armarouge",
       "roles": [
         "offense",
@@ -123,7 +238,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Basculegion",
       "roles": [],
       "coversThreats": [],
@@ -133,7 +248,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Basculegion [Male]",
       "roles": [
         "offense",
@@ -157,7 +272,47 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Baxcalibur",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Blastoise",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Blastoise Mega",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Blaziken",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Blaziken-Mega",
       "roles": [],
       "coversThreats": [],
@@ -167,7 +322,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Camerupt Mega",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Ceruledge",
       "roles": [
         "offense",
@@ -193,7 +358,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Charizard",
       "roles": [
         "offense"
@@ -219,7 +384,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Charizard Mega Y",
       "roles": [],
       "coversThreats": [],
@@ -229,7 +394,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Clefable",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Corviknight",
       "roles": [
         "offense",
@@ -253,7 +428,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Delphox",
       "roles": [
         "offense",
@@ -279,7 +454,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Delphox-Mega",
       "roles": [],
       "coversThreats": [],
@@ -289,7 +464,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Dragapult",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Dragonite",
       "roles": [
         "offense",
@@ -313,7 +498,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Dragonite Mega",
       "roles": [],
       "coversThreats": [],
@@ -323,7 +508,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Espathra",
       "roles": [],
       "coversThreats": [],
@@ -333,7 +518,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Excadrill",
       "roles": [
         "offense"
@@ -357,7 +542,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Farigiraf",
       "roles": [
         "offense",
@@ -377,7 +562,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Floette [Eternal Flower]",
       "roles": [
         "offense",
@@ -393,7 +578,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Floette Mega",
       "roles": [],
       "coversThreats": [],
@@ -403,7 +588,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Froslass",
       "roles": [
         "offense",
@@ -425,7 +610,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Froslass Mega",
       "roles": [],
       "coversThreats": [],
@@ -435,7 +620,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Garchomp",
       "roles": [
         "offense"
@@ -461,7 +646,43 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Garchomp Mega Z",
+      "roles": [
+        "offense"
+      ],
+      "coversThreats": [
+        "Gholdengo",
+        "Incineroar",
+        "Kingambit",
+        "Rillaboom",
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "offense: draco meteor, earth power, power gem, stomping tantrum, scale shot, rock slide, dragon pulse, flamethrower, dragon claw, earthquake"
+      ],
+      "coverageSignals": [
+        "Gholdengo: earth power, stomping tantrum, flamethrower, earthquake",
+        "Incineroar: earth power, power gem, stomping tantrum, rock slide, earthquake",
+        "Kingambit: earth power, stomping tantrum, flamethrower, earthquake",
+        "Rillaboom: flamethrower",
+        "Sneasler: earth power, stomping tantrum, earthquake"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Gardevoir",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Gardevoir-Mega",
       "roles": [],
       "coversThreats": [],
@@ -471,7 +692,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Gengar",
       "roles": [
         "disruption",
@@ -493,7 +714,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Gengar Mega",
       "roles": [],
       "coversThreats": [],
@@ -503,7 +724,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Gholdengo",
       "roles": [
         "offense",
@@ -523,7 +744,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Glimmora",
       "roles": [
         "offense"
@@ -549,7 +770,33 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Glimmora Mega",
+      "roles": [
+        "offense"
+      ],
+      "coversThreats": [
+        "Gholdengo",
+        "Incineroar",
+        "Kingambit",
+        "Rillaboom",
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "offense: sludge bomb, power gem, earth power"
+      ],
+      "coverageSignals": [
+        "Gholdengo: earth power",
+        "Incineroar: power gem, earth power",
+        "Kingambit: earth power",
+        "Rillaboom: sludge bomb",
+        "Sneasler: earth power"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Golisopod",
       "roles": [
         "offense"
@@ -575,7 +822,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Golisopod-Mega",
       "roles": [],
       "coversThreats": [],
@@ -585,7 +832,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Grapploct",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Grimmsnarl",
       "roles": [
         "offense",
@@ -603,7 +860,37 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Hatterene",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Hippowdon",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Hydreigon",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Incineroar",
       "roles": [
         "disruption",
@@ -631,7 +918,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Indeedee",
       "roles": [],
       "coversThreats": [],
@@ -641,7 +928,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Indeedee [Female]",
       "roles": [
         "field control",
@@ -665,7 +952,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Indeedee [Male]",
       "roles": [
         "disruption",
@@ -695,7 +982,31 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Indeedee F",
+      "roles": [
+        "field control",
+        "offense",
+        "redirection",
+        "speed control"
+      ],
+      "coversThreats": [
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "field control: psychic surge",
+        "offense: psyshock",
+        "redirection: follow me",
+        "speed control: trick room"
+      ],
+      "coverageSignals": [
+        "Sneasler: psyshock"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Kingambit",
       "roles": [
         "offense",
@@ -721,7 +1032,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Klefki",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Kommo O",
       "roles": [
         "offense",
@@ -743,7 +1064,77 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Lopunny",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Lucario Mega Z",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Lycanroc [Dusk Form]",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Mamoswine",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Maushold",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Maushold [Family of Three]",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Mawile",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Meowstic [Female]",
       "roles": [
         "disruption",
@@ -765,7 +1156,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Meowstic F Mega",
       "roles": [],
       "coversThreats": [],
@@ -775,7 +1166,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Metagross",
       "roles": [
         "offense"
@@ -797,7 +1188,29 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Metagross Mega",
+      "roles": [
+        "offense"
+      ],
+      "coversThreats": [
+        "Incineroar",
+        "Kingambit",
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "offense: steel roller, psychic fangs, body press"
+      ],
+      "coverageSignals": [
+        "Incineroar: body press",
+        "Kingambit: body press",
+        "Sneasler: psychic fangs"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Milotic",
       "roles": [
         "disruption",
@@ -823,7 +1236,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Orthworm",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Pawmot",
       "roles": [],
       "coversThreats": [],
@@ -833,7 +1256,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Pelipper",
       "roles": [
         "field control",
@@ -859,7 +1282,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Politoed",
       "roles": [
         "disruption",
@@ -885,7 +1308,27 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Primarina",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Pyroar",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Pyroar-Mega",
       "roles": [],
       "coversThreats": [],
@@ -895,7 +1338,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Raichu",
       "roles": [
         "disruption",
@@ -919,7 +1362,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Raichu Mega Y",
       "roles": [],
       "coversThreats": [],
@@ -929,7 +1372,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Rillaboom",
       "roles": [
         "disruption",
@@ -963,7 +1406,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Sableye",
       "roles": [],
       "coversThreats": [],
@@ -973,7 +1416,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Salamence",
       "roles": [
         "offense",
@@ -997,7 +1440,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Salamence Mega",
       "roles": [],
       "coversThreats": [],
@@ -1007,7 +1450,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Scovillain",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Scovillain-Mega",
       "roles": [],
       "coversThreats": [],
@@ -1017,7 +1470,47 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Sinistcha",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Sinistcha [Masterpiece Form]",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Sinistcha [Unremarkable Form]",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Sirfetchd",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Sneasler",
       "roles": [
         "disruption",
@@ -1051,7 +1544,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Staraptor",
       "roles": [
         "offense",
@@ -1077,7 +1570,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Staraptor Mega",
       "roles": [],
       "coversThreats": [],
@@ -1087,7 +1580,17 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Starmie",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Swampert",
       "roles": [
         "offense"
@@ -1113,7 +1616,33 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Swampert Mega",
+      "roles": [
+        "offense"
+      ],
+      "coversThreats": [
+        "Gholdengo",
+        "Incineroar",
+        "Kingambit",
+        "Rillaboom",
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "offense: ice punch, wave crash, earthquake"
+      ],
+      "coverageSignals": [
+        "Gholdengo: earthquake",
+        "Incineroar: wave crash, earthquake",
+        "Kingambit: earthquake",
+        "Rillaboom: ice punch",
+        "Sneasler: earthquake"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Sylveon",
       "roles": [
         "disruption",
@@ -1129,7 +1658,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Torkoal",
       "roles": [
         "field control",
@@ -1157,7 +1686,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Toxapex",
       "roles": [
         "disruption",
@@ -1179,7 +1708,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Tyranitar",
       "roles": [
         "field control",
@@ -1203,7 +1732,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Tyranitar-Mega",
       "roles": [],
       "coversThreats": [],
@@ -1213,7 +1742,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Venusaur",
       "roles": [
         "disruption",
@@ -1241,7 +1770,7 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Vivillon",
       "roles": [
         "disruption",
@@ -1265,7 +1794,55 @@
     },
     {
       "regulation": "champions-regulation-mc",
-      "version": "observed-capabilities-2026-09-27",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Vivillon Fancy",
+      "roles": [
+        "disruption",
+        "offense",
+        "redirection"
+      ],
+      "coversThreats": [
+        "Rillaboom",
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "disruption: sleep powder",
+        "offense: hurricane",
+        "redirection: rage powder"
+      ],
+      "coverageSignals": [
+        "Rillaboom: hurricane",
+        "Sneasler: hurricane"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Vivillon High Plains",
+      "roles": [
+        "disruption",
+        "offense",
+        "redirection"
+      ],
+      "coversThreats": [
+        "Rillaboom",
+        "Sneasler"
+      ],
+      "evidenceStatus": "observed-set",
+      "roleSignals": [
+        "disruption: sleep powder",
+        "offense: hurricane",
+        "redirection: rage powder"
+      ],
+      "coverageSignals": [
+        "Rillaboom: hurricane",
+        "Sneasler: hurricane"
+      ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
       "pokemon": "Volcarona",
       "roles": [
         "offense",
@@ -1290,6 +1867,16 @@
         "Kingambit: overheat, heat wave",
         "Rillaboom: overheat, struggle bug, heat wave"
       ]
+    },
+    {
+      "regulation": "champions-regulation-mc",
+      "version": "observed-capabilities-2026-09-28",
+      "pokemon": "Whimsicott",
+      "roles": [],
+      "coversThreats": [],
+      "evidenceStatus": "roster-only",
+      "roleSignals": [],
+      "coverageSignals": []
     }
   ]
 }

@@ -27,6 +27,23 @@ export interface SetEvidence {
   evidenceScore: number;
 }
 
+export type ObservedArchetype = "trick-room" | "balance" | "hyper-offense";
+
+export interface ArchetypeCoreEvidence {
+  regulation: string;
+  archetype: ObservedArchetype;
+  pokemon: readonly [string, string];
+  teamCount: number;
+  eventCount: number;
+  evidenceScore: number;
+}
+
+const ARCHETYPE_LABEL: Record<ObservedArchetype, string> = {
+  "trick-room": "Observed Trick Room core",
+  balance: "Observed balance support core",
+  "hyper-offense": "Observed hyper-offense (Tailwind) core",
+};
+
 export function tournamentSetEvidence(
   snapshot: MetaSnapshot,
   regulation: string,
@@ -42,6 +59,7 @@ export function tournamentSetEvidence(
           set: {
             ability: member.ability,
             item: member.item,
+            nature: member.nature,
             teraType: member.teraType,
             moves: member.moves ?? [],
           },
@@ -49,6 +67,72 @@ export function tournamentSetEvidence(
           evidenceScore: teamScore(team.placement, tournament.event, now, team.record),
         })),
       ),
+    );
+}
+
+function teamHasMove(members: MetaSnapshot["tournaments"][number]["teams"][number]["roster"], move: string): boolean {
+  return members.some((member) =>
+    member.moves?.some((candidate) => candidate.trim().toLowerCase() === move),
+  );
+}
+
+/**
+ * Direct source signals only: Trick Room, Tailwind without Trick Room, and the
+ * repeatable Incineroar + Rillaboom support core without either speed mode.
+ */
+export function tournamentArchetypeCores(
+  snapshot: MetaSnapshot,
+  regulation: string,
+  now = new Date(),
+): ArchetypeCoreEvidence[] {
+  const groups = new Map<string, ArchetypeCoreEvidence & { events: Set<string> }>();
+  for (const tournament of snapshot.tournaments) {
+    if (tournament.event.regulation !== regulation) continue;
+    for (const team of tournament.teams) {
+      const byKey = new Map(
+        team.roster.map((member) => [canonicalPokemonName(member.pokemon), member.pokemon]),
+      );
+      const trickRoom = teamHasMove(team.roster, "trick room");
+      const tailwind = teamHasMove(team.roster, "tailwind");
+      const completeSet = team.roster.every((member) => member.moves?.length);
+      const pairs = [...byKey.keys()].sort().flatMap((left, index, members) =>
+        members.slice(index + 1).map((right) => [left, right] as const),
+      );
+      const archetypes: Array<[ObservedArchetype, ReadonlyArray<readonly [string, string]>]> = [];
+      if (trickRoom) archetypes.push(["trick-room", pairs]);
+      if (completeSet && byKey.has("incineroar") && byKey.has("rillaboom") && !trickRoom && !tailwind)
+        archetypes.push(["balance", [["incineroar", "rillaboom"]]]);
+      if (tailwind && !trickRoom) archetypes.push(["hyper-offense", pairs]);
+      for (const [archetype, archetypePairs] of archetypes) {
+        for (const pair of archetypePairs) {
+          const key = `${archetype}|${pair.join("+")}`;
+          const current = groups.get(key);
+          const evidenceScore = teamScore(team.placement, tournament.event, now, team.record);
+          if (current) {
+            current.teamCount += 1;
+            current.eventCount = current.events.add(tournament.event.id).size;
+            current.evidenceScore += evidenceScore;
+            continue;
+          }
+          groups.set(key, {
+            regulation,
+            archetype,
+            pokemon: [byKey.get(pair[0]) ?? pair[0], byKey.get(pair[1]) ?? pair[1]],
+            teamCount: 1,
+            eventCount: 1,
+            evidenceScore,
+            events: new Set([tournament.event.id]),
+          });
+        }
+      }
+    }
+  }
+  return [...groups.values()]
+    .map(({ events: _events, ...core }) => core)
+    .sort((left, right) =>
+      left.archetype.localeCompare(right.archetype) ||
+      right.evidenceScore - left.evidenceScore ||
+      left.pokemon.join("+").localeCompare(right.pokemon.join("+")),
     );
 }
 
@@ -144,19 +228,26 @@ function candidateAllowed(
   if (!Number.isFinite(set.evidenceScore) || set.evidenceScore < 0)
     return false;
   return (
-    validateTeam([...slots, { ...set.set, species: set.pokemon }], rules, true)
-      .length === 0
+    // recommendTeam checked catalog completeness before its bounded search.
+    validateTeam(
+      [...slots, { ...set.set, species: set.pokemon }],
+      rules,
+      true,
+      true,
+    ).length === 0
   );
 }
 
 function scoreCandidate(
   pokemon: string,
   slots: readonly TeamSlot[],
+  set: SetEvidence,
   rankings: MetaRankings,
   profiles: readonly RoleProfile[],
   regulation: string,
   requiredRoles: readonly string[],
   topThreats: readonly string[],
+  archetypeCores: readonly ArchetypeCoreEvidence[],
 ): CandidateScore {
   const key = canonicalPokemonName(pokemon);
   const entry = rankings.pokemon.find((ranked) => ranked.key === key);
@@ -211,9 +302,53 @@ function scoreCandidate(
     reasons.push(
       `Adds coverage for ${threatGain} top threat${threatGain === 1 ? "" : "s"}`,
     );
+  const archetype = archetypeGain(pokemon, slots, set, archetypeCores);
+  reasons.push(...archetype.reasons);
   return {
-    total: success + coOccurrence + roleGain * 8 + threatGain * 7,
+    total: success + coOccurrence + roleGain * 8 + threatGain * 7 + archetype.total,
     reasons,
+  };
+}
+
+function activeArchetype(slots: readonly TeamSlot[]): ObservedArchetype | undefined {
+  const trickRoom = slots.some((slot) =>
+    slot.moves.some((move) => move.trim().toLowerCase() === "trick room"),
+  );
+  const tailwind = slots.some((slot) =>
+    slot.moves.some((move) => move.trim().toLowerCase() === "tailwind"),
+  );
+  if (trickRoom && tailwind) return undefined;
+  if (trickRoom) return "trick-room";
+  if (tailwind) return "hyper-offense";
+  const roster = new Set(slots.map((slot) => canonicalPokemonName(slot.species)));
+  return roster.has("incineroar") && roster.has("rillaboom") ? "balance" : undefined;
+}
+
+function archetypeGain(
+  pokemon: string,
+  slots: readonly TeamSlot[],
+  set: SetEvidence,
+  cores: readonly ArchetypeCoreEvidence[],
+): CandidateScore {
+  const candidate = { ...set.set, species: pokemon };
+  const archetype = activeArchetype([...slots, candidate]);
+  if (!archetype) return { total: 0, reasons: [] };
+  const key = canonicalPokemonName(pokemon);
+  const roster = new Set([...slots.map((slot) => canonicalPokemonName(slot.species)), key]);
+  const eligible = cores.filter((core) => core.archetype === archetype);
+  const maximum = Math.max(1, ...eligible.map((core) => core.evidenceScore));
+  const core = eligible
+    .filter((entry) => {
+      const members = entry.pokemon.map(canonicalPokemonName);
+      return members.includes(key) && members.every((member) => roster.has(member));
+    })
+    .sort((left, right) => right.evidenceScore - left.evidenceScore)[0];
+  if (!core) return { total: 0, reasons: [] };
+  return {
+    total: (core.evidenceScore / maximum) * 10,
+    reasons: [
+      `${ARCHETYPE_LABEL[core.archetype]}: ${core.pokemon.join(" + ")} (${core.teamCount} full published ${core.teamCount === 1 ? "team" : "teams"})`,
+    ],
   };
 }
 
@@ -240,6 +375,7 @@ export function recommendTeam(input: {
   rankings: MetaRankings;
   profiles: readonly RoleProfile[];
   setEvidence: readonly SetEvidence[];
+  archetypeCores?: readonly ArchetypeCoreEvidence[];
   rules: LegalityRules;
   requiredRoles: readonly string[];
   topThreats: readonly string[];
@@ -315,26 +451,35 @@ export function recommendTeam(input: {
       reason: "Result limit must be a positive integer",
     };
   const limit = Math.min(input.limit ?? 3, 5);
+  const setsByRankedPokemon = new Map(
+    input.rankings.pokemon.map((ranked) => {
+      const pokemon = ranked.pokemon[0] ?? "";
+      return [
+        canonicalPokemonName(pokemon),
+        chooseSets(input.setEvidence, input.regulation, pokemon),
+      ] as const;
+    }),
+  );
   let states: SearchState[] = [{ slots: resolvedLocks, score: 0, reasons: [] }];
 
   while ((states[0]?.slots.length ?? 6) < 6) {
     const expanded: SearchState[] = [];
     for (const state of states) {
       for (const ranked of input.rankings.pokemon) {
-        const set = chooseSets(
-          input.setEvidence,
-          input.regulation,
-          ranked.pokemon[0] ?? "",
-        ).find((entry) => candidateAllowed(state.slots, entry, input.rules));
+        const set = setsByRankedPokemon
+          .get(canonicalPokemonName(ranked.pokemon[0] ?? ""))
+          ?.find((entry) => candidateAllowed(state.slots, entry, input.rules));
         if (!set) continue;
         const candidate = scoreCandidate(
           set.pokemon,
           state.slots,
+          set,
           input.rankings,
           input.profiles,
           input.regulation,
           input.requiredRoles,
           input.topThreats,
+          input.archetypeCores ?? [],
         );
         expanded.push({
           slots: [

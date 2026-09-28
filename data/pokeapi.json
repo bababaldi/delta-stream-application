@@ -1,0 +1,4127 @@
+{
+  "source": {
+    "api": "https://pokeapi.co/api/v2/",
+    "sprites": "https://github.com/PokeAPI/sprites",
+    "fetchedAt": "2026-09-28T10:19:43.397Z"
+  },
+  "pokemon": {
+    "abomasnow": {
+      "name": "Abomasnow",
+      "pokeApiName": "abomasnow",
+      "sprite": "pokeapi/pokemon/abomasnow.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 92,
+        "defense": 75,
+        "specialAttack": 92,
+        "specialDefense": 85,
+        "speed": 60
+      }
+    },
+    "absol": {
+      "name": "Absol",
+      "pokeApiName": "absol",
+      "sprite": "pokeapi/pokemon/absol.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 130,
+        "defense": 60,
+        "specialAttack": 75,
+        "specialDefense": 60,
+        "speed": 75
+      }
+    },
+    "aegislash": {
+      "name": "Aegislash",
+      "pokeApiName": "aegislash-shield",
+      "sprite": "pokeapi/pokemon/aegislash-shield.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 140,
+        "specialAttack": 50,
+        "specialDefense": 140,
+        "speed": 60
+      }
+    },
+    "aerodactyl": {
+      "name": "Aerodactyl",
+      "pokeApiName": "aerodactyl",
+      "sprite": "pokeapi/pokemon/aerodactyl.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 105,
+        "defense": 65,
+        "specialAttack": 60,
+        "specialDefense": 75,
+        "speed": 130
+      }
+    },
+    "aerodactyl-mega": {
+      "name": "Aerodactyl-Mega",
+      "pokeApiName": "aerodactyl-mega",
+      "sprite": "pokeapi/pokemon/aerodactyl-mega.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 135,
+        "defense": 85,
+        "specialAttack": 70,
+        "specialDefense": 95,
+        "speed": 150
+      }
+    },
+    "aggron": {
+      "name": "Aggron",
+      "pokeApiName": "aggron",
+      "sprite": "pokeapi/pokemon/aggron.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 180,
+        "specialAttack": 60,
+        "specialDefense": 60,
+        "speed": 50
+      }
+    },
+    "alakazam": {
+      "name": "Alakazam",
+      "pokeApiName": "alakazam",
+      "sprite": "pokeapi/pokemon/alakazam.png",
+      "baseStats": {
+        "hp": 55,
+        "attack": 50,
+        "defense": 45,
+        "specialAttack": 135,
+        "specialDefense": 95,
+        "speed": 120
+      }
+    },
+    "alcremie": {
+      "name": "Alcremie",
+      "pokeApiName": "alcremie",
+      "sprite": "pokeapi/pokemon/alcremie.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 60,
+        "defense": 75,
+        "specialAttack": 110,
+        "specialDefense": 121,
+        "speed": 64
+      }
+    },
+    "ninetales-alola": {
+      "name": "Alolan Ninetales",
+      "pokeApiName": "ninetales-alola",
+      "sprite": "pokeapi/pokemon/ninetales-alola.png",
+      "baseStats": {
+        "hp": 73,
+        "attack": 67,
+        "defense": 75,
+        "specialAttack": 81,
+        "specialDefense": 100,
+        "speed": 109
+      }
+    },
+    "altaria": {
+      "name": "Altaria",
+      "pokeApiName": "altaria",
+      "sprite": "pokeapi/pokemon/altaria.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 70,
+        "defense": 90,
+        "specialAttack": 70,
+        "specialDefense": 105,
+        "speed": 80
+      }
+    },
+    "ampharos": {
+      "name": "Ampharos",
+      "pokeApiName": "ampharos",
+      "sprite": "pokeapi/pokemon/ampharos.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 75,
+        "defense": 85,
+        "specialAttack": 115,
+        "specialDefense": 90,
+        "speed": 55
+      }
+    },
+    "ampharos-mega": {
+      "name": "Ampharos Mega",
+      "pokeApiName": "ampharos-mega",
+      "sprite": "pokeapi/pokemon/ampharos-mega.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 95,
+        "defense": 105,
+        "specialAttack": 165,
+        "specialDefense": 110,
+        "speed": 45
+      }
+    },
+    "annihilape": {
+      "name": "Annihilape",
+      "pokeApiName": "annihilape",
+      "sprite": "pokeapi/pokemon/annihilape.png",
+      "baseStats": {
+        "hp": 110,
+        "attack": 115,
+        "defense": 80,
+        "specialAttack": 50,
+        "specialDefense": 90,
+        "speed": 90
+      }
+    },
+    "appletun": {
+      "name": "Appletun",
+      "pokeApiName": "appletun",
+      "sprite": "pokeapi/pokemon/appletun.png",
+      "baseStats": {
+        "hp": 110,
+        "attack": 85,
+        "defense": 80,
+        "specialAttack": 100,
+        "specialDefense": 80,
+        "speed": 30
+      }
+    },
+    "araquanid": {
+      "name": "Araquanid",
+      "pokeApiName": "araquanid",
+      "sprite": "pokeapi/pokemon/araquanid.png",
+      "baseStats": {
+        "hp": 68,
+        "attack": 70,
+        "defense": 92,
+        "specialAttack": 50,
+        "specialDefense": 132,
+        "speed": 42
+      }
+    },
+    "arbok": {
+      "name": "Arbok",
+      "pokeApiName": "arbok",
+      "sprite": "pokeapi/pokemon/arbok.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 95,
+        "defense": 69,
+        "specialAttack": 65,
+        "specialDefense": 79,
+        "speed": 80
+      }
+    },
+    "arboliva": {
+      "name": "Arboliva",
+      "pokeApiName": "arboliva",
+      "sprite": "pokeapi/pokemon/arboliva.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 69,
+        "defense": 90,
+        "specialAttack": 125,
+        "specialDefense": 109,
+        "speed": 39
+      }
+    },
+    "arcanine": {
+      "name": "Arcanine",
+      "pokeApiName": "arcanine",
+      "sprite": "pokeapi/pokemon/arcanine.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 110,
+        "defense": 80,
+        "specialAttack": 100,
+        "specialDefense": 80,
+        "speed": 95
+      }
+    },
+    "arcanine-hisuian": {
+      "name": "Arcanine (Hisuian Form)",
+      "pokeApiName": "arcanine-hisui",
+      "sprite": "pokeapi/pokemon/arcanine-hisui.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 115,
+        "defense": 80,
+        "specialAttack": 95,
+        "specialDefense": 80,
+        "speed": 90
+      }
+    },
+    "arcanine-hisui": {
+      "name": "Arcanine Hisui",
+      "pokeApiName": "arcanine-hisui",
+      "sprite": "pokeapi/pokemon/arcanine-hisui.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 115,
+        "defense": 80,
+        "specialAttack": 95,
+        "specialDefense": 80,
+        "speed": 90
+      }
+    },
+    "archaludon": {
+      "name": "Archaludon",
+      "pokeApiName": "archaludon",
+      "sprite": "pokeapi/pokemon/archaludon.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 105,
+        "defense": 130,
+        "specialAttack": 125,
+        "specialDefense": 65,
+        "speed": 85
+      }
+    },
+    "ariados": {
+      "name": "Ariados",
+      "pokeApiName": "ariados",
+      "sprite": "pokeapi/pokemon/ariados.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 90,
+        "defense": 70,
+        "specialAttack": 60,
+        "specialDefense": 70,
+        "speed": 40
+      }
+    },
+    "armarouge": {
+      "name": "Armarouge",
+      "pokeApiName": "armarouge",
+      "sprite": "pokeapi/pokemon/armarouge.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 60,
+        "defense": 100,
+        "specialAttack": 125,
+        "specialDefense": 80,
+        "speed": 75
+      }
+    },
+    "aromatisse": {
+      "name": "Aromatisse",
+      "pokeApiName": "aromatisse",
+      "sprite": "pokeapi/pokemon/aromatisse.png",
+      "baseStats": {
+        "hp": 101,
+        "attack": 72,
+        "defense": 72,
+        "specialAttack": 99,
+        "specialDefense": 89,
+        "speed": 29
+      }
+    },
+    "audino": {
+      "name": "Audino",
+      "pokeApiName": "audino",
+      "sprite": "pokeapi/pokemon/audino.png",
+      "baseStats": {
+        "hp": 103,
+        "attack": 60,
+        "defense": 86,
+        "specialAttack": 60,
+        "specialDefense": 86,
+        "speed": 50
+      }
+    },
+    "aurorus": {
+      "name": "Aurorus",
+      "pokeApiName": "aurorus",
+      "sprite": "pokeapi/pokemon/aurorus.png",
+      "baseStats": {
+        "hp": 123,
+        "attack": 77,
+        "defense": 72,
+        "specialAttack": 99,
+        "specialDefense": 92,
+        "speed": 58
+      }
+    },
+    "avalugg": {
+      "name": "Avalugg",
+      "pokeApiName": "avalugg",
+      "sprite": "pokeapi/pokemon/avalugg.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 117,
+        "defense": 184,
+        "specialAttack": 44,
+        "specialDefense": 46,
+        "speed": 28
+      }
+    },
+    "avalugg-hisuian": {
+      "name": "Avalugg (Hisuian Form)",
+      "pokeApiName": "avalugg-hisui",
+      "sprite": "pokeapi/pokemon/avalugg-hisui.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 127,
+        "defense": 184,
+        "specialAttack": 34,
+        "specialDefense": 36,
+        "speed": 38
+      }
+    },
+    "azumarill": {
+      "name": "Azumarill",
+      "pokeApiName": "azumarill",
+      "sprite": "pokeapi/pokemon/azumarill.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 50,
+        "defense": 80,
+        "specialAttack": 60,
+        "specialDefense": 80,
+        "speed": 50
+      }
+    },
+    "banette": {
+      "name": "Banette",
+      "pokeApiName": "banette",
+      "sprite": "pokeapi/pokemon/banette.png",
+      "baseStats": {
+        "hp": 64,
+        "attack": 115,
+        "defense": 65,
+        "specialAttack": 83,
+        "specialDefense": 63,
+        "speed": 65
+      }
+    },
+    "barbaracle": {
+      "name": "Barbaracle",
+      "pokeApiName": "barbaracle",
+      "sprite": "pokeapi/pokemon/barbaracle.png",
+      "baseStats": {
+        "hp": 72,
+        "attack": 105,
+        "defense": 115,
+        "specialAttack": 54,
+        "specialDefense": 86,
+        "speed": 68
+      }
+    },
+    "basculegion": {
+      "name": "Basculegion",
+      "pokeApiName": "basculegion-male",
+      "sprite": "pokeapi/pokemon/basculegion-male.png",
+      "baseStats": {
+        "hp": 120,
+        "attack": 112,
+        "defense": 65,
+        "specialAttack": 80,
+        "specialDefense": 75,
+        "speed": 78
+      }
+    },
+    "basculegion-female": {
+      "name": "Basculegion (Female)",
+      "pokeApiName": "basculegion-female",
+      "sprite": "pokeapi/pokemon/basculegion-female.png",
+      "baseStats": {
+        "hp": 120,
+        "attack": 92,
+        "defense": 65,
+        "specialAttack": 100,
+        "specialDefense": 75,
+        "speed": 78
+      }
+    },
+    "basculegion-male": {
+      "name": "Basculegion (Male)",
+      "pokeApiName": "basculegion-male",
+      "sprite": "pokeapi/pokemon/basculegion-male.png",
+      "baseStats": {
+        "hp": 120,
+        "attack": 112,
+        "defense": 65,
+        "specialAttack": 80,
+        "specialDefense": 75,
+        "speed": 78
+      }
+    },
+    "bastiodon": {
+      "name": "Bastiodon",
+      "pokeApiName": "bastiodon",
+      "sprite": "pokeapi/pokemon/bastiodon.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 52,
+        "defense": 168,
+        "specialAttack": 47,
+        "specialDefense": 138,
+        "speed": 30
+      }
+    },
+    "baxcalibur": {
+      "name": "Baxcalibur",
+      "pokeApiName": "baxcalibur",
+      "sprite": "pokeapi/pokemon/baxcalibur.png",
+      "baseStats": {
+        "hp": 115,
+        "attack": 145,
+        "defense": 92,
+        "specialAttack": 75,
+        "specialDefense": 86,
+        "speed": 87
+      }
+    },
+    "beartic": {
+      "name": "Beartic",
+      "pokeApiName": "beartic",
+      "sprite": "pokeapi/pokemon/beartic.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 130,
+        "defense": 80,
+        "specialAttack": 70,
+        "specialDefense": 80,
+        "speed": 50
+      }
+    },
+    "beedrill": {
+      "name": "Beedrill",
+      "pokeApiName": "beedrill",
+      "sprite": "pokeapi/pokemon/beedrill.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 40,
+        "specialAttack": 45,
+        "specialDefense": 80,
+        "speed": 75
+      }
+    },
+    "bellibolt": {
+      "name": "Bellibolt",
+      "pokeApiName": "bellibolt",
+      "sprite": "pokeapi/pokemon/bellibolt.png",
+      "baseStats": {
+        "hp": 109,
+        "attack": 64,
+        "defense": 91,
+        "specialAttack": 103,
+        "specialDefense": 83,
+        "speed": 45
+      }
+    },
+    "blastoise": {
+      "name": "Blastoise",
+      "pokeApiName": "blastoise",
+      "sprite": "pokeapi/pokemon/blastoise.png",
+      "baseStats": {
+        "hp": 79,
+        "attack": 83,
+        "defense": 100,
+        "specialAttack": 85,
+        "specialDefense": 105,
+        "speed": 78
+      }
+    },
+    "blastoise-mega": {
+      "name": "Blastoise Mega",
+      "pokeApiName": "blastoise-mega",
+      "sprite": "pokeapi/pokemon/blastoise-mega.png",
+      "baseStats": {
+        "hp": 79,
+        "attack": 103,
+        "defense": 120,
+        "specialAttack": 135,
+        "specialDefense": 115,
+        "speed": 78
+      }
+    },
+    "blaziken": {
+      "name": "Blaziken",
+      "pokeApiName": "blaziken",
+      "sprite": "pokeapi/pokemon/blaziken.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 120,
+        "defense": 70,
+        "specialAttack": 110,
+        "specialDefense": 70,
+        "speed": 80
+      }
+    },
+    "blaziken-mega": {
+      "name": "Blaziken-Mega",
+      "pokeApiName": "blaziken-mega",
+      "sprite": "pokeapi/pokemon/blaziken-mega.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 160,
+        "defense": 80,
+        "specialAttack": 130,
+        "specialDefense": 80,
+        "speed": 100
+      }
+    },
+    "camerupt": {
+      "name": "Camerupt",
+      "pokeApiName": "camerupt",
+      "sprite": "pokeapi/pokemon/camerupt.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 100,
+        "defense": 70,
+        "specialAttack": 105,
+        "specialDefense": 75,
+        "speed": 40
+      }
+    },
+    "camerupt-mega": {
+      "name": "Camerupt Mega",
+      "pokeApiName": "camerupt-mega",
+      "sprite": "pokeapi/pokemon/camerupt-mega.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 120,
+        "defense": 100,
+        "specialAttack": 145,
+        "specialDefense": 105,
+        "speed": 20
+      }
+    },
+    "castform": {
+      "name": "Castform",
+      "pokeApiName": "castform",
+      "sprite": "pokeapi/pokemon/castform.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 70,
+        "defense": 70,
+        "specialAttack": 70,
+        "specialDefense": 70,
+        "speed": 70
+      }
+    },
+    "ceruledge": {
+      "name": "Ceruledge",
+      "pokeApiName": "ceruledge",
+      "sprite": "pokeapi/pokemon/ceruledge.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 125,
+        "defense": 80,
+        "specialAttack": 60,
+        "specialDefense": 100,
+        "speed": 85
+      }
+    },
+    "chandelure": {
+      "name": "Chandelure",
+      "pokeApiName": "chandelure",
+      "sprite": "pokeapi/pokemon/chandelure.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 55,
+        "defense": 90,
+        "specialAttack": 145,
+        "specialDefense": 90,
+        "speed": 80
+      }
+    },
+    "charizard": {
+      "name": "Charizard",
+      "pokeApiName": "charizard",
+      "sprite": "pokeapi/pokemon/charizard.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "specialAttack": 109,
+        "specialDefense": 85,
+        "speed": 100
+      }
+    },
+    "charizard-mega-y": {
+      "name": "Charizard Mega Y",
+      "pokeApiName": "charizard-mega-y",
+      "sprite": "pokeapi/pokemon/charizard-mega-y.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 104,
+        "defense": 78,
+        "specialAttack": 159,
+        "specialDefense": 115,
+        "speed": 100
+      }
+    },
+    "chesnaught": {
+      "name": "Chesnaught",
+      "pokeApiName": "chesnaught",
+      "sprite": "pokeapi/pokemon/chesnaught.png",
+      "baseStats": {
+        "hp": 88,
+        "attack": 107,
+        "defense": 122,
+        "specialAttack": 74,
+        "specialDefense": 75,
+        "speed": 64
+      }
+    },
+    "chimecho": {
+      "name": "Chimecho",
+      "pokeApiName": "chimecho",
+      "sprite": "pokeapi/pokemon/chimecho.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 50,
+        "defense": 80,
+        "specialAttack": 95,
+        "specialDefense": 90,
+        "speed": 65
+      }
+    },
+    "cinderace": {
+      "name": "Cinderace",
+      "pokeApiName": "cinderace",
+      "sprite": "pokeapi/pokemon/cinderace.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 116,
+        "defense": 75,
+        "specialAttack": 65,
+        "specialDefense": 75,
+        "speed": 119
+      }
+    },
+    "clawitzer": {
+      "name": "Clawitzer",
+      "pokeApiName": "clawitzer",
+      "sprite": "pokeapi/pokemon/clawitzer.png",
+      "baseStats": {
+        "hp": 71,
+        "attack": 73,
+        "defense": 88,
+        "specialAttack": 120,
+        "specialDefense": 89,
+        "speed": 59
+      }
+    },
+    "clefable": {
+      "name": "Clefable",
+      "pokeApiName": "clefable",
+      "sprite": "pokeapi/pokemon/clefable.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 70,
+        "defense": 73,
+        "specialAttack": 95,
+        "specialDefense": 90,
+        "speed": 60
+      }
+    },
+    "cofagrigus": {
+      "name": "Cofagrigus",
+      "pokeApiName": "cofagrigus",
+      "sprite": "pokeapi/pokemon/cofagrigus.png",
+      "baseStats": {
+        "hp": 58,
+        "attack": 50,
+        "defense": 145,
+        "specialAttack": 95,
+        "specialDefense": 105,
+        "speed": 30
+      }
+    },
+    "conkeldurr": {
+      "name": "Conkeldurr",
+      "pokeApiName": "conkeldurr",
+      "sprite": "pokeapi/pokemon/conkeldurr.png",
+      "baseStats": {
+        "hp": 105,
+        "attack": 140,
+        "defense": 95,
+        "specialAttack": 55,
+        "specialDefense": 65,
+        "speed": 45
+      }
+    },
+    "corviknight": {
+      "name": "Corviknight",
+      "pokeApiName": "corviknight",
+      "sprite": "pokeapi/pokemon/corviknight.png",
+      "baseStats": {
+        "hp": 98,
+        "attack": 87,
+        "defense": 105,
+        "specialAttack": 53,
+        "specialDefense": 85,
+        "speed": 67
+      }
+    },
+    "crabominable": {
+      "name": "Crabominable",
+      "pokeApiName": "crabominable",
+      "sprite": "pokeapi/pokemon/crabominable.png",
+      "baseStats": {
+        "hp": 97,
+        "attack": 132,
+        "defense": 77,
+        "specialAttack": 62,
+        "specialDefense": 67,
+        "speed": 43
+      }
+    },
+    "decidueye": {
+      "name": "Decidueye",
+      "pokeApiName": "decidueye",
+      "sprite": "pokeapi/pokemon/decidueye.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 107,
+        "defense": 75,
+        "specialAttack": 100,
+        "specialDefense": 100,
+        "speed": 70
+      }
+    },
+    "decidueye-hisuian": {
+      "name": "Decidueye (Hisuian Form)",
+      "pokeApiName": "decidueye-hisui",
+      "sprite": "pokeapi/pokemon/decidueye-hisui.png",
+      "baseStats": {
+        "hp": 88,
+        "attack": 112,
+        "defense": 80,
+        "specialAttack": 95,
+        "specialDefense": 95,
+        "speed": 60
+      }
+    },
+    "dedenne": {
+      "name": "Dedenne",
+      "pokeApiName": "dedenne",
+      "sprite": "pokeapi/pokemon/dedenne.png",
+      "baseStats": {
+        "hp": 67,
+        "attack": 58,
+        "defense": 57,
+        "specialAttack": 81,
+        "specialDefense": 67,
+        "speed": 101
+      }
+    },
+    "delphox": {
+      "name": "Delphox",
+      "pokeApiName": "delphox",
+      "sprite": "pokeapi/pokemon/delphox.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 69,
+        "defense": 72,
+        "specialAttack": 114,
+        "specialDefense": 100,
+        "speed": 104
+      }
+    },
+    "delphox-mega": {
+      "name": "Delphox-Mega",
+      "pokeApiName": "delphox-mega",
+      "sprite": "pokeapi/pokemon/delphox-mega.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 69,
+        "defense": 72,
+        "specialAttack": 159,
+        "specialDefense": 125,
+        "speed": 134
+      }
+    },
+    "diggersby": {
+      "name": "Diggersby",
+      "pokeApiName": "diggersby",
+      "sprite": "pokeapi/pokemon/diggersby.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 56,
+        "defense": 77,
+        "specialAttack": 50,
+        "specialDefense": 77,
+        "speed": 78
+      }
+    },
+    "ditto": {
+      "name": "Ditto",
+      "pokeApiName": "ditto",
+      "sprite": "pokeapi/pokemon/ditto.png",
+      "baseStats": {
+        "hp": 48,
+        "attack": 48,
+        "defense": 48,
+        "specialAttack": 48,
+        "specialDefense": 48,
+        "speed": 48
+      }
+    },
+    "dragalge": {
+      "name": "Dragalge",
+      "pokeApiName": "dragalge",
+      "sprite": "pokeapi/pokemon/dragalge.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 75,
+        "defense": 90,
+        "specialAttack": 97,
+        "specialDefense": 123,
+        "speed": 44
+      }
+    },
+    "dragapult": {
+      "name": "Dragapult",
+      "pokeApiName": "dragapult",
+      "sprite": "pokeapi/pokemon/dragapult.png",
+      "baseStats": {
+        "hp": 88,
+        "attack": 120,
+        "defense": 75,
+        "specialAttack": 100,
+        "specialDefense": 75,
+        "speed": 142
+      }
+    },
+    "dragonite": {
+      "name": "Dragonite",
+      "pokeApiName": "dragonite",
+      "sprite": "pokeapi/pokemon/dragonite.png",
+      "baseStats": {
+        "hp": 91,
+        "attack": 134,
+        "defense": 95,
+        "specialAttack": 100,
+        "specialDefense": 100,
+        "speed": 80
+      }
+    },
+    "dragonite-mega": {
+      "name": "Dragonite Mega",
+      "pokeApiName": "dragonite-mega",
+      "sprite": "pokeapi/pokemon/dragonite-mega.png",
+      "baseStats": {
+        "hp": 91,
+        "attack": 124,
+        "defense": 115,
+        "specialAttack": 145,
+        "specialDefense": 125,
+        "speed": 100
+      }
+    },
+    "drampa": {
+      "name": "Drampa",
+      "pokeApiName": "drampa",
+      "sprite": "pokeapi/pokemon/drampa.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 60,
+        "defense": 85,
+        "specialAttack": 135,
+        "specialDefense": 91,
+        "speed": 36
+      }
+    },
+    "eelektross": {
+      "name": "Eelektross",
+      "pokeApiName": "eelektross",
+      "sprite": "pokeapi/pokemon/eelektross.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 115,
+        "defense": 80,
+        "specialAttack": 105,
+        "specialDefense": 80,
+        "speed": 50
+      }
+    },
+    "emboar": {
+      "name": "Emboar",
+      "pokeApiName": "emboar",
+      "sprite": "pokeapi/pokemon/emboar.png",
+      "baseStats": {
+        "hp": 110,
+        "attack": 123,
+        "defense": 65,
+        "specialAttack": 100,
+        "specialDefense": 65,
+        "speed": 65
+      }
+    },
+    "emolga": {
+      "name": "Emolga",
+      "pokeApiName": "emolga",
+      "sprite": "pokeapi/pokemon/emolga.png",
+      "baseStats": {
+        "hp": 55,
+        "attack": 75,
+        "defense": 60,
+        "specialAttack": 75,
+        "specialDefense": 60,
+        "speed": 103
+      }
+    },
+    "empoleon": {
+      "name": "Empoleon",
+      "pokeApiName": "empoleon",
+      "sprite": "pokeapi/pokemon/empoleon.png",
+      "baseStats": {
+        "hp": 84,
+        "attack": 86,
+        "defense": 88,
+        "specialAttack": 111,
+        "specialDefense": 101,
+        "speed": 60
+      }
+    },
+    "espathra": {
+      "name": "Espathra",
+      "pokeApiName": "espathra",
+      "sprite": "pokeapi/pokemon/espathra.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 60,
+        "defense": 60,
+        "specialAttack": 101,
+        "specialDefense": 60,
+        "speed": 105
+      }
+    },
+    "espeon": {
+      "name": "Espeon",
+      "pokeApiName": "espeon",
+      "sprite": "pokeapi/pokemon/espeon.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 60,
+        "specialAttack": 130,
+        "specialDefense": 95,
+        "speed": 110
+      }
+    },
+    "excadrill": {
+      "name": "Excadrill",
+      "pokeApiName": "excadrill",
+      "sprite": "pokeapi/pokemon/excadrill.png",
+      "baseStats": {
+        "hp": 110,
+        "attack": 135,
+        "defense": 60,
+        "specialAttack": 50,
+        "specialDefense": 65,
+        "speed": 88
+      }
+    },
+    "falinks": {
+      "name": "Falinks",
+      "pokeApiName": "falinks",
+      "sprite": "pokeapi/pokemon/falinks.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 100,
+        "defense": 100,
+        "specialAttack": 70,
+        "specialDefense": 60,
+        "speed": 75
+      }
+    },
+    "farfetch-d": {
+      "name": "Farfetch’d",
+      "pokeApiName": "farfetchd",
+      "sprite": "pokeapi/pokemon/farfetchd.png",
+      "baseStats": {
+        "hp": 52,
+        "attack": 90,
+        "defense": 55,
+        "specialAttack": 58,
+        "specialDefense": 62,
+        "speed": 60
+      }
+    },
+    "farigiraf": {
+      "name": "Farigiraf",
+      "pokeApiName": "farigiraf",
+      "sprite": "pokeapi/pokemon/farigiraf.png",
+      "baseStats": {
+        "hp": 120,
+        "attack": 90,
+        "defense": 70,
+        "specialAttack": 110,
+        "specialDefense": 70,
+        "speed": 60
+      }
+    },
+    "feraligatr": {
+      "name": "Feraligatr",
+      "pokeApiName": "feraligatr",
+      "sprite": "pokeapi/pokemon/feraligatr.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 105,
+        "defense": 100,
+        "specialAttack": 79,
+        "specialDefense": 83,
+        "speed": 78
+      }
+    },
+    "flapple": {
+      "name": "Flapple",
+      "pokeApiName": "flapple",
+      "sprite": "pokeapi/pokemon/flapple.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 80,
+        "specialAttack": 95,
+        "specialDefense": 60,
+        "speed": 70
+      }
+    },
+    "flareon": {
+      "name": "Flareon",
+      "pokeApiName": "flareon",
+      "sprite": "pokeapi/pokemon/flareon.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 130,
+        "defense": 60,
+        "specialAttack": 95,
+        "specialDefense": 110,
+        "speed": 65
+      }
+    },
+    "floette": {
+      "name": "Floette",
+      "pokeApiName": "floette",
+      "sprite": "pokeapi/pokemon/floette.png",
+      "baseStats": {
+        "hp": 54,
+        "attack": 45,
+        "defense": 47,
+        "specialAttack": 75,
+        "specialDefense": 98,
+        "speed": 52
+      }
+    },
+    "floette-eternal-flower": {
+      "name": "Floette [Eternal Flower]",
+      "pokeApiName": "floette-eternal",
+      "sprite": "pokeapi/pokemon/floette-eternal.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 65,
+        "defense": 67,
+        "specialAttack": 125,
+        "specialDefense": 128,
+        "speed": 92
+      }
+    },
+    "floette-mega": {
+      "name": "Floette Mega",
+      "pokeApiName": "floette-mega",
+      "sprite": "pokeapi/pokemon/floette-mega.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 85,
+        "defense": 87,
+        "specialAttack": 155,
+        "specialDefense": 148,
+        "speed": 102
+      }
+    },
+    "florges": {
+      "name": "Florges",
+      "pokeApiName": "florges",
+      "sprite": "pokeapi/pokemon/florges.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 65,
+        "defense": 68,
+        "specialAttack": 112,
+        "specialDefense": 154,
+        "speed": 75
+      }
+    },
+    "forretress": {
+      "name": "Forretress",
+      "pokeApiName": "forretress",
+      "sprite": "pokeapi/pokemon/forretress.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 90,
+        "defense": 140,
+        "specialAttack": 60,
+        "specialDefense": 60,
+        "speed": 40
+      }
+    },
+    "froslass": {
+      "name": "Froslass",
+      "pokeApiName": "froslass",
+      "sprite": "pokeapi/pokemon/froslass.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 80,
+        "defense": 70,
+        "specialAttack": 80,
+        "specialDefense": 70,
+        "speed": 110
+      }
+    },
+    "froslass-mega": {
+      "name": "Froslass Mega",
+      "pokeApiName": "froslass-mega",
+      "sprite": "pokeapi/pokemon/froslass-mega.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 80,
+        "defense": 70,
+        "specialAttack": 140,
+        "specialDefense": 100,
+        "speed": 120
+      }
+    },
+    "furfrou": {
+      "name": "Furfrou",
+      "pokeApiName": "furfrou",
+      "sprite": "pokeapi/pokemon/furfrou.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 60,
+        "specialAttack": 65,
+        "specialDefense": 90,
+        "speed": 102
+      }
+    },
+    "gallade": {
+      "name": "Gallade",
+      "pokeApiName": "gallade",
+      "sprite": "pokeapi/pokemon/gallade.png",
+      "baseStats": {
+        "hp": 68,
+        "attack": 125,
+        "defense": 65,
+        "specialAttack": 65,
+        "specialDefense": 115,
+        "speed": 80
+      }
+    },
+    "garbodor": {
+      "name": "Garbodor",
+      "pokeApiName": "garbodor",
+      "sprite": "pokeapi/pokemon/garbodor.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 95,
+        "defense": 82,
+        "specialAttack": 60,
+        "specialDefense": 82,
+        "speed": 75
+      }
+    },
+    "garchomp": {
+      "name": "Garchomp",
+      "pokeApiName": "garchomp",
+      "sprite": "pokeapi/pokemon/garchomp.png",
+      "baseStats": {
+        "hp": 108,
+        "attack": 130,
+        "defense": 95,
+        "specialAttack": 80,
+        "specialDefense": 85,
+        "speed": 102
+      }
+    },
+    "garchomp-mega-z": {
+      "name": "Garchomp Mega Z",
+      "pokeApiName": "garchomp-mega-z",
+      "sprite": "pokeapi/pokemon/garchomp-mega-z.png",
+      "baseStats": {
+        "hp": 108,
+        "attack": 130,
+        "defense": 85,
+        "specialAttack": 141,
+        "specialDefense": 85,
+        "speed": 151
+      }
+    },
+    "gardevoir": {
+      "name": "Gardevoir",
+      "pokeApiName": "gardevoir",
+      "sprite": "pokeapi/pokemon/gardevoir.png",
+      "baseStats": {
+        "hp": 68,
+        "attack": 65,
+        "defense": 65,
+        "specialAttack": 125,
+        "specialDefense": 115,
+        "speed": 80
+      }
+    },
+    "gardevoir-mega": {
+      "name": "Gardevoir-Mega",
+      "pokeApiName": "gardevoir-mega",
+      "sprite": "pokeapi/pokemon/gardevoir-mega.png",
+      "baseStats": {
+        "hp": 68,
+        "attack": 85,
+        "defense": 65,
+        "specialAttack": 165,
+        "specialDefense": 135,
+        "speed": 100
+      }
+    },
+    "garganacl": {
+      "name": "Garganacl",
+      "pokeApiName": "garganacl",
+      "sprite": "pokeapi/pokemon/garganacl.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 130,
+        "specialAttack": 45,
+        "specialDefense": 90,
+        "speed": 35
+      }
+    },
+    "gengar": {
+      "name": "Gengar",
+      "pokeApiName": "gengar",
+      "sprite": "pokeapi/pokemon/gengar.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 60,
+        "specialAttack": 130,
+        "specialDefense": 75,
+        "speed": 110
+      }
+    },
+    "gengar-mega": {
+      "name": "Gengar Mega",
+      "pokeApiName": "gengar-mega",
+      "sprite": "pokeapi/pokemon/gengar-mega.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 80,
+        "specialAttack": 170,
+        "specialDefense": 95,
+        "speed": 130
+      }
+    },
+    "gholdengo": {
+      "name": "Gholdengo",
+      "pokeApiName": "gholdengo",
+      "sprite": "pokeapi/pokemon/gholdengo.png",
+      "baseStats": {
+        "hp": 87,
+        "attack": 60,
+        "defense": 95,
+        "specialAttack": 133,
+        "specialDefense": 91,
+        "speed": 84
+      }
+    },
+    "glaceon": {
+      "name": "Glaceon",
+      "pokeApiName": "glaceon",
+      "sprite": "pokeapi/pokemon/glaceon.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 60,
+        "defense": 110,
+        "specialAttack": 130,
+        "specialDefense": 95,
+        "speed": 65
+      }
+    },
+    "glalie": {
+      "name": "Glalie",
+      "pokeApiName": "glalie",
+      "sprite": "pokeapi/pokemon/glalie.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 80,
+        "specialAttack": 80,
+        "specialDefense": 80,
+        "speed": 80
+      }
+    },
+    "glimmora": {
+      "name": "Glimmora",
+      "pokeApiName": "glimmora",
+      "sprite": "pokeapi/pokemon/glimmora.png",
+      "baseStats": {
+        "hp": 83,
+        "attack": 55,
+        "defense": 90,
+        "specialAttack": 130,
+        "specialDefense": 81,
+        "speed": 86
+      }
+    },
+    "glimmora-mega": {
+      "name": "Glimmora Mega",
+      "pokeApiName": "glimmora-mega",
+      "sprite": "pokeapi/pokemon/glimmora-mega.png",
+      "baseStats": {
+        "hp": 83,
+        "attack": 90,
+        "defense": 105,
+        "specialAttack": 150,
+        "specialDefense": 96,
+        "speed": 101
+      }
+    },
+    "gliscor": {
+      "name": "Gliscor",
+      "pokeApiName": "gliscor",
+      "sprite": "pokeapi/pokemon/gliscor.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 95,
+        "defense": 125,
+        "specialAttack": 45,
+        "specialDefense": 75,
+        "speed": 95
+      }
+    },
+    "gogoat": {
+      "name": "Gogoat",
+      "pokeApiName": "gogoat",
+      "sprite": "pokeapi/pokemon/gogoat.png",
+      "baseStats": {
+        "hp": 123,
+        "attack": 100,
+        "defense": 62,
+        "specialAttack": 97,
+        "specialDefense": 81,
+        "speed": 68
+      }
+    },
+    "golisopod": {
+      "name": "Golisopod",
+      "pokeApiName": "golisopod",
+      "sprite": "pokeapi/pokemon/golisopod.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 125,
+        "defense": 140,
+        "specialAttack": 60,
+        "specialDefense": 90,
+        "speed": 40
+      }
+    },
+    "golisopod-mega": {
+      "name": "Golisopod-Mega",
+      "pokeApiName": "golisopod-mega",
+      "sprite": "pokeapi/pokemon/golisopod-mega.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 150,
+        "defense": 175,
+        "specialAttack": 70,
+        "specialDefense": 120,
+        "speed": 40
+      }
+    },
+    "golurk": {
+      "name": "Golurk",
+      "pokeApiName": "golurk",
+      "sprite": "pokeapi/pokemon/golurk.png",
+      "baseStats": {
+        "hp": 89,
+        "attack": 124,
+        "defense": 80,
+        "specialAttack": 55,
+        "specialDefense": 80,
+        "speed": 55
+      }
+    },
+    "goodra": {
+      "name": "Goodra",
+      "pokeApiName": "goodra",
+      "sprite": "pokeapi/pokemon/goodra.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 100,
+        "defense": 70,
+        "specialAttack": 110,
+        "specialDefense": 150,
+        "speed": 80
+      }
+    },
+    "goodra-hisuian": {
+      "name": "Goodra (Hisuian Form)",
+      "pokeApiName": "goodra-hisui",
+      "sprite": "pokeapi/pokemon/goodra-hisui.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 100,
+        "defense": 100,
+        "specialAttack": 110,
+        "specialDefense": 150,
+        "speed": 60
+      }
+    },
+    "gourgeist-jumbo-variety": {
+      "name": "Gourgeist (Jumbo Variety)",
+      "pokeApiName": "gourgeist-super",
+      "sprite": "pokeapi/pokemon/gourgeist-super.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 100,
+        "defense": 122,
+        "specialAttack": 58,
+        "specialDefense": 75,
+        "speed": 54
+      }
+    },
+    "gourgeist-large-variety": {
+      "name": "Gourgeist (Large Variety)",
+      "pokeApiName": "gourgeist-large",
+      "sprite": "pokeapi/pokemon/gourgeist-large.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 95,
+        "defense": 122,
+        "specialAttack": 58,
+        "specialDefense": 75,
+        "speed": 69
+      }
+    },
+    "gourgeist-medium-variety": {
+      "name": "Gourgeist (Medium Variety)",
+      "pokeApiName": "gourgeist-average",
+      "sprite": "pokeapi/pokemon/gourgeist-average.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 122,
+        "specialAttack": 58,
+        "specialDefense": 75,
+        "speed": 84
+      }
+    },
+    "gourgeist-small-variety": {
+      "name": "Gourgeist (Small Variety)",
+      "pokeApiName": "gourgeist-small",
+      "sprite": "pokeapi/pokemon/gourgeist-small.png",
+      "baseStats": {
+        "hp": 55,
+        "attack": 85,
+        "defense": 122,
+        "specialAttack": 58,
+        "specialDefense": 75,
+        "speed": 99
+      }
+    },
+    "grapploct": {
+      "name": "Grapploct",
+      "pokeApiName": "grapploct",
+      "sprite": "pokeapi/pokemon/grapploct.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 118,
+        "defense": 90,
+        "specialAttack": 70,
+        "specialDefense": 80,
+        "speed": 42
+      }
+    },
+    "greninja": {
+      "name": "Greninja",
+      "pokeApiName": "greninja",
+      "sprite": "pokeapi/pokemon/greninja.png",
+      "baseStats": {
+        "hp": 72,
+        "attack": 95,
+        "defense": 67,
+        "specialAttack": 103,
+        "specialDefense": 71,
+        "speed": 122
+      }
+    },
+    "grimmsnarl": {
+      "name": "Grimmsnarl",
+      "pokeApiName": "grimmsnarl",
+      "sprite": "pokeapi/pokemon/grimmsnarl.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 120,
+        "defense": 65,
+        "specialAttack": 95,
+        "specialDefense": 75,
+        "speed": 60
+      }
+    },
+    "gyarados": {
+      "name": "Gyarados",
+      "pokeApiName": "gyarados",
+      "sprite": "pokeapi/pokemon/gyarados.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 125,
+        "defense": 79,
+        "specialAttack": 60,
+        "specialDefense": 100,
+        "speed": 81
+      }
+    },
+    "hatterene": {
+      "name": "Hatterene",
+      "pokeApiName": "hatterene",
+      "sprite": "pokeapi/pokemon/hatterene.png",
+      "baseStats": {
+        "hp": 57,
+        "attack": 90,
+        "defense": 95,
+        "specialAttack": 136,
+        "specialDefense": 103,
+        "speed": 29
+      }
+    },
+    "hawlucha": {
+      "name": "Hawlucha",
+      "pokeApiName": "hawlucha",
+      "sprite": "pokeapi/pokemon/hawlucha.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 92,
+        "defense": 75,
+        "specialAttack": 74,
+        "specialDefense": 63,
+        "speed": 118
+      }
+    },
+    "heliolisk": {
+      "name": "Heliolisk",
+      "pokeApiName": "heliolisk",
+      "sprite": "pokeapi/pokemon/heliolisk.png",
+      "baseStats": {
+        "hp": 62,
+        "attack": 55,
+        "defense": 52,
+        "specialAttack": 109,
+        "specialDefense": 94,
+        "speed": 109
+      }
+    },
+    "heracross": {
+      "name": "Heracross",
+      "pokeApiName": "heracross",
+      "sprite": "pokeapi/pokemon/heracross.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 125,
+        "defense": 75,
+        "specialAttack": 40,
+        "specialDefense": 95,
+        "speed": 85
+      }
+    },
+    "hippowdon": {
+      "name": "Hippowdon",
+      "pokeApiName": "hippowdon",
+      "sprite": "pokeapi/pokemon/hippowdon.png",
+      "baseStats": {
+        "hp": 108,
+        "attack": 112,
+        "defense": 118,
+        "specialAttack": 68,
+        "specialDefense": 72,
+        "speed": 47
+      }
+    },
+    "houndoom": {
+      "name": "Houndoom",
+      "pokeApiName": "houndoom",
+      "sprite": "pokeapi/pokemon/houndoom.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 90,
+        "defense": 50,
+        "specialAttack": 110,
+        "specialDefense": 80,
+        "speed": 95
+      }
+    },
+    "houndstone": {
+      "name": "Houndstone",
+      "pokeApiName": "houndstone",
+      "sprite": "pokeapi/pokemon/houndstone.png",
+      "baseStats": {
+        "hp": 72,
+        "attack": 101,
+        "defense": 100,
+        "specialAttack": 50,
+        "specialDefense": 97,
+        "speed": 68
+      }
+    },
+    "hydrapple": {
+      "name": "Hydrapple",
+      "pokeApiName": "hydrapple",
+      "sprite": "pokeapi/pokemon/hydrapple.png",
+      "baseStats": {
+        "hp": 106,
+        "attack": 80,
+        "defense": 110,
+        "specialAttack": 120,
+        "specialDefense": 80,
+        "speed": 44
+      }
+    },
+    "hydreigon": {
+      "name": "Hydreigon",
+      "pokeApiName": "hydreigon",
+      "sprite": "pokeapi/pokemon/hydreigon.png",
+      "baseStats": {
+        "hp": 92,
+        "attack": 105,
+        "defense": 90,
+        "specialAttack": 125,
+        "specialDefense": 90,
+        "speed": 98
+      }
+    },
+    "incineroar": {
+      "name": "Incineroar",
+      "pokeApiName": "incineroar",
+      "sprite": "pokeapi/pokemon/incineroar.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 115,
+        "defense": 90,
+        "specialAttack": 80,
+        "specialDefense": 90,
+        "speed": 60
+      }
+    },
+    "indeedee": {
+      "name": "Indeedee",
+      "pokeApiName": "indeedee-male",
+      "sprite": "pokeapi/pokemon/indeedee-male.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 55,
+        "specialAttack": 105,
+        "specialDefense": 95,
+        "speed": 95
+      }
+    },
+    "indeedee-female": {
+      "name": "Indeedee (Female)",
+      "pokeApiName": "indeedee-female",
+      "sprite": "pokeapi/pokemon/indeedee-female.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 55,
+        "defense": 65,
+        "specialAttack": 95,
+        "specialDefense": 105,
+        "speed": 85
+      }
+    },
+    "indeedee-male": {
+      "name": "Indeedee (Male)",
+      "pokeApiName": "indeedee-male",
+      "sprite": "pokeapi/pokemon/indeedee-male.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 55,
+        "specialAttack": 105,
+        "specialDefense": 95,
+        "speed": 95
+      }
+    },
+    "indeedee-f": {
+      "name": "Indeedee F",
+      "pokeApiName": "indeedee-female",
+      "sprite": "pokeapi/pokemon/indeedee-female.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 55,
+        "defense": 65,
+        "specialAttack": 95,
+        "specialDefense": 105,
+        "speed": 85
+      }
+    },
+    "infernape": {
+      "name": "Infernape",
+      "pokeApiName": "infernape",
+      "sprite": "pokeapi/pokemon/infernape.png",
+      "baseStats": {
+        "hp": 76,
+        "attack": 104,
+        "defense": 71,
+        "specialAttack": 104,
+        "specialDefense": 71,
+        "speed": 108
+      }
+    },
+    "inteleon": {
+      "name": "Inteleon",
+      "pokeApiName": "inteleon",
+      "sprite": "pokeapi/pokemon/inteleon.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 65,
+        "specialAttack": 125,
+        "specialDefense": 65,
+        "speed": 120
+      }
+    },
+    "jolteon": {
+      "name": "Jolteon",
+      "pokeApiName": "jolteon",
+      "sprite": "pokeapi/pokemon/jolteon.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 60,
+        "specialAttack": 110,
+        "specialDefense": 95,
+        "speed": 130
+      }
+    },
+    "kangaskhan": {
+      "name": "Kangaskhan",
+      "pokeApiName": "kangaskhan",
+      "sprite": "pokeapi/pokemon/kangaskhan.png",
+      "baseStats": {
+        "hp": 105,
+        "attack": 95,
+        "defense": 80,
+        "specialAttack": 40,
+        "specialDefense": 80,
+        "speed": 90
+      }
+    },
+    "kingambit": {
+      "name": "Kingambit",
+      "pokeApiName": "kingambit",
+      "sprite": "pokeapi/pokemon/kingambit.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 135,
+        "defense": 120,
+        "specialAttack": 60,
+        "specialDefense": 85,
+        "speed": 50
+      }
+    },
+    "kleavor": {
+      "name": "Kleavor",
+      "pokeApiName": "kleavor",
+      "sprite": "pokeapi/pokemon/kleavor.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 135,
+        "defense": 95,
+        "specialAttack": 45,
+        "specialDefense": 70,
+        "speed": 85
+      }
+    },
+    "klefki": {
+      "name": "Klefki",
+      "pokeApiName": "klefki",
+      "sprite": "pokeapi/pokemon/klefki.png",
+      "baseStats": {
+        "hp": 57,
+        "attack": 80,
+        "defense": 91,
+        "specialAttack": 80,
+        "specialDefense": 87,
+        "speed": 75
+      }
+    },
+    "kommo-o": {
+      "name": "Kommo O",
+      "pokeApiName": "kommo-o",
+      "sprite": "pokeapi/pokemon/kommo-o.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 110,
+        "defense": 125,
+        "specialAttack": 100,
+        "specialDefense": 105,
+        "speed": 85
+      }
+    },
+    "krookodile": {
+      "name": "Krookodile",
+      "pokeApiName": "krookodile",
+      "sprite": "pokeapi/pokemon/krookodile.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 117,
+        "defense": 80,
+        "specialAttack": 65,
+        "specialDefense": 70,
+        "speed": 92
+      }
+    },
+    "leafeon": {
+      "name": "Leafeon",
+      "pokeApiName": "leafeon",
+      "sprite": "pokeapi/pokemon/leafeon.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 110,
+        "defense": 130,
+        "specialAttack": 60,
+        "specialDefense": 65,
+        "speed": 95
+      }
+    },
+    "liepard": {
+      "name": "Liepard",
+      "pokeApiName": "liepard",
+      "sprite": "pokeapi/pokemon/liepard.png",
+      "baseStats": {
+        "hp": 64,
+        "attack": 88,
+        "defense": 50,
+        "specialAttack": 88,
+        "specialDefense": 50,
+        "speed": 106
+      }
+    },
+    "lopunny": {
+      "name": "Lopunny",
+      "pokeApiName": "lopunny",
+      "sprite": "pokeapi/pokemon/lopunny.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 76,
+        "defense": 84,
+        "specialAttack": 54,
+        "specialDefense": 96,
+        "speed": 105
+      }
+    },
+    "lucario": {
+      "name": "Lucario",
+      "pokeApiName": "lucario",
+      "sprite": "pokeapi/pokemon/lucario.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 70,
+        "specialAttack": 115,
+        "specialDefense": 70,
+        "speed": 90
+      }
+    },
+    "lucario-mega-z": {
+      "name": "Lucario Mega Z",
+      "pokeApiName": "lucario-mega-z",
+      "sprite": "pokeapi/pokemon/lucario-mega-z.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 100,
+        "defense": 70,
+        "specialAttack": 164,
+        "specialDefense": 70,
+        "speed": 151
+      }
+    },
+    "luxray": {
+      "name": "Luxray",
+      "pokeApiName": "luxray",
+      "sprite": "pokeapi/pokemon/luxray.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 120,
+        "defense": 79,
+        "specialAttack": 95,
+        "specialDefense": 79,
+        "speed": 70
+      }
+    },
+    "lycanroc-dusk": {
+      "name": "Lycanroc (Dusk Form)",
+      "pokeApiName": "lycanroc-dusk",
+      "sprite": "pokeapi/pokemon/lycanroc-dusk.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 117,
+        "defense": 65,
+        "specialAttack": 55,
+        "specialDefense": 65,
+        "speed": 110
+      }
+    },
+    "lycanroc-midday": {
+      "name": "Lycanroc (Midday Form)",
+      "pokeApiName": "lycanroc-midday",
+      "sprite": "pokeapi/pokemon/lycanroc-midday.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 115,
+        "defense": 65,
+        "specialAttack": 55,
+        "specialDefense": 65,
+        "speed": 112
+      }
+    },
+    "lycanroc-midnight": {
+      "name": "Lycanroc (Midnight Form)",
+      "pokeApiName": "lycanroc-midnight",
+      "sprite": "pokeapi/pokemon/lycanroc-midnight.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 115,
+        "defense": 75,
+        "specialAttack": 55,
+        "specialDefense": 75,
+        "speed": 82
+      }
+    },
+    "mabosstiff": {
+      "name": "Mabosstiff",
+      "pokeApiName": "mabosstiff",
+      "sprite": "pokeapi/pokemon/mabosstiff.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 120,
+        "defense": 90,
+        "specialAttack": 60,
+        "specialDefense": 70,
+        "speed": 85
+      }
+    },
+    "machamp": {
+      "name": "Machamp",
+      "pokeApiName": "machamp",
+      "sprite": "pokeapi/pokemon/machamp.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 130,
+        "defense": 80,
+        "specialAttack": 65,
+        "specialDefense": 85,
+        "speed": 55
+      }
+    },
+    "malamar": {
+      "name": "Malamar",
+      "pokeApiName": "malamar",
+      "sprite": "pokeapi/pokemon/malamar.png",
+      "baseStats": {
+        "hp": 86,
+        "attack": 92,
+        "defense": 88,
+        "specialAttack": 68,
+        "specialDefense": 75,
+        "speed": 73
+      }
+    },
+    "mamoswine": {
+      "name": "Mamoswine",
+      "pokeApiName": "mamoswine",
+      "sprite": "pokeapi/pokemon/mamoswine.png",
+      "baseStats": {
+        "hp": 110,
+        "attack": 130,
+        "defense": 80,
+        "specialAttack": 70,
+        "specialDefense": 60,
+        "speed": 80
+      }
+    },
+    "manectric": {
+      "name": "Manectric",
+      "pokeApiName": "manectric",
+      "sprite": "pokeapi/pokemon/manectric.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 75,
+        "defense": 60,
+        "specialAttack": 105,
+        "specialDefense": 60,
+        "speed": 105
+      }
+    },
+    "maushold": {
+      "name": "Maushold",
+      "pokeApiName": "maushold-family-of-four",
+      "sprite": "pokeapi/pokemon/maushold-family-of-four.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 75,
+        "defense": 70,
+        "specialAttack": 65,
+        "specialDefense": 75,
+        "speed": 111
+      }
+    },
+    "maushold-family-of-three": {
+      "name": "Maushold [Family of Three]",
+      "pokeApiName": "maushold-family-of-three",
+      "sprite": "pokeapi/pokemon/maushold-family-of-three.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 75,
+        "defense": 70,
+        "specialAttack": 65,
+        "specialDefense": 75,
+        "speed": 111
+      }
+    },
+    "mawile": {
+      "name": "Mawile",
+      "pokeApiName": "mawile",
+      "sprite": "pokeapi/pokemon/mawile.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 85,
+        "defense": 85,
+        "specialAttack": 55,
+        "specialDefense": 55,
+        "speed": 50
+      }
+    },
+    "medicham": {
+      "name": "Medicham",
+      "pokeApiName": "medicham",
+      "sprite": "pokeapi/pokemon/medicham.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 75,
+        "specialAttack": 60,
+        "specialDefense": 75,
+        "speed": 80
+      }
+    },
+    "meganium": {
+      "name": "Meganium",
+      "pokeApiName": "meganium",
+      "sprite": "pokeapi/pokemon/meganium.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 100,
+        "specialAttack": 83,
+        "specialDefense": 100,
+        "speed": 80
+      }
+    },
+    "meowscarada": {
+      "name": "Meowscarada",
+      "pokeApiName": "meowscarada",
+      "sprite": "pokeapi/pokemon/meowscarada.png",
+      "baseStats": {
+        "hp": 76,
+        "attack": 110,
+        "defense": 70,
+        "specialAttack": 81,
+        "specialDefense": 70,
+        "speed": 123
+      }
+    },
+    "meowstic-female": {
+      "name": "Meowstic (Female)",
+      "pokeApiName": "meowstic-female",
+      "sprite": "pokeapi/pokemon/meowstic-female.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 48,
+        "defense": 76,
+        "specialAttack": 83,
+        "specialDefense": 81,
+        "speed": 104
+      }
+    },
+    "meowstic-male": {
+      "name": "Meowstic (Male)",
+      "pokeApiName": "meowstic-male",
+      "sprite": "pokeapi/pokemon/meowstic-male.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 48,
+        "defense": 76,
+        "specialAttack": 83,
+        "specialDefense": 81,
+        "speed": 104
+      }
+    },
+    "meowstic-f-mega": {
+      "name": "Meowstic F Mega",
+      "pokeApiName": "meowstic-female-mega",
+      "sprite": "pokeapi/pokemon/meowstic-female-mega.png",
+      "baseStats": {
+        "hp": 74,
+        "attack": 48,
+        "defense": 76,
+        "specialAttack": 143,
+        "specialDefense": 101,
+        "speed": 124
+      }
+    },
+    "metagross": {
+      "name": "Metagross",
+      "pokeApiName": "metagross",
+      "sprite": "pokeapi/pokemon/metagross.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 135,
+        "defense": 130,
+        "specialAttack": 95,
+        "specialDefense": 90,
+        "speed": 70
+      }
+    },
+    "metagross-mega": {
+      "name": "Metagross Mega",
+      "pokeApiName": "metagross-mega",
+      "sprite": "pokeapi/pokemon/metagross-mega.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 145,
+        "defense": 150,
+        "specialAttack": 105,
+        "specialDefense": 110,
+        "speed": 110
+      }
+    },
+    "milotic": {
+      "name": "Milotic",
+      "pokeApiName": "milotic",
+      "sprite": "pokeapi/pokemon/milotic.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 60,
+        "defense": 79,
+        "specialAttack": 100,
+        "specialDefense": 125,
+        "speed": 81
+      }
+    },
+    "mimikyu": {
+      "name": "Mimikyu",
+      "pokeApiName": "mimikyu-disguised",
+      "sprite": "pokeapi/pokemon/mimikyu-disguised.png",
+      "baseStats": {
+        "hp": 55,
+        "attack": 90,
+        "defense": 80,
+        "specialAttack": 50,
+        "specialDefense": 105,
+        "speed": 96
+      }
+    },
+    "morpeko": {
+      "name": "Morpeko",
+      "pokeApiName": "morpeko-full-belly",
+      "sprite": "pokeapi/pokemon/morpeko-full-belly.png",
+      "baseStats": {
+        "hp": 58,
+        "attack": 95,
+        "defense": 58,
+        "specialAttack": 70,
+        "specialDefense": 58,
+        "speed": 97
+      }
+    },
+    "mr-mime": {
+      "name": "Mr. Mime",
+      "pokeApiName": "mr-mime",
+      "sprite": "pokeapi/pokemon/mr-mime.png",
+      "baseStats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 65,
+        "specialAttack": 100,
+        "specialDefense": 120,
+        "speed": 90
+      }
+    },
+    "mr-rime": {
+      "name": "Mr. Rime",
+      "pokeApiName": "mr-rime",
+      "sprite": "pokeapi/pokemon/mr-rime.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 85,
+        "defense": 75,
+        "specialAttack": 110,
+        "specialDefense": 100,
+        "speed": 70
+      }
+    },
+    "mudsdale": {
+      "name": "Mudsdale",
+      "pokeApiName": "mudsdale",
+      "sprite": "pokeapi/pokemon/mudsdale.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 125,
+        "defense": 100,
+        "specialAttack": 55,
+        "specialDefense": 85,
+        "speed": 35
+      }
+    },
+    "musharna": {
+      "name": "Musharna",
+      "pokeApiName": "musharna",
+      "sprite": "pokeapi/pokemon/musharna.png",
+      "baseStats": {
+        "hp": 116,
+        "attack": 55,
+        "defense": 85,
+        "specialAttack": 107,
+        "specialDefense": 95,
+        "speed": 29
+      }
+    },
+    "ninetales": {
+      "name": "Ninetales",
+      "pokeApiName": "ninetales",
+      "sprite": "pokeapi/pokemon/ninetales.png",
+      "baseStats": {
+        "hp": 73,
+        "attack": 76,
+        "defense": 75,
+        "specialAttack": 81,
+        "specialDefense": 100,
+        "speed": 100
+      }
+    },
+    "ninetales-alolan": {
+      "name": "Ninetales (Alolan Form)",
+      "pokeApiName": "ninetales-alola",
+      "sprite": "pokeapi/pokemon/ninetales-alola.png",
+      "baseStats": {
+        "hp": 73,
+        "attack": 67,
+        "defense": 75,
+        "specialAttack": 81,
+        "specialDefense": 100,
+        "speed": 109
+      }
+    },
+    "noivern": {
+      "name": "Noivern",
+      "pokeApiName": "noivern",
+      "sprite": "pokeapi/pokemon/noivern.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 70,
+        "defense": 80,
+        "specialAttack": 97,
+        "specialDefense": 80,
+        "speed": 123
+      }
+    },
+    "oranguru": {
+      "name": "Oranguru",
+      "pokeApiName": "oranguru",
+      "sprite": "pokeapi/pokemon/oranguru.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 60,
+        "defense": 80,
+        "specialAttack": 90,
+        "specialDefense": 110,
+        "speed": 60
+      }
+    },
+    "orthworm": {
+      "name": "Orthworm",
+      "pokeApiName": "orthworm",
+      "sprite": "pokeapi/pokemon/orthworm.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 145,
+        "specialAttack": 60,
+        "specialDefense": 55,
+        "speed": 65
+      }
+    },
+    "overqwil": {
+      "name": "Overqwil",
+      "pokeApiName": "overqwil",
+      "sprite": "pokeapi/pokemon/overqwil.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 115,
+        "defense": 95,
+        "specialAttack": 65,
+        "specialDefense": 65,
+        "speed": 85
+      }
+    },
+    "palafin": {
+      "name": "Palafin",
+      "pokeApiName": "palafin-zero",
+      "sprite": "pokeapi/pokemon/palafin-zero.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 70,
+        "defense": 72,
+        "specialAttack": 53,
+        "specialDefense": 62,
+        "speed": 100
+      }
+    },
+    "pangoro": {
+      "name": "Pangoro",
+      "pokeApiName": "pangoro",
+      "sprite": "pokeapi/pokemon/pangoro.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 124,
+        "defense": 78,
+        "specialAttack": 69,
+        "specialDefense": 71,
+        "speed": 58
+      }
+    },
+    "passimian": {
+      "name": "Passimian",
+      "pokeApiName": "passimian",
+      "sprite": "pokeapi/pokemon/passimian.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 120,
+        "defense": 90,
+        "specialAttack": 40,
+        "specialDefense": 60,
+        "speed": 80
+      }
+    },
+    "pawmot": {
+      "name": "Pawmot",
+      "pokeApiName": "pawmot",
+      "sprite": "pokeapi/pokemon/pawmot.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 115,
+        "defense": 70,
+        "specialAttack": 70,
+        "specialDefense": 60,
+        "speed": 105
+      }
+    },
+    "pelipper": {
+      "name": "Pelipper",
+      "pokeApiName": "pelipper",
+      "sprite": "pokeapi/pokemon/pelipper.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 100,
+        "specialAttack": 95,
+        "specialDefense": 70,
+        "speed": 65
+      }
+    },
+    "perrserker": {
+      "name": "Perrserker",
+      "pokeApiName": "perrserker",
+      "sprite": "pokeapi/pokemon/perrserker.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 100,
+        "specialAttack": 50,
+        "specialDefense": 60,
+        "speed": 50
+      }
+    },
+    "persian": {
+      "name": "Persian",
+      "pokeApiName": "persian",
+      "sprite": "pokeapi/pokemon/persian.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 70,
+        "defense": 60,
+        "specialAttack": 65,
+        "specialDefense": 65,
+        "speed": 115
+      }
+    },
+    "persian-alolan": {
+      "name": "Persian (Alolan Form)",
+      "pokeApiName": "persian-alola",
+      "sprite": "pokeapi/pokemon/persian-alola.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 60,
+        "defense": 60,
+        "specialAttack": 75,
+        "specialDefense": 65,
+        "speed": 115
+      }
+    },
+    "pidgeot": {
+      "name": "Pidgeot",
+      "pokeApiName": "pidgeot",
+      "sprite": "pokeapi/pokemon/pidgeot.png",
+      "baseStats": {
+        "hp": 83,
+        "attack": 80,
+        "defense": 75,
+        "specialAttack": 70,
+        "specialDefense": 70,
+        "speed": 101
+      }
+    },
+    "pikachu": {
+      "name": "Pikachu",
+      "pokeApiName": "pikachu",
+      "sprite": "pokeapi/pokemon/pikachu.png",
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 40,
+        "specialAttack": 50,
+        "specialDefense": 50,
+        "speed": 90
+      }
+    },
+    "pincurchin": {
+      "name": "Pincurchin",
+      "pokeApiName": "pincurchin",
+      "sprite": "pokeapi/pokemon/pincurchin.png",
+      "baseStats": {
+        "hp": 48,
+        "attack": 101,
+        "defense": 95,
+        "specialAttack": 91,
+        "specialDefense": 85,
+        "speed": 15
+      }
+    },
+    "pinsir": {
+      "name": "Pinsir",
+      "pokeApiName": "pinsir",
+      "sprite": "pokeapi/pokemon/pinsir.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 125,
+        "defense": 100,
+        "specialAttack": 55,
+        "specialDefense": 70,
+        "speed": 85
+      }
+    },
+    "politoed": {
+      "name": "Politoed",
+      "pokeApiName": "politoed",
+      "sprite": "pokeapi/pokemon/politoed.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 75,
+        "defense": 75,
+        "specialAttack": 90,
+        "specialDefense": 100,
+        "speed": 70
+      }
+    },
+    "polteageist": {
+      "name": "Polteageist",
+      "pokeApiName": "polteageist",
+      "sprite": "pokeapi/pokemon/polteageist.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 65,
+        "specialAttack": 134,
+        "specialDefense": 114,
+        "speed": 70
+      }
+    },
+    "primarina": {
+      "name": "Primarina",
+      "pokeApiName": "primarina",
+      "sprite": "pokeapi/pokemon/primarina.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 74,
+        "defense": 74,
+        "specialAttack": 126,
+        "specialDefense": 116,
+        "speed": 60
+      }
+    },
+    "pyroar": {
+      "name": "Pyroar",
+      "pokeApiName": "pyroar-male",
+      "sprite": "pokeapi/pokemon/pyroar-male.png",
+      "baseStats": {
+        "hp": 86,
+        "attack": 68,
+        "defense": 72,
+        "specialAttack": 109,
+        "specialDefense": 66,
+        "speed": 106
+      }
+    },
+    "pyroar-mega": {
+      "name": "Pyroar-Mega",
+      "pokeApiName": "pyroar-mega",
+      "sprite": "pokeapi/pokemon/pyroar-mega.png",
+      "baseStats": {
+        "hp": 86,
+        "attack": 88,
+        "defense": 92,
+        "specialAttack": 129,
+        "specialDefense": 86,
+        "speed": 126
+      }
+    },
+    "quaquaval": {
+      "name": "Quaquaval",
+      "pokeApiName": "quaquaval",
+      "sprite": "pokeapi/pokemon/quaquaval.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 120,
+        "defense": 80,
+        "specialAttack": 85,
+        "specialDefense": 75,
+        "speed": 85
+      }
+    },
+    "qwilfish": {
+      "name": "Qwilfish",
+      "pokeApiName": "qwilfish",
+      "sprite": "pokeapi/pokemon/qwilfish.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 95,
+        "defense": 85,
+        "specialAttack": 55,
+        "specialDefense": 55,
+        "speed": 85
+      }
+    },
+    "raichu": {
+      "name": "Raichu",
+      "pokeApiName": "raichu",
+      "sprite": "pokeapi/pokemon/raichu.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "specialAttack": 90,
+        "specialDefense": 80,
+        "speed": 110
+      }
+    },
+    "raichu-alolan": {
+      "name": "Raichu (Alolan Form)",
+      "pokeApiName": "raichu-alola",
+      "sprite": "pokeapi/pokemon/raichu-alola.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 50,
+        "specialAttack": 95,
+        "specialDefense": 85,
+        "speed": 110
+      }
+    },
+    "raichu-mega-y": {
+      "name": "Raichu Mega Y",
+      "pokeApiName": "raichu-mega-y",
+      "sprite": "pokeapi/pokemon/raichu-mega-y.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 100,
+        "defense": 55,
+        "specialAttack": 160,
+        "specialDefense": 80,
+        "speed": 130
+      }
+    },
+    "rampardos": {
+      "name": "Rampardos",
+      "pokeApiName": "rampardos",
+      "sprite": "pokeapi/pokemon/rampardos.png",
+      "baseStats": {
+        "hp": 97,
+        "attack": 165,
+        "defense": 60,
+        "specialAttack": 65,
+        "specialDefense": 50,
+        "speed": 58
+      }
+    },
+    "reuniclus": {
+      "name": "Reuniclus",
+      "pokeApiName": "reuniclus",
+      "sprite": "pokeapi/pokemon/reuniclus.png",
+      "baseStats": {
+        "hp": 110,
+        "attack": 65,
+        "defense": 75,
+        "specialAttack": 125,
+        "specialDefense": 85,
+        "speed": 30
+      }
+    },
+    "rhyperior": {
+      "name": "Rhyperior",
+      "pokeApiName": "rhyperior",
+      "sprite": "pokeapi/pokemon/rhyperior.png",
+      "baseStats": {
+        "hp": 115,
+        "attack": 140,
+        "defense": 130,
+        "specialAttack": 55,
+        "specialDefense": 55,
+        "speed": 40
+      }
+    },
+    "rillaboom": {
+      "name": "Rillaboom",
+      "pokeApiName": "rillaboom",
+      "sprite": "pokeapi/pokemon/rillaboom.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 125,
+        "defense": 90,
+        "specialAttack": 60,
+        "specialDefense": 70,
+        "speed": 85
+      }
+    },
+    "roserade": {
+      "name": "Roserade",
+      "pokeApiName": "roserade",
+      "sprite": "pokeapi/pokemon/roserade.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 70,
+        "defense": 65,
+        "specialAttack": 125,
+        "specialDefense": 105,
+        "speed": 90
+      }
+    },
+    "rotom-fan-rotom": {
+      "name": "Rotom (Fan Rotom)",
+      "pokeApiName": "rotom-fan",
+      "sprite": "pokeapi/pokemon/rotom-fan.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 107,
+        "specialAttack": 105,
+        "specialDefense": 107,
+        "speed": 86
+      }
+    },
+    "rotom-frost-rotom": {
+      "name": "Rotom (Frost Rotom)",
+      "pokeApiName": "rotom-frost",
+      "sprite": "pokeapi/pokemon/rotom-frost.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 107,
+        "specialAttack": 105,
+        "specialDefense": 107,
+        "speed": 86
+      }
+    },
+    "rotom-heat-rotom": {
+      "name": "Rotom (Heat Rotom)",
+      "pokeApiName": "rotom-heat",
+      "sprite": "pokeapi/pokemon/rotom-heat.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 107,
+        "specialAttack": 105,
+        "specialDefense": 107,
+        "speed": 86
+      }
+    },
+    "rotom-mow-rotom": {
+      "name": "Rotom (Mow Rotom)",
+      "pokeApiName": "rotom-mow",
+      "sprite": "pokeapi/pokemon/rotom-mow.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 107,
+        "specialAttack": 105,
+        "specialDefense": 107,
+        "speed": 86
+      }
+    },
+    "rotom-rotom": {
+      "name": "Rotom (Rotom)",
+      "pokeApiName": "rotom",
+      "sprite": "pokeapi/pokemon/rotom.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 50,
+        "defense": 77,
+        "specialAttack": 95,
+        "specialDefense": 77,
+        "speed": 91
+      }
+    },
+    "rotom-wash-rotom": {
+      "name": "Rotom (Wash Rotom)",
+      "pokeApiName": "rotom-wash",
+      "sprite": "pokeapi/pokemon/rotom-wash.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 107,
+        "specialAttack": 105,
+        "specialDefense": 107,
+        "speed": 86
+      }
+    },
+    "runerigus": {
+      "name": "Runerigus",
+      "pokeApiName": "runerigus",
+      "sprite": "pokeapi/pokemon/runerigus.png",
+      "baseStats": {
+        "hp": 58,
+        "attack": 95,
+        "defense": 145,
+        "specialAttack": 50,
+        "specialDefense": 105,
+        "speed": 30
+      }
+    },
+    "sableye": {
+      "name": "Sableye",
+      "pokeApiName": "sableye",
+      "sprite": "pokeapi/pokemon/sableye.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 75,
+        "specialAttack": 65,
+        "specialDefense": 65,
+        "speed": 50
+      }
+    },
+    "salamence": {
+      "name": "Salamence",
+      "pokeApiName": "salamence",
+      "sprite": "pokeapi/pokemon/salamence.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 135,
+        "defense": 80,
+        "specialAttack": 110,
+        "specialDefense": 80,
+        "speed": 100
+      }
+    },
+    "salamence-mega": {
+      "name": "Salamence Mega",
+      "pokeApiName": "salamence-mega",
+      "sprite": "pokeapi/pokemon/salamence-mega.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 145,
+        "defense": 130,
+        "specialAttack": 120,
+        "specialDefense": 90,
+        "speed": 120
+      }
+    },
+    "salazzle": {
+      "name": "Salazzle",
+      "pokeApiName": "salazzle",
+      "sprite": "pokeapi/pokemon/salazzle.png",
+      "baseStats": {
+        "hp": 68,
+        "attack": 64,
+        "defense": 60,
+        "specialAttack": 111,
+        "specialDefense": 60,
+        "speed": 117
+      }
+    },
+    "samurott": {
+      "name": "Samurott",
+      "pokeApiName": "samurott",
+      "sprite": "pokeapi/pokemon/samurott.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 100,
+        "defense": 85,
+        "specialAttack": 108,
+        "specialDefense": 70,
+        "speed": 70
+      }
+    },
+    "samurott-hisuian": {
+      "name": "Samurott (Hisuian Form)",
+      "pokeApiName": "samurott-hisui",
+      "sprite": "pokeapi/pokemon/samurott-hisui.png",
+      "baseStats": {
+        "hp": 90,
+        "attack": 108,
+        "defense": 80,
+        "specialAttack": 100,
+        "specialDefense": 65,
+        "speed": 85
+      }
+    },
+    "sandaconda": {
+      "name": "Sandaconda",
+      "pokeApiName": "sandaconda",
+      "sprite": "pokeapi/pokemon/sandaconda.png",
+      "baseStats": {
+        "hp": 72,
+        "attack": 107,
+        "defense": 125,
+        "specialAttack": 65,
+        "specialDefense": 70,
+        "speed": 71
+      }
+    },
+    "sceptile": {
+      "name": "Sceptile",
+      "pokeApiName": "sceptile",
+      "sprite": "pokeapi/pokemon/sceptile.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 65,
+        "specialAttack": 105,
+        "specialDefense": 85,
+        "speed": 120
+      }
+    },
+    "scizor": {
+      "name": "Scizor",
+      "pokeApiName": "scizor",
+      "sprite": "pokeapi/pokemon/scizor.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 130,
+        "defense": 100,
+        "specialAttack": 55,
+        "specialDefense": 80,
+        "speed": 65
+      }
+    },
+    "scolipede": {
+      "name": "Scolipede",
+      "pokeApiName": "scolipede",
+      "sprite": "pokeapi/pokemon/scolipede.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 100,
+        "defense": 89,
+        "specialAttack": 55,
+        "specialDefense": 69,
+        "speed": 112
+      }
+    },
+    "scovillain": {
+      "name": "Scovillain",
+      "pokeApiName": "scovillain",
+      "sprite": "pokeapi/pokemon/scovillain.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 108,
+        "defense": 65,
+        "specialAttack": 108,
+        "specialDefense": 65,
+        "speed": 75
+      }
+    },
+    "scovillain-mega": {
+      "name": "Scovillain-Mega",
+      "pokeApiName": "scovillain-mega",
+      "sprite": "pokeapi/pokemon/scovillain-mega.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 138,
+        "defense": 85,
+        "specialAttack": 138,
+        "specialDefense": 85,
+        "speed": 75
+      }
+    },
+    "scrafty": {
+      "name": "Scrafty",
+      "pokeApiName": "scrafty",
+      "sprite": "pokeapi/pokemon/scrafty.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 90,
+        "defense": 115,
+        "specialAttack": 45,
+        "specialDefense": 115,
+        "speed": 58
+      }
+    },
+    "serperior": {
+      "name": "Serperior",
+      "pokeApiName": "serperior",
+      "sprite": "pokeapi/pokemon/serperior.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 75,
+        "defense": 95,
+        "specialAttack": 75,
+        "specialDefense": 95,
+        "speed": 113
+      }
+    },
+    "sharpedo": {
+      "name": "Sharpedo",
+      "pokeApiName": "sharpedo",
+      "sprite": "pokeapi/pokemon/sharpedo.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 120,
+        "defense": 40,
+        "specialAttack": 95,
+        "specialDefense": 40,
+        "speed": 95
+      }
+    },
+    "simipour": {
+      "name": "Simipour",
+      "pokeApiName": "simipour",
+      "sprite": "pokeapi/pokemon/simipour.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 63,
+        "specialAttack": 98,
+        "specialDefense": 63,
+        "speed": 101
+      }
+    },
+    "simisage": {
+      "name": "Simisage",
+      "pokeApiName": "simisage",
+      "sprite": "pokeapi/pokemon/simisage.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 63,
+        "specialAttack": 98,
+        "specialDefense": 63,
+        "speed": 101
+      }
+    },
+    "simisear": {
+      "name": "Simisear",
+      "pokeApiName": "simisear",
+      "sprite": "pokeapi/pokemon/simisear.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 63,
+        "specialAttack": 98,
+        "specialDefense": 63,
+        "speed": 101
+      }
+    },
+    "sinistcha": {
+      "name": "Sinistcha",
+      "pokeApiName": "sinistcha",
+      "sprite": "pokeapi/pokemon/sinistcha.png",
+      "baseStats": {
+        "hp": 71,
+        "attack": 60,
+        "defense": 106,
+        "specialAttack": 121,
+        "specialDefense": 80,
+        "speed": 70
+      }
+    },
+    "sirfetch-d": {
+      "name": "Sirfetch’d",
+      "pokeApiName": "sirfetchd",
+      "sprite": "pokeapi/pokemon/sirfetchd.png",
+      "baseStats": {
+        "hp": 62,
+        "attack": 135,
+        "defense": 95,
+        "specialAttack": 68,
+        "specialDefense": 82,
+        "speed": 65
+      }
+    },
+    "sirfetchd": {
+      "name": "Sirfetchd",
+      "pokeApiName": "sirfetchd",
+      "sprite": "pokeapi/pokemon/sirfetchd.png",
+      "baseStats": {
+        "hp": 62,
+        "attack": 135,
+        "defense": 95,
+        "specialAttack": 68,
+        "specialDefense": 82,
+        "speed": 65
+      }
+    },
+    "skarmory": {
+      "name": "Skarmory",
+      "pokeApiName": "skarmory",
+      "sprite": "pokeapi/pokemon/skarmory.png",
+      "baseStats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 140,
+        "specialAttack": 40,
+        "specialDefense": 70,
+        "speed": 70
+      }
+    },
+    "skeledirge": {
+      "name": "Skeledirge",
+      "pokeApiName": "skeledirge",
+      "sprite": "pokeapi/pokemon/skeledirge.png",
+      "baseStats": {
+        "hp": 104,
+        "attack": 75,
+        "defense": 100,
+        "specialAttack": 110,
+        "specialDefense": 75,
+        "speed": 66
+      }
+    },
+    "slowbro": {
+      "name": "Slowbro",
+      "pokeApiName": "slowbro",
+      "sprite": "pokeapi/pokemon/slowbro.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 75,
+        "defense": 110,
+        "specialAttack": 100,
+        "specialDefense": 80,
+        "speed": 30
+      }
+    },
+    "slowbro-galarian": {
+      "name": "Slowbro (Galarian Form)",
+      "pokeApiName": "slowbro-galar",
+      "sprite": "pokeapi/pokemon/slowbro-galar.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 100,
+        "defense": 95,
+        "specialAttack": 100,
+        "specialDefense": 70,
+        "speed": 30
+      }
+    },
+    "slowking": {
+      "name": "Slowking",
+      "pokeApiName": "slowking",
+      "sprite": "pokeapi/pokemon/slowking.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 75,
+        "defense": 80,
+        "specialAttack": 100,
+        "specialDefense": 110,
+        "speed": 30
+      }
+    },
+    "slowking-galarian": {
+      "name": "Slowking (Galarian Form)",
+      "pokeApiName": "slowking-galar",
+      "sprite": "pokeapi/pokemon/slowking-galar.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 65,
+        "defense": 80,
+        "specialAttack": 110,
+        "specialDefense": 110,
+        "speed": 30
+      }
+    },
+    "slurpuff": {
+      "name": "Slurpuff",
+      "pokeApiName": "slurpuff",
+      "sprite": "pokeapi/pokemon/slurpuff.png",
+      "baseStats": {
+        "hp": 82,
+        "attack": 80,
+        "defense": 86,
+        "specialAttack": 85,
+        "specialDefense": 75,
+        "speed": 72
+      }
+    },
+    "sneasler": {
+      "name": "Sneasler",
+      "pokeApiName": "sneasler",
+      "sprite": "pokeapi/pokemon/sneasler.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 130,
+        "defense": 60,
+        "specialAttack": 40,
+        "specialDefense": 80,
+        "speed": 120
+      }
+    },
+    "snorlax": {
+      "name": "Snorlax",
+      "pokeApiName": "snorlax",
+      "sprite": "pokeapi/pokemon/snorlax.png",
+      "baseStats": {
+        "hp": 160,
+        "attack": 110,
+        "defense": 65,
+        "specialAttack": 65,
+        "specialDefense": 110,
+        "speed": 30
+      }
+    },
+    "spiritomb": {
+      "name": "Spiritomb",
+      "pokeApiName": "spiritomb",
+      "sprite": "pokeapi/pokemon/spiritomb.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 92,
+        "defense": 108,
+        "specialAttack": 92,
+        "specialDefense": 108,
+        "speed": 35
+      }
+    },
+    "squawkabilly": {
+      "name": "Squawkabilly",
+      "pokeApiName": "squawkabilly-green-plumage",
+      "sprite": "pokeapi/pokemon/squawkabilly-green-plumage.png",
+      "baseStats": {
+        "hp": 82,
+        "attack": 96,
+        "defense": 51,
+        "specialAttack": 45,
+        "specialDefense": 51,
+        "speed": 92
+      }
+    },
+    "staraptor": {
+      "name": "Staraptor",
+      "pokeApiName": "staraptor",
+      "sprite": "pokeapi/pokemon/staraptor.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 120,
+        "defense": 70,
+        "specialAttack": 50,
+        "specialDefense": 60,
+        "speed": 100
+      }
+    },
+    "staraptor-mega": {
+      "name": "Staraptor Mega",
+      "pokeApiName": "staraptor-mega",
+      "sprite": "pokeapi/pokemon/staraptor-mega.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 140,
+        "defense": 100,
+        "specialAttack": 60,
+        "specialDefense": 90,
+        "speed": 110
+      }
+    },
+    "starmie": {
+      "name": "Starmie",
+      "pokeApiName": "starmie",
+      "sprite": "pokeapi/pokemon/starmie.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 75,
+        "defense": 85,
+        "specialAttack": 100,
+        "specialDefense": 85,
+        "speed": 115
+      }
+    },
+    "steelix": {
+      "name": "Steelix",
+      "pokeApiName": "steelix",
+      "sprite": "pokeapi/pokemon/steelix.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 85,
+        "defense": 200,
+        "specialAttack": 55,
+        "specialDefense": 65,
+        "speed": 30
+      }
+    },
+    "stunfisk": {
+      "name": "Stunfisk",
+      "pokeApiName": "stunfisk",
+      "sprite": "pokeapi/pokemon/stunfisk.png",
+      "baseStats": {
+        "hp": 109,
+        "attack": 66,
+        "defense": 84,
+        "specialAttack": 81,
+        "specialDefense": 99,
+        "speed": 32
+      }
+    },
+    "stunfisk-galarian": {
+      "name": "Stunfisk (Galarian Form)",
+      "pokeApiName": "stunfisk-galar",
+      "sprite": "pokeapi/pokemon/stunfisk-galar.png",
+      "baseStats": {
+        "hp": 109,
+        "attack": 81,
+        "defense": 99,
+        "specialAttack": 66,
+        "specialDefense": 84,
+        "speed": 32
+      }
+    },
+    "swalot": {
+      "name": "Swalot",
+      "pokeApiName": "swalot",
+      "sprite": "pokeapi/pokemon/swalot.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 73,
+        "defense": 83,
+        "specialAttack": 73,
+        "specialDefense": 83,
+        "speed": 55
+      }
+    },
+    "swampert": {
+      "name": "Swampert",
+      "pokeApiName": "swampert",
+      "sprite": "pokeapi/pokemon/swampert.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 110,
+        "defense": 90,
+        "specialAttack": 85,
+        "specialDefense": 90,
+        "speed": 60
+      }
+    },
+    "swampert-mega": {
+      "name": "Swampert Mega",
+      "pokeApiName": "swampert-mega",
+      "sprite": "pokeapi/pokemon/swampert-mega.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 150,
+        "defense": 110,
+        "specialAttack": 95,
+        "specialDefense": 110,
+        "speed": 70
+      }
+    },
+    "sylveon": {
+      "name": "Sylveon",
+      "pokeApiName": "sylveon",
+      "sprite": "pokeapi/pokemon/sylveon.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 65,
+        "defense": 65,
+        "specialAttack": 110,
+        "specialDefense": 130,
+        "speed": 60
+      }
+    },
+    "talonflame": {
+      "name": "Talonflame",
+      "pokeApiName": "talonflame",
+      "sprite": "pokeapi/pokemon/talonflame.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 81,
+        "defense": 71,
+        "specialAttack": 74,
+        "specialDefense": 69,
+        "speed": 126
+      }
+    },
+    "tauros": {
+      "name": "Tauros",
+      "pokeApiName": "tauros",
+      "sprite": "pokeapi/pokemon/tauros.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 95,
+        "specialAttack": 40,
+        "specialDefense": 70,
+        "speed": 110
+      }
+    },
+    "tauros-paldean-aqua-breed": {
+      "name": "Tauros (Paldean Form (Aqua Breed))",
+      "pokeApiName": "tauros-paldea-aqua-breed",
+      "sprite": "pokeapi/pokemon/tauros-paldea-aqua-breed.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 110,
+        "defense": 105,
+        "specialAttack": 30,
+        "specialDefense": 70,
+        "speed": 100
+      }
+    },
+    "tauros-paldean-blaze-breed": {
+      "name": "Tauros (Paldean Form (Blaze Breed))",
+      "pokeApiName": "tauros-paldea-blaze-breed",
+      "sprite": "pokeapi/pokemon/tauros-paldea-blaze-breed.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 110,
+        "defense": 105,
+        "specialAttack": 30,
+        "specialDefense": 70,
+        "speed": 100
+      }
+    },
+    "tauros-paldean-combat-breed": {
+      "name": "Tauros (Paldean Form (Combat Breed))",
+      "pokeApiName": "tauros-paldea-combat-breed",
+      "sprite": "pokeapi/pokemon/tauros-paldea-combat-breed.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 110,
+        "defense": 105,
+        "specialAttack": 30,
+        "specialDefense": 70,
+        "speed": 100
+      }
+    },
+    "thievul": {
+      "name": "Thievul",
+      "pokeApiName": "thievul",
+      "sprite": "pokeapi/pokemon/thievul.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 58,
+        "defense": 58,
+        "specialAttack": 87,
+        "specialDefense": 92,
+        "speed": 90
+      }
+    },
+    "tinkaton": {
+      "name": "Tinkaton",
+      "pokeApiName": "tinkaton",
+      "sprite": "pokeapi/pokemon/tinkaton.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 75,
+        "defense": 77,
+        "specialAttack": 70,
+        "specialDefense": 105,
+        "speed": 94
+      }
+    },
+    "torkoal": {
+      "name": "Torkoal",
+      "pokeApiName": "torkoal",
+      "sprite": "pokeapi/pokemon/torkoal.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 140,
+        "specialAttack": 85,
+        "specialDefense": 70,
+        "speed": 20
+      }
+    },
+    "torterra": {
+      "name": "Torterra",
+      "pokeApiName": "torterra",
+      "sprite": "pokeapi/pokemon/torterra.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 109,
+        "defense": 105,
+        "specialAttack": 75,
+        "specialDefense": 85,
+        "speed": 56
+      }
+    },
+    "toucannon": {
+      "name": "Toucannon",
+      "pokeApiName": "toucannon",
+      "sprite": "pokeapi/pokemon/toucannon.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 120,
+        "defense": 75,
+        "specialAttack": 75,
+        "specialDefense": 75,
+        "speed": 60
+      }
+    },
+    "toxapex": {
+      "name": "Toxapex",
+      "pokeApiName": "toxapex",
+      "sprite": "pokeapi/pokemon/toxapex.png",
+      "baseStats": {
+        "hp": 50,
+        "attack": 63,
+        "defense": 152,
+        "specialAttack": 53,
+        "specialDefense": 142,
+        "speed": 35
+      }
+    },
+    "toxicroak": {
+      "name": "Toxicroak",
+      "pokeApiName": "toxicroak",
+      "sprite": "pokeapi/pokemon/toxicroak.png",
+      "baseStats": {
+        "hp": 83,
+        "attack": 106,
+        "defense": 65,
+        "specialAttack": 86,
+        "specialDefense": 65,
+        "speed": 85
+      }
+    },
+    "toxtricity-amped": {
+      "name": "Toxtricity (Amped Form)",
+      "pokeApiName": "toxtricity-amped",
+      "sprite": "pokeapi/pokemon/toxtricity-amped.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 70,
+        "specialAttack": 114,
+        "specialDefense": 70,
+        "speed": 75
+      }
+    },
+    "toxtricity-low-key": {
+      "name": "Toxtricity (Low Key Form)",
+      "pokeApiName": "toxtricity-low-key",
+      "sprite": "pokeapi/pokemon/toxtricity-low-key.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 70,
+        "specialAttack": 114,
+        "specialDefense": 70,
+        "speed": 75
+      }
+    },
+    "trevenant": {
+      "name": "Trevenant",
+      "pokeApiName": "trevenant",
+      "sprite": "pokeapi/pokemon/trevenant.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 110,
+        "defense": 76,
+        "specialAttack": 65,
+        "specialDefense": 82,
+        "speed": 56
+      }
+    },
+    "tsareena": {
+      "name": "Tsareena",
+      "pokeApiName": "tsareena",
+      "sprite": "pokeapi/pokemon/tsareena.png",
+      "baseStats": {
+        "hp": 72,
+        "attack": 120,
+        "defense": 98,
+        "specialAttack": 50,
+        "specialDefense": 98,
+        "speed": 72
+      }
+    },
+    "typhlosion": {
+      "name": "Typhlosion",
+      "pokeApiName": "typhlosion",
+      "sprite": "pokeapi/pokemon/typhlosion.png",
+      "baseStats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "specialAttack": 109,
+        "specialDefense": 85,
+        "speed": 100
+      }
+    },
+    "typhlosion-hisuian": {
+      "name": "Typhlosion (Hisuian Form)",
+      "pokeApiName": "typhlosion-hisui",
+      "sprite": "pokeapi/pokemon/typhlosion-hisui.png",
+      "baseStats": {
+        "hp": 73,
+        "attack": 84,
+        "defense": 78,
+        "specialAttack": 119,
+        "specialDefense": 85,
+        "speed": 95
+      }
+    },
+    "tyranitar": {
+      "name": "Tyranitar",
+      "pokeApiName": "tyranitar",
+      "sprite": "pokeapi/pokemon/tyranitar.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 134,
+        "defense": 110,
+        "specialAttack": 95,
+        "specialDefense": 100,
+        "speed": 61
+      }
+    },
+    "tyranitar-mega": {
+      "name": "Tyranitar-Mega",
+      "pokeApiName": "tyranitar-mega",
+      "sprite": "pokeapi/pokemon/tyranitar-mega.png",
+      "baseStats": {
+        "hp": 100,
+        "attack": 164,
+        "defense": 150,
+        "specialAttack": 95,
+        "specialDefense": 120,
+        "speed": 71
+      }
+    },
+    "tyrantrum": {
+      "name": "Tyrantrum",
+      "pokeApiName": "tyrantrum",
+      "sprite": "pokeapi/pokemon/tyrantrum.png",
+      "baseStats": {
+        "hp": 82,
+        "attack": 121,
+        "defense": 119,
+        "specialAttack": 69,
+        "specialDefense": 59,
+        "speed": 71
+      }
+    },
+    "umbreon": {
+      "name": "Umbreon",
+      "pokeApiName": "umbreon",
+      "sprite": "pokeapi/pokemon/umbreon.png",
+      "baseStats": {
+        "hp": 95,
+        "attack": 65,
+        "defense": 110,
+        "specialAttack": 60,
+        "specialDefense": 130,
+        "speed": 65
+      }
+    },
+    "vanilluxe": {
+      "name": "Vanilluxe",
+      "pokeApiName": "vanilluxe",
+      "sprite": "pokeapi/pokemon/vanilluxe.png",
+      "baseStats": {
+        "hp": 71,
+        "attack": 95,
+        "defense": 85,
+        "specialAttack": 110,
+        "specialDefense": 95,
+        "speed": 79
+      }
+    },
+    "vaporeon": {
+      "name": "Vaporeon",
+      "pokeApiName": "vaporeon",
+      "sprite": "pokeapi/pokemon/vaporeon.png",
+      "baseStats": {
+        "hp": 130,
+        "attack": 65,
+        "defense": 60,
+        "specialAttack": 110,
+        "specialDefense": 95,
+        "speed": 65
+      }
+    },
+    "venusaur": {
+      "name": "Venusaur",
+      "pokeApiName": "venusaur",
+      "sprite": "pokeapi/pokemon/venusaur.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 83,
+        "specialAttack": 100,
+        "specialDefense": 100,
+        "speed": 80
+      }
+    },
+    "victreebel": {
+      "name": "Victreebel",
+      "pokeApiName": "victreebel",
+      "sprite": "pokeapi/pokemon/victreebel.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 105,
+        "defense": 65,
+        "specialAttack": 100,
+        "specialDefense": 70,
+        "speed": 70
+      }
+    },
+    "vileplume": {
+      "name": "Vileplume",
+      "pokeApiName": "vileplume",
+      "sprite": "pokeapi/pokemon/vileplume.png",
+      "baseStats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 85,
+        "specialAttack": 110,
+        "specialDefense": 90,
+        "speed": 50
+      }
+    },
+    "vivillon": {
+      "name": "Vivillon",
+      "pokeApiName": "vivillon",
+      "sprite": "pokeapi/pokemon/vivillon.png",
+      "baseStats": {
+        "hp": 80,
+        "attack": 52,
+        "defense": 50,
+        "specialAttack": 90,
+        "specialDefense": 50,
+        "speed": 89
+      }
+    },
+    "volcarona": {
+      "name": "Volcarona",
+      "pokeApiName": "volcarona",
+      "sprite": "pokeapi/pokemon/volcarona.png",
+      "baseStats": {
+        "hp": 85,
+        "attack": 60,
+        "defense": 65,
+        "specialAttack": 135,
+        "specialDefense": 105,
+        "speed": 100
+      }
+    },
+    "watchog": {
+      "name": "Watchog",
+      "pokeApiName": "watchog",
+      "sprite": "pokeapi/pokemon/watchog.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 69,
+        "specialAttack": 60,
+        "specialDefense": 69,
+        "speed": 77
+      }
+    },
+    "weavile": {
+      "name": "Weavile",
+      "pokeApiName": "weavile",
+      "sprite": "pokeapi/pokemon/weavile.png",
+      "baseStats": {
+        "hp": 70,
+        "attack": 120,
+        "defense": 65,
+        "specialAttack": 45,
+        "specialDefense": 85,
+        "speed": 125
+      }
+    },
+    "whimsicott": {
+      "name": "Whimsicott",
+      "pokeApiName": "whimsicott",
+      "sprite": "pokeapi/pokemon/whimsicott.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 67,
+        "defense": 85,
+        "specialAttack": 77,
+        "specialDefense": 75,
+        "speed": 116
+      }
+    },
+    "wigglytuff": {
+      "name": "Wigglytuff",
+      "pokeApiName": "wigglytuff",
+      "sprite": "pokeapi/pokemon/wigglytuff.png",
+      "baseStats": {
+        "hp": 140,
+        "attack": 70,
+        "defense": 45,
+        "specialAttack": 85,
+        "specialDefense": 50,
+        "speed": 45
+      }
+    },
+    "wyrdeer": {
+      "name": "Wyrdeer",
+      "pokeApiName": "wyrdeer",
+      "sprite": "pokeapi/pokemon/wyrdeer.png",
+      "baseStats": {
+        "hp": 103,
+        "attack": 105,
+        "defense": 72,
+        "specialAttack": 105,
+        "specialDefense": 75,
+        "speed": 65
+      }
+    },
+    "zoroark": {
+      "name": "Zoroark",
+      "pokeApiName": "zoroark",
+      "sprite": "pokeapi/pokemon/zoroark.png",
+      "baseStats": {
+        "hp": 60,
+        "attack": 105,
+        "defense": 60,
+        "specialAttack": 120,
+        "specialDefense": 60,
+        "speed": 105
+      }
+    },
+    "zoroark-hisuian": {
+      "name": "Zoroark (Hisuian Form)",
+      "pokeApiName": "zoroark-hisui",
+      "sprite": "pokeapi/pokemon/zoroark-hisui.png",
+      "baseStats": {
+        "hp": 55,
+        "attack": 100,
+        "defense": 60,
+        "specialAttack": 125,
+        "specialDefense": 60,
+        "speed": 110
+      }
+    }
+  },
+  "items": {
+    "aerodactylite": {
+      "name": "Aerodactylite",
+      "pokeApiName": "aerodactylite",
+      "sprite": "pokeapi/items/aerodactylite.png"
+    },
+    "altarianite": {
+      "name": "Altarianite",
+      "pokeApiName": "altarianite",
+      "sprite": "pokeapi/items/altarianite.png"
+    },
+    "ampharosite": {
+      "name": "Ampharosite",
+      "pokeApiName": "ampharosite",
+      "sprite": "pokeapi/items/ampharosite.png"
+    },
+    "baxcalibrite": {
+      "name": "Baxcalibrite",
+      "pokeApiName": "baxcalibrite"
+    },
+    "black belt": {
+      "name": "Black Belt",
+      "pokeApiName": "black-belt",
+      "sprite": "pokeapi/items/black-belt.png"
+    },
+    "black glasses": {
+      "name": "Black Glasses",
+      "pokeApiName": "black-glasses",
+      "sprite": "pokeapi/items/black-glasses.png"
+    },
+    "blastoisinite": {
+      "name": "Blastoisinite",
+      "pokeApiName": "blastoisinite",
+      "sprite": "pokeapi/items/blastoisinite.png"
+    },
+    "blazikenite": {
+      "name": "Blazikenite",
+      "pokeApiName": "blazikenite",
+      "sprite": "pokeapi/items/blazikenite.png"
+    },
+    "cameruptite": {
+      "name": "Cameruptite",
+      "pokeApiName": "cameruptite",
+      "sprite": "pokeapi/items/cameruptite.png"
+    },
+    "charcoal": {
+      "name": "Charcoal",
+      "pokeApiName": "charcoal",
+      "sprite": "pokeapi/items/charcoal.png"
+    },
+    "charizardite y": {
+      "name": "Charizardite Y",
+      "pokeApiName": "charizardite-y",
+      "sprite": "pokeapi/items/charizardite-y.png"
+    },
+    "choice scarf": {
+      "name": "Choice Scarf",
+      "pokeApiName": "choice-scarf",
+      "sprite": "pokeapi/items/choice-scarf.png"
+    },
+    "chople berry": {
+      "name": "Chople Berry",
+      "pokeApiName": "chople-berry",
+      "sprite": "pokeapi/items/chople-berry.png"
+    },
+    "coba berry": {
+      "name": "Coba Berry",
+      "pokeApiName": "coba-berry",
+      "sprite": "pokeapi/items/coba-berry.png"
+    },
+    "colbur berry": {
+      "name": "Colbur Berry",
+      "pokeApiName": "colbur-berry",
+      "sprite": "pokeapi/items/colbur-berry.png"
+    },
+    "delphoxite": {
+      "name": "Delphoxite",
+      "pokeApiName": "delphoxite"
+    },
+    "dragoninite": {
+      "name": "Dragoninite",
+      "pokeApiName": "dragoninite"
+    },
+    "eject button": {
+      "name": "Eject Button",
+      "pokeApiName": "eject-button",
+      "sprite": "pokeapi/items/eject-button.png"
+    },
+    "expert belt": {
+      "name": "Expert Belt",
+      "pokeApiName": "expert-belt",
+      "sprite": "pokeapi/items/expert-belt.png"
+    },
+    "fairy feather": {
+      "name": "Fairy Feather",
+      "pokeApiName": "fairy-feather"
+    },
+    "floettite": {
+      "name": "Floettite",
+      "pokeApiName": "floettite"
+    },
+    "focus sash": {
+      "name": "Focus Sash",
+      "pokeApiName": "focus-sash",
+      "sprite": "pokeapi/items/focus-sash.png"
+    },
+    "froslassite": {
+      "name": "Froslassite",
+      "pokeApiName": "froslassite"
+    },
+    "garchompite": {
+      "name": "Garchompite",
+      "pokeApiName": "garchompite",
+      "sprite": "pokeapi/items/garchompite.png"
+    },
+    "garchompite z": {
+      "name": "Garchompite Z",
+      "pokeApiName": "garchompite-z"
+    },
+    "gardevoirite": {
+      "name": "Gardevoirite",
+      "pokeApiName": "gardevoirite",
+      "sprite": "pokeapi/items/gardevoirite.png"
+    },
+    "gengarite": {
+      "name": "Gengarite",
+      "pokeApiName": "gengarite",
+      "sprite": "pokeapi/items/gengarite.png"
+    },
+    "glimmoranite": {
+      "name": "Glimmoranite",
+      "pokeApiName": "glimmoranite"
+    },
+    "golisopite": {
+      "name": "Golisopite",
+      "pokeApiName": "golisopite"
+    },
+    "grassy seed": {
+      "name": "Grassy Seed",
+      "pokeApiName": "grassy-seed",
+      "sprite": "pokeapi/items/grassy-seed.png"
+    },
+    "haban berry": {
+      "name": "Haban Berry",
+      "pokeApiName": "haban-berry",
+      "sprite": "pokeapi/items/haban-berry.png"
+    },
+    "kasib berry": {
+      "name": "Kasib Berry",
+      "pokeApiName": "kasib-berry",
+      "sprite": "pokeapi/items/kasib-berry.png"
+    },
+    "kebia berry": {
+      "name": "Kebia Berry",
+      "pokeApiName": "kebia-berry",
+      "sprite": "pokeapi/items/kebia-berry.png"
+    },
+    "leftovers": {
+      "name": "Leftovers",
+      "pokeApiName": "leftovers",
+      "sprite": "pokeapi/items/leftovers.png"
+    },
+    "life orb": {
+      "name": "Life Orb",
+      "pokeApiName": "life-orb",
+      "sprite": "pokeapi/items/life-orb.png"
+    },
+    "light clay": {
+      "name": "Light Clay",
+      "pokeApiName": "light-clay",
+      "sprite": "pokeapi/items/light-clay.png"
+    },
+    "lopunnite": {
+      "name": "Lopunnite",
+      "pokeApiName": "lopunnite",
+      "sprite": "pokeapi/items/lopunnite.png"
+    },
+    "lucarionite z": {
+      "name": "Lucarionite Z",
+      "pokeApiName": "lucarionite-z"
+    },
+    "lum berry": {
+      "name": "Lum Berry",
+      "pokeApiName": "lum-berry",
+      "sprite": "pokeapi/items/lum-berry.png"
+    },
+    "mawilite": {
+      "name": "Mawilite",
+      "pokeApiName": "mawilite",
+      "sprite": "pokeapi/items/mawilite.png"
+    },
+    "meowsticite": {
+      "name": "Meowsticite",
+      "pokeApiName": "meowsticite"
+    },
+    "metagrossite": {
+      "name": "Metagrossite",
+      "pokeApiName": "metagrossite",
+      "sprite": "pokeapi/items/metagrossite.png"
+    },
+    "miracle seed": {
+      "name": "Miracle Seed",
+      "pokeApiName": "miracle-seed",
+      "sprite": "pokeapi/items/miracle-seed.png"
+    },
+    "mystic water": {
+      "name": "Mystic Water",
+      "pokeApiName": "mystic-water",
+      "sprite": "pokeapi/items/mystic-water.png"
+    },
+    "occa berry": {
+      "name": "Occa Berry",
+      "pokeApiName": "occa-berry",
+      "sprite": "pokeapi/items/occa-berry.png"
+    },
+    "passho berry": {
+      "name": "Passho Berry",
+      "pokeApiName": "passho-berry",
+      "sprite": "pokeapi/items/passho-berry.png"
+    },
+    "psychic seed": {
+      "name": "Psychic Seed",
+      "pokeApiName": "psychic-seed",
+      "sprite": "pokeapi/items/psychic-seed.png"
+    },
+    "pyroarite": {
+      "name": "Pyroarite",
+      "pokeApiName": "pyroarite"
+    },
+    "raichunite y": {
+      "name": "Raichunite Y",
+      "pokeApiName": "raichunite-y"
+    },
+    "rocky helmet": {
+      "name": "Rocky Helmet",
+      "pokeApiName": "rocky-helmet",
+      "sprite": "pokeapi/items/rocky-helmet.png"
+    },
+    "roseli berry": {
+      "name": "Roseli Berry",
+      "pokeApiName": "roseli-berry",
+      "sprite": "pokeapi/items/roseli-berry.png"
+    },
+    "salamencite": {
+      "name": "Salamencite",
+      "pokeApiName": "salamencite",
+      "sprite": "pokeapi/items/salamencite.png"
+    },
+    "scovillainite": {
+      "name": "Scovillainite",
+      "pokeApiName": "scovillainite"
+    },
+    "shuca berry": {
+      "name": "Shuca Berry",
+      "pokeApiName": "shuca-berry",
+      "sprite": "pokeapi/items/shuca-berry.png"
+    },
+    "sitrus berry": {
+      "name": "Sitrus Berry",
+      "pokeApiName": "sitrus-berry",
+      "sprite": "pokeapi/items/sitrus-berry.png"
+    },
+    "staraptite": {
+      "name": "Staraptite",
+      "pokeApiName": "staraptite"
+    },
+    "starminite": {
+      "name": "Starminite",
+      "pokeApiName": "starminite"
+    },
+    "swampertite": {
+      "name": "Swampertite",
+      "pokeApiName": "swampertite",
+      "sprite": "pokeapi/items/swampertite.png"
+    },
+    "twisted spoon": {
+      "name": "Twisted Spoon",
+      "pokeApiName": "twisted-spoon",
+      "sprite": "pokeapi/items/twisted-spoon.png"
+    },
+    "tyranitarite": {
+      "name": "Tyranitarite",
+      "pokeApiName": "tyranitarite",
+      "sprite": "pokeapi/items/tyranitarite.png"
+    },
+    "white herb": {
+      "name": "White Herb",
+      "pokeApiName": "white-herb",
+      "sprite": "pokeapi/items/white-herb.png"
+    },
+    "zoom lens": {
+      "name": "Zoom Lens",
+      "pokeApiName": "zoom-lens",
+      "sprite": "pokeapi/items/zoom-lens.png"
+    }
+  }
+}

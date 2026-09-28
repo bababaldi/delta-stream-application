@@ -4,7 +4,7 @@ Mobile-first, offline-capable web toolkit for the Delta Stream Pokémon Champion
 
 ## Current status
 
-The requested current format is Champions M-C. The owner-approved legality and observed-signal role catalogs cover the current 27-event / 52-team snapshot, and `npm run release:check` passes. The snapshot contains six roster-only teams from the two completed September M-C VR Challenges, reviewed Pokédata top eights from Baltimore, Brisbane and Frankfurt, and 22 Italian VG Cup/VG Challenge winner rosters. Italian locals are low-weight, owner-accepted evidence rather than official Regional results. The calculator remains intentionally fail-closed for unsupported mechanics; real-device accessibility and independent in-game golden checks remain separate publication work.
+The requested current format is Champions M-C. The owner-approved legality and observed-signal role catalogs cover the current 27-event / 185-team snapshot: 72 reviewed Pokédata Top-24 teams, 91 public Victory Road Open Team Lists with published item/ability/nature/moves, and 22 Italian VG Cup/VG Challenge winner rosters. Exact Victory Road placements are retained for display while scoring uses the documented placement bucket; Italian locals remain low-weight, owner-accepted evidence rather than official Regional results. The calculator remains intentionally fail-closed for unsupported mechanics; real-device accessibility and independent in-game golden checks remain separate publication work.
 
 ```bash
 npm ci
@@ -52,10 +52,16 @@ npm ci
 npm run data:review                  # official M-C eligibility, review only
 npm run data:review-legality          # secondary-source legality draft, review only
 npm run data:review-roles             # observed-signal role/threat draft, review only
+npm run data:review-teams             # PokeData Top-24 expansion draft, review only
+npm run data:review-pikalytics-spreads # verify current M-C spread/nature availability
+npm run data:import-pokedata-top24   # promote the owner-approved Top-24 evidence
+npm run data:import-victoryroad      # import owner-approved public VR Open Team Lists
 npm run data:discover -- --rk9-only  # available public source while Pikalytics returns 403
 ```
 
-`data:discover` normally reads public Pikalytics AI tournament pages and RK9 Pokémon event pages. `--rk9-only` explicitly skips Pikalytics and replaces the candidate file with current RK9 suggestions. It writes untrusted suggestions to `data/candidates.json`; it does **not** approve or rank them. The two reviewed VR events plus completed Baltimore, Brisbane and Frankfurt top eights are pinned in `data/reviewed-results.json`; the same file also stores reviewed Italian VG Cup/VG Challenge winners. New live events are never ingested automatically. Run `npm run data:import-pokedata` or `npm run data:import-italian-locals` only to refresh their already-reviewed sources. Usage context is currently disabled with `pikalyticsFormat: null` until an accessible M-C feed is verified; M-B is never a fallback.
+If Serebii is temporarily unreachable, the `*-from-approved` review commands produce a source-preserving alias/profile candidate from the last exact owner-approved catalog; they never fetch a substitute source and still require a new exact approval hash.
+
+`data:discover` normally reads public Pikalytics AI tournament pages and RK9 Pokémon event pages. `--rk9-only` explicitly skips Pikalytics and replaces the candidate file with current RK9 suggestions. It writes untrusted suggestions to `data/candidates.json`; it does **not** approve or rank them. The two reviewed VR events, owner-approved Baltimore/Brisbane/Frankfurt Top-24 teams, and reviewed Italian VG Cup/VG Challenge winners are pinned in `data/reviewed-results.json`. The preserved `data/review/` Top-24 draft is source provenance, not a second production dataset. New live events are never ingested automatically. Run import commands only to refresh their already-reviewed sources and only promote after owner approval. The current M-C Pikalytics spread audit found no EV/nature data on all 21 checked pages, so `pikalyticsFormat` stays `null`; M-B is never a fallback.
 
 Review candidates against official Pokémon Champions rules. Copy only completed, relevant events into `data/approved-tournaments.json` using this shape:
 
@@ -80,6 +86,7 @@ Then build the validated snapshot:
 
 ```bash
 npm run data:build
+npm run sprites:sync        # refresh bundled PokeAPI sprite/base-stat data after roster changes
 npm run data:preview       # review report + snapshot hash; no push or approval
 npm run build:pages
 npm run preview:pages
@@ -89,6 +96,7 @@ npm run preview:pages
 - Invalid or conflicting events are written to `data/quarantine.json`.
 - Any quarantined approved or reviewed event makes `data:build` fail. `npm run data:validate` additionally rejects incomplete/mismatched legality and role catalogs, invalid timestamps, duplicate events and missing team details.
 - The current `data/legality.json` and `data/roles.json` are owner-approved copies of the exact artifacts in `data/review/`; approval hashes and assumptions are in `data/approved-sources.json`. Regenerating a draft is not a new approval. An empty `allowedTeraTypes` list deliberately disables that mechanic. Do not import Scarlet/Violet assumptions as Champions rules.
+- `npm run sprites:sync` stores local PokeAPI base-stat data and sprites in `data/pokeapi.json` and `public/pokeapi/`; the app makes no runtime PokeAPI requests. Forms without exact PokeAPI base stats stay out of the calculator picker, and missing item images keep a named fallback instead of inventing data or art.
 - Scrapers use only public HTTPS pages with a small concurrency limit. Do not bypass authentication, rate limits, or technical controls.
 
 ## Ranking formula
@@ -99,24 +107,24 @@ For each placed team:
 
 - Placement: winner `64`, runner-up `48`, Top 4 `32`, Top 8 `20`, Top 16 `12`, Top 32 `6`, Top 64 `3`.
 - Tier: Worlds `2`, International `1.5`, Regional `1`, VR Online `.75`.
-- Recency: 0–30 days `1`, 31–60 `.75`, 61–90 `.5`, older `.25`.
+- Recency: 0–30 days `1`, 31–60 `.75`, 61–90 `.5`, older `.25`. The same decay is applied independently to each full team and each 2–4 Pokémon core; only a new placed finish adds fresh evidence.
 
 - For Victory Road online events only, a documented complete record that exactly totals `recordRounds` gives x-0 a `2` multiplier and x-1 a `1.75` multiplier; all other records get `1`. These bonuses use the **same recency weight**. Partial or inferred records never receive a bonus.
 - Italian VG Cup/VG Challenge winners are roster-only local evidence at `0.125×` placement value (a conservative potential x-2 Regional/VR signal). They never receive a record bonus or make an entry `Strong` by themselves.
 
-Recency is calculated from the device date. Regulations never mix. Pikalytics usage is displayed separately and only breaks tournament-score ties. Sources for the current snapshot: [Pokédata Baltimore](https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json), [Brisbane](https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json), [Frankfurt](https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json), [VR Sep #1](https://victoryroad.pro/vr-sep26/), [VR Sep #2](https://victoryroad.pro/vr-sep26-2/) and [VGC Locals Italia](https://shairaba.github.io/vgc-locals-italia/data/tournaments.json). `data/reviewed-results.json` is a manually reviewed, versioned source; run `npm run data:build` to rebuild the snapshot. `scripts/import-pokedata.ts` imports the three pinned completed-event top eights; `scripts/import-italian-locals.ts` imports only published local winners, not full top-cut sets. Pokédata's final Frankfurt record is 17-0 for Eric Rios and 14-3 for Sebastian Liu Li; the prior in-progress 16-0/14-2 figures are not retained. Roster-only evidence never supplies a recommendable set or an inferred role.
+Recency is calculated from the device date. Regulations never mix. Pikalytics usage is displayed separately and only breaks tournament-score ties. Sources for the current snapshot: [Pokédata Baltimore](https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json), [Brisbane](https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json), [Frankfurt](https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json), [VR Sep #1](https://victoryroad.pro/vr-sep26/), [VR Sep #2](https://victoryroad.pro/vr-sep26-2/) and [VGC Locals Italia](https://shairaba.github.io/vgc-locals-italia/data/tournaments.json). `data/reviewed-results.json` is manually reviewed and versioned; run `npm run data:build` after an approved import. `npm run data:import-pokedata-top24` promotes the three pinned completed-event Top-24 records, while `npm run data:import-victoryroad` validates every officially linked public Open Team List and preserves exact source placements, complete records, items, abilities, natures and moves. Pokédata's ambiguous records receive no inferred record bonus. Roster-only evidence never supplies a recommendable set or an inferred role.
 
 ## Calculator core
 
-`src/calculator.ts` implements Pokémon Champions stat points (0–32 per stat, 66 total), 16 damage rolls, sequential two-attack checks, and Pareto-minimal defensive/offensive spread search. Each attack step has independent field modifiers; defensive checks use both maximum rolls and offensive checks use both minimum rolls. Unsupported move-, ability-, and item-specific effects must be resolved by the future data adapter rather than guessed.
+`src/calculator.ts` implements Pokémon Champions stat points (0–32 per stat, 66 total), 16 damage rolls, sequential two-attack checks, a classic single-hit defensive check, and Pareto-minimal spread search. Two-hit defense uses both maximum rolls; single-hit defense accepts exactly one possible 6.25% maximum normal-damage roll (15 of 16 rolls survive); offensive checks use both minimum rolls. Critical hits are not simulated. Unsupported move-, ability-, and item-specific effects fail closed rather than guessed.
 
-The formula is adapted from NCP under MIT; see `THIRD_PARTY_NOTICES.md`. The UI lists all 166 NCP Champions items. Direct handlers cover type boosters, Normal Gem, Muscle Band, Wise Glasses, Expert Belt, Life Orb, Light Ball (Pikachu), resist berries, Air Balloon and active terrain seeds; `Technician` remains an ability, not an item. Mega form stats/abilities and stateful effects such as recovery, recoil, accuracy, speed and switching remain manual and are called out beside each result. Unsupported interactions fail closed rather than invent a damage result; independent in-game golden validation remains recommended before public competitive use. Baseline damage is explicitly distinguished from each optimized spread.
+The formula is adapted from NCP under MIT; see `THIRD_PARTY_NOTICES.md`. The calculator's local Pokémon/form picker shows a bundled PokeAPI sprite and loads base stats only for exact supported forms; users can still override the shown base values. The UI lists all 166 NCP Champions items. Direct handlers cover type boosters, Normal Gem, Muscle Band, Wise Glasses, Expert Belt, Life Orb, Light Ball (Pikachu), resist berries, Air Balloon and active terrain seeds; `Technician` remains an ability, not an item. Stateful effects such as recovery, recoil, accuracy, speed and switching remain manual and are called out beside each result. Independent in-game golden validation remains recommended before public competitive use. Baseline damage is explicitly distinguished from each optimized spread.
 
 ## Team tools
 
-`src/team.ts` parses Poképaste, validates team and regulation clauses against supplied legality catalogs, and renders printable English open/staff sheets. Staff sheets require nature and stat points; incomplete catalogs and malformed imported fields block export. Tera Type is required/rendered only when enabled by the regulation. Registration fields are not stored; team and assistant text drafts are saved locally with visible storage-error recovery.
+`src/team.ts` parses Poképaste (including `SPs`, `Stat Points`, or standard `EVs` labels when they contain valid 0–32 Champions points), validates team and regulation clauses against supplied legality catalogs, and renders printable English open/staff sheets. Staff sheets require nature and stat points; incomplete catalogs and malformed imported fields block export. Tera Type is required/rendered only when enabled by the regulation. Registration fields are not stored; team and assistant text drafts are saved locally with visible storage-error recovery.
 
-`src/assistant.ts` completes one to five locked slots from regulation-specific tournament rankings, co-occurrence, versioned roles, top-threat coverage, and evidence-backed sets. Legal tournament sets take priority over Pikalytics fallback sets; item conflicts trigger alternative-set selection. Missing locked-slot fields can be filled without changing supplied values. Output includes scoring reasons and uncovered roles/threats. Search is bounded (32 states), not exhaustive and not proof that a team is impossible; no LLM or battle simulation is used.
+`src/assistant.ts` completes one to five locked slots from regulation-specific tournament rankings, co-occurrence, versioned roles, top-threat coverage, and evidence-backed sets. It separately rewards direct published Trick Room cores, the complete-set Incineroar + Rillaboom balance-support core without either speed mode, and Tailwind-without-Trick-Room fast-mode cores; every bonus names its source count. Legal tournament sets take priority over Pikalytics fallback sets; item conflicts trigger alternative-set selection. Missing locked-slot fields can be filled without changing supplied values. Output includes scoring reasons and uncovered roles/threats. Search is bounded (32 states), not exhaustive and not proof that a team is impossible; no LLM or battle simulation is used.
 
 ## Legacy Android build — not part of the web release
 

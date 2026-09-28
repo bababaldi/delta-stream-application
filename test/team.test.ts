@@ -47,6 +47,23 @@ Timid Nature
   });
 });
 
+test("Poképaste accepts standard EVs labels as Champions stat points", () => {
+  const parsed = parsePokepaste(`Kangaskhan (F) @ Life Orb
+Ability: Scrappy
+EVs: 32 HP / 32 Atk / 2 Def
+Brave Nature
+- Fake Out
+- Hammer Arm
+- Protect
+- Double-Edge`);
+  assert.deepEqual(parsed.warnings, []);
+  assert.deepEqual(parsed.slots[0]?.statPoints, {
+    hp: 32,
+    attack: 32,
+    defense: 2,
+  });
+});
+
 test("team validation enforces clauses and supplied regulation catalogs", () => {
   const team = [
     slot("Alpha", "Berry"),

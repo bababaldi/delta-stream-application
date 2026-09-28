@@ -2,7 +2,9 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { CHAMPIONS_ITEMS } from "../src/items.js";
 import { canonicalPokemonName, type MetaSnapshot } from "../src/meta.js";
+import type { LegalityRules } from "../src/team.js";
 import { fetchText } from "../src/sources.js";
+import { OBSERVED_DISPLAY_ALIASES } from "./observed-display-aliases.js";
 
 const DATA_DIR = new URL("../data/", import.meta.url);
 const SEREBII_INDEX = "https://www.serebii.net/pokedex-champions/";
@@ -18,6 +20,15 @@ type EligibilityReview = {
 
 type SerebiiEntry = { slug: string; name: string };
 type SerebiiSetData = { moves: string[]; abilities: string[] };
+type ApprovedCatalog = LegalityRules & {
+  catalogVersion: string;
+  reviewStatus: string;
+  sources: Record<string, unknown>;
+  allowedPokemon: string[];
+  allowedMoves: Record<string, string[]>;
+  allowedAbilities: Record<string, string[]>;
+  speciesClauseKeys: Record<string, string>;
+};
 
 function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex");
@@ -64,7 +75,8 @@ function baseSpeciesKey(name: string): string {
     .replace(/^(?:alolan|galarian|hisuian|paldean)\s+/i, "")
     .replace(/[-\s]+(?:alola|galar|hisui|paldea)$/i, "")
     .replace(/[♀♂]/g, "")
-    .replace(/\s+[mf]$/i, "");
+    .replace(/[-\s]+(?:female|male|f|m)$/i, "")
+    .replace(/^vivillon[-\s]+(?:fancy|high[-\s]+plains)$/i, "Vivillon");
   if (isMega) value = value.replace(/[-\s]+[xyz]$/i, "");
   return canonicalPokemonName(value);
 }
@@ -97,9 +109,18 @@ function parseSetData(html: string): SerebiiSetData {
 }
 
 async function delayedFetch(url: string): Promise<string> {
-  const result = await fetchText(url);
-  await new Promise((resolve) => setTimeout(resolve, REQUEST_DELAY_MS));
-  return result;
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    try {
+      const result = await fetchText(url);
+      await new Promise((resolve) => setTimeout(resolve, REQUEST_DELAY_MS));
+      return result;
+    } catch (cause) {
+      if (attempt === 2)
+        throw new Error(`${url}: ${cause instanceof Error ? cause.message : String(cause)}`);
+      await new Promise((resolve) => setTimeout(resolve, REQUEST_DELAY_MS * (attempt + 2)));
+    }
+  }
+  throw new Error(`Could not fetch ${url}`);
 }
 
 async function mapLimit<T, U>(
@@ -140,6 +161,58 @@ function observedSets(snapshot: MetaSnapshot): Map<string, SerebiiSetData> {
 }
 
 async function main(): Promise<void> {
+  if (process.argv.includes("--from-approved-catalog")) {
+    const [approvedText, snapshotText] = await Promise.all([
+      readFile(new URL("legality.json", DATA_DIR), "utf8"),
+      readFile(new URL("snapshot.json", DATA_DIR), "utf8"),
+    ]);
+    const approved = parseJson<ApprovedCatalog>(approvedText, "approved legality catalog");
+    const snapshot = parseJson<MetaSnapshot>(snapshotText, "snapshot");
+    const observed = new Set(snapshot.tournaments.flatMap((tournament) =>
+      tournament.teams.flatMap((team) => team.roster.map((member) => member.pokemon)),
+    ));
+    const known = new Set(approved.allowedPokemon.map(canonicalPokemonName));
+    const unlisted = [...observed].filter((name) => !known.has(canonicalPokemonName(name)));
+    const unexpected = unlisted.filter((name) => !(name in OBSERVED_DISPLAY_ALIASES));
+    const missing = Object.keys(OBSERVED_DISPLAY_ALIASES).filter((name) => !unlisted.includes(name));
+    if (unexpected.length || missing.length)
+      throw new Error(`Review display aliases: unexpected ${unexpected.join(", ") || "none"}; missing ${missing.join(", ") || "none"}`);
+    const allowedMoves = { ...approved.allowedMoves };
+    const allowedAbilities = { ...approved.allowedAbilities };
+    const speciesClauseKeys = { ...approved.speciesClauseKeys };
+    for (const [alias, base] of Object.entries(OBSERVED_DISPLAY_ALIASES)) {
+      const baseKey = canonicalPokemonName(base);
+      const aliasKey = canonicalPokemonName(alias);
+      if (!allowedMoves[baseKey] || !allowedAbilities[baseKey] || !speciesClauseKeys[baseKey])
+        throw new Error(`Approved catalog has no base form for ${alias}: ${base}`);
+      allowedMoves[aliasKey] = allowedMoves[baseKey] as string[];
+      allowedAbilities[aliasKey] = allowedAbilities[baseKey] as string[];
+      speciesClauseKeys[aliasKey] = speciesClauseKeys[baseKey] as string;
+    }
+    const catalog = {
+      ...approved,
+      catalogVersion: "serebii-champions-2026-09-28",
+      reviewStatus: "owner-approved-2026-09-28",
+      sources: {
+        ...approved.sources,
+        observedDisplayAliases: {
+          source: "owner-approved reviewed PokeData and Victory Road Open Team Lists",
+          aliases: OBSERVED_DISPLAY_ALIASES,
+          note: "Inherited only from the mapped base form in the previous owner-approved Serebii catalog because Serebii was unavailable during this review refresh.",
+        },
+      },
+      allowedPokemon: uniqueSorted([...approved.allowedPokemon, ...Object.keys(OBSERVED_DISPLAY_ALIASES)]),
+      allowedMoves,
+      allowedAbilities,
+      speciesClauseKeys,
+    };
+    await writeFile(
+      new URL("review/legality-mc-serebii-draft.json", DATA_DIR),
+      `${JSON.stringify(catalog, null, 2)}\n`,
+    );
+    console.log(`Wrote alias-only review draft with ${Object.keys(OBSERVED_DISPLAY_ALIASES).length} approved display aliases.`);
+    return;
+  }
   const [reviewText, snapshotText, indexHtml] = await Promise.all([
     readFile(new URL("review/eligibility-mc.json", DATA_DIR), "utf8"),
     readFile(new URL("snapshot.json", DATA_DIR), "utf8"),
@@ -168,7 +241,7 @@ async function main(): Promise<void> {
     [...sourceForEligibility.values()].map((entry) => [entry.slug, entry]),
   ).values()];
   console.log(`Fetching move and ability data for ${requiredSources.length} Champions species pages...`);
-  const fetched = await mapLimit(requiredSources, 2, async (entry) => ({
+  const fetched = await mapLimit(requiredSources, 1, async (entry) => ({
     key: baseSpeciesKey(entry.name),
     source: entry,
     data: parseSetData(
@@ -213,7 +286,7 @@ async function main(): Promise<void> {
 
   const catalog = {
     regulation: review.regulation,
-    catalogVersion: "serebii-champions-2026-09-27",
+    catalogVersion: "serebii-champions-2026-09-28",
     reviewStatus: "secondary-reference-pending-owner-review",
     sources: {
       eligibility: {

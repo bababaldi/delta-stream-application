@@ -1,6 +1,6 @@
-# Owner review — NOT approved production data
+# Owner review provenance and frozen artifacts
 
-These files are not imported by the app and do not modify its rankings. `npm run data:review` now regenerates **M-C eligibility only**; archived M-B/Worlds files are preserved. Regeneration writes pending review artifacts, never production approvals.
+Most files here are not imported by the app and do not modify rankings. The explicitly marked M-C catalog and team-evidence artifacts are the frozen records behind the owner-approved production copies. `npm run data:review` regenerates **M-C eligibility only**; archived M-B/Worlds files are preserved. Regeneration writes pending review artifacts, never production approvals.
 
 ## Current target: Regulation M-C
 
@@ -17,17 +17,29 @@ The comparison with the archived M-B extraction has 28 added rows and one remove
 
 ### Approved M-C catalogs (frozen review artifacts)
 
-`legality-mc-serebii-draft.json` is the exact reviewed artifact copied to `data/legality.json` after owner approval on September 27, 2026. It combines the approved official M-C eligibility list with Serebii's Champions Pokédex (231 base-species pages for move/ability lists), reviewed tournament-set values for observed form aliases, and the pinned NCP calculator item catalog (166 items). Its secondary-source status, hashes, alias/species-clause mapping, no-Tera policy, and zero-restricted assumption are recorded in `data/approved-sources.json`. Regenerating it creates a new artifact that requires another approval.
+`legality-mc-serebii-draft.json` is the exact reviewed artifact copied to `data/legality.json` after owner approval on September 28, 2026. It retains the prior owner-approved Serebii-backed base catalog (231 base-species pages for move/ability lists), adds only 15 owner-approved display aliases from reviewed PokeData/Victory Road teams, and keeps the pinned NCP calculator item catalog (166 items). During this refresh Serebii was unreachable, so aliases inherit only their explicitly mapped prior approved base form; no remote rule data was substituted or inferred. Hashes, mappings, no-Tera policy and zero-restricted assumption are in `data/approved-sources.json`. Regenerating it creates a new artifact that requires another approval.
 
-`roles-mc-observed-signals-draft.json` is the exact reviewed artifact copied to `data/roles.json` after the same approval. Its 42 set-backed profiles use only direct observed move/ability signals; its 24 roster-only profiles deliberately make no role or matchup claim. “Threat coverage” is only a direct observed physical/special super-effective move against a top threat's base typing, not a matchup or damage guarantee.
+`roles-mc-observed-signals-draft.json` is the exact reviewed artifact copied to `data/roles.json` after the same approval. Its 49 set-backed profiles retain direct source-backed move/ability signals; its 59 roster-only profiles deliberately make no role or matchup claim. Mapped aliases inherit only their prior base profile, while newly observed species without a prior profile remain roster-only until Serebii move categories can be refreshed. “Threat coverage” is only a direct observed physical/special super-effective move against a top threat's base typing, not a matchup or damage guarantee.
 
 ### Event and usage blockers
 
-`npm run data:discover -- --rk9-only` retrieved 41 unapproved RK9 candidates. Eight start dates fall within the ranked M-C period, but a date match is not proof of the game's regulation or completion. Baltimore (`BA002-JL3KVbvivVKNAc`, September 18–20) did not yet have verified final results/regulation in this review; later events remain future candidates. No event was promoted.
+`npm run data:discover -- --rk9-only` retrieved 41 unapproved RK9 candidates. Eight start dates fall within the ranked M-C period, but a date match is not proof of the game's regulation or completion. No RK9 candidate was promoted through this path; the separately reviewed PokeData and Victory Road imports are documented above.
 
-The Pikalytics AI request returned HTTP 403. No workaround was attempted. `data/config.json` sets `pikalyticsFormat` to `null` so unverified M-C or historical M-B usage cannot silently enter the snapshot. A valid, reviewed M-C feed can be configured when accessible.
+Current M-C Pikalytics AI pages are publicly accessible, but `pikalytics-mc-spread-audit.json` verified that all 21 checked pages explicitly report no EV spread or nature data. No spread recommendation is imported and `data/config.json` keeps `pikalyticsFormat` as `null`, so unverified M-C or historical M-B data cannot silently enter the snapshot. If Pikalytics publishes exact spreads later, the audit fails closed and requires review before import.
 
 `publication-preview.json` records a snapshot SHA-256 and preflight state at the time it was generated. It is an inspection report, not consent; regenerate it after any data or catalog change before publishing.
+
+## Approved M-C Top-24 team expansion
+
+`reviewed-results-mc-top24-draft.json` is the preserved 100-team review artifact for the owner-approved expansion of Baltimore, Brisbane and Frankfurt from Top 8 to Top 24. Its exact draft SHA-256 and three fetched source hashes are recorded in `reviewed-results-mc-top24-manifest.json`; the 72 PokeData records are promoted into `data/reviewed-results.json`.
+
+All 72 Pokédata rosters have six Pokémon, an ability, an item and four moves. Only two source records per Regional exactly match the documented Swiss-round count; 22 ambiguous records per event remain without a record bonus. The approved aliases are `Maushold [Family of Three]`, `Sinistcha [Masterpiece Form]`, and `Sinistcha [Unremarkable Form]`, mapped only to their approved base entries.
+
+Recency scoring applies independently to each roster and each 2–4 Pokémon core; only new placed finishes add fresh evidence.
+
+## Approved Victory Road Open Team Lists
+
+`victoryroad-mc-open-team-lists-manifest.json` records the owner-approved import of all 55 public lists from VR September Challenge #1 and all 36 from #2. Each roster is linked from the public result table and is validated for six Pokémon, item, ability, nature and four moves. Exact published positions are kept separately from the scoring bucket (for example, Marco Silva is recorded as Placement #5 while retaining the Top-8 score bucket). Only records that exactly total the event’s 11 or 10 rounds receive an x-0/x-1 bonus; no published list supplies stat points, IVs or Tera data.
 
 ## Historical Regulation M-B eligibility
 

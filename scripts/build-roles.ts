@@ -6,11 +6,12 @@ import {
   type TeamMember,
 } from "../src/meta.js";
 import { fetchText } from "../src/sources.js";
+import { OBSERVED_DISPLAY_ALIASES } from "./observed-display-aliases.js";
 
 const DATA_DIR = new URL("../data/", import.meta.url);
 const SEREBII_ATTACKDEX = "https://www.serebii.net/attackdex-champions/";
 const REQUEST_DELAY_MS = 250;
-const VERSION = "observed-capabilities-2026-09-27";
+const VERSION = "observed-capabilities-2026-09-28";
 
 const TYPES = [
   "bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying",
@@ -29,6 +30,16 @@ type Profile = {
   roleSignals: string[];
   coverageSignals: string[];
 };
+type ApprovedRoleCatalog = {
+  regulation: string;
+  version: string;
+  reviewStatus: string;
+  requiredRoles: string[];
+  topThreats: string[];
+  coverageDefinition: string;
+  sources: Record<string, unknown>;
+  profiles: Profile[];
+};
 
 type Threat = { name: string; weakTo: readonly string[] };
 
@@ -38,8 +49,8 @@ const THREATS: readonly Threat[] = [
   { name: "Rillaboom", weakTo: ["bug", "fire", "flying", "ice", "poison"] },
   { name: "Sneasler", weakTo: ["flying", "ground", "psychic"] },
   { name: "Incineroar", weakTo: ["fighting", "ground", "rock", "water"] },
-  { name: "Gholdengo", weakTo: ["dark", "fire", "ghost", "ground"] },
   { name: "Kingambit", weakTo: ["fighting", "fire", "ground"] },
+  { name: "Gholdengo", weakTo: ["dark", "fire", "ghost", "ground"] },
 ];
 
 const SPEED_CONTROL = new Set(["tailwind", "trick room", "icy wind", "electroweb", "rock tomb"]);
@@ -205,7 +216,7 @@ async function main(): Promise<void> {
     await readFile(new URL("snapshot.json", DATA_DIR), "utf8"),
     "snapshot",
   );
-  const ranked = rankMeta(snapshot, snapshot.activeRegulation, new Date("2026-09-27T00:00:00Z"))
+  const ranked = rankMeta(snapshot, snapshot.activeRegulation, new Date("2026-09-28T00:00:00Z"))
     .pokemon.slice(0, THREATS.length)
     .map((entry) => entry.key);
   const expectedThreats = THREATS.map((threat) => canonicalPokemonName(threat.name));
@@ -213,6 +224,56 @@ async function main(): Promise<void> {
     throw new Error(
       `Top threats changed (${ranked.join(", ")}); review THREATS before rebuilding roles.`,
     );
+  if (process.argv.includes("--from-approved-catalog")) {
+    const approved = parseJson<ApprovedRoleCatalog>(
+      await readFile(new URL("roles.json", DATA_DIR), "utf8"),
+      "approved role catalog",
+    );
+    const profileByKey = new Map(approved.profiles.map((profile) => [
+      canonicalPokemonName(profile.pokemon), profile,
+    ]));
+    const labels = new Set(snapshot.tournaments.flatMap((tournament) =>
+      tournament.teams.flatMap((team) => team.roster.map((member) => member.pokemon)),
+    ));
+    const unprofiled = [...new Map(
+      [...labels]
+        .filter((name) => !profileByKey.has(canonicalPokemonName(name)))
+        .map((name) => [canonicalPokemonName(name), name]),
+    ).values()];
+    const profiles = [
+      ...approved.profiles.map((profile) => ({ ...profile, version: VERSION })),
+      ...unprofiled.map((pokemon) => {
+        const base = OBSERVED_DISPLAY_ALIASES[pokemon];
+        const profile = base ? profileByKey.get(canonicalPokemonName(base)) : undefined;
+        return profile
+          ? { ...profile, pokemon, version: VERSION }
+          : rosterOnlyProfile(snapshot.activeRegulation, pokemon);
+      }),
+    ].sort((left, right) => left.pokemon.localeCompare(right.pokemon));
+    const catalog = {
+      ...approved,
+      version: VERSION,
+      reviewStatus: "owner-approved-2026-09-28",
+      topThreats: THREATS.map((threat) => threat.name),
+      sources: {
+        ...approved.sources,
+        observedDisplayAliases: {
+          source: "owner-approved reviewed PokeData and Victory Road Open Team Lists",
+          aliases: OBSERVED_DISPLAY_ALIASES,
+          unclassifiedProfiles: unprofiled,
+          note: "Mapped aliases inherit their prior base profile; other newly observed species remain roster-only because Serebii move categories were unavailable during this review refresh.",
+        },
+        threatSelection: "top five reviewed-snapshot rankings at 2026-09-28",
+      },
+      profiles,
+    };
+    await writeFile(
+      new URL("review/roles-mc-observed-signals-draft.json", DATA_DIR),
+      `${JSON.stringify(catalog, null, 2)}\n`,
+    );
+    console.log(`Wrote source-preserving role review draft with ${unprofiled.length} newly observed profiles.`);
+    return;
+  }
 
   console.log(`Fetching Champions move categories from ${TYPES.length} Serebii type pages...`);
   const parsedTypes = await mapLimit(TYPES, 2, async (type) =>
@@ -263,7 +324,7 @@ async function main(): Promise<void> {
     sources: {
       setEvidence: "reviewed PokeData tournament sets in data/snapshot.json",
       moveCategories: `${SEREBII_ATTACKDEX}{type}.shtml`,
-      threatSelection: "top five reviewed-snapshot rankings at 2026-09-27",
+      threatSelection: "top five reviewed-snapshot rankings at 2026-09-28",
     },
     profiles,
   };

@@ -1,0 +1,136 @@
+{
+  "reviewStatus": "verified-no-spread-data",
+  "regulation": "champions-regulation-mc",
+  "pikalyticsFormat": "gen9championsvgc2026regmc",
+  "sourceSnapshotSha256": "b10128c4de91a4401824678a147fadb7738ebc0f4840ee307aed3981711582dc",
+  "checkedAt": "2026-09-28T10:34:42.439Z",
+  "entries": [
+    {
+      "pokemon": "rillaboom",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/rillaboom",
+      "sha256": "dee98279a1778c8b0d8edb2f1569aea00f61536bb9120c46e7c1e909981adb9a",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "sneasler",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/sneasler",
+      "sha256": "4fba288b58bb4b5c4a9c8fa2f7c238df91b9be90933065c596ce1266d26c7d18",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "incineroar",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/incineroar",
+      "sha256": "8cef280282096a86dc074144584a9172d736ceaa78311fddfa76edbf8ca68697",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "kingambit",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/kingambit",
+      "sha256": "ba584f5093b56628930cecc90c272d320e422c7871c6d3eeb7a154e57d86592e",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "gholdengo",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/gholdengo",
+      "sha256": "211e6e82245d1f2852168020401d4bc06d7560890a2565621469ba22c9f94d98",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "archaludon",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/archaludon",
+      "sha256": "2d8b339902c2f8f15157cfe7992446e83152107c1d0de0a2ea20a46fb95ddd22",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "garchomp",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/garchomp",
+      "sha256": "ae705622e82cce0af0e7150b2ec69a7a589e14496340159583570caab89375f2",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "sylveon",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/sylveon",
+      "sha256": "9bcaead38885bbd1e3934a2b5bfebe23050a1f1621997a7ef8a4eb73f96751e0",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "floette-mega",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/floette-mega",
+      "sha256": "5c0ff692cdd1af4ba92c33282367eeb942cc09292ea68085ef42033173870b4c",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "salamence-mega",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/salamence-mega",
+      "sha256": "b8a7860a6109eb9943846523c3c911a6453329698106ea2530bbad5fe5a48067",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "floette-eternal-flower",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/floette-eternal-flower",
+      "sha256": "5c0ff692cdd1af4ba92c33282367eeb942cc09292ea68085ef42033173870b4c",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "farigiraf",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/farigiraf",
+      "sha256": "cc357423d04f725f5f0db89d32762c8fc6998d577784f4eee90268afa33f602c",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "salamence",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/salamence",
+      "sha256": "d5df6e938b97d7f862d739e890e9eb768c082083a2abdb08bd1f80bdc4bf13c6",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "raichu",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/raichu",
+      "sha256": "d250e95edd945cd4082fa1982c59dfd4db50ebf73ffc37ab7a38a39ea1a0f539",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "pelipper",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/pelipper",
+      "sha256": "e9375a317cafb773dc15177140b3296919f6c121ea5378b07e7e8e1f839dd992",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "milotic",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/milotic",
+      "sha256": "cc987fdf2673055875ebffd5bf95adb66db7c3b374c0dde335c04fdd763d44b9",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "charizard",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/charizard",
+      "sha256": "434d39358e40ef1602b37ed9fc8f09acf2914bb63b8cf547a174e08f63ec3216",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "politoed",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/politoed",
+      "sha256": "e135b1f49f714b5dfd4bbacbd8719837fd603067f2eef7531c72a081e620236d",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "raichu-mega-y",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/raichu-mega-y",
+      "sha256": "d20d931e7e098c7c6ff46e92e5942cfcfdb66b99d576f844bcaae1955870a6f2",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "arcanine-hisui",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/arcanine-hisui",
+      "sha256": "345b76735f2051a08566b605ead2359c17ff1faa9d4927e879a0a139af54d80d",
+      "noSpreadNatureData": true
+    },
+    {
+      "pokemon": "indeedee-male",
+      "url": "https://www.pikalytics.com/ai/pokedex/gen9championsvgc2026regmc/Indeedee",
+      "sha256": "b92038e140d988e2c99dd2fe537c2c3d1771f4d2e7b786c34dafeaa0f1403087",
+      "noSpreadNatureData": true
+    }
+  ],
+  "conclusion": "All 21 current M-C pages explicitly state that no EV spread or nature data is available. No Pikalytics spread recommendation is imported."
+}

@@ -575,11 +575,18 @@ function buildPokemon(
   return { ...pokemon, nature, statPoints: { ...locked, ...allocated } };
 }
 
+function defensiveDamageCeiling(result: DamageResult, singleHit: boolean): number {
+  // A single-hit check accepts the one 1/16 maximum normal-damage roll.
+  return singleHit && result.rolls.length === 16
+    ? result.rolls.at(-2) as number
+    : result.max;
+}
+
 export function solveDefensiveSpread(input: {
   defender: Omit<ChampionsPokemon, "nature" | "statPoints">;
   lockedPoints?: Partial<StatTable>;
   natures?: Nature[];
-  attacks: [IncomingAttack, IncomingAttack];
+  attacks: [IncomingAttack] | [IncomingAttack, IncomingAttack];
   limit?: number;
 }): SpreadResult {
   const locked = input.lockedPoints ?? {};
@@ -591,11 +598,16 @@ export function solveDefensiveSpread(input: {
       reason: "Locked stat points are illegal",
     };
   const firstAttack = { ...input.attacks[0], defender: input.defender };
-  const secondAttack = advanceConsumedItems(
-    firstAttack,
-    { ...input.attacks[1], defender: input.defender },
-  );
-  const attacks = [firstAttack, secondAttack] as const;
+  const attacks = input.attacks.length === 1
+    ? [firstAttack]
+    : [
+        firstAttack,
+        advanceConsumedItems(
+          firstAttack,
+          { ...input.attacks[1], defender: input.defender },
+        ),
+      ];
+  const singleHit = attacks.length === 1;
   for (const attack of attacks)
     calculateDamage({ ...attack, defender: buildPokemon(attack.defender, NEUTRAL_NATURE, locked, {}) });
   const optimizedStats = (["hp", "defense", "specialDefense"] as const).filter(
@@ -616,10 +628,13 @@ export function solveDefensiveSpread(input: {
       const damage = attacks
         .filter((attack) => attack.move.category === category)
         .reduce(
-          (sum, attack) => sum + calculateDamage({
-            ...attack,
-            defender: buildPokemon(attack.defender, nature, locked, { [stat]: value }),
-          }).max,
+          (sum, attack) => sum + defensiveDamageCeiling(
+            calculateDamage({
+              ...attack,
+              defender: buildPokemon(attack.defender, nature, locked, { [stat]: value }),
+            }),
+            singleHit,
+          ),
           0,
         );
       cache.set(value, damage);
@@ -648,7 +663,9 @@ export function solveDefensiveSpread(input: {
     return {
       possible: false,
       options: [],
-      reason: "No legal spread survives both maximum rolls",
+      reason: singleHit
+        ? "No legal spread survives 15 of 16 normal-damage rolls"
+        : "No legal spread survives both maximum rolls",
     };
   return {
     possible: true,

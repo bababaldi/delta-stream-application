@@ -60,9 +60,50 @@ test("placement and recency boundaries are explicit", () => {
   assert.equal(recencyWeight("2026-09-07", NOW), 0);
 });
 
+test("published placements retain exact source ranks without changing score buckets", () => {
+  const tournament: TournamentData = {
+    event: event("published"),
+    teams: [{
+      ...team("published", "Alice", ["A", "B", "C", "D", "E", "F"], 8),
+      publishedPlacement: 5,
+    }],
+  };
+  assert.deepEqual(validateTournamentData(tournament, NOW), []);
+  tournament.teams[0]!.publishedPlacement = 4;
+  assert.ok(validateTournamentData(tournament, NOW).some((error) =>
+    error.includes("publishedPlacement"),
+  ));
+});
+
 test("a recent regional can outrank an old Worlds result", () => {
   assert.equal(teamScore(1, { tier: "regional", date: "2026-09-01" }, NOW), 64);
   assert.equal(teamScore(1, { tier: "worlds", date: "2026-05-01" }, NOW), 32);
+});
+
+test("old teams and cores decay until a new placed finish reconfirms them", () => {
+  const oldRoster = ["A", "B", "C", "D", "E", "F"];
+  const freshRoster = ["A", "B", "G", "H", "I", "J"];
+  const old: TournamentData = {
+    event: event("old", "2026-06-07"),
+    teams: [team("old", "Alice", oldRoster, 1)],
+  };
+  const snapshot: MetaSnapshot = {
+    generatedAt: NOW.toISOString(),
+    activeRegulation: "champions-mb",
+    tournaments: [old],
+    pikalyticsUsage: {},
+  };
+  const decayed = rankMeta(snapshot, "champions-mb", NOW);
+  assert.equal(decayed.teams[0]?.score, 16);
+  assert.equal(decayed.cores.find(({ key }) => key === "a+b")?.score, 16);
+
+  snapshot.tournaments.push({
+    event: event("fresh", "2026-09-01"),
+    teams: [team("fresh", "Bob", freshRoster, 1)],
+  });
+  const reconfirmed = rankMeta(snapshot, "champions-mb", NOW);
+  assert.equal(reconfirmed.teams.find(({ key }) => key === "a+b+c+d+e+f")?.score, 16);
+  assert.equal(reconfirmed.cores.find(({ key }) => key === "a+b")?.score, 80);
 });
 
 test("complete 10-0 / 9-1 records are boosted and decay with event age", () => {

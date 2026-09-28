@@ -125,6 +125,24 @@ test("two-step solvers carry consumed items into the second attack", () => {
   }).possible, false);
 });
 
+test("single-hit defense accepts only the one 1/16 maximum normal roll", () => {
+  const attack = {
+    attacker: pokemon("Attacker", { attack: 32 }, "attack"),
+    move: { name: "Test Strike", power: 190, category: "physical" as const },
+    modifiers: { stab: 1.5 },
+  };
+  const result = solveDefensiveSpread({
+    defender: { name: "Defender", baseStats: BASE_STATS },
+    lockedPoints: { hp: 0, defense: 0, specialDefense: 0 },
+    attacks: [attack],
+  });
+  assert.equal(result.possible, true);
+  const defender = pokemon("Defender");
+  const damage = calculateDamage({ ...attack, defender });
+  assert.ok((damage.rolls[14] as number) < championsStats(defender).hp);
+  assert.ok(damage.max >= championsStats(defender).hp);
+});
+
 test("defensive solver returns legal Pareto spreads that survive both max rolls", () => {
   const attack = {
     attacker: pokemon("Attacker", { attack: 32 }, "attack"),

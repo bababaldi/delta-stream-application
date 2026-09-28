@@ -111,9 +111,9 @@ export function parsePokepaste(text: string): ParsedTeam {
         else if (line.startsWith("Tera Type:"))
           slot.teraType = line.slice(10).trim();
         else if (/ Nature$/i.test(line)) slot.nature = line.slice(0, -7).trim();
-        else if (/^(?:SPs|Stat Points):/i.test(line)) {
+        else if (/^(?:SPs|Stat Points|EVs):/i.test(line)) {
           const points = parseStatPoints(line.slice(line.indexOf(":") + 1));
-          if (points) slot.statPoints = points;
+          if (points && !validateStatPoints(points).length) slot.statPoints = points;
           else
             warnings.push(`Slot ${index + 1}: ignored malformed stat points`);
         } else if (line.startsWith("- ")) slot.moves.push(line.slice(2).trim());
@@ -133,6 +133,27 @@ function canonicalSet(
   return values ? new Set(values.map(canonicalPokemonName)) : undefined;
 }
 
+interface LegalityIndex {
+  allowedPokemon: Set<string> | undefined;
+  allowedItems: Set<string> | undefined;
+  restricted: Set<string> | undefined;
+}
+
+const legalityIndexes = new WeakMap<LegalityRules, LegalityIndex>();
+
+function legalityIndex(rules: LegalityRules): LegalityIndex {
+  const existing = legalityIndexes.get(rules);
+  if (existing) return existing;
+  const index = {
+    allowedPokemon: canonicalSet(rules.allowedPokemon),
+    allowedItems: rules.allowedItems
+      ? new Set(rules.allowedItems.map((item) => item.toLowerCase()))
+      : undefined,
+    restricted: canonicalSet(rules.restrictedPokemon),
+  };
+  legalityIndexes.set(rules, index);
+  return index;
+}
 export function legalityCatalogErrors(rules: LegalityRules): string[] {
   const errors: string[] = [];
   if (!rules.regulation?.trim()) errors.push("Regulation is missing");
@@ -162,20 +183,19 @@ export function validateTeam(
   slots: readonly TeamSlot[],
   rules: LegalityRules,
   partial = false,
+  catalogValidated = false,
 ): LegalityIssue[] {
-  const issues: LegalityIssue[] = legalityCatalogErrors(rules).map(
-    (message) => ({ code: "catalog-incomplete", message }),
-  );
+  const issues: LegalityIssue[] = catalogValidated
+    ? []
+    : legalityCatalogErrors(rules).map(
+      (message) => ({ code: "catalog-incomplete", message }),
+    );
   if ((!partial && slots.length !== 6) || slots.length > 6)
     issues.push({
       code: "team-size",
       message: "A tournament team must contain exactly six Pokémon",
     });
-  const allowedPokemon = canonicalSet(rules.allowedPokemon);
-  const allowedItems = rules.allowedItems
-    ? new Set(rules.allowedItems.map((item) => item.toLowerCase()))
-    : undefined;
-  const restricted = canonicalSet(rules.restrictedPokemon);
+  const { allowedPokemon, allowedItems, restricted } = legalityIndex(rules);
   const seenSpecies = new Map<string, number>();
   const seenItems = new Map<string, number>();
   let restrictedCount = 0;

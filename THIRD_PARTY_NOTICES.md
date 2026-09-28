@@ -13,3 +13,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+## PokéAPI
+
+`data/pokeapi.json` and `public/pokeapi/` are generated from the public [PokéAPI v2](https://pokeapi.co/docs/v2) and [PokéAPI sprites repository](https://github.com/PokeAPI/sprites) by `npm run sprites:sync`. The bundled files are used only for local Pokémon/form base-stat defaults and sprites; this application does not claim ownership of Pokémon artwork or trademarks.

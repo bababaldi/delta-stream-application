@@ -1,0 +1,73 @@
+{
+  "reviewStatus": "owner-approved",
+  "approvedAt": "2026-09-28T10:12:01Z",
+  "regulation": "champions-regulation-mc",
+  "target": {
+    "placementDepth": 24,
+    "totalTeamRecords": 100,
+    "sourceBackedPokeDataTeamRecords": 72
+  },
+  "draft": {
+    "path": "data/review/reviewed-results-mc-top24-draft.json",
+    "sha256": "ec69c092a0cb7af0551aa7adf33fd07fe8f220d2cc1da3a1b7fb06c6b91ec0fe"
+  },
+  "sources": [
+    {
+      "eventId": "baltimore-2027",
+      "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000192/masters/0000192_Masters.json",
+      "sourceSha256": "8597d4b14545d234eaee64396c201602d6e9879377f35562c7d60dc5ba0ae9f6",
+      "importedTeams": 24,
+      "completeRecords": 2,
+      "omittedAmbiguousRecords": 22
+    },
+    {
+      "eventId": "brisbane-2027",
+      "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000193/masters/0000193_Masters.json",
+      "sourceSha256": "8b0badad0eff9ac0c19e0cc441a06a2ec078bda2eda4013f4530d514cf3a1ec8",
+      "importedTeams": 24,
+      "completeRecords": 2,
+      "omittedAmbiguousRecords": 22
+    },
+    {
+      "eventId": "frankfurt-2027",
+      "sourceUrl": "https://www.pokedata.ovh/standingsVGC/0000194/masters/0000194_Masters.json",
+      "sourceSha256": "59240f16a59d733a5dc291f7739a69309a886771bbc88ba518bfcdb45c08b10d",
+      "importedTeams": 24,
+      "completeRecords": 2,
+      "omittedAmbiguousRecords": 22
+    }
+  ],
+  "requiredCatalogReview": {
+    "proposedFormAliases": [
+      {
+        "canonicalAlias": "maushold-family-of-three",
+        "proposedBase": "maushold",
+        "officialBaseFormId": "0925-001",
+        "sourceLabels": [
+          "Maushold [Family of Three]"
+        ],
+        "occurrences": 1
+      },
+      {
+        "canonicalAlias": "sinistcha-masterpiece",
+        "proposedBase": "sinistcha",
+        "officialBaseFormId": "1013-000",
+        "sourceLabels": [
+          "Sinistcha [Masterpiece Form]"
+        ],
+        "occurrences": 2
+      },
+      {
+        "canonicalAlias": "sinistcha-unremarkable",
+        "proposedBase": "sinistcha",
+        "officialBaseFormId": "1013-000",
+        "sourceLabels": [
+          "Sinistcha [Unremarkable Form]"
+        ],
+        "occurrences": 7
+      }
+    ],
+    "note": "Owner-approved aliases were promoted to data/legality.json with an exact approved catalog hash."
+  },
+  "scorePolicy": "Every placed roster and its 2–4 Pokémon cores use the same placement × tier × recency score. New placements add current evidence; old evidence decays at 31, 61 and 91 days."
+}

@@ -1,0 +1,23 @@
+{
+  "reviewStatus": "owner-approved",
+  "regulation": "champions-regulation-mc",
+  "sources": [
+    {
+      "eventId": "vr-sep26",
+      "sourceUrl": "https://victoryroad.pro/vr-sep26/",
+      "resultSha256": "1df6fcaf33e081b317fecd67aaca3a74ed1d7d39fc9598bea4be2c3704b1e37e",
+      "importedOpenTeamLists": 55,
+      "completeRecords": 39,
+      "teamDataSha256": "4cae86a5ecf02a1efa24e4acd44481b8dff4650741c4c09f2e94d88e95365ea5"
+    },
+    {
+      "eventId": "vr-sep26-2",
+      "sourceUrl": "https://victoryroad.pro/vr-sep26-2/",
+      "resultSha256": "eff2d8acc23c7932026ce7aaa017d017367dadd967ace35e490e8b3e5c3ad10e",
+      "importedOpenTeamLists": 36,
+      "completeRecords": 29,
+      "teamDataSha256": "a23a1c2801540efc3091276580b72d71c5471c37ddbd66db80e280c5935f9e1f"
+    }
+  ],
+  "note": "Every imported roster is linked directly from the public Victory Road result table. Nature, item, ability and four moves come from the linked public Open Team List; stat points are not published and remain unset."
+}

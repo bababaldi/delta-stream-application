@@ -28,6 +28,25 @@ try {
             .click();
     await tab("Teams");
     const paste = "Synthetic\nAbility: Test\nSPs: broken\n- Protect";
+    const assistPaste = `Kangaskhan (F) @ Life Orb
+Ability: Scrappy
+Level: 50
+EVs: 32 HP / 32 Atk / 2 Def
+Brave Nature
+- Fake Out
+- Hammer Arm
+- Protect
+- Double-Edge
+
+Farigiraf (M) @ Colbur Berry
+Ability: Armor Tail
+Level: 50
+EVs: 32 HP / 10 Def / 24 SpD
+Relaxed Nature
+- Helping Hand
+- Psychic
+- Trick Room
+- Thunderbolt`;
     await page
         .getByRole("textbox", { name: "Poképaste", exact: true })
         .fill(paste);
@@ -65,13 +84,30 @@ try {
     );
     assert.ok(!stored.includes("PRIVATE REGISTRATION"));
     await tab("Calc");
+    await page.locator('[name="attackerName"]').fill("Floette Mega");
+    assert.equal(await page.locator('[name="attackBase"]').inputValue(), "85");
+    assert.equal(await page.locator('[name="specialAttackBase"]').inputValue(), "155");
+    assert.match(
+        await page.locator('[data-pokemon-sprite="attacker"]').getAttribute("src") ?? "",
+        /floette-mega\.png$/,
+    );
     await page.locator('[name="move1Power"]').fill("80");
     await page.getByRole("button", { name: "Calculate spreads" }).click();
     assert.match(
         await page.locator("#calc-result").innerText(),
         /Non-dominated spreads|Impossible/,
     );
+    await page.locator('[name="goal"]').selectOption("survive-one");
+    assert.equal(await page.locator(".move-step").count(), 1);
+    assert.match(await page.locator("#calc-form").innerText(), /6\.25%/);
+    await page.getByRole("button", { name: "Calculate spreads" }).click();
+    assert.match(await page.locator("#calc-result").textContent() ?? "", /15\/16 roll/);
     await tab("Assist");
+    await page.locator("#assist-form textarea").fill(assistPaste);
+    await page.getByRole("button", { name: "Rank completions" }).click();
+    assert.ok(await page.locator("#assist-result .completion").count());
+    assert.match(await page.locator("#assist-result").innerText(), /Kangaskhan[\s\S]*Farigiraf/);
+    assert.match(await page.locator("#assist-result").innerText(), /Placed-team co-occurrence/);
     await tab("Calc");
     assert.equal(await page.locator('[name="move1Power"]').inputValue(), "80");
     assert.match(
@@ -79,6 +115,20 @@ try {
         /Non-dominated spreads|Impossible/,
     );
     await tab("Meta");
+    const firstRanking = page.locator(".ranking-row").first();
+    assert.ok(await firstRanking.locator(".rank-sprites img").count());
+    await firstRanking.locator("summary").first().click();
+    const setPreview = firstRanking.locator("[data-set-preview]").first();
+    assert.ok(await setPreview.count());
+    assert.match(await setPreview.getAttribute("aria-label") ?? "", /Moves:|Roster-only/);
+    await setPreview.focus();
+    await page.waitForTimeout(150);
+    assert.equal(
+        await setPreview.locator(".set-popover").evaluate((element) =>
+            getComputedStyle(element).visibility,
+        ),
+        "visible",
+    );
     await page.locator('[data-region="NA"]').uncheck();
     assert.equal(
         await page.evaluate(() =>
@@ -119,6 +169,25 @@ try {
             });
             await page.screenshot({
                 path: `.impeccable/review/${width === 1440 ? "desktop" : "mobile"}-${theme}-${scale}x.png`,
+                fullPage: true,
+            });
+            const firstRanking = page.locator(".ranking-row").first();
+            await firstRanking.locator("summary").first().click();
+            assert.equal(
+                await firstRanking.locator(".evidence > .evidence-team-list > li").count(),
+                6,
+            );
+            assert.match(
+                await firstRanking.locator(".evidence-more summary").textContent() ?? "",
+                /^Show \d+ more supporting teams$/,
+            );
+            await page.screenshot({
+                path: `.impeccable/review/${width === 1440 ? "desktop" : "mobile"}-detail-${theme}-${scale}x.png`,
+                fullPage: true,
+            });
+            await tab("Calc");
+            await page.screenshot({
+                path: `.impeccable/review/${width === 1440 ? "desktop" : "mobile"}-calc-${theme}-${scale}x.png`,
                 fullPage: true,
             });
         }
