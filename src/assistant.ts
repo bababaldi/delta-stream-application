@@ -171,6 +171,58 @@ interface SearchState {
   reasons: RecommendationReason[];
 }
 
+interface ArchetypeScoreIndex {
+  maximum: number;
+  coresByPokemon: Map<string, ArchetypeCoreEvidence[]>;
+}
+
+interface ScoringIndex {
+  pokemon: Map<string, MetaRankings["pokemon"][number]>;
+  coresByPokemon: Map<string, MetaRankings["cores"][number][]>;
+  bestPokemonScore: number;
+  bestCoreScore: number;
+  archetypes: Map<ObservedArchetype, ArchetypeScoreIndex>;
+}
+
+function buildScoringIndex(
+  rankings: MetaRankings,
+  archetypeCores: readonly ArchetypeCoreEvidence[],
+): ScoringIndex {
+  const pokemon = new Map<string, MetaRankings["pokemon"][number]>();
+  let bestPokemonScore = 1;
+  for (const ranked of rankings.pokemon) {
+    if (!pokemon.has(ranked.key)) pokemon.set(ranked.key, ranked);
+    bestPokemonScore = Math.max(bestPokemonScore, ranked.score);
+  }
+  const coresByPokemon = new Map<string, MetaRankings["cores"][number][]>();
+  let bestCoreScore = 1;
+  for (const core of rankings.cores) {
+    bestCoreScore = Math.max(bestCoreScore, core.score);
+    for (const member of core.pokemon) {
+      const key = canonicalPokemonName(member);
+      const cores = coresByPokemon.get(key);
+      if (cores) cores.push(core);
+      else coresByPokemon.set(key, [core]);
+    }
+  }
+  const archetypes = new Map<ObservedArchetype, ArchetypeScoreIndex>();
+  for (const core of archetypeCores) {
+    let index = archetypes.get(core.archetype);
+    if (!index) {
+      index = { maximum: 1, coresByPokemon: new Map() };
+      archetypes.set(core.archetype, index);
+    }
+    index.maximum = Math.max(index.maximum, core.evidenceScore);
+    for (const pokemon of core.pokemon) {
+      const key = canonicalPokemonName(pokemon);
+      const cores = index.coresByPokemon.get(key);
+      if (cores) cores.push(core);
+      else index.coresByPokemon.set(key, [core]);
+    }
+  }
+  return { pokemon, coresByPokemon, bestPokemonScore, bestCoreScore, archetypes };
+}
+
 function profileFor(
   profiles: readonly RoleProfile[],
   regulation: string,
@@ -220,57 +272,66 @@ function chooseSets(
     );
 }
 
+interface CandidateLegality {
+  validSets: Map<SetEvidence, boolean>;
+  restrictedPokemon: Set<string>;
+}
+
 function candidateAllowed(
   slots: readonly TeamSlot[],
   set: SetEvidence,
   rules: LegalityRules,
+  legality: CandidateLegality,
 ): boolean {
-  if (!Number.isFinite(set.evidenceScore) || set.evidenceScore < 0)
+  if (!Number.isFinite(set.evidenceScore) || set.evidenceScore < 0 || slots.length >= 6)
     return false;
-  return (
-    // recommendTeam checked catalog completeness before its bounded search.
-    validateTeam(
-      [...slots, { ...set.set, species: set.pokemon }],
-      rules,
-      true,
-      true,
-    ).length === 0
-  );
+  const candidate: TeamSlot = { ...set.set, species: set.pokemon };
+  let valid = legality.validSets.get(set);
+  if (valid === undefined) {
+    // Beam states are already legal; validate each evidence-backed set once.
+    valid = validateTeam([candidate], rules, true, true).length === 0;
+    legality.validSets.set(set, valid);
+  }
+  if (!valid) return false;
+  const canonical = canonicalPokemonName(candidate.species);
+  const speciesKey = rules.speciesClauseKeys?.[canonical] ?? canonical;
+  const itemKey = candidate.item?.trim().toLowerCase();
+  let restrictedCount = legality.restrictedPokemon.has(canonical) ? 1 : 0;
+  for (const slot of slots) {
+    const slotCanonical = canonicalPokemonName(slot.species);
+    if ((rules.speciesClauseKeys?.[slotCanonical] ?? slotCanonical) === speciesKey)
+      return false;
+    if (itemKey && slot.item?.trim().toLowerCase() === itemKey) return false;
+    if (legality.restrictedPokemon.has(slotCanonical)) restrictedCount += 1;
+  }
+  return rules.maxRestricted === undefined || restrictedCount <= rules.maxRestricted;
 }
 
 function scoreCandidate(
   pokemon: string,
   slots: readonly TeamSlot[],
   set: SetEvidence,
-  rankings: MetaRankings,
+  scoring: ScoringIndex,
   profiles: readonly RoleProfile[],
   regulation: string,
   requiredRoles: readonly string[],
   topThreats: readonly string[],
-  archetypeCores: readonly ArchetypeCoreEvidence[],
 ): CandidateScore {
   const key = canonicalPokemonName(pokemon);
-  const entry = rankings.pokemon.find((ranked) => ranked.key === key);
-  const bestPokemonScore = Math.max(
-    1,
-    ...rankings.pokemon.map((ranked) => ranked.score),
-  );
-  const success = ((entry?.score ?? 0) / bestPokemonScore) * 60;
+  const entry = scoring.pokemon.get(key);
+  const success = ((entry?.score ?? 0) / scoring.bestPokemonScore) * 60;
   const roster = new Set(
     slots.map((slot) => canonicalPokemonName(slot.species)),
   );
-  const relatedCore = rankings.cores
-    .filter(
-      (core) =>
-        core.pokemon.includes(key) &&
-        core.pokemon.every((member) => member === key || roster.has(member)),
-    )
-    .sort((left, right) => right.score - left.score)[0];
-  const bestCoreScore = Math.max(
-    1,
-    ...rankings.cores.map((core) => core.score),
-  );
-  const coOccurrence = ((relatedCore?.score ?? 0) / bestCoreScore) * 25;
+  let relatedCore: MetaRankings["cores"][number] | undefined;
+  for (const core of scoring.coresByPokemon.get(key) ?? []) {
+    if (
+      core.pokemon.includes(key) &&
+      core.pokemon.every((member) => member === key || roster.has(member)) &&
+      (!relatedCore || core.score > relatedCore.score)
+    ) relatedCore = core;
+  }
+  const coOccurrence = ((relatedCore?.score ?? 0) / scoring.bestCoreScore) * 25;
   const profile = profileFor(profiles, regulation, pokemon);
   const coveredRoles = coveredValues(slots, profiles, regulation, "roles");
   const coveredThreats = coveredValues(
@@ -302,7 +363,7 @@ function scoreCandidate(
     reasons.push(
       `Adds coverage for ${threatGain} top threat${threatGain === 1 ? "" : "s"}`,
     );
-  const archetype = archetypeGain(pokemon, slots, set, archetypeCores);
+  const archetype = archetypeGain(pokemon, slots, set, scoring.archetypes);
   reasons.push(...archetype.reasons);
   return {
     total: success + coOccurrence + roleGain * 8 + threatGain * 7 + archetype.total,
@@ -328,24 +389,25 @@ function archetypeGain(
   pokemon: string,
   slots: readonly TeamSlot[],
   set: SetEvidence,
-  cores: readonly ArchetypeCoreEvidence[],
+  archetypes: ReadonlyMap<ObservedArchetype, ArchetypeScoreIndex>,
 ): CandidateScore {
   const candidate = { ...set.set, species: pokemon };
   const archetype = activeArchetype([...slots, candidate]);
-  if (!archetype) return { total: 0, reasons: [] };
+  const index = archetype ? archetypes.get(archetype) : undefined;
+  if (!archetype || !index) return { total: 0, reasons: [] };
   const key = canonicalPokemonName(pokemon);
   const roster = new Set([...slots.map((slot) => canonicalPokemonName(slot.species)), key]);
-  const eligible = cores.filter((core) => core.archetype === archetype);
-  const maximum = Math.max(1, ...eligible.map((core) => core.evidenceScore));
-  const core = eligible
-    .filter((entry) => {
-      const members = entry.pokemon.map(canonicalPokemonName);
-      return members.includes(key) && members.every((member) => roster.has(member));
-    })
-    .sort((left, right) => right.evidenceScore - left.evidenceScore)[0];
+  let core: ArchetypeCoreEvidence | undefined;
+  for (const entry of index.coresByPokemon.get(key) ?? []) {
+    const members = entry.pokemon.map(canonicalPokemonName);
+    if (
+      members.every((member) => roster.has(member)) &&
+      (!core || entry.evidenceScore > core.evidenceScore)
+    ) core = entry;
+  }
   if (!core) return { total: 0, reasons: [] };
   return {
-    total: (core.evidenceScore / maximum) * 10,
+    total: (core.evidenceScore / index.maximum) * 10,
     reasons: [
       `${ARCHETYPE_LABEL[core.archetype]}: ${core.pokemon.join(" + ")} (${core.teamCount} full published ${core.teamCount === 1 ? "team" : "teams"})`,
     ],
@@ -460,6 +522,16 @@ export function recommendTeam(input: {
       ] as const;
     }),
   );
+  const scoring = buildScoringIndex(
+    input.rankings,
+    input.archetypeCores ?? [],
+  );
+  const candidateLegality: CandidateLegality = {
+    validSets: new Map(),
+    restrictedPokemon: new Set(
+      (input.rules.restrictedPokemon ?? []).map(canonicalPokemonName),
+    ),
+  };
   let states: SearchState[] = [{ slots: resolvedLocks, score: 0, reasons: [] }];
 
   while ((states[0]?.slots.length ?? 6) < 6) {
@@ -468,18 +540,19 @@ export function recommendTeam(input: {
       for (const ranked of input.rankings.pokemon) {
         const set = setsByRankedPokemon
           .get(canonicalPokemonName(ranked.pokemon[0] ?? ""))
-          ?.find((entry) => candidateAllowed(state.slots, entry, input.rules));
+          ?.find((entry) =>
+            candidateAllowed(state.slots, entry, input.rules, candidateLegality),
+          );
         if (!set) continue;
         const candidate = scoreCandidate(
           set.pokemon,
           state.slots,
           set,
-          input.rankings,
+          scoring,
           input.profiles,
           input.regulation,
           input.requiredRoles,
           input.topThreats,
-          input.archetypeCores ?? [],
         );
         expanded.push({
           slots: [

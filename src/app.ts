@@ -93,11 +93,13 @@ function saveDraft(key: string, value: string): void {
 }
 const calcDraft = new Map<string, string | boolean>();
 let calcResult = "";
+const RANK_PAGE_SIZE = 50;
 
 const state: {
   tab: Tab;
   rankingKind: RankingKind;
   regions: Set<Region>;
+  metaLimit: number;
   teamText: string;
   team: TeamSlot[];
   assistantText: string;
@@ -107,12 +109,28 @@ const state: {
   tab: "meta",
   rankingKind: "pokemon",
   regions: new Set(["NA", "EU", "OCE", "OTHER"]),
+  metaLimit: RANK_PAGE_SIZE,
   teamText: readDraft("delta-stream-team"),
   team: [],
   assistantText: readDraft("delta-stream-assist"),
   completions: [],
   message: "",
 };
+
+const rankingsByRegion = new Map<string, ReturnType<typeof rankMeta>>();
+function metaRankings(): ReturnType<typeof rankMeta> {
+  const key = [...state.regions].sort((left, right) => left.localeCompare(right)).join(",");
+  const cached = rankingsByRegion.get(key);
+  if (cached) return cached;
+  const rankings = rankMeta(
+    snapshot,
+    snapshot.activeRegulation,
+    new Date(),
+    state.regions,
+  );
+  rankingsByRegion.set(key, rankings);
+  return rankings;
+}
 
 state.team = parsePokepaste(state.teamText).slots;
 
@@ -258,14 +276,13 @@ function evidenceTeams(entry: RankedEntry): string {
   return `<p class="set-help">Hover or focus a Pokémon to inspect its published item and four moves. Roster-only evidence stays explicitly unknown.</p><ol class="evidence-team-list">${evidenceTeamRows(visible)}</ol>${remaining.length ? `<details class="evidence-more"><summary>Show ${remaining.length} more supporting team${remaining.length === 1 ? "" : "s"}</summary><ol class="evidence-team-list">${evidenceTeamRows(remaining)}</ol></details>` : ""}`;
 }
 
+function rankingEvidence(entry: RankedEntry): string {
+  return `<p><strong>Evidence</strong> Placement × event tier × recency. Verified Victory Road x-0/x-1 records use 2×/1.75×; Italian VG Cup/Challenge winners are low-weight (0.125×) potential x-2 evidence only. Regulations never mix. Roster-only results do not provide usable moves, abilities or items.</p>${entry.pikalyticsUsage === undefined ? "" : `<p>Pikalytics usage: ${entry.pikalyticsUsage.toFixed(1)}% (tie-break only).</p>`}${evidenceTeams(entry)}`;
+}
+
 function metaView(): string {
-  const rankings = rankMeta(
-    snapshot,
-    snapshot.activeRegulation,
-    new Date(),
-    state.regions,
-  );
-  const entries = rankings[state.rankingKind];
+  const entries = metaRankings()[state.rankingKind];
+  const visibleEntries = entries.slice(0, state.metaLimit);
   const filters = (["NA", "EU", "LATAM", "OCE", "ASIA", "OTHER"] as Region[])
     .map(
       (region) =>
@@ -278,13 +295,16 @@ function metaView(): string {
         `<button type="button" data-ranking-kind="${kind}" aria-pressed="${state.rankingKind === kind}">${kind === "cores" ? "Cores 2–4" : kind[0]?.toUpperCase() + kind.slice(1)}</button>`,
     )
     .join("");
-  const rows = entries
+  const rows = visibleEntries
     .map(
       (entry, index) =>
-        `<details class="ranking-row"><summary><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="rank-name">${rankSprites(entry.pokemon)}<small>${entry.teamCount} team${entry.teamCount === 1 ? "" : "s"} · ${entry.eventCount} event${entry.eventCount === 1 ? "" : "s"}${entry.localEvidenceTeams ? ` · ${entry.localEvidenceTeams} Italian local` : ""}</small></span><span class="rank-score">${entry.score.toFixed(1)}<small>score</small></span><span class="confidence ${entry.confidence}">${entry.confidence === "strong" ? "● Strong" : "○ Emerging"}</span></summary><div class="evidence"><p><strong>Evidence</strong> Placement × event tier × recency. Verified Victory Road x-0/x-1 records use 2×/1.75×; Italian VG Cup/Challenge winners are low-weight (0.125×) potential x-2 evidence only. Regulations never mix. Roster-only results do not provide usable moves, abilities or items.</p>${entry.pikalyticsUsage === undefined ? "" : `<p>Pikalytics usage: ${entry.pikalyticsUsage.toFixed(1)}% (tie-break only).</p>`}${evidenceTeams(entry)}</div></details>`,
+        `<details class="ranking-row" data-ranking-index="${index}"><summary><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="rank-name">${rankSprites(entry.pokemon)}<small>${entry.teamCount} team${entry.teamCount === 1 ? "" : "s"} · ${entry.eventCount} event${entry.eventCount === 1 ? "" : "s"}${entry.localEvidenceTeams ? ` · ${entry.localEvidenceTeams} Italian local` : ""}</small></span><span class="rank-score">${entry.score.toFixed(1)}<small>score</small></span><span class="confidence ${entry.confidence}">${entry.confidence === "strong" ? "● Strong" : "○ Emerging"}</span></summary><div class="evidence" data-ranking-evidence></div></details>`,
     )
     .join("");
-  return `<section aria-labelledby="meta-title"><div class="screen-heading"><div><p class="board-status">Meta updated · ${escapeHtml(formatDate(snapshot.generatedAt))}</p><h1 id="meta-title">Tournament board</h1></div><span class="reg-stamp">${escapeHtml(snapshot.activeRegulation.replace("champions-regulation-", "REG ").toUpperCase())}</span></div><div class="toolbar"><div class="segmented" aria-label="Ranking type">${categories}</div><fieldset class="filter-row"><legend>Regions</legend>${filters}</fieldset></div>${entries.length ? `<div class="ranking-board">${rows}</div>` : emptyState(snapshot.tournaments.length ? "No results for these filters" : "No approved results", snapshot.tournaments.length ? "Select at least one region with approved results." : "The owner needs to approve completed events and publish a new data snapshot. No results have been invented.")}</section>`;
+  const more = entries.length > visibleEntries.length
+    ? `<div class="action-row"><span>Showing ${visibleEntries.length} of ${entries.length}</span><button type="button" data-show-more>Show next ${Math.min(RANK_PAGE_SIZE, entries.length - visibleEntries.length)}</button></div>`
+    : "";
+  return `<section aria-labelledby="meta-title"><div class="screen-heading"><div><p class="board-status">Meta updated · ${escapeHtml(formatDate(snapshot.generatedAt))}</p><h1 id="meta-title">Tournament board</h1></div><span class="reg-stamp">${escapeHtml(snapshot.activeRegulation.replace("champions-regulation-", "REG ").toUpperCase())}</span></div><div class="toolbar"><div class="segmented" aria-label="Ranking type">${categories}</div><fieldset class="filter-row"><legend>Regions</legend>${filters}</fieldset></div>${entries.length ? `<div class="ranking-board">${rows}</div>${more}` : emptyState(snapshot.tournaments.length ? "No results for these filters" : "No approved results", snapshot.tournaments.length ? "Select at least one region with approved results." : "The owner needs to approve completed events and publish a new data snapshot. No results have been invented.")}</section>`;
 }
 
 function inputField(
@@ -308,30 +328,51 @@ function calcGoal(): CalcGoal {
   return calcDraft.get("goal") === "ko" ? "ko" : "survive-two";
 }
 
+function learnedMoves(name: string): readonly string[] {
+  return rules.allowedMoves?.[canonicalPokemonName(name)] ?? [];
+}
+
+function reviewedPokemon(name: string) {
+  const visual = pokemonVisual(name);
+  return visual && learnedMoves(name).length ? visual : undefined;
+}
+
+const calculatorPokemon = pokemonPickerOptions.filter(({ name }) =>
+  reviewedPokemon(name),
+);
+
 function pokemonOptions(): string {
-  return `<datalist id="pokemon-options">${pokemonPickerOptions.map((pokemon) => `<option value="${escapeHtml(pokemon.name)}"></option>`).join("")}</datalist>`;
+  return `<datalist id="pokemon-options">${calculatorPokemon.map((pokemon) => `<option value="${escapeHtml(pokemon.name)}"></option>`).join("")}</datalist>`;
 }
 
 function pokemonPicker(side: "attacker" | "defender"): string {
   const name = `${side}Name`;
-  const fallback = side === "attacker" ? "Attacker" : "Defender";
-  const value = String(calcDraft.get(name) ?? fallback);
-  const visual = pokemonVisual(value);
+  const value = String(calcDraft.get(name) ?? "");
+  const visual = reviewedPokemon(value);
+  const defenderLocked = side === "defender" && !reviewedPokemon(String(calcDraft.get("attackerName") ?? ""));
   const stats = visual
     ? `PokeAPI base stats for ${visual.name}: HP ${visual.baseStats.hp} · Atk ${visual.baseStats.attack} · Def ${visual.baseStats.defense} · SpA ${visual.baseStats.specialAttack} · SpD ${visual.baseStats.specialDefense} · Spe ${visual.baseStats.speed}`
-    : "Choose a form with bundled exact PokeAPI base stats.";
-  return `<label class="pokemon-picker"><span>${side === "attacker" ? "Attacker Pokémon" : "Defender Pokémon"}</span><span class="pokemon-picker-control"><img data-pokemon-sprite="${side}" class="calculator-sprite" ${visual ? `src="${escapeHtml(bundledSpriteUrl(visual.sprite))}"` : ""} alt="" width="48" height="48" ${visual ? "" : "hidden"}><span data-pokemon-fallback="${side}" class="calculator-sprite sprite-fallback" aria-hidden="true" ${visual ? "hidden" : ""}>?</span><input name="${name}" data-pokemon-picker="${side}" list="pokemon-options" value="${escapeHtml(value)}" maxlength="60" autocomplete="off" spellcheck="false"></span><small data-pokemon-status="${side}">${escapeHtml(stats)}</small></label>`;
+    : defenderLocked
+      ? "Choose an attacker with reviewed moves first."
+      : "Choose a reviewed legal Pokémon with bundled exact PokeAPI base stats.";
+  return `<label class="pokemon-picker"><span>${side === "attacker" ? "1. Attacker Pokémon" : "2. Defender Pokémon"}</span><span class="pokemon-picker-control"><img data-pokemon-sprite="${side}" class="calculator-sprite" ${visual ? `src="${escapeHtml(bundledSpriteUrl(visual.sprite))}"` : ""} alt="" width="48" height="48" ${visual ? "" : "hidden"}><span data-pokemon-fallback="${side}" class="calculator-sprite sprite-fallback" aria-hidden="true" ${visual ? "hidden" : ""}>?</span><input name="${name}" data-pokemon-picker="${side}" list="pokemon-options" value="${escapeHtml(value)}" maxlength="60" autocomplete="off" spellcheck="false" required ${defenderLocked ? "disabled" : ""}></span><small data-pokemon-status="${side}">${escapeHtml(stats)}</small></label>`;
 }
 
-function moveFields(number: 1 | 2): string {
+function moveFields(number: 1 | 2, moves: readonly string[]): string {
   const prefix = `move${number}`;
-  return `<fieldset class="move-step"><legend>Attack ${number}</legend><div class="form-grid"><label><span>Move name (optional)</span><input name="${prefix}Name" maxlength="60"></label><label><span>Move type</span><select name="${prefix}Type"><option value="">Unknown / not set</option>${pokemonTypes.map((type) => `<option>${type}</option>`).join("")}</select></label><label><span>Category</span><select name="${prefix}Category"><option value="physical">Physical</option><option value="special">Special</option></select></label>${inputField("Power", `${prefix}Power`, 100, 1, 999)}${inputField("Attack stage", `${prefix}AttackStage`, 0, -6, 6)}${inputField("Defense stage", `${prefix}DefenseStage`, 0, -6, 6)}<label><span>STAB</span><select name="${prefix}Stab"><option value="1">None</option><option value="1.2">1.2×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option></select></label><label><span>Effectiveness</span><select name="${prefix}Effectiveness"><option value="0">Immune</option><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label><span>Weather</span><select name="${prefix}Weather"><option value="1">Neutral</option><option value="1.5">Boosted</option><option value="0.5">Reduced</option></select></label><label class="check-row"><input type="checkbox" name="${prefix}Spread"><span>Spread move</span></label><label class="check-row"><input type="checkbox" name="${prefix}Burned"><span>Attacker burned</span></label><label class="check-row"><input type="checkbox" name="${prefix}HelpingHand"><span>Helping Hand</span></label></div></fieldset>`;
+  const selected = String(calcDraft.get(`${prefix}Name`) ?? "");
+  const options = moves.length
+    ? `<option value="">Choose a learned move</option>${moves.map((move) => `<option value="${escapeHtml(move)}" ${move === selected ? "selected" : ""}>${escapeHtml(move)}</option>`).join("")}`
+    : '<option value="">Choose an attacker first</option>';
+  return `<fieldset class="move-step" ${moves.length ? "" : "disabled"}><legend>Attack ${number}</legend><div class="form-grid"><label><span>Move</span><select name="${prefix}Name" required>${options}</select></label><label><span>Move type</span><select name="${prefix}Type"><option value="">Unknown / not set</option>${pokemonTypes.map((type) => `<option>${type}</option>`).join("")}</select></label><label><span>Category</span><select name="${prefix}Category"><option value="physical">Physical</option><option value="special">Special</option></select></label>${inputField("Power", `${prefix}Power`, 100, 1, 999)}${inputField("Attack stage", `${prefix}AttackStage`, 0, -6, 6)}${inputField("Defense stage", `${prefix}DefenseStage`, 0, -6, 6)}<label><span>STAB</span><select name="${prefix}Stab"><option value="1">None</option><option value="1.2">1.2×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option></select></label><label><span>Effectiveness</span><select name="${prefix}Effectiveness"><option value="0">Immune</option><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label><span>Weather</span><select name="${prefix}Weather"><option value="1">Neutral</option><option value="1.5">Boosted</option><option value="0.5">Reduced</option></select></label><label class="check-row"><input type="checkbox" name="${prefix}Spread"><span>Spread move</span></label><label class="check-row"><input type="checkbox" name="${prefix}Burned"><span>Attacker burned</span></label><label class="check-row"><input type="checkbox" name="${prefix}HelpingHand"><span>Helping Hand</span></label></div></fieldset>`;
 }
 
 function calcView(): string {
   const goal = calcGoal();
   const singleHit = goal === "survive-one";
-  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Damage calculator</h1></div></div><p class="status-line warning">Level 50, neutral natures and full HP. Selecting a legal Pokémon or form loads its bundled PokeAPI base stats; mechanics outside the documented calculator support remain manual.</p><form id="calc-form">${pokemonOptions()}<div class="goal-row"><label><span>Solver goal</span><select name="goal"><option value="survive-one" ${goal === "survive-one" ? "selected" : ""}>Survive one hit (15/16 rolls)</option><option value="survive-two" ${goal === "survive-two" ? "selected" : ""}>Survive both maximum rolls</option><option value="ko" ${goal === "ko" ? "selected" : ""}>Guarantee knockout with both minimum rolls</option></select></label></div>${singleHit ? '<p class="status-line warning">Single-hit mode accepts the sole 6.25% maximum normal-damage roll; critical hits are not simulated.</p>' : ""}<section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}${pokemonPicker("attacker")}${pokemonPicker("defender")}<label><span>Attacker ability</span><select name="attackerAbility"><option value="">None / manual</option><option>Technician</option></select></label><label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label><label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label><label><span>Terrain (for seeds)</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><div class="move-grid">${moveFields(1)}${singleHit ? "" : moveFields(2)}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
+  const attackerName = String(calcDraft.get("attackerName") ?? "");
+  const attackerMoves = reviewedPokemon(attackerName) ? learnedMoves(attackerName) : [];
+  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Damage calculator</h1></div></div><p class="status-line warning">Choose the attacker first, then the defender. Move choices are limited to the attacker’s reviewed legal moves; type, category, and power remain explicit calculator inputs.</p><form id="calc-form">${pokemonOptions()}<section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${pokemonPicker("attacker")}${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}<label><span>Attacker ability</span><select name="attackerAbility"><option value="">None / manual</option><option>Technician</option></select></label><label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label>${pokemonPicker("defender")}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}<label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label><label><span>Terrain (for seeds)</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><div class="goal-row"><label><span>Solver goal</span><select name="goal"><option value="survive-one" ${goal === "survive-one" ? "selected" : ""}>Survive one hit (15/16 rolls)</option><option value="survive-two" ${goal === "survive-two" ? "selected" : ""}>Survive both maximum rolls</option><option value="ko" ${goal === "ko" ? "selected" : ""}>Guarantee knockout with both minimum rolls</option></select></label></div>${singleHit ? '<p class="status-line warning">Single-hit mode accepts the sole 6.25% maximum normal-damage roll; critical hits are not simulated.</p>' : ""}<div class="move-grid">${moveFields(1, attackerMoves)}${singleHit ? "" : moveFields(2, attackerMoves)}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
 }
 
 function baseStats(partial: Partial<StatTable>): StatTable {
@@ -356,11 +397,15 @@ function numberValue(data: FormData, name: string): number {
 function moveFromForm(
   data: FormData,
   number: 1 | 2,
+  allowedMoves: readonly string[],
 ): { move: Move; modifiers: DamageModifiers } {
   const prefix = `move${number}`;
+  const name = String(data.get(`${prefix}Name`) ?? "").trim();
+  if (!allowedMoves.includes(name))
+    throw new RangeError(`Choose a reviewed learned move for attack ${number}`);
   return {
     move: {
-      name: String(data.get(`${prefix}Name`) || `Attack ${number}`),
+      name,
       category: String(data.get(`${prefix}Category`)) as "physical" | "special",
       ...(String(data.get(`${prefix}Type`)) ? { type: String(data.get(`${prefix}Type`)) as Move["type"] } : {}),
       power: numberValue(data, `${prefix}Power`),
@@ -403,8 +448,15 @@ function calculateFromForm(form: HTMLFormElement): string {
     throw new RangeError("Invalid solver goal");
   const singleHit = goal === "survive-one";
   const defensive = goal !== "ko";
-  const firstMove = moveFromForm(data, 1);
-  const secondMove = singleHit ? undefined : moveFromForm(data, 2);
+  const attackerName = String(data.get("attackerName") ?? "").trim();
+  const attackerMoves = learnedMoves(attackerName);
+  if (!reviewedPokemon(attackerName))
+    throw new RangeError("Choose an attacker with reviewed base stats and moves");
+  const defenderName = String(data.get("defenderName") ?? "").trim();
+  if (!reviewedPokemon(defenderName))
+    throw new RangeError("Choose a defender with reviewed base stats");
+  const firstMove = moveFromForm(data, 1, attackerMoves);
+  const secondMove = singleHit ? undefined : moveFromForm(data, 2, attackerMoves);
   const moves = secondMove ? [firstMove, secondMove] : [firstMove];
   const attackerStats = {
     attack: numberValue(data, "attackBase"),
@@ -425,14 +477,14 @@ function calculateFromForm(form: HTMLFormElement): string {
     specialDefense: numberValue(data, "specialDefensePoints"),
   };
   const attacker = pokemon(
-    String(data.get("attackerName") || "Attacker"),
+    attackerName,
     attackerStats,
     defensive ? attackerPoints : {},
     String(data.get("attackerAbility")) as ChampionsPokemon["ability"],
     (String(data.get("attackerItem")) || undefined) as ChampionsPokemon["item"],
   );
   const defender = pokemon(
-    String(data.get("defenderName") || "Defender"),
+    defenderName,
     defenderStats,
     goal === "ko" ? defenderPoints : {},
     undefined,
@@ -597,10 +649,50 @@ async function printHtml(html: string): Promise<void> {
   target.document.close();
 }
 
+let activeAttacker = "";
+
+function syncMoveSelectors(
+  form: HTMLFormElement,
+  moves: readonly string[],
+): void {
+  for (const fieldset of form.querySelectorAll<HTMLFieldSetElement>(".move-step"))
+    fieldset.disabled = moves.length === 0;
+  for (const name of ["move1Name", "move2Name"] as const) {
+    const select = form.elements.namedItem(name);
+    if (!(select instanceof HTMLSelectElement)) continue;
+    const current = select.value;
+    select.replaceChildren(
+      new Option(moves.length ? "Choose a learned move" : "Choose an attacker first", ""),
+      ...moves.map((move) => new Option(move, move)),
+    );
+    const next = moves.includes(current) ? current : "";
+    select.value = next;
+    calcDraft.set(name, next);
+  }
+}
+
+function syncAttackerSelection(
+  form: HTMLFormElement,
+  attackerName: string,
+  moves: readonly string[],
+): void {
+  if (activeAttacker === attackerName) return;
+  activeAttacker = attackerName;
+  const defender = form.elements.namedItem("defenderName");
+  if (defender instanceof HTMLInputElement) {
+    defender.disabled = moves.length === 0;
+    defender.value = "";
+    calcDraft.set("defenderName", "");
+    applyPokemonPicker(defender);
+  }
+  syncMoveSelectors(form, moves);
+}
+
 function applyPokemonPicker(input: HTMLInputElement): void {
   const side = input.dataset.pokemonPicker as "attacker" | "defender" | undefined;
   if (!side) return;
-  const visual = pokemonVisual(input.value);
+  const name = input.value.trim();
+  const visual = reviewedPokemon(name);
   const form = input.form;
   const image = form?.querySelector<HTMLImageElement>(`[data-pokemon-sprite="${side}"]`);
   const fallback = form?.querySelector<HTMLElement>(`[data-pokemon-fallback="${side}"]`);
@@ -610,7 +702,11 @@ function applyPokemonPicker(input: HTMLInputElement): void {
     if (image) image.hidden = true;
     if (fallback) fallback.hidden = false;
     if (status)
-      status.textContent = "Choose a form with bundled exact PokeAPI base stats.";
+      status.textContent = side === "defender" && input.disabled
+        ? "Choose an attacker with reviewed moves first."
+        : "Choose a reviewed legal Pokémon with bundled exact PokeAPI base stats.";
+    if (side === "attacker" && form)
+      syncAttackerSelection(form, "", []);
     return;
   }
   if (image) {
@@ -623,11 +719,13 @@ function applyPokemonPicker(input: HTMLInputElement): void {
   const fields = side === "attacker"
     ? [["attackBase", visual.baseStats.attack], ["specialAttackBase", visual.baseStats.specialAttack]] as const
     : [["hpBase", visual.baseStats.hp], ["defenseBase", visual.baseStats.defense], ["specialDefenseBase", visual.baseStats.specialDefense]] as const;
-  for (const [name, value] of fields) {
-    const field = form?.elements.namedItem(name);
+  for (const [fieldName, value] of fields) {
+    const field = form?.elements.namedItem(fieldName);
     if (field instanceof HTMLInputElement) field.value = String(value);
-    calcDraft.set(name, String(value));
+    calcDraft.set(fieldName, String(value));
   }
+  if (side === "attacker" && form)
+    syncAttackerSelection(form, name, learnedMoves(name));
 }
 
 function bindEvents(): void {
@@ -647,19 +745,22 @@ function bindEvents(): void {
     });
   }
   const calcForm = app.querySelector<HTMLFormElement>("#calc-form");
-  calcForm?.addEventListener("input", () => {
-    for (const field of app.querySelectorAll<
-      HTMLInputElement | HTMLSelectElement
-    >("#calc-form [name]")) {
-      calcDraft.set(
-        field.name,
-        field instanceof HTMLInputElement && field.type === "checkbox"
-          ? field.checked
-          : field.value,
-      );
+  calcForm?.addEventListener("input", (event) => {
+    const field = event.target;
+    if (
+      !(field instanceof HTMLInputElement || field instanceof HTMLSelectElement) ||
+      !field.name
+    ) return;
+    calcDraft.set(
+      field.name,
+      field instanceof HTMLInputElement && field.type === "checkbox"
+        ? field.checked
+        : field.value,
+    );
+    if (calcResult) {
+      calcResult = "";
+      app.querySelector("#calc-result")?.replaceChildren();
     }
-    calcResult = "";
-    app.querySelector("#calc-result")?.replaceChildren();
   });
   for (const picker of app.querySelectorAll<HTMLInputElement>(
     "#calc-form [data-pokemon-picker]",
@@ -677,6 +778,19 @@ function bindEvents(): void {
       app.querySelector<HTMLSelectElement>("#calc-form [name=goal]")?.focus();
     },
   );
+  for (const row of app.querySelectorAll<HTMLDetailsElement>(
+    ".ranking-row[data-ranking-index]",
+  )) {
+    row.addEventListener("toggle", () => {
+      if (!row.open || row.dataset.evidenceLoaded) return;
+      const index = Number(row.dataset.rankingIndex);
+      const entry = metaRankings()[state.rankingKind][index];
+      const target = row.querySelector<HTMLElement>("[data-ranking-evidence]");
+      if (!entry || !target) return;
+      setMarkup(target, rankingEvidence(entry));
+      row.dataset.evidenceLoaded = "true";
+    });
+  }
   for (const button of app.querySelectorAll<HTMLButtonElement>("[data-tab]")) {
     button.addEventListener("click", () => {
       state.tab = button.dataset.tab as Tab;
@@ -691,6 +805,7 @@ function bindEvents(): void {
   )) {
     button.addEventListener("click", () => {
       state.rankingKind = button.dataset.rankingKind as RankingKind;
+      state.metaLimit = RANK_PAGE_SIZE;
       render();
       app
         .querySelector<HTMLElement>(
@@ -699,11 +814,20 @@ function bindEvents(): void {
         ?.focus();
     });
   }
+  app.querySelector<HTMLButtonElement>("[data-show-more]")?.addEventListener(
+    "click",
+    () => {
+      state.metaLimit += RANK_PAGE_SIZE;
+      render();
+      app.querySelector<HTMLButtonElement>("[data-show-more]")?.focus();
+    },
+  );
   for (const input of app.querySelectorAll<HTMLInputElement>("[data-region]")) {
     input.addEventListener("change", () => {
       const region = input.dataset.region as Region;
       if (input.checked) state.regions.add(region);
       else state.regions.delete(region);
+      state.metaLimit = RANK_PAGE_SIZE;
       render();
       app.querySelector<HTMLElement>(`[data-region="${region}"]`)?.focus();
     });

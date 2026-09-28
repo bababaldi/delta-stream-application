@@ -74,6 +74,9 @@ try {
   const peer = await context.newPage();
   await peer.goto(url);
   await peer.getByRole("navigation").getByRole("button", { name: "Calc", exact: true }).click();
+  await peer.locator('[name="attackerName"]').fill("Floette Mega");
+  await peer.locator('[name="defenderName"]').fill("Incineroar");
+  await peer.locator('[name="move1Name"]').selectOption("Light of Ruin");
   await peer.locator('[name="move1Power"]').fill("130");
   files.set(base + "index.html", Buffer.from(originalIndex.replace("</head>", '<meta name="test-release" content="two"></head>')));
   files.set(base + "sw.js", Buffer.from(workerVersion("two")));
@@ -99,6 +102,9 @@ try {
   assert.ok(keys.includes("unrelated-site-cache"));
   assert.equal(keys.filter((key) => key.startsWith("delta-stream:")).length, 1);
   assert.equal(await peer.locator('meta[name="test-release"]').count(), 0, "Another tab must keep its unsaved form");
+  assert.equal(await peer.locator('[name="attackerName"]').inputValue(), "Floette Mega");
+  assert.equal(await peer.locator('[name="defenderName"]').inputValue(), "Incineroar");
+  assert.equal(await peer.locator('[name="move1Name"]').inputValue(), "Light of Ruin");
   assert.equal(await peer.locator('[name="move1Power"]').inputValue(), "130");
   await peer.getByRole("button", { name: "Reload to update", exact: true }).click();
   await peer.waitForFunction(() => document.querySelector<HTMLMetaElement>('meta[name="test-release"]')?.content === "two");

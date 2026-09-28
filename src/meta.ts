@@ -129,7 +129,11 @@ export function teamScore(
     recencyWeight(event.date, now) * recordMultiplier(event, record);
 }
 
+const canonicalNameCache = new Map<string, string>();
+
 export function canonicalPokemonName(name: string): string {
+  const cached = canonicalNameCache.get(name);
+  if (cached !== undefined) return cached;
   let normalized = name
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -155,6 +159,7 @@ export function canonicalPokemonName(name: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .replace(/-{2,}/g, "-");
+  canonicalNameCache.set(name, normalized);
   return normalized;
 }
 

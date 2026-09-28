@@ -84,13 +84,24 @@ Relaxed Nature
     );
     assert.ok(!stored.includes("PRIVATE REGISTRATION"));
     await tab("Calc");
+    const defenderPicker = page.locator('[name="defenderName"]');
+    const firstMove = page.locator('[name="move1Name"]');
+    assert.ok(await defenderPicker.isDisabled());
+    assert.ok(await firstMove.isDisabled());
     await page.locator('[name="attackerName"]').fill("Floette Mega");
+    assert.equal(await defenderPicker.isDisabled(), false);
+    assert.equal(await firstMove.isDisabled(), false);
+    assert.ok(await firstMove.locator('option[value="Light of Ruin"]').count());
+    assert.equal(await firstMove.locator('option[value="Surf"]').count(), 0);
+    await defenderPicker.fill("Incineroar");
     assert.equal(await page.locator('[name="attackBase"]').inputValue(), "85");
     assert.equal(await page.locator('[name="specialAttackBase"]').inputValue(), "155");
     assert.match(
         await page.locator('[data-pokemon-sprite="attacker"]').getAttribute("src") ?? "",
         /floette-mega\.png$/,
     );
+    await firstMove.selectOption("Light of Ruin");
+    await page.locator('[name="move2Name"]').selectOption("Light of Ruin");
     await page.locator('[name="move1Power"]').fill("80");
     await page.getByRole("button", { name: "Calculate spreads" }).click();
     assert.match(
@@ -117,8 +128,10 @@ Relaxed Nature
     await tab("Meta");
     const firstRanking = page.locator(".ranking-row").first();
     assert.ok(await firstRanking.locator(".rank-sprites img").count());
+    assert.equal(await firstRanking.locator("[data-ranking-evidence] *").count(), 0);
     await firstRanking.locator("summary").first().click();
     const setPreview = firstRanking.locator("[data-set-preview]").first();
+    await setPreview.waitFor();
     assert.ok(await setPreview.count());
     assert.match(await setPreview.getAttribute("aria-label") ?? "", /Moves:|Roster-only/);
     await setPreview.focus();
@@ -129,6 +142,11 @@ Relaxed Nature
         ),
         "visible",
     );
+    await page.getByRole("button", { name: "Cores 2–4", exact: true }).click();
+    assert.equal(await page.locator(".ranking-row").count(), 50);
+    await page.getByRole("button", { name: "Show next 50", exact: true }).click();
+    assert.equal(await page.locator(".ranking-row").count(), 100);
+    await page.getByRole("button", { name: "Pokemon", exact: true }).click();
     await page.locator('[data-region="NA"]').uncheck();
     assert.equal(
         await page.evaluate(() =>
@@ -173,10 +191,9 @@ Relaxed Nature
             });
             const firstRanking = page.locator(".ranking-row").first();
             await firstRanking.locator("summary").first().click();
-            assert.equal(
-                await firstRanking.locator(".evidence > .evidence-team-list > li").count(),
-                6,
-            );
+            const evidenceRows = firstRanking.locator(".evidence > .evidence-team-list > li");
+            await evidenceRows.nth(5).waitFor();
+            assert.equal(await evidenceRows.count(), 6);
             assert.match(
                 await firstRanking.locator(".evidence-more summary").textContent() ?? "",
                 /^Show \d+ more supporting teams$/,
