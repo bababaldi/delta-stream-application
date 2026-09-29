@@ -51,7 +51,10 @@ export interface MetaSnapshot {
 export interface RankedEntry {
   key: string;
   pokemon: string[];
+  /** Calibrated display score. Teams and cores use the 1–10 current-meta scale. */
   score: number;
+  /** Raw placement × tier × recency evidence retained for ranking and recommendations. */
+  evidenceScore?: number;
   teamCount: number;
   eventCount: number;
   confidence: "strong" | "emerging";
@@ -228,12 +231,48 @@ function addAggregate(
   });
 }
 
+function normalizedEvidence(
+  evidence: number,
+  floor: number,
+  ceiling: number,
+  index: number,
+  count: number,
+): number {
+  if (ceiling <= floor || floor <= 0)
+    return count <= 1 ? 1 : 1 - index / (count - 1);
+  const relative = Math.log(evidence / floor) / Math.log(ceiling / floor);
+  // Preserve ordering and meaningful evidence gaps without making adjacent top ranks jump.
+  return Math.pow(Math.max(0, Math.min(1, relative)), 0.25);
+}
+
+function calibrateTeamAndCoreScores(entries: RankedEntry[]): RankedEntry[] {
+  if (!entries.length) return entries;
+  const topCount = Math.min(50, entries.length);
+  const topFloor = entries[topCount - 1]?.evidenceScore ?? entries[topCount - 1]?.score ?? 0;
+  const topCeiling = entries[0]?.evidenceScore ?? entries[0]?.score ?? topFloor;
+  const lowerFloor = entries.at(-1)?.evidenceScore ?? entries.at(-1)?.score ?? topFloor;
+  return entries.map((entry, index) => {
+    const isTop = index < topCount;
+    const relative = isTop
+      ? normalizedEvidence(entry.evidenceScore ?? entry.score, topFloor, topCeiling, index, topCount)
+      : normalizedEvidence(
+          entry.evidenceScore ?? entry.score,
+          lowerFloor,
+          topFloor,
+          index - topCount,
+          entries.length - topCount,
+        );
+    const score = isTop ? 6.1 + 3.7 * relative : 1 + 5.1 * relative;
+    return { ...entry, score: Number(score.toFixed(2)) };
+  });
+}
+
 function finishRanking(
   aggregates: Map<string, Aggregate>,
   usage: Readonly<Record<string, number>> = {},
   kind: "pokemon" | "core" | "team",
 ): RankedEntry[] {
-  return [...aggregates.entries()]
+  const entries = [...aggregates.entries()]
     .map(([key, value]) => {
       const eventCount = value.events.size;
       const strong = value.exceptionalRecord ||
@@ -244,6 +283,7 @@ function finishRanking(
         key,
         pokemon: value.names,
         score: value.score,
+        evidenceScore: value.score,
         teamCount: value.teams,
         eventCount,
         localEvidenceTeams: value.localTeams,
@@ -255,10 +295,11 @@ function finishRanking(
     })
     .sort(
       (left, right) =>
-        right.score - left.score ||
+        (right.evidenceScore ?? right.score) - (left.evidenceScore ?? left.score) ||
         (right.pikalyticsUsage ?? -1) - (left.pikalyticsUsage ?? -1) ||
         left.key.localeCompare(right.key),
     );
+  return kind === "pokemon" ? entries : calibrateTeamAndCoreScores(entries);
 }
 
 export function rankMeta(

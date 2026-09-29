@@ -16,7 +16,11 @@ export type PokemonType =
   | "Normal" | "Fire" | "Water" | "Electric" | "Grass" | "Ice"
   | "Fighting" | "Poison" | "Ground" | "Flying" | "Psychic" | "Bug"
   | "Rock" | "Ghost" | "Dragon" | "Dark" | "Steel" | "Fairy";
+export type BattleStatus =
+  | "Healthy" | "Burned" | "Poisoned" | "Badly Poisoned" | "Paralyzed" | "Asleep";
+export type FieldWeather = "" | "Sun" | "Rain" | "Sand" | "Snow";
 
+import legalityData from "../data/legality.json" with { type: "json" };
 import { isChampionsItem, type ChampionsItem } from "./items.js";
 
 export interface StatTable {
@@ -36,7 +40,7 @@ export interface Nature {
 
 export interface ChampionsPokemon {
   name: string;
-  ability?: "Technician";
+  ability?: string;
   item?: ChampionsItem | "";
   baseStats: StatTable;
   statPoints?: Partial<StatTable>;
@@ -51,6 +55,17 @@ export interface Move {
   hits?: number;
   spread?: boolean;
   fixedDamage?: number;
+  contact?: boolean;
+  sound?: boolean;
+  bite?: boolean;
+  punch?: boolean;
+  pulse?: boolean;
+  bullet?: boolean;
+  wind?: boolean;
+  slicing?: boolean;
+  secondary?: boolean;
+  recoil?: boolean;
+  priority?: boolean;
 }
 
 export interface DamageModifiers {
@@ -66,6 +81,18 @@ export interface DamageModifiers {
   burned?: boolean;
   helpingHand?: boolean;
   terrain?: "Electric" | "Grassy" | "Misty" | "Psychic";
+  fieldWeather?: FieldWeather;
+  attackerStatus?: BattleStatus;
+  defenderStatus?: BattleStatus;
+  attackerHpPercent?: number;
+  defenderHpPercent?: number;
+  attackerAbilityActive?: boolean;
+  attackerMovedLast?: boolean;
+  genderRelation?: "same" | "opposite";
+  faintedAllies?: number;
+  attackerAllyAbility?: "Steely Spirit";
+  defenderAllyAbility?: "Friend Guard";
+  neutralizingGas?: boolean;
 }
 
 export interface DamageInput {
@@ -112,12 +139,15 @@ export interface SpreadResult {
 }
 
 export const MOD = {
+  QUARTER: 0x400,
   HALF: 0x800,
   THREE_QUARTERS: 0xc00,
   ONE: 0x1000,
   ONE_POINT_ONE: 0x1199,
   ONE_POINT_TWO: 0x1333,
+  ONE_POINT_TWENTY_FIVE: 0x1400,
   ONE_POINT_THREE: 0x14cd,
+  ONE_POINT_FOUR: 0x1666,
   FOUR_THIRDS: 0x1555,
   ONE_POINT_FIVE: 0x1800,
   TWO: 0x2000,
@@ -134,6 +164,284 @@ const STATS: readonly BattleStat[] = [
 ];
 const MAX_POINTS_PER_STAT = 32;
 const MAX_TOTAL_POINTS = 66;
+const CHAMPIONS_ABILITIES = new Set(
+  Object.values(
+    (legalityData as { allowedAbilities?: Record<string, readonly string[]> })
+      .allowedAbilities ?? {},
+  ).flat(),
+);
+
+export function isChampionsAbility(ability: string): boolean {
+  return CHAMPIONS_ABILITIES.has(ability);
+}
+
+interface AbilityEffects {
+  move: Move;
+  basePower: number[];
+  attack: number[];
+  defense: number[];
+  final: number[];
+  immune: boolean;
+  stab?: number;
+  ignoreAttackStage: boolean;
+  ignoreDefenseStage: boolean;
+  ignoreBurn: boolean;
+  ignoreWeather: boolean;
+  blocksBerries: boolean;
+  ripensBerries: boolean;
+  notes: string[];
+}
+
+function abilityEffects(
+  attacker: ChampionsPokemon,
+  defender: ChampionsPokemon,
+  initialMove: Move,
+  modifiers: DamageModifiers,
+): AbilityEffects {
+  const notes: string[] = [];
+  const used = new Set<string>();
+  const use = (ability: string | undefined, note = ability): void => {
+    if (!ability || used.has(ability)) return;
+    used.add(ability);
+    notes.push(note as string);
+  };
+  const attackerStatus = modifiers.attackerStatus ??
+    (modifiers.burned ? "Burned" : "Healthy");
+  const defenderStatus = modifiers.defenderStatus ?? "Healthy";
+  const attackerHp = modifiers.attackerHpPercent ?? 100;
+  const defenderHp = modifiers.defenderHpPercent ?? 100;
+  const attackerAbility = modifiers.neutralizingGas ? undefined : attacker.ability;
+  const moldBreaker = attackerAbility === "Mold Breaker";
+  const defenderAbility = modifiers.neutralizingGas || moldBreaker
+    ? undefined
+    : defender.ability;
+  const ignoreWeather = attackerAbility === "Cloud Nine" || defenderAbility === "Cloud Nine";
+  const weather = ignoreWeather ? "" : modifiers.fieldWeather ?? "";
+  const move = { ...initialMove };
+  const basePower: number[] = [];
+  const attack: number[] = [];
+  const defense: number[] = [];
+  const final: number[] = [];
+  let immune = false;
+  let stab: number | undefined;
+  let ignoreAttackStage = defenderAbility === "Unaware";
+  let ignoreDefenseStage = attackerAbility === "Unaware";
+  let ignoreBurn = attackerAbility === "Guts";
+  const blocksBerries = attackerAbility === "Unnerve";
+  const ripensBerries = defenderAbility === "Ripen";
+
+  if (modifiers.neutralizingGas) notes.push("Neutralizing Gas suppresses ability effects.");
+  else if (moldBreaker && defender.ability)
+    notes.push(`Mold Breaker ignores ${defender.ability}.`);
+  if (ignoreWeather && (modifiers.fieldWeather || modifiers.weather !== undefined))
+    use(attackerAbility === "Cloud Nine" ? attackerAbility : defenderAbility, "Cloud Nine suppresses weather effects.");
+  if (attackerAbility === "Long Reach" && move.contact) {
+    move.contact = false;
+    use(attackerAbility, "Long Reach removes contact from this move.");
+  }
+  if (attackerAbility === "Liquid Voice" && move.sound) {
+    move.type = "Water";
+    use(attackerAbility, "Liquid Voice changes the sound move to Water.");
+  }
+
+  if (attackerAbility === "Pixilate" && move.type === "Normal") {
+    move.type = "Fairy";
+    basePower.push(MOD.ONE_POINT_TWO);
+    use(attackerAbility, "Pixilate changes the move to Fairy and boosts it.");
+  } else if (attackerAbility === "Refrigerate" && move.type === "Normal") {
+    move.type = "Ice";
+    basePower.push(MOD.ONE_POINT_TWO);
+    use(attackerAbility, "Refrigerate changes the move to Ice and boosts it.");
+  }
+
+  if (defenderAbility && move.type) {
+    const blocked =
+      (move.type === "Fire" && defenderAbility === "Flash Fire") ||
+      (move.type === "Water" && ["Dry Skin", "Water Absorb"].includes(defenderAbility)) ||
+      (move.type === "Electric" && ["Lightning Rod", "Motor Drive", "Volt Absorb"].includes(defenderAbility)) ||
+      (move.type === "Grass" && defenderAbility === "Sap Sipper") ||
+      (move.type === "Ground" && ["Earth Eater", "Levitate"].includes(defenderAbility)) ||
+      (move.bullet && defenderAbility === "Bulletproof") ||
+      (move.sound && defenderAbility === "Soundproof") ||
+      (move.wind && defenderAbility === "Wind Rider") ||
+      (move.priority && ["Armor Tail", "Queenly Majesty"].includes(defenderAbility));
+    if (blocked) {
+      immune = true;
+      use(defenderAbility, `${defenderAbility} prevents this attack.`);
+    }
+  }
+
+  if (attackerAbility === "Adaptability" && (modifiers.stab ?? 1) > 1) {
+    stab = Math.max(modifiers.stab ?? 1, 2);
+    use(attackerAbility, "Adaptability increases STAB.");
+  } else if (["Protean", "Libero"].includes(attackerAbility ?? "") &&
+      modifiers.attackerAbilityActive) {
+    stab = Math.max(modifiers.stab ?? 1, MOD.ONE_POINT_FIVE / MOD.ONE);
+    use(attackerAbility, `${attackerAbility} grants STAB for the active move.`);
+  }
+
+  if (attackerAbility === "Rivalry" && modifiers.genderRelation) {
+    basePower.push(
+      modifiers.genderRelation === "same" ? MOD.ONE_POINT_TWENTY_FIVE : MOD.THREE_QUARTERS,
+    );
+    use(attackerAbility, `Rivalry applies against an ${modifiers.genderRelation}-gender target.`);
+  }
+  if (
+    (attackerAbility === "Reckless" && move.recoil) ||
+    (attackerAbility === "Iron Fist" && move.punch)
+  ) {
+    basePower.push(MOD.ONE_POINT_TWO);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Sheer Force" && move.secondary) {
+    basePower.push(MOD.ONE_POINT_THREE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Sand Force" && weather === "Sand" &&
+      ["Rock", "Ground", "Steel"].includes(move.type ?? "")) {
+    basePower.push(MOD.ONE_POINT_THREE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Analytic" && modifiers.attackerMovedLast) {
+    basePower.push(MOD.ONE_POINT_THREE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Tough Claws" && move.contact) {
+    basePower.push(MOD.ONE_POINT_THREE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Punk Rock" && move.sound) {
+    basePower.push(MOD.ONE_POINT_THREE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Mega Launcher" && move.pulse) {
+    basePower.push(MOD.ONE_POINT_FIVE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Strong Jaw" && move.bite) {
+    basePower.push(MOD.ONE_POINT_FIVE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Steely Spirit" && move.type === "Steel") {
+    basePower.push(MOD.ONE_POINT_FIVE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Electromorphosis" && modifiers.attackerAbilityActive &&
+      move.type === "Electric") {
+    basePower.push(MOD.TWO);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Supreme Overlord" && modifiers.faintedAllies) {
+    const boosts = [MOD.ONE_POINT_ONE, MOD.ONE_POINT_TWO, MOD.ONE_POINT_THREE, MOD.ONE_POINT_FOUR, MOD.ONE_POINT_FIVE];
+    basePower.push(boosts[Math.min(5, modifiers.faintedAllies) - 1] as number);
+    use(attackerAbility, `Supreme Overlord boosts damage for ${Math.min(5, modifiers.faintedAllies)} fainted allies.`);
+  }
+  if (modifiers.attackerAllyAbility === "Steely Spirit" && move.type === "Steel") {
+    basePower.push(MOD.ONE_POINT_FIVE);
+    notes.push("Ally Steely Spirit boosts the Steel move.");
+  }
+
+  if (attackerAbility === "Hustle" && move.category === "physical") {
+    attack.push(MOD.ONE_POINT_FIVE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Guts" && attackerStatus !== "Healthy" && move.category === "physical") {
+    attack.push(MOD.ONE_POINT_FIVE);
+    ignoreBurn = true;
+    use(attackerAbility);
+  }
+  if (["Huge Power", "Pure Power"].includes(attackerAbility ?? "") && move.category === "physical") {
+    attack.push(MOD.TWO);
+    use(attackerAbility);
+  }
+  if (
+    (["Overgrow", "Blaze", "Torrent", "Swarm"].includes(attackerAbility ?? "") &&
+      attackerHp <= 100 / 3 &&
+      ({ Overgrow: "Grass", Blaze: "Fire", Torrent: "Water", Swarm: "Bug" } as Record<string, PokemonType>)[attackerAbility ?? ""] === move.type) ||
+    (attackerAbility === "Solar Power" && weather === "Sun" && move.category === "special") ||
+    (attackerAbility === "Flash Fire" && modifiers.attackerAbilityActive && move.type === "Fire") ||
+    (["Plus", "Minus"].includes(attackerAbility ?? "") && modifiers.attackerAbilityActive && move.category === "special") ||
+    (attackerAbility === "Sharpness" && move.slicing)
+  ) {
+    attack.push(MOD.ONE_POINT_FIVE);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Stakeout" && modifiers.attackerAbilityActive) {
+    attack.push(MOD.TWO);
+    use(attackerAbility);
+  }
+  if (attackerAbility === "Water Bubble" && move.type === "Water") {
+    attack.push(MOD.TWO);
+    use(attackerAbility);
+  }
+
+  if (defenderAbility === "Fur Coat" && move.category === "physical") {
+    defense.push(MOD.TWO);
+    use(defenderAbility);
+  }
+  if (
+    (defenderAbility === "Marvel Scale" && defenderStatus !== "Healthy" && move.category === "physical") ||
+    (defenderAbility === "Grass Pelt" && modifiers.terrain === "Grassy" && move.category === "physical")
+  ) {
+    defense.push(MOD.ONE_POINT_FIVE);
+    use(defenderAbility);
+  }
+
+  if (defenderAbility === "Dry Skin" && move.type === "Fire") {
+    basePower.push(MOD.ONE_POINT_TWENTY_FIVE);
+    use(defenderAbility);
+  }
+  if (
+    (defenderAbility === "Thick Fat" && ["Fire", "Ice"].includes(move.type ?? "")) ||
+    (defenderAbility === "Water Bubble" && move.type === "Fire") ||
+    (defenderAbility === "Heatproof" && move.type === "Fire") ||
+    (defenderAbility === "Purifying Salt" && move.type === "Ghost")
+  ) {
+    attack.push(MOD.HALF);
+    use(defenderAbility);
+  }
+  if (["Filter", "Solid Rock"].includes(defenderAbility ?? "") &&
+      (modifiers.effectiveness ?? 1) > 1) {
+    final.push(MOD.THREE_QUARTERS);
+    use(defenderAbility);
+  }
+  if (defenderAbility === "Multiscale" && defenderHp >= 100) {
+    final.push(MOD.HALF);
+    use(defenderAbility);
+  }
+  if (defenderAbility === "Punk Rock" && move.sound) {
+    final.push(MOD.HALF);
+    use(defenderAbility);
+  }
+  if (defenderAbility === "Fluffy") {
+    if (move.contact) final.push(MOD.HALF);
+    if (move.type === "Fire") final.push(MOD.TWO);
+    if (move.contact || move.type === "Fire") use(defenderAbility);
+  }
+  if (modifiers.defenderAllyAbility === "Friend Guard") {
+    final.push(MOD.THREE_QUARTERS);
+    notes.push("Ally Friend Guard reduces incoming damage.");
+  }
+
+  if (ignoreAttackStage) use(defenderAbility, "Unaware ignores the attacker's stat stage.");
+  if (ignoreDefenseStage) use(attackerAbility, "Unaware ignores the defender's stat stage.");
+  return {
+    move,
+    basePower,
+    attack,
+    defense,
+    final,
+    immune,
+    stab,
+    ignoreAttackStage,
+    ignoreDefenseStage,
+    ignoreBurn,
+    ignoreWeather,
+    blocksBerries,
+    ripensBerries,
+    notes,
+  };
+}
 
 function pokeRound(value: number): number {
   return value % 1 > 0.5 ? Math.ceil(value) : Math.floor(value);
@@ -307,7 +615,8 @@ function itemNotes(
 }
 
 export function calculateDamage(input: DamageInput): DamageResult {
-  const { attacker, defender, move } = input;
+  let { attacker, defender } = input;
+  let move = input.move;
   const modifiers = input.modifiers ?? {};
   if (!["physical", "special", "status"].includes(move.category))
     throw new RangeError("Invalid move category");
@@ -341,22 +650,62 @@ export function calculateDamage(input: DamageInput): DamageResult {
     modifiers.final,
   ])
     chainModifiers(values ?? []);
-  // Unsupported abilities fail closed; non-damage items are intentionally neutral in a damage-only calculation.
+  // Abilities are accepted only from the reviewed Champions legality catalog.
   if ((attacker.item && !isChampionsItem(attacker.item)) ||
       (defender.item && !isChampionsItem(defender.item)))
     throw new RangeError("Unknown Champions item");
-  if ((attacker.ability && attacker.ability !== "Technician") || defender.ability)
+  if ((attacker.ability && !isChampionsAbility(attacker.ability)) ||
+      (defender.ability && !isChampionsAbility(defender.ability)))
     throw new RangeError("Unsupported ability interaction");
   if (modifiers.helpingHand !== undefined && typeof modifiers.helpingHand !== "boolean")
     throw new RangeError("Invalid Helping Hand state");
+  if (!["", "Sun", "Rain", "Sand", "Snow"].includes(modifiers.fieldWeather ?? ""))
+    throw new RangeError("Invalid field weather");
+  for (const status of [modifiers.attackerStatus, modifiers.defenderStatus]) {
+    if (status !== undefined && !["Healthy", "Burned", "Poisoned", "Badly Poisoned", "Paralyzed", "Asleep"].includes(status))
+      throw new RangeError("Invalid battle status");
+  }
+  for (const percent of [modifiers.attackerHpPercent, modifiers.defenderHpPercent]) {
+    if (percent !== undefined && (!Number.isFinite(percent) || percent < 0 || percent > 100))
+      throw new RangeError("HP percent must be from 0 to 100");
+  }
+  if (modifiers.faintedAllies !== undefined &&
+      (!Number.isInteger(modifiers.faintedAllies) || modifiers.faintedAllies < 0 || modifiers.faintedAllies > 5))
+    throw new RangeError("Fainted allies must be an integer from 0 to 5");
+  if (modifiers.genderRelation !== undefined && !["same", "opposite"].includes(modifiers.genderRelation))
+    throw new RangeError("Invalid gender relation");
+  if (modifiers.attackerAllyAbility !== undefined && modifiers.attackerAllyAbility !== "Steely Spirit")
+    throw new RangeError("Unsupported attacker ally ability");
+  if (modifiers.defenderAllyAbility !== undefined && modifiers.defenderAllyAbility !== "Friend Guard")
+    throw new RangeError("Unsupported defender ally ability");
+  for (const active of [modifiers.attackerAbilityActive, modifiers.attackerMovedLast, modifiers.neutralizingGas]) {
+    if (active !== undefined && typeof active !== "boolean")
+      throw new RangeError("Invalid ability state");
+  }
+  const suppressedItemNotes: string[] = [];
+  if (!modifiers.neutralizingGas && attacker.ability === "Klutz" && attacker.item) {
+    suppressedItemNotes.push("Klutz prevents the attacker's held-item effect.");
+    attacker = { ...attacker, item: undefined };
+  }
+  if (!modifiers.neutralizingGas && defender.ability === "Klutz" && defender.item) {
+    suppressedItemNotes.push("Klutz prevents the defender's held-item effect.");
+    defender = { ...defender, item: undefined };
+  }
+  const effects = abilityEffects(attacker, defender, move, modifiers);
+  move = effects.move;
   championsStats(attacker);
   const defenderHp = championsStats(defender).hp;
-  const effectiveness = defender.item === "Air Balloon" && move.type === "Ground" && move.name !== "Thousand Arrows"
+  const effectiveness = effects.immune ||
+      defender.item === "Air Balloon" && move.type === "Ground" && move.name !== "Thousand Arrows"
     ? 0 : modifiers.effectiveness ?? 1;
   const hits = move.hits ?? 1;
   if (!Number.isInteger(hits) || hits < 1 || hits > 10)
     throw new RangeError("move hits must be an integer from 1 to 10");
-  const notes = itemNotes(attacker, defender, move, modifiers.terrain);
+  const notes = [...new Set([
+    ...suppressedItemNotes,
+    ...itemNotes(attacker, defender, move, modifiers.terrain),
+    ...effects.notes,
+  ])];
   if (move.category === "status" || effectiveness === 0) {
     return {
       rolls: [0],
@@ -394,10 +743,12 @@ export function calculateDamage(input: DamageInput): DamageResult {
     ...(attacker.item === "Muscle Band" && move.category === "physical" ? [MOD.ONE_POINT_ONE] : []),
     ...(attacker.item === "Wise Glasses" && move.category === "special" ? [MOD.ONE_POINT_ONE] : []),
     ...(attacker.item === "Normal Gem" && move.type === "Normal" ? [MOD.ONE_POINT_THREE] : []),
+    ...effects.basePower,
     ...modifiers.basePower ?? [],
   ];
-  const technicianBoost = attacker.ability === "Technician" &&
+  const technicianBoost = !modifiers.neutralizingGas && attacker.ability === "Technician" &&
     applyChained(move.power, bpModifiers) <= 60;
+  if (technicianBoost) notes.push("Technician boosts this move.");
   const basePower = applyChained(move.power, [
     ...bpModifiers,
     ...(technicianBoost ? [MOD.ONE_POINT_FIVE] : []),
@@ -408,42 +759,54 @@ export function calculateDamage(input: DamageInput): DamageResult {
   const seedStat = defender.item === "Electric Seed" || defender.item === "Grassy Seed" ? "defense" : "specialDefense";
   const seedBoost = seedTerrain !== undefined && seedTerrain === modifiers.terrain &&
     defenseKey === seedStat;
-  const defenseStage = Math.min(6, (modifiers.defenseStage ?? 0) + Number(seedBoost));
+  const attackStage = effects.ignoreAttackStage ? 0 : modifiers.attackStage;
+  const defenseStage = effects.ignoreDefenseStage
+    ? 0
+    : Math.min(6, (modifiers.defenseStage ?? 0) + Number(seedBoost));
   const attack = applyChained(
-    modifiedStat(attackerStats[attackKey], modifiers.attackStage),
-    [...(attackBoost ? [MOD.TWO] : []), ...modifiers.attack ?? []],
+    modifiedStat(attackerStats[attackKey], attackStage),
+    [...(attackBoost ? [MOD.TWO] : []), ...effects.attack, ...modifiers.attack ?? []],
   );
   const defense = applyChained(
     modifiedStat(defenderStats[defenseKey], defenseStage),
-    modifiers.defense ?? [],
+    [...effects.defense, ...modifiers.defense ?? []],
   );
   let baseDamage = Math.floor(
     Math.floor(Math.floor((22 * basePower * attack) / defense) / 50) + 2,
   );
   if (move.spread)
     baseDamage = pokeRound((baseDamage * MOD.THREE_QUARTERS) / MOD.ONE);
-  baseDamage = pokeRound(baseDamage * (modifiers.weather ?? 1));
+  baseDamage = pokeRound(baseDamage * (effects.ignoreWeather ? 1 : modifiers.weather ?? 1));
 
-  const stab = modifiers.stab ?? 1;
+  const stab = effects.stab ?? modifiers.stab ?? 1;
   const expertBelt = attacker.item === "Expert Belt" && effectiveness > 1;
   const lifeOrb = attacker.item === "Life Orb";
   const berryType = defender.item && RESIST_BERRIES[defender.item as ChampionsItem];
-  const resistBerry = move.type !== undefined && berryType === move.type &&
+  const resistBerry = !effects.blocksBerries && move.type !== undefined && berryType === move.type &&
     (effectiveness > 1 || move.type === "Normal");
+  if (!resistBerry && berryType === move.type && effects.blocksBerries)
+    notes.push("Unnerve prevents the defender's resist Berry from activating.");
+  if (resistBerry && effects.ripensBerries)
+    notes.push("Ripen doubles the defender's resist Berry reduction.");
   const finalModifiers = [
     ...(expertBelt ? [MOD.ONE_POINT_TWO] : []),
     ...(lifeOrb ? [0x14cc] : []),
+    ...effects.final,
     ...modifiers.final ?? [],
   ];
+  const resistBerryModifier = effects.ripensBerries ? MOD.QUARTER : MOD.HALF;
   const rolls = Array.from({ length: 16 }, (_, index) => {
     let total = 0;
     for (let hit = 0; hit < hits; hit += 1) {
       let damage = Math.floor((baseDamage * (85 + index)) / 100);
       damage = pokeRound((damage * multiplierMod(stab)) / MOD.ONE);
       damage = Math.floor(damage * effectiveness);
-      if (modifiers.burned && move.category === "physical")
+      if ((modifiers.burned || modifiers.attackerStatus === "Burned") &&
+          !effects.ignoreBurn && move.category === "physical")
         damage = Math.floor(damage / 2);
-      const hitModifiers = hit === 0 && resistBerry ? [...finalModifiers, MOD.HALF] : finalModifiers;
+      const hitModifiers = hit === 0 && resistBerry
+        ? [...finalModifiers, resistBerryModifier]
+        : finalModifiers;
       damage = pokeRound((damage * chainModifiers(hitModifiers)) / MOD.ONE);
       total += Math.max(1, damage);
     }
@@ -469,7 +832,8 @@ function advanceConsumedItems<T extends IncomingAttack | OutgoingAttack>(first: 
   const nextDefender = "defender" in next ? next.defender : undefined;
   const gemUsed = firstAttacker?.item === "Normal Gem" && first.move.type === "Normal" && first.move.category !== "status";
   const berryType = firstDefender?.item && RESIST_BERRIES[firstDefender.item as ChampionsItem];
-  const berryUsed = first.move.type !== undefined && berryType === first.move.type &&
+  const berryUsed = firstAttacker?.ability !== "Unnerve" && first.move.type !== undefined &&
+    berryType === first.move.type &&
     ((first.modifiers?.effectiveness ?? 1) > 1 || first.move.type === "Normal");
   const seedType = firstDefender?.item ? SEED_TERRAINS[firstDefender.item] : undefined;
   const seedUsed = seedType !== undefined && seedType === first.modifiers?.terrain;
@@ -482,8 +846,20 @@ function advanceConsumedItems<T extends IncomingAttack | OutgoingAttack>(first: 
     ? { ...nextAttacker, item: undefined } : nextAttacker;
   const updatedDefender = (berryUsed || seedUsed || balloonPopped) && nextDefender
     ? { ...nextDefender, item: undefined } : nextDefender;
-  const updatedModifiers = seedUsed
-    ? { ...next.modifiers, defenseStage: Math.min(6, (next.modifiers?.defenseStage ?? 0) + 1) }
+  let defenderReaction = 0;
+  const defenderCanReact = firstDefender && damagingMove &&
+    first.move.category === "physical" && !first.modifiers?.neutralizingGas &&
+    firstAttacker?.ability !== "Mold Breaker";
+  if (defenderCanReact && firstDefender.ability === "Stamina")
+    defenderReaction = first.move.hits ?? 1;
+  else if (defenderCanReact && firstDefender.ability === "Weak Armor")
+    defenderReaction = -(first.move.hits ?? 1);
+  const updatedModifiers = seedUsed || defenderReaction
+    ? {
+        ...next.modifiers,
+        defenseStage: Math.max(-6, Math.min(6,
+          (next.modifiers?.defenseStage ?? 0) + Number(seedUsed) + defenderReaction)),
+      }
     : next.modifiers;
   return {
     ...next,
@@ -705,7 +1081,13 @@ export function solveOffensiveSpread(input: {
       "Sequential attacks must target the same defender; use stages for changes between steps",
     );
   }
-  const attacks = [input.attacks[0], advanceConsumedItems(input.attacks[0], input.attacks[1])] as const;
+  const attacks = [
+    input.attacks[0],
+    advanceConsumedItems(
+      { ...input.attacks[0], attacker: input.attacker },
+      { ...input.attacks[1], attacker: input.attacker },
+    ),
+  ] as const;
   const normalGemUsed = input.attacker.item === "Normal Gem" &&
     attacks[0].move.type === "Normal" && attacks[0].move.category !== "status";
   const baseline = buildPokemon(input.attacker, NEUTRAL_NATURE, locked, {});

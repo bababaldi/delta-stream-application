@@ -100,6 +100,10 @@ Relaxed Nature
         await page.locator('[data-pokemon-sprite="attacker"]').getAttribute("src") ?? "",
         /floette-mega\.png$/,
     );
+    assert.ok(await page.locator('[name="attackerAbility"] option[value="Flower Veil"]').count());
+    assert.ok(await page.locator('[name="defenderAbility"] option[value="Intimidate"]').count());
+    await page.locator('[name="attackerAbility"]').selectOption("Flower Veil");
+    await page.locator('[name="defenderAbility"]').selectOption("Intimidate");
     await firstMove.selectOption("Light of Ruin");
     await page.locator('[name="move2Name"]').selectOption("Light of Ruin");
     await page.locator('[name="move1Power"]').fill("80");
@@ -154,6 +158,12 @@ Relaxed Nature
     assert.equal(await page.locator(".ranking-row").count(), 50);
     await page.getByRole("button", { name: "Show next 50", exact: true }).click();
     assert.equal(await page.locator(".ranking-row").count(), 100);
+    await page.locator('[data-ranking-kind="teams"]').click();
+    assert.equal(await page.locator(".ranking-row").first().locator(".rank-score").textContent(), "9.80score");
+    const localRanking = page.locator(".ranking-row").filter({ hasText: "Italian local" }).first();
+    await localRanking.locator("summary").click();
+    await localRanking.locator(".item-unpublished").first().waitFor();
+    assert.match(await localRanking.textContent() ?? "", /roster-only; items not published/);
     await page.getByRole("button", { name: "Pokemon", exact: true }).click();
     await page.locator('[data-region="NA"]').uncheck();
     assert.equal(

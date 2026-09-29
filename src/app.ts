@@ -224,7 +224,10 @@ function setPreview(member: TeamMember): string {
   const summary = moves.length
     ? `${member.pokemon}. Item: ${item}. Ability: ${ability}. Nature: ${nature}. Moves: ${moves.join(", ")}.`
     : `${member.pokemon}. Roster-only source; no item, ability, nature, or moves were published.`;
-  return `<div class="set-preview" data-set-preview tabindex="0" role="group" aria-label="${escapeHtml(summary)}"><span class="set-sprite">${pokemonSprite(member.pokemon)}</span><span class="held-item">${member.item ? itemSprite(member.item) : ""}</span><div class="set-popover" aria-hidden="true"><strong>${escapeHtml(member.pokemon)}</strong><span>${escapeHtml(item)} · ${escapeHtml(ability)} · ${escapeHtml(nature)}</span>${moves.length ? `<ul>${moves.map((move) => `<li>${escapeHtml(move)}</li>`).join("")}</ul>` : "<p>Roster only — set not published.</p>"}</div></div>`;
+  const heldItem = member.item
+    ? itemSprite(member.item)
+    : '<span class="item-unpublished">Item not published</span>';
+  return `<div class="set-preview" data-set-preview tabindex="0" role="group" aria-label="${escapeHtml(summary)}"><span class="set-sprite">${pokemonSprite(member.pokemon)}</span><span class="held-item">${heldItem}</span><div class="set-popover" aria-hidden="true"><strong>${escapeHtml(member.pokemon)}</strong><span>${escapeHtml(item)} · ${escapeHtml(ability)} · ${escapeHtml(nature)}</span>${moves.length ? `<ul>${moves.map((move) => `<li>${escapeHtml(move)}</li>`).join("")}</ul>` : "<p>Roster only — set not published.</p>"}</div></div>`;
 }
 
 type EvidenceTeam = {
@@ -264,7 +267,10 @@ function matchingEvidenceTeams(entry: RankedEntry): EvidenceTeam[] {
 
 function evidenceTeamRows(teams: readonly EvidenceTeam[]): string {
   return teams
-    .map(({ event, team }) => `<li><div class="evidence-team-heading"><strong>${escapeHtml(team.player)}</strong><span>${escapeHtml(event.name)} · ${team.publishedPlacement ? `Placement #${team.publishedPlacement}` : `Top ${team.placement}`}</span></div><div class="visual-team">${team.roster.map(setPreview).join("")}</div></li>`)
+    .map(({ event, team }) => {
+      const rosterOnly = team.roster.every((member) => !member.item && !member.ability && !member.nature && !(member.moves?.length));
+      return `<li><div class="evidence-team-heading"><strong>${escapeHtml(team.player)}</strong><span>${escapeHtml(event.name)} · ${team.publishedPlacement ? `Placement #${team.publishedPlacement}` : `Top ${team.placement}`}${rosterOnly ? " · roster-only; items not published" : ""}</span></div><div class="visual-team">${team.roster.map(setPreview).join("")}</div></li>`;
+    })
     .join("");
 }
 
@@ -277,7 +283,7 @@ function evidenceTeams(entry: RankedEntry): string {
 }
 
 function rankingEvidence(entry: RankedEntry): string {
-  return `<p><strong>Evidence</strong> Placement × event tier × recency. Verified Victory Road x-0/x-1 records use 2×/1.75×; Italian VG Cup/Challenge winners are low-weight (0.125×) potential x-2 evidence only. Regulations never mix. Roster-only results do not provide usable moves, abilities or items.</p>${entry.pikalyticsUsage === undefined ? "" : `<p>Pikalytics usage: ${entry.pikalyticsUsage.toFixed(1)}% (tie-break only).</p>`}${evidenceTeams(entry)}`;
+  return `<p><strong>Evidence</strong> Placement × event tier × recency. Team and core display scores are calibrated to the current 1–10 meta: the top 50 stay above 6, while compressed evidence gaps preserve close finishes. Verified Victory Road x-0/x-1 records use 2×/1.75×; Italian VG Cup/Challenge winners are low-weight (0.125×) potential x-2 evidence only. Regulations never mix. Roster-only results do not provide usable moves, abilities or items.</p>${entry.pikalyticsUsage === undefined ? "" : `<p>Pikalytics usage: ${entry.pikalyticsUsage.toFixed(1)}% (tie-break only).</p>`}${evidenceTeams(entry)}`;
 }
 
 function metaView(): string {
@@ -298,7 +304,7 @@ function metaView(): string {
   const rows = visibleEntries
     .map(
       (entry, index) =>
-        `<details class="ranking-row" data-ranking-index="${index}"><summary><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="rank-name">${rankSprites(entry.pokemon)}<small>${entry.teamCount} team${entry.teamCount === 1 ? "" : "s"} · ${entry.eventCount} event${entry.eventCount === 1 ? "" : "s"}${entry.localEvidenceTeams ? ` · ${entry.localEvidenceTeams} Italian local` : ""}</small></span><span class="rank-score">${entry.score.toFixed(1)}<small>score</small></span><span class="confidence ${entry.confidence}">${entry.confidence === "strong" ? "● Strong" : "○ Emerging"}</span></summary><div class="evidence" data-ranking-evidence></div></details>`,
+        `<details class="ranking-row" data-ranking-index="${index}"><summary><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="rank-name">${rankSprites(entry.pokemon)}<small>${entry.teamCount} team${entry.teamCount === 1 ? "" : "s"} · ${entry.eventCount} event${entry.eventCount === 1 ? "" : "s"}${entry.localEvidenceTeams ? ` · ${entry.localEvidenceTeams} Italian local` : ""}</small></span><span class="rank-score">${entry.score.toFixed(2)}<small>score</small></span><span class="confidence ${entry.confidence}">${entry.confidence === "strong" ? "● Strong" : "○ Emerging"}</span></summary><div class="evidence" data-ranking-evidence></div></details>`,
     )
     .join("");
   const more = entries.length > visibleEntries.length
@@ -315,6 +321,10 @@ function inputField(
   max = 255,
 ): string {
   return `<label><span>${label}</span><input type="number" name="${name}" value="${value}" min="${min}" max="${max}" inputmode="numeric" required></label>`;
+}
+
+function checkboxField(label: string, name: string): string {
+  return `<label class="check-row"><input type="checkbox" name="${name}"><span>${label}</span></label>`;
 }
 
 function itemOptions(): string {
@@ -337,6 +347,26 @@ function calcTargets(): {
 
 function learnedMoves(name: string): readonly string[] {
   return rules.allowedMoves?.[canonicalPokemonName(name)] ?? [];
+}
+
+function learnedAbilities(name: string): readonly string[] {
+  return rules.allowedAbilities?.[canonicalPokemonName(name)] ?? [];
+}
+
+function abilityPicker(side: "attacker" | "defender", name: string): string {
+  const field = `${side}Ability`;
+  const selected = String(calcDraft.get(field) ?? "");
+  const abilities = reviewedPokemon(name) ? learnedAbilities(name) : [];
+  const options = abilities.length
+    ? `<option value="">None</option>${abilities.map((ability) => `<option value="${escapeHtml(ability)}" ${ability === selected ? "selected" : ""}>${escapeHtml(ability)}</option>`).join("")}`
+    : '<option value="">Choose this Pokémon first</option>';
+  return `<label><span>${side === "attacker" ? "Attacker" : "Defender"} ability</span><select name="${field}" ${abilities.length ? "" : "disabled"}>${options}</select></label>`;
+}
+
+function statusOptions(): string {
+  return ["Healthy", "Burned", "Poisoned", "Badly Poisoned", "Paralyzed", "Asleep"]
+    .map((status) => `<option>${status}</option>`)
+    .join("");
 }
 
 function reviewedPokemon(name: string) {
@@ -371,7 +401,7 @@ function moveFields(number: 1 | 2, moves: readonly string[]): string {
   const options = moves.length
     ? `<option value="">Choose a learned move</option>${moves.map((move) => `<option value="${escapeHtml(move)}" ${move === selected ? "selected" : ""}>${escapeHtml(move)}</option>`).join("")}`
     : '<option value="">Choose an attacker first</option>';
-  return `<fieldset class="move-step" ${moves.length ? "" : "disabled"}><legend>Attack ${number}</legend><div class="form-grid"><label><span>Move</span><select name="${prefix}Name" required>${options}</select></label><label><span>Move type</span><select name="${prefix}Type"><option value="">Unknown / not set</option>${pokemonTypes.map((type) => `<option>${type}</option>`).join("")}</select></label><label><span>Category</span><select name="${prefix}Category"><option value="physical">Physical</option><option value="special">Special</option></select></label>${inputField("Power", `${prefix}Power`, 100, 1, 999)}${inputField("Attack stage", `${prefix}AttackStage`, 0, -6, 6)}${inputField("Defense stage", `${prefix}DefenseStage`, 0, -6, 6)}<label><span>STAB</span><select name="${prefix}Stab"><option value="1">None</option><option value="1.2">1.2×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option></select></label><label><span>Effectiveness</span><select name="${prefix}Effectiveness"><option value="0">Immune</option><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label><span>Weather</span><select name="${prefix}Weather"><option value="1">Neutral</option><option value="1.5">Boosted</option><option value="0.5">Reduced</option></select></label><label class="check-row"><input type="checkbox" name="${prefix}Spread"><span>Spread move</span></label><label class="check-row"><input type="checkbox" name="${prefix}Burned"><span>Attacker burned</span></label><label class="check-row"><input type="checkbox" name="${prefix}HelpingHand"><span>Helping Hand</span></label></div></fieldset>`;
+  return `<fieldset class="move-step" ${moves.length ? "" : "disabled"}><legend>Attack ${number}</legend><div class="form-grid"><label><span>Move</span><select name="${prefix}Name" required>${options}</select></label><label><span>Move type</span><select name="${prefix}Type"><option value="">Unknown / not set</option>${pokemonTypes.map((type) => `<option>${type}</option>`).join("")}</select></label><label><span>Category</span><select name="${prefix}Category"><option value="physical">Physical</option><option value="special">Special</option></select></label>${inputField("Power", `${prefix}Power`, 100, 1, 999)}${inputField("Attack stage", `${prefix}AttackStage`, 0, -6, 6)}${inputField("Defense stage", `${prefix}DefenseStage`, 0, -6, 6)}<label><span>STAB</span><select name="${prefix}Stab"><option value="1">None</option><option value="1.2">1.2×</option><option value="1.5" selected>1.5×</option><option value="2">2×</option></select></label><label><span>Effectiveness</span><select name="${prefix}Effectiveness"><option value="0">Immune</option><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label><span>Move weather effect</span><select name="${prefix}Weather"><option value="1">Neutral</option><option value="1.5">Boosted</option><option value="0.5">Reduced</option></select></label>${checkboxField("Spread move", `${prefix}Spread`)}${checkboxField("Attacker burned", `${prefix}Burned`)}${checkboxField("Helping Hand", `${prefix}HelpingHand`)}</div><details class="ability-traits"><summary>Ability move traits</summary><div class="form-grid">${checkboxField("Contact", `${prefix}Contact`)}${checkboxField("Sound", `${prefix}Sound`)}${checkboxField("Bite", `${prefix}Bite`)}${checkboxField("Punch", `${prefix}Punch`)}${checkboxField("Pulse", `${prefix}Pulse`)}${checkboxField("Bullet", `${prefix}Bullet`)}${checkboxField("Wind", `${prefix}Wind`)}${checkboxField("Slicing", `${prefix}Slicing`)}${checkboxField("Secondary effect", `${prefix}Secondary`)}${checkboxField("Recoil / crash", `${prefix}Recoil`)}${checkboxField("Priority", `${prefix}Priority`)}</div></details></fieldset>`;
 }
 
 function calcView(): string {
@@ -380,7 +410,7 @@ function calcView(): string {
     (targets.defender && targets.defenderGoal === "two");
   const attackerName = String(calcDraft.get("attackerName") ?? "");
   const attackerMoves = reviewedPokemon(attackerName) ? learnedMoves(attackerName) : [];
-  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Damage calculator</h1></div></div><p class="status-line warning">Choose the attacker first, then the defender. Move choices are limited to the attacker’s reviewed legal moves; type, category, and power remain explicit calculator inputs.</p><form id="calc-form">${pokemonOptions()}<section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${pokemonPicker("attacker")}${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}<label><span>Attacker ability</span><select name="attackerAbility"><option value="">None / manual</option><option>Technician</option></select></label><label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label>${pokemonPicker("defender")}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}<label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label><label><span>Terrain (for seeds)</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><fieldset class="goal-row"><legend>Spreads to calculate</legend><div class="form-grid"><label class="check-row"><input type="checkbox" name="attackerSpread" ${targets.attacker ? "checked" : ""}><span>Attacker: guarantee 2HKO</span></label><label class="check-row"><input type="checkbox" name="defenderSpread" ${targets.defender ? "checked" : ""}><span>Defender: survive attacks</span></label><label><span>Defender target</span><select name="defenderGoal" ${targets.defender ? "" : "disabled"}><option value="two" ${targets.defenderGoal === "two" ? "selected" : ""}>Two maximum rolls</option><option value="one" ${targets.defenderGoal === "one" ? "selected" : ""}>One hit (15/16 rolls)</option></select></label></div></fieldset><p class="status-line warning">Entered points stay fixed on the opposing Pokémon while the selected side is optimized.</p>${targets.defender && targets.defenderGoal === "one" ? '<p class="status-line warning">Single-hit mode accepts the sole 6.25% maximum normal-damage roll; critical hits are not simulated.</p>' : ""}<div class="move-grid">${moveFields(1, attackerMoves)}${needsTwoMoves ? moveFields(2, attackerMoves) : ""}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
+  return `<section aria-labelledby="calc-title"><div class="screen-heading"><div><p class="board-status">Normal rolls · no critical hits</p><h1 id="calc-title">Damage calculator</h1></div></div><p class="status-line warning">Choose the attacker first, then the defender. Move choices are limited to the attacker’s reviewed legal moves; type, category, and power remain explicit calculator inputs.</p><form id="calc-form">${pokemonOptions()}<section class="form-section" aria-labelledby="stats-title"><h2 id="stats-title">Combatants</h2><div class="form-grid stats-grid">${pokemonPicker("attacker")}${inputField("Attacker Attack base", "attackBase", 100, 1)}${inputField("Attacker Sp. Atk base", "specialAttackBase", 100, 1)}${inputField("Fixed Attack points", "attackPoints", 32, 0, 32)}${inputField("Fixed Sp. Atk points", "specialAttackPoints", 32, 0, 32)}${abilityPicker("attacker", attackerName)}<label><span>Attacker item</span><select name="attackerItem">${itemOptions()}</select></label>${pokemonPicker("defender")}${inputField("Defender HP base", "hpBase", 100, 1)}${inputField("Defender Defense base", "defenseBase", 100, 1)}${inputField("Defender Sp. Def base", "specialDefenseBase", 100, 1)}${inputField("Fixed HP points", "hpPoints", 0, 0, 32)}${inputField("Fixed Defense points", "defensePoints", 0, 0, 32)}${inputField("Fixed Sp. Def points", "specialDefensePoints", 0, 0, 32)}<label><span>Defender item</span><select name="defenderItem">${itemOptions()}</select></label>${abilityPicker("defender", String(calcDraft.get("defenderName") ?? ""))}<label><span>Terrain</span><select name="terrain"><option value="">None</option><option>Electric</option><option>Grassy</option><option>Misty</option><option>Psychic</option></select></label></div></section><details class="ability-conditions"><summary>Ability conditions</summary><p class="status-line">Set only the state used by the selected ability. Move traits are under each attack.</p><div class="form-grid"><label><span>Field weather</span><select name="fieldWeather"><option value="">None</option><option>Sun</option><option>Rain</option><option>Sand</option><option>Snow</option></select></label><label><span>Attacker status</span><select name="attackerStatus">${statusOptions()}</select></label><label><span>Defender status</span><select name="defenderStatus">${statusOptions()}</select></label>${inputField("Attacker HP %", "attackerHpPercent", 100, 0, 100)}${inputField("Defender HP %", "defenderHpPercent", 100, 0, 100)}${inputField("Fainted attacker allies", "faintedAllies", 0, 0, 5)}<label><span>Gender relation</span><select name="genderRelation"><option value="">Not set</option><option value="same">Same</option><option value="opposite">Opposite</option></select></label><label><span>Attacker ally ability</span><select name="attackerAllyAbility"><option value="">None</option><option>Steely Spirit</option></select></label><label><span>Defender ally ability</span><select name="defenderAllyAbility"><option value="">None</option><option>Friend Guard</option></select></label>${checkboxField("Attacker ability trigger active", "attackerAbilityActive")}${checkboxField("Attacker moved last", "attackerMovedLast")}${checkboxField("Neutralizing Gas active", "neutralizingGas")}</div></details><fieldset class="goal-row"><legend>Spreads to calculate</legend><div class="form-grid"><label class="check-row"><input type="checkbox" name="attackerSpread" ${targets.attacker ? "checked" : ""}><span>Attacker: guarantee 2HKO</span></label><label class="check-row"><input type="checkbox" name="defenderSpread" ${targets.defender ? "checked" : ""}><span>Defender: survive attacks</span></label><label><span>Defender target</span><select name="defenderGoal" ${targets.defender ? "" : "disabled"}><option value="two" ${targets.defenderGoal === "two" ? "selected" : ""}>Two maximum rolls</option><option value="one" ${targets.defenderGoal === "one" ? "selected" : ""}>One hit (15/16 rolls)</option></select></label></div></fieldset><p class="status-line warning">Entered points stay fixed on the opposing Pokémon while the selected side is optimized.</p>${targets.defender && targets.defenderGoal === "one" ? '<p class="status-line warning">Single-hit mode accepts the sole 6.25% maximum normal-damage roll; critical hits are not simulated.</p>' : ""}<div class="move-grid">${moveFields(1, attackerMoves)}${needsTwoMoves ? moveFields(2, attackerMoves) : ""}</div><button class="primary-action" type="submit">Calculate spreads</button></form><div id="calc-result" class="result-region" aria-live="polite">${calcResult}</div></section>`;
 }
 
 function baseStats(partial: Partial<StatTable>): StatTable {
@@ -418,6 +448,17 @@ function moveFromForm(
       ...(String(data.get(`${prefix}Type`)) ? { type: String(data.get(`${prefix}Type`)) as Move["type"] } : {}),
       power: numberValue(data, `${prefix}Power`),
       spread: data.has(`${prefix}Spread`),
+      contact: data.has(`${prefix}Contact`),
+      sound: data.has(`${prefix}Sound`),
+      bite: data.has(`${prefix}Bite`),
+      punch: data.has(`${prefix}Punch`),
+      pulse: data.has(`${prefix}Pulse`),
+      bullet: data.has(`${prefix}Bullet`),
+      wind: data.has(`${prefix}Wind`),
+      slicing: data.has(`${prefix}Slicing`),
+      secondary: data.has(`${prefix}Secondary`),
+      recoil: data.has(`${prefix}Recoil`),
+      priority: data.has(`${prefix}Priority`),
     },
     modifiers: {
       attackStage: numberValue(data, `${prefix}AttackStage`),
@@ -483,8 +524,31 @@ function calculateFromForm(form: HTMLFormElement): string {
   const defenderName = String(data.get("defenderName") ?? "").trim();
   if (!reviewedPokemon(defenderName))
     throw new RangeError("Choose a defender with reviewed base stats");
+  const attackerAbility = String(data.get("attackerAbility") ?? "").trim();
+  const defenderAbility = String(data.get("defenderAbility") ?? "").trim();
+  if (attackerAbility && !learnedAbilities(attackerName).includes(attackerAbility))
+    throw new RangeError("Choose a reviewed ability for the attacker");
+  if (defenderAbility && !learnedAbilities(defenderName).includes(defenderAbility))
+    throw new RangeError("Choose a reviewed ability for the defender");
+  const abilityModifiers: DamageModifiers = {
+    fieldWeather: String(data.get("fieldWeather") ?? "") as DamageModifiers["fieldWeather"],
+    attackerStatus: String(data.get("attackerStatus") ?? "Healthy") as DamageModifiers["attackerStatus"],
+    defenderStatus: String(data.get("defenderStatus") ?? "Healthy") as DamageModifiers["defenderStatus"],
+    attackerHpPercent: numberValue(data, "attackerHpPercent"),
+    defenderHpPercent: numberValue(data, "defenderHpPercent"),
+    attackerAbilityActive: data.has("attackerAbilityActive"),
+    attackerMovedLast: data.has("attackerMovedLast"),
+    faintedAllies: numberValue(data, "faintedAllies"),
+    neutralizingGas: data.has("neutralizingGas"),
+    ...(String(data.get("genderRelation")) ? { genderRelation: String(data.get("genderRelation")) as "same" | "opposite" } : {}),
+    ...(String(data.get("attackerAllyAbility")) ? { attackerAllyAbility: String(data.get("attackerAllyAbility")) as DamageModifiers["attackerAllyAbility"] } : {}),
+    ...(String(data.get("defenderAllyAbility")) ? { defenderAllyAbility: String(data.get("defenderAllyAbility")) as DamageModifiers["defenderAllyAbility"] } : {}),
+  };
   const firstMove = moveFromForm(data, 1, attackerMoves);
   const secondMove = needsTwoMoves ? moveFromForm(data, 2, attackerMoves) : undefined;
+  for (const attack of [firstMove, secondMove]) {
+    if (attack) attack.modifiers = { ...attack.modifiers, ...abilityModifiers };
+  }
   const moves = secondMove ? [firstMove, secondMove] : [firstMove];
   const attackerStats = {
     attack: numberValue(data, "attackBase"),
@@ -508,14 +572,14 @@ function calculateFromForm(form: HTMLFormElement): string {
     attackerName,
     attackerStats,
     attackerPoints,
-    String(data.get("attackerAbility")) as ChampionsPokemon["ability"],
+    attackerAbility || undefined,
     (String(data.get("attackerItem")) || undefined) as ChampionsPokemon["item"],
   );
   const defender = pokemon(
     defenderName,
     defenderStats,
     defenderPoints,
-    undefined,
+    defenderAbility || undefined,
     (String(data.get("defenderItem")) || undefined) as ChampionsPokemon["item"],
   );
   const direct = moves.map(({ move, modifiers }) =>
@@ -575,6 +639,7 @@ function calculateFromForm(form: HTMLFormElement): string {
           name: defender.name,
           baseStats: defender.baseStats,
           item: defender.item,
+          ability: defender.ability,
         },
         attacks,
       }),
@@ -701,6 +766,25 @@ function syncMoveSelectors(
   }
 }
 
+function syncAbilitySelector(
+  form: HTMLFormElement,
+  side: "attacker" | "defender",
+  name: string,
+): void {
+  const select = form.elements.namedItem(`${side}Ability`);
+  if (!(select instanceof HTMLSelectElement)) return;
+  const abilities = reviewedPokemon(name) ? learnedAbilities(name) : [];
+  const current = select.value;
+  select.replaceChildren(
+    new Option(abilities.length ? "None" : "Choose this Pokémon first", ""),
+    ...abilities.map((ability) => new Option(ability, ability)),
+  );
+  select.disabled = abilities.length === 0;
+  const next = abilities.includes(current) ? current : "";
+  select.value = next;
+  calcDraft.set(select.name, next);
+}
+
 function syncAttackerSelection(
   form: HTMLFormElement,
   attackerName: string,
@@ -735,6 +819,7 @@ function applyPokemonPicker(input: HTMLInputElement): void {
       status.textContent = side === "defender" && input.disabled
         ? "Choose an attacker with reviewed moves first."
         : "Choose a reviewed legal Pokémon with bundled exact PokeAPI base stats.";
+    if (form) syncAbilitySelector(form, side, "");
     if (side === "attacker" && form)
       syncAttackerSelection(form, "", []);
     return;
@@ -754,6 +839,7 @@ function applyPokemonPicker(input: HTMLInputElement): void {
     if (field instanceof HTMLInputElement) field.value = String(value);
     calcDraft.set(fieldName, String(value));
   }
+  if (form) syncAbilitySelector(form, side, name);
   if (side === "attacker" && form)
     syncAttackerSelection(form, name, learnedMoves(name));
 }

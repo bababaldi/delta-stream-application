@@ -94,16 +94,51 @@ test("old teams and cores decay until a new placed finish reconfirms them", () =
     pikalyticsUsage: {},
   };
   const decayed = rankMeta(snapshot, "champions-mb", NOW);
-  assert.equal(decayed.teams[0]?.score, 16);
-  assert.equal(decayed.cores.find(({ key }) => key === "a+b")?.score, 16);
+  assert.equal(decayed.teams[0]?.evidenceScore, 16);
+  assert.equal(decayed.cores.find(({ key }) => key === "a+b")?.evidenceScore, 16);
 
   snapshot.tournaments.push({
     event: event("fresh", "2026-09-01"),
     teams: [team("fresh", "Bob", freshRoster, 1)],
   });
   const reconfirmed = rankMeta(snapshot, "champions-mb", NOW);
-  assert.equal(reconfirmed.teams.find(({ key }) => key === "a+b+c+d+e+f")?.score, 16);
-  assert.equal(reconfirmed.cores.find(({ key }) => key === "a+b")?.score, 80);
+  assert.equal(reconfirmed.teams.find(({ key }) => key === "a+b+c+d+e+f")?.evidenceScore, 16);
+  assert.equal(reconfirmed.cores.find(({ key }) => key === "a+b")?.evidenceScore, 80);
+});
+
+test("team and core display scores are calibrated to the current 1–10 meta", () => {
+  const roster = (label: string) =>
+    Array.from({ length: 6 }, (_, slot) => `${label}-${slot}`);
+  const tournaments: TournamentData[] = [];
+  const add = (
+    id: string,
+    player: string,
+    members: string[],
+    placement: PlacedTeam["placement"],
+  ) => tournaments.push({ event: event(id), teams: [team(id, player, members, placement)] });
+  for (const [id, placement] of [["top-one-a", 1], ["top-one-b", 4], ["top-one-c", 64]] as const)
+    add(id, "Top one", roster("top-one"), placement);
+  for (const [id, placement] of [["top-two-a", 1], ["top-two-b", 4]] as const)
+    add(id, "Top two", roster("top-two"), placement);
+  for (let index = 0; index < 48; index += 1)
+    add(`middle-${index}`, `Middle ${index}`, roster(`middle-${index}`), 16);
+  for (let index = 0; index < 5; index += 1)
+    add(`low-${index}`, `Low ${index}`, roster(`low-${index}`), 64);
+  const rankings = rankMeta({
+    generatedAt: NOW.toISOString(),
+    activeRegulation: "champions-mb",
+    tournaments,
+    pikalyticsUsage: {},
+  }, "champions-mb", NOW);
+  for (const entries of [rankings.teams, rankings.cores]) {
+    assert.equal(entries[0]?.score, 9.8);
+    assert.ok((entries[49]?.score ?? 0) > 6);
+    assert.ok(entries.every(({ score }) => score >= 1 && score <= 10));
+    assert.ok((entries[49]?.score ?? 0) >= (entries[50]?.score ?? 0));
+  }
+  assert.deepEqual(rankings.teams.slice(0, 2).map(({ score }) => score), [9.8, 9.79]);
+  assert.ok((rankings.teams[0]?.evidenceScore ?? 0) >
+    (rankings.teams.at(-1)?.evidenceScore ?? 0));
 });
 
 test("complete 10-0 / 9-1 records are boosted and decay with event age", () => {
@@ -145,7 +180,7 @@ test("Italian local winners are low-weight emerging x-2 evidence", () => {
   };
   assert.equal(teamScore(1, snapshot.tournaments[0]!.event, NOW), 8);
   const ranking = rankMeta(snapshot, "champions-mb", NOW).teams[0];
-  assert.equal(ranking?.score, 16);
+  assert.equal(ranking?.evidenceScore, 16);
   assert.equal(ranking?.localEvidenceTeams, 2);
   assert.equal(ranking?.confidence, "emerging");
 });

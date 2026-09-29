@@ -621,6 +621,22 @@ h2 {
   height: 1.45rem;
 }
 
+.held-item:has(.item-unpublished) {
+  width: auto;
+  height: auto;
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.25rem;
+}
+
+.item-unpublished {
+  color: var(--muted);
+  font-size: 0.55rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .set-popover {
   position: absolute;
   z-index: 3;
@@ -717,6 +733,24 @@ form {
 .move-grid {
   display: grid;
   gap: 1.5rem;
+}
+
+.ability-conditions,
+.ability-traits {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.85rem;
+}
+
+.ability-conditions summary,
+.ability-traits summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.ability-conditions .status-line,
+.ability-traits .form-grid {
+  margin-top: 0.85rem;
 }
 
 .move-step legend {

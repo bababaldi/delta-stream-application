@@ -106,6 +106,29 @@ test("NCP Champions item catalog and direct damage interactions", () => {
   assert.throws(() => calculateDamage({ attacker: { ...attacker, ability: "Unknown" as "Technician" }, defender, move }), /Unsupported ability/);
 });
 
+test("reviewed abilities apply only with their explicit battle state", () => {
+  const attacker = pokemon("Attacker", { attack: 32 }, "attack");
+  const defender = pokemon("Defender");
+  const physical = { name: "Test hit", power: 100, category: "physical" as const, type: "Normal" as const };
+  const normal = calculateDamage({ attacker, defender, move: physical }).max;
+  assert.ok(calculateDamage({ attacker: { ...attacker, ability: "Huge Power" }, defender, move: physical }).max > normal);
+  assert.ok(calculateDamage({ attacker, defender: { ...defender, ability: "Fur Coat" }, move: physical }).max < normal);
+  const ground = { ...physical, type: "Ground" as const };
+  assert.equal(calculateDamage({ attacker, defender: { ...defender, ability: "Levitate" }, move: ground }).max, 0);
+  assert.ok(calculateDamage({ attacker: { ...attacker, ability: "Mold Breaker" }, defender: { ...defender, ability: "Levitate" }, move: ground }).max > 0);
+  const burned = calculateDamage({ attacker, defender, move: physical, modifiers: { burned: true } }).max;
+  assert.ok(calculateDamage({ attacker: { ...attacker, ability: "Guts" }, defender, move: physical, modifiers: { attackerStatus: "Burned" } }).max > normal);
+  assert.ok(burned < normal);
+  assert.ok(calculateDamage({ attacker, defender: { ...defender, ability: "Multiscale" }, move: physical }).max < normal);
+  assert.ok(calculateDamage({ attacker: { ...attacker, ability: "Adaptability" }, defender, move: physical, modifiers: { stab: 1.5 } }).max >
+    calculateDamage({ attacker, defender, move: physical, modifiers: { stab: 1.5 } }).max);
+  assert.ok(calculateDamage({ attacker: { ...attacker, ability: "Pixilate" }, defender, move: physical }).max > normal);
+  const steel = { ...physical, type: "Steel" as const };
+  assert.ok(calculateDamage({ attacker, defender, move: steel, modifiers: { attackerAllyAbility: "Steely Spirit" } }).max >
+    calculateDamage({ attacker, defender, move: steel }).max);
+  assert.ok(calculateDamage({ attacker, defender, move: physical, modifiers: { defenderAllyAbility: "Friend Guard" } }).max < normal);
+});
+
 test("two-step solvers carry consumed items into the second attack", () => {
   const attacker = pokemon("Attacker");
   const defender = pokemon("Defender");

@@ -184,6 +184,10 @@ interface ScoringIndex {
   archetypes: Map<ObservedArchetype, ArchetypeScoreIndex>;
 }
 
+function metaEvidenceScore(entry: { score: number; evidenceScore?: number }): number {
+  return entry.evidenceScore ?? entry.score;
+}
+
 function buildScoringIndex(
   rankings: MetaRankings,
   archetypeCores: readonly ArchetypeCoreEvidence[],
@@ -192,12 +196,12 @@ function buildScoringIndex(
   let bestPokemonScore = 1;
   for (const ranked of rankings.pokemon) {
     if (!pokemon.has(ranked.key)) pokemon.set(ranked.key, ranked);
-    bestPokemonScore = Math.max(bestPokemonScore, ranked.score);
+    bestPokemonScore = Math.max(bestPokemonScore, metaEvidenceScore(ranked));
   }
   const coresByPokemon = new Map<string, MetaRankings["cores"][number][]>();
   let bestCoreScore = 1;
   for (const core of rankings.cores) {
-    bestCoreScore = Math.max(bestCoreScore, core.score);
+    bestCoreScore = Math.max(bestCoreScore, metaEvidenceScore(core));
     for (const member of core.pokemon) {
       const key = canonicalPokemonName(member);
       const cores = coresByPokemon.get(key);
@@ -319,7 +323,7 @@ function scoreCandidate(
 ): CandidateScore {
   const key = canonicalPokemonName(pokemon);
   const entry = scoring.pokemon.get(key);
-  const success = ((entry?.score ?? 0) / scoring.bestPokemonScore) * 60;
+  const success = ((entry ? metaEvidenceScore(entry) : 0) / scoring.bestPokemonScore) * 60;
   const roster = new Set(
     slots.map((slot) => canonicalPokemonName(slot.species)),
   );
@@ -328,10 +332,10 @@ function scoreCandidate(
     if (
       core.pokemon.includes(key) &&
       core.pokemon.every((member) => member === key || roster.has(member)) &&
-      (!relatedCore || core.score > relatedCore.score)
+      (!relatedCore || metaEvidenceScore(core) > metaEvidenceScore(relatedCore))
     ) relatedCore = core;
   }
-  const coOccurrence = ((relatedCore?.score ?? 0) / scoring.bestCoreScore) * 25;
+  const coOccurrence = ((relatedCore ? metaEvidenceScore(relatedCore) : 0) / scoring.bestCoreScore) * 25;
   const profile = profileFor(profiles, regulation, pokemon);
   const coveredRoles = coveredValues(slots, profiles, regulation, "roles");
   const coveredThreats = coveredValues(
