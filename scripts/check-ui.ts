@@ -72,17 +72,21 @@ Relaxed Nature
         /malformed stat points/,
     );
     const printButton = page.getByRole("button", {
-        name: "Print / save open PDF",
+        name: "Print / save 2-page PDF",
         exact: true,
     });
     assert.ok(!(await printButton.isDisabled()));
     await printButton.click();
     assert.match(await page.locator("#team-result").innerText(), /Cannot export/);
     await page.locator("#player-name").fill("PRIVATE REGISTRATION");
+    await page.locator("#age-division").fill("Masters");
+    await page.locator("#trainer-name").fill("PRIVATE TRAINER");
+    await page.locator("#battle-team-number").fill("2");
     const stored = await page.evaluate(() =>
         Object.values(localStorage).join(" "),
     );
     assert.ok(!stored.includes("PRIVATE REGISTRATION"));
+    assert.ok(!stored.includes("PRIVATE TRAINER"));
     await tab("Calc");
     const defenderPicker = page.locator('[name="defenderName"]');
     const firstMove = page.locator('[name="move1Name"]');

@@ -1,9 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import legalityData from "../data/legality.json" with { type: "json" };
 import {
   parsePokepaste,
   renderTeamSheetHtml,
   validateTeam,
+  type LegalityRules,
   type TeamSlot,
 } from "../src/team.js";
 
@@ -64,6 +66,20 @@ Brave Nature
   });
 });
 
+test("Poképaste form aliases resolve through the approved M-C catalog", () => {
+  const parsed = parsePokepaste(`Floette-Eternal
+Ability: Flower Veil
+- Moonblast
+
+Maushold-Four
+Ability: Friend Guard
+- Population Bomb`);
+  assert.deepEqual(
+    validateTeam(parsed.slots, legalityData as LegalityRules, true),
+    [],
+  );
+});
+
 test("team validation enforces clauses and supplied regulation catalogs", () => {
   const team = [
     slot("Alpha", "Berry"),
@@ -87,7 +103,7 @@ test("team validation enforces clauses and supplied regulation catalogs", () => 
   assert.ok(issues.some(({ code }) => code === "tera-illegal"));
 });
 
-test("printable open sheet omits private spread data and rejects illegal export", () => {
+test("official printable list creates staff and opponent pages without leaking spreads", () => {
   const team = [
     slot("Alpha", "A"),
     slot("Bravo", "B"),
@@ -97,17 +113,32 @@ test("printable open sheet omits private spread data and rejects illegal export"
     slot("Foxtrot", "F"),
   ];
   const rules = rulesFor(team, "champions-test");
-  const open = renderTeamSheetHtml(team, "open", rules, {
+  const sheet = renderTeamSheetHtml(team, rules, {
     playerName: "A <B>",
+    ageDivision: "Masters",
+    trainerName: "Delta",
+    playerId: "1234",
+    battleTeamNumber: "2",
+    teamName: "Current six",
   });
-  assert.match(open, /Open Team Sheet/);
-  assert.match(open, /A &lt;B&gt;/);
-  assert.doesNotMatch(open, /Stat Points/);
-  const staff = renderTeamSheetHtml(team, "staff", rules);
-  assert.match(staff, /Stat Points/);
-  assert.match(staff, /32 HP \/ 0 Atk \/ 0 Def \/ 0 SpA \/ 32 SpD \/ 2 Spe/);
+  assert.equal((sheet.match(/class="official-sheet/g) ?? []).length, 2);
+  assert.match(sheet, /@page\{size:A4 portrait/);
+  assert.match(sheet, /Page 1 of 2/);
+  assert.match(sheet, /Page 2 of 2/);
+  assert.match(sheet, /Pokémon Video Game Team List/);
+  assert.match(sheet, /A &lt;B&gt;/);
+  assert.match(sheet, /Age Division/);
+  assert.match(sheet, /Trainer Name in Game/);
+  assert.match(sheet, /Battle Team Number/);
+  assert.match(sheet, /Champions Stat Points/);
+  assert.match(sheet, /32 HP \/ 0 Atk \/ 0 Def \/ 0 SpA \/ 32 SpD \/ 2 Spe/);
+  const opponentPage = sheet.slice(sheet.indexOf('class="official-sheet opponent-sheet"'));
+  assert.doesNotMatch(opponentPage, /Age Division/);
+  assert.doesNotMatch(opponentPage, /Player ID/);
+  assert.doesNotMatch(opponentPage, /Calm/);
+  assert.doesNotMatch(opponentPage, /32 HP \/ 0 Atk/);
   assert.throws(
-    () => renderTeamSheetHtml(team.slice(0, 5), "open", rules),
+    () => renderTeamSheetHtml(team.slice(0, 5), rules),
     /exactly six/,
   );
 });

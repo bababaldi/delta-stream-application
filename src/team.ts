@@ -39,7 +39,10 @@ export interface LegalityIssue {
 
 export interface RegistrationFields {
   playerName?: string;
+  ageDivision?: string;
+  trainerName?: string;
   playerId?: string;
+  battleTeamNumber?: string;
   teamName?: string;
 }
 
@@ -360,46 +363,86 @@ function statPointText(points: Partial<StatTable> | undefined): string {
     .join(" / ");
 }
 
+function officialName(slot: TeamSlot): string {
+  return display(slot.nickname ? `${slot.nickname} (${slot.species})` : slot.species);
+}
+
+function officialMoves(slot: TeamSlot): string {
+  return `<ol class="sheet-moves">${Array.from(
+    { length: 4 },
+    (_, index) => `<li>${display(slot.moves[index])}</li>`,
+  ).join("")}</ol>`;
+}
+
+function officialField(label: string, value: string | undefined): string {
+  return `<div class="sheet-field"><span>${escapeHtml(label)}</span><strong>${display(value)}</strong></div>`;
+}
+
+function entryFacts(
+  facts: ReadonlyArray<readonly [string, string | undefined]>,
+): string {
+  return facts
+    .map(([label, value]) => `<div class="entry-fact"><span>${escapeHtml(label)}</span><strong>${display(value)}</strong></div>`)
+    .join("");
+}
+
+function staffEntry(slot: TeamSlot, index: number, showTera: boolean): string {
+  return `<article class="staff-entry"><div class="entry-number">${index + 1}</div><div class="entry-body"><h3>${officialName(slot)}</h3><div class="entry-facts">${entryFacts([
+    ["Ability", slot.ability],
+    ["Held Item", slot.item],
+    ["Nature", slot.nature],
+    ...(showTera ? [["Tera Type", slot.teraType] as const] : []),
+  ])}</div><div class="entry-moves"><span>Moves</span>${officialMoves(slot)}</div><div class="entry-points"><span>Champions Stat Points</span><strong>${escapeHtml(statPointText(slot.statPoints))}</strong></div></div></article>`;
+}
+
+function opponentEntry(slot: TeamSlot, index: number, showTera: boolean): string {
+  return `<article class="opponent-entry"><div class="entry-number">${index + 1}</div><div class="entry-body"><h3>${officialName(slot)}</h3><div class="entry-facts">${entryFacts([
+    ["Ability", slot.ability],
+    ["Held Item", slot.item],
+    ...(showTera ? [["Tera Type", slot.teraType] as const] : []),
+  ])}</div><div class="entry-moves"><span>Moves</span>${officialMoves(slot)}</div></div></article>`;
+}
+
 export function renderTeamSheetHtml(
   slots: readonly TeamSlot[],
-  audience: "open" | "staff",
   rules: LegalityRules,
   registration: RegistrationFields = {},
 ): string {
   const issues = validateTeam(slots, rules);
-  if (audience === "staff") {
-    slots.forEach((slot, index) => {
-      if (!slot.nature)
-        issues.push({
-          code: "nature-required",
-          slot: index + 1,
-          message: `Slot ${index + 1}: nature is required for the staff sheet`,
-        });
-      if (!slot.statPoints)
-        issues.push({
-          code: "stat-points-required",
-          slot: index + 1,
-          message: `Slot ${index + 1}: stat points are required for the staff sheet`,
-        });
-    });
-  }
+  slots.forEach((slot, index) => {
+    if (!slot.nature)
+      issues.push({
+        code: "nature-required",
+        slot: index + 1,
+        message: `Slot ${index + 1}: nature is required for the staff page`,
+      });
+    if (!slot.statPoints)
+      issues.push({
+        code: "stat-points-required",
+        slot: index + 1,
+        message: `Slot ${index + 1}: stat points are required for the staff page`,
+      });
+  });
   if (issues.length)
     throw new Error(issues.map(({ message }) => message).join("; "));
   const showTera = (rules.allowedTeraTypes?.length ?? 0) > 0;
-  const privateHeaders =
-    audience === "staff" ? "<th>Nature</th><th>Stat Points</th>" : "";
-  const rows = slots
-    .map(
-      (slot) =>
-        `<tr><th scope="row">${display(slot.species)}</th><td>${display(slot.item)}</td><td>${display(slot.ability)}</td>${showTera ? `<td>${display(slot.teraType)}</td>` : ""}<td>${slot.moves.map(escapeHtml).join("<br>")}</td>${audience === "staff" ? `<td>${display(slot.nature)}</td><td>${escapeHtml(statPointText(slot.statPoints))}</td>` : ""}</tr>`,
-    )
-    .join("");
-  const registrationRows = Object.entries(registration)
-    .filter(([, value]) => value)
-    .map(
-      ([label, value]) =>
-        `<div><dt>${escapeHtml(label.replace(/([A-Z])/g, " $1"))}</dt><dd>${display(value)}</dd></div>`,
-    )
-    .join("");
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${audience === "staff" ? "Staff" : "Open"} Team Sheet</title><style>@page{size:landscape;margin:12mm}body{font:12px system-ui,sans-serif;color:#111}h1{font-size:20px}dl{display:flex;gap:24px}dt{font-weight:700;text-transform:capitalize}dd{margin:2px 0}table{border-collapse:collapse;width:100%}th,td{border:1px solid #555;padding:7px;text-align:left;vertical-align:top}thead{background:#eee}</style></head><body><main><h1>${audience === "staff" ? "Staff" : "Open"} Team Sheet</h1><p>Regulation: ${escapeHtml(rules.regulation)}</p>${registrationRows ? `<dl>${registrationRows}</dl>` : ""}<table><thead><tr><th>Pokémon</th><th>Item</th><th>Ability</th>${showTera ? "<th>Tera Type</th>" : ""}<th>Moves</th>${privateHeaders}</tr></thead><tbody>${rows}</tbody></table></main></body></html>`;
+  const staffFields = [
+    ["Player Name", registration.playerName],
+    ["Age Division", registration.ageDivision],
+    ["Trainer Name in Game", registration.trainerName],
+    ["Player ID", registration.playerId],
+    ["Battle Team Number", registration.battleTeamNumber],
+    ["Battle Team Name", registration.teamName],
+  ] as const;
+  const opponentFields = [
+    ["Player Name", registration.playerName],
+    ["Trainer Name in Game", registration.trainerName],
+    ["Battle Team Number", registration.battleTeamNumber],
+    ["Battle Team Name", registration.teamName],
+  ] as const;
+  const regulation = escapeHtml(rules.regulation);
+  const opponentDetailNote = showTera
+    ? "ability, held item, Tera Type when enabled, and moves only."
+    : "ability, held item, and moves only.";
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pokémon Video Game Team List</title><style>:root{color-scheme:light}@page{size:A4 portrait;margin:0}*{box-sizing:border-box}body{margin:0;background:#eef1ec;color:#101612;font-family:system-ui,sans-serif;font-size:9pt;line-height:1.25}.official-sheet{display:flex;width:210mm;min-height:297mm;margin:0 auto;padding:8mm 12mm 6mm;flex-direction:column;background:#fff}.sheet-header{display:grid;grid-template-columns:1fr auto;gap:6mm;align-items:end;border-block:2px solid #176b4d;padding-block:2mm}.sheet-header p{margin:0;color:#176b4d;font-size:7.5pt;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.sheet-header h1{margin:1mm 0 0;font-size:22pt;letter-spacing:-.025em;line-height:1}.sheet-header .sheet-mark{font-size:8pt;font-weight:800;text-align:right}.sheet-subhead{display:flex;justify-content:space-between;gap:4mm;margin:3mm 0;color:#33443a;font-size:8pt;font-weight:700}.sheet-subhead strong{color:#101612}.player-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2mm 4mm;margin:2.5mm 0 3mm}.sheet-field{min-height:8mm;border-bottom:1px solid #101612;padding-bottom:1mm}.sheet-field span,.entry-fact span,.entry-moves>span,.entry-points>span{display:block;color:#456052;font-size:6.5pt;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.sheet-field strong{display:block;min-height:4mm;margin-top:1mm;font-size:8.5pt;overflow-wrap:anywhere}.section-title{margin:0;border-bottom:2px solid #101612;padding:1.5mm 0;font-size:10pt;letter-spacing:.01em}.section-title small{float:right;color:#456052;font-size:7pt;font-weight:700;text-transform:uppercase}.staff-list,.opponent-list{display:block}.staff-entry,.opponent-entry{display:grid;grid-template-columns:8mm minmax(0,1fr);border:1px solid #101612;border-bottom:0;break-inside:avoid}.staff-entry:last-child,.opponent-entry:last-child{border-bottom:1px solid #101612}.entry-number{display:grid;place-items:center;border-right:1px solid #101612;background:#e2ece5;color:#176b4d;font-size:12pt;font-weight:800}.entry-body{min-width:0;padding:1.3mm 2mm}.entry-body h3{margin:0 0 .8mm;font-size:9pt;line-height:1.1;overflow-wrap:anywhere}.entry-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #b5c4ba}.entry-fact{min-height:5.5mm;padding:.7mm 1mm;border-right:1px solid #b5c4ba;border-bottom:1px solid #b5c4ba}.entry-fact:nth-child(even){border-right:0}.entry-fact strong{display:block;margin-top:.3mm;font-size:7.5pt;overflow-wrap:anywhere}.entry-moves{display:grid;grid-template-columns:22mm minmax(0,1fr);gap:2mm;align-items:start;padding-top:.7mm}.sheet-moves{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8mm 3mm;margin:0;padding:0;list-style-position:inside}.sheet-moves li{min-width:0;overflow-wrap:anywhere}.entry-points{display:flex;gap:3mm;align-items:baseline;margin-top:.7mm;border-top:1px solid #b5c4ba;padding-top:.7mm}.entry-points strong{font-size:7pt;overflow-wrap:anywhere}.opponent-entry .entry-body{padding-block:2.7mm}.opponent-entry .entry-facts{grid-template-columns:repeat(3,minmax(0,1fr))}.opponent-entry .entry-fact:nth-child(even){border-right:1px solid #b5c4ba}.opponent-entry .entry-fact:last-child{border-right:0}.opponent-entry .entry-moves{margin-top:1mm}.sheet-footer{margin-top:auto;border-top:1px solid #101612;padding-top:2mm;color:#456052;font-size:7pt}.sheet-footer span:last-child{float:right}.opponent-note{margin:3mm 0 4mm;color:#33443a;font-size:8pt}.opponent-note strong{color:#176b4d}@media screen{.official-sheet{margin-block:10mm;box-shadow:0 4mm 10mm rgba(16,22,18,.16)}}@media print{body{background:#fff}.official-sheet{break-after:page;page-break-after:always}.official-sheet:last-child{break-after:auto;page-break-after:auto}}</style></head><body><main><section class="official-sheet staff-sheet" aria-labelledby="staff-title"><header class="sheet-header"><div><p>Pokémon Video Game</p><h1 id="staff-title">Team List</h1></div><div class="sheet-mark">Tournament Staff</div></header><div class="sheet-subhead"><span>Regulation <strong>${regulation}</strong></span><span>Staff copy · Page 1 of 2</span></div><div class="player-fields">${staffFields.map(([label, value]) => officialField(label, value)).join("")}</div><h2 class="section-title">Registered Battle Team <small>Complete set details</small></h2><div class="staff-list">${slots.map((slot, index) => staffEntry(slot, index, showTera)).join("")}</div><footer class="sheet-footer"><span>Keep this page with tournament staff.</span><span>Page 1 of 2</span></footer></section><section class="official-sheet opponent-sheet" aria-labelledby="opponent-title"><header class="sheet-header"><div><p>Pokémon Video Game</p><h1 id="opponent-title">Team List</h1></div><div class="sheet-mark">Opponent Copy</div></header><div class="sheet-subhead"><span>Regulation <strong>${regulation}</strong></span><span>Opponent copy · Page 2 of 2</span></div><div class="player-fields">${opponentFields.map(([label, value]) => officialField(label, value)).join("")}</div><p class="opponent-note"><strong>Battle preview:</strong> ${opponentDetailNote}</p><h2 class="section-title">Battle Team <small>Opponent-facing details</small></h2><div class="opponent-list">${slots.map((slot, index) => opponentEntry(slot, index, showTera)).join("")}</div><footer class="sheet-footer"><span>Nature and Champions stat points are kept on the staff page.</span><span>Page 2 of 2</span></footer></section></main></body></html>`;
 }

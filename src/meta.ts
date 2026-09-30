@@ -134,6 +134,13 @@ export function teamScore(
 
 const canonicalNameCache = new Map<string, string>();
 
+// Reviewed form names accepted by Poképaste/Showdown but catalogued differently.
+const FORM_NAME_ALIASES: Readonly<Record<string, string>> = {
+  "floette-eternal": "floette-eternal-flower",
+  "maushold-four": "maushold",
+  "maushold-family-of-four": "maushold",
+};
+
 export function canonicalPokemonName(name: string): string {
   const cached = canonicalNameCache.get(name);
   if (cached !== undefined) return cached;
@@ -162,6 +169,7 @@ export function canonicalPokemonName(name: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .replace(/-{2,}/g, "-");
+  normalized = FORM_NAME_ALIASES[normalized] ?? normalized;
   canonicalNameCache.set(name, normalized);
   return normalized;
 }

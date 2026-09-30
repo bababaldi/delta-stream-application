@@ -92,7 +92,7 @@ test("malformed or duplicated spread fields cannot silently produce a printable 
     );
   }
   assert.throws(
-    () => renderTeamSheetHtml([], "open", { regulation: "test" }),
+    () => renderTeamSheetHtml([], { regulation: "test" }),
     /catalog/,
   );
 });
@@ -101,14 +101,16 @@ test("missing species catalogs fail closed; Tera is not required unless enabled 
   const team = Array.from({ length: 6 }, (_, i) => ({
     species: `Synthetic ${i}`,
     ability: "Test",
+    nature: "Calm",
+    statPoints: { hp: 32 },
     moves: ["Protect"],
   }));
   const rules = rulesFor(team);
   assert.deepEqual(validateTeam(team, rules), []);
-  assert.doesNotMatch(renderTeamSheetHtml(team, "open", rules), /Tera Type/);
+  assert.doesNotMatch(renderTeamSheetHtml(team, rules), /Tera Type/);
   const incomplete = { ...rules, allowedAbilities: {} };
   assert.throws(
-    () => renderTeamSheetHtml(team, "open", incomplete),
+    () => renderTeamSheetHtml(team, incomplete),
     /catalog missing/,
   );
 });

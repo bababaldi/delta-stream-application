@@ -53,6 +53,9 @@ test("placement and recency boundaries are explicit", () => {
   assert.equal(placementBucket(64), 64);
   assert.equal(placementBucket(65), undefined);
   assert.equal(canonicalPokemonName("Indeedee ♀"), "indeedee-female");
+  assert.equal(canonicalPokemonName("Floette-Eternal"), "floette-eternal-flower");
+  assert.equal(canonicalPokemonName("Maushold-Four"), "maushold");
+  assert.equal(canonicalPokemonName("Maushold [Family of Four]"), "maushold");
   assert.equal(recencyWeight("2026-08-07", NOW), 1);
   assert.equal(recencyWeight("2026-08-06", NOW), 0.75);
   assert.equal(recencyWeight("2026-06-08", NOW), 0.5);

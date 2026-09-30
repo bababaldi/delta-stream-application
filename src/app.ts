@@ -662,7 +662,7 @@ function teamsView(): string {
     ? '<p class="status-line success">Regulation legality catalog loaded</p>'
     : '<p class="status-line warning">Legality catalog is missing, incomplete or uses a different regulation. PDF export is disabled.</p>';
   const parsed = state.team.length
-    ? `<ol class="team-list">${teamRows(state.team)}</ol><section class="registration" aria-labelledby="registration-title"><h2 id="registration-title">One-time registration fields</h2><p>These values are sent only to the print sheet and are not saved.</p><div class="form-grid"><label><span>Player name</span><input id="player-name" autocomplete="off"></label><label><span>Player ID</span><input id="player-id" inputmode="numeric" autocomplete="off"></label><label><span>Team name</span><input id="team-name" autocomplete="off"></label></div><div class="action-row"><button type="button" data-print="open" ${hasLegalityCatalog ? "" : "disabled"}>Print / save open PDF</button><button type="button" data-print="staff" ${hasLegalityCatalog ? "" : "disabled"}>Print / save staff PDF</button></div></section>`
+    ? `<ol class="team-list">${teamRows(state.team)}</ol><section class="registration" aria-labelledby="registration-title"><h2 id="registration-title">Official team list</h2><p>Print one A4, two-page PDF: staff details first, then an opponent-facing copy. These fields print only and are not saved.</p><div class="form-grid"><label><span>Player name</span><input id="player-name" autocomplete="off"></label><label><span>Age division</span><input id="age-division" autocomplete="off"></label><label><span>Trainer name in game</span><input id="trainer-name" autocomplete="off"></label><label><span>Player ID</span><input id="player-id" inputmode="numeric" autocomplete="off"></label><label><span>Battle Team number</span><input id="battle-team-number" inputmode="numeric" autocomplete="off"></label><label><span>Battle Team name</span><input id="team-name" autocomplete="off"></label></div><div class="action-row"><button type="button" data-print="official" ${hasLegalityCatalog ? "" : "disabled"}>Print / save 2-page PDF</button></div></section>`
     : emptyState(
         "Paste a team to begin",
         "Use Poképaste with Ability, SPs or EVs (0–32 Champions points), Nature, and one to four moves. Tera Type is used only if the regulation enables it.",
@@ -997,19 +997,20 @@ function bindEvents(): void {
         if (issues.length)
           throw new Error(issues.map(({ message }) => message).join("; "));
         await printHtml(
-          renderTeamSheetHtml(
-            state.team,
-            button.dataset.print as "open" | "staff",
-            rules,
-            {
-              playerName:
-                app.querySelector<HTMLInputElement>("#player-name")?.value,
-              playerId:
-                app.querySelector<HTMLInputElement>("#player-id")?.value,
-              teamName:
-                app.querySelector<HTMLInputElement>("#team-name")?.value,
-            },
-          ),
+          renderTeamSheetHtml(state.team, rules, {
+            playerName:
+              app.querySelector<HTMLInputElement>("#player-name")?.value,
+            ageDivision:
+              app.querySelector<HTMLInputElement>("#age-division")?.value,
+            trainerName:
+              app.querySelector<HTMLInputElement>("#trainer-name")?.value,
+            playerId:
+              app.querySelector<HTMLInputElement>("#player-id")?.value,
+            battleTeamNumber:
+              app.querySelector<HTMLInputElement>("#battle-team-number")?.value,
+            teamName:
+              app.querySelector<HTMLInputElement>("#team-name")?.value,
+          }),
         );
       } catch (error) {
         state.message = error instanceof Error ? error.message : String(error);
