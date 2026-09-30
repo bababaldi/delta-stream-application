@@ -1,0 +1,75 @@
+{
+  "reviewedAt": "2026-09-30",
+  "note": "Exact artwork for observed Pokémon Champions held items missing from PokeAPI. This does not alter legality or mechanics data.",
+  "sources": {
+    "pokeApiSprites": "https://github.com/PokeAPI/sprites",
+    "pokeChampDex": "https://pokechampdex.com/items/{item}/en",
+    "game8FairyFeather": "https://game8.co/games/Pokemon-Champions/archives/593854"
+  },
+  "items": {
+    "baxcalibrite": {
+      "url": "https://pokechampdex.com/uploads/items/baxcalibrite.webp",
+      "sprite": "champions/items/baxcalibrite.webp"
+    },
+    "delphoxite": {
+      "url": "https://pokechampdex.com/uploads/items/delphoxite.webp",
+      "sprite": "champions/items/delphoxite.webp"
+    },
+    "dragoninite": {
+      "url": "https://pokechampdex.com/uploads/items/dragoninite.webp",
+      "sprite": "champions/items/dragoninite.webp"
+    },
+    "fairy-feather": {
+      "url": "https://img.game8.co/3765263/3445747e8585d28feae9d3a5f1b04cb4.png/show",
+      "sprite": "champions/items/fairy-feather.png"
+    },
+    "floettite": {
+      "url": "https://pokechampdex.com/uploads/items/floettite.webp",
+      "sprite": "champions/items/floettite.webp"
+    },
+    "froslassite": {
+      "url": "https://pokechampdex.com/uploads/items/froslassite.webp",
+      "sprite": "champions/items/froslassite.webp"
+    },
+    "garchompite-z": {
+      "url": "https://pokechampdex.com/uploads/items/garchompite-z.webp",
+      "sprite": "champions/items/garchompite-z.webp"
+    },
+    "glimmoranite": {
+      "url": "https://pokechampdex.com/uploads/items/glimmoranite.webp",
+      "sprite": "champions/items/glimmoranite.webp"
+    },
+    "golisopite": {
+      "url": "https://pokechampdex.com/uploads/items/golisopite.webp",
+      "sprite": "champions/items/golisopite.webp"
+    },
+    "lucarionite-z": {
+      "url": "https://pokechampdex.com/uploads/items/lucarionite-z.webp",
+      "sprite": "champions/items/lucarionite-z.webp"
+    },
+    "meowsticite": {
+      "url": "https://pokechampdex.com/uploads/items/meowsticite.webp",
+      "sprite": "champions/items/meowsticite.webp"
+    },
+    "pyroarite": {
+      "url": "https://pokechampdex.com/uploads/items/pyroarite.webp",
+      "sprite": "champions/items/pyroarite.webp"
+    },
+    "raichunite-y": {
+      "url": "https://pokechampdex.com/uploads/items/raichunite-y.webp",
+      "sprite": "champions/items/raichunite-y.webp"
+    },
+    "scovillainite": {
+      "url": "https://pokechampdex.com/uploads/items/scovillainite.webp",
+      "sprite": "champions/items/scovillainite.webp"
+    },
+    "staraptite": {
+      "url": "https://pokechampdex.com/uploads/items/staraptite.webp",
+      "sprite": "champions/items/staraptite.webp"
+    },
+    "starminite": {
+      "url": "https://pokechampdex.com/uploads/items/starminite.webp",
+      "sprite": "champions/items/starminite.webp"
+    }
+  }
+}

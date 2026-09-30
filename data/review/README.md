@@ -29,6 +29,8 @@ Current M-C Pikalytics AI pages are publicly accessible, but `pikalytics-mc-spre
 
 `publication-preview.json` records a snapshot SHA-256 and preflight state at the time it was generated. It is an inspection report, not consent; regenerate it after any data or catalog change before publishing.
 
+`champions-item-sprites.json` records exact local-artwork sources for 16 observed Champions held items that PokeAPI does not distribute. It affects imagery only, never legality, mechanics, rankings, or the reviewed catalog hashes.
+
 ## Approved M-C Top-24 team expansion
 
 `reviewed-results-mc-top24-draft.json` is the preserved 100-team review artifact for the owner-approved expansion of Baltimore, Brisbane and Frankfurt from Top 8 to Top 24. Its exact draft SHA-256 and three fetched source hashes are recorded in `reviewed-results-mc-top24-manifest.json`; the 72 PokeData records are promoted into `data/reviewed-results.json`.

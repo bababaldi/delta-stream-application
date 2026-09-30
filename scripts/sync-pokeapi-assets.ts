@@ -21,22 +21,65 @@ type PokeApiItem = {
   sprites: { default: string | null };
 };
 
+type ItemEntry = { name: string; pokeApiName: string; sprite?: string };
+type ReviewedItemSprite = { url: string; sprite: string };
+type ReviewedItemSpriteManifest = {
+  sources: { pokeApiSprites: string };
+  items: Record<string, ReviewedItemSprite>;
+};
+
 type PokeApiCatalog = {
   source: {
     api: string;
     sprites: string;
+    reviewedItemSprites: Record<string, string>;
     fetchedAt: string;
   };
   pokemon: Record<
     string,
     { name: string; pokeApiName: string; sprite: string; baseStats: BaseStats }
   >;
-  items: Record<string, { name: string; pokeApiName: string; sprite?: string }>;
+  items: Record<string, ItemEntry>;
 };
 
 const DATA_DIR = new URL("../data/", import.meta.url);
-const ASSET_DIR = new URL("../public/pokeapi/", import.meta.url);
+const PUBLIC_DIR = new URL("../public/", import.meta.url);
+const ASSET_DIR = new URL("pokeapi/", PUBLIC_DIR);
 const API = "https://pokeapi.co/api/v2/";
+
+function isReviewedItemSprite(
+  key: string,
+  source: Partial<ReviewedItemSprite>,
+): source is ReviewedItemSprite {
+  const item = Object(source) as Partial<ReviewedItemSprite>;
+  return [
+    /^[a-z0-9-]+$/.test(key),
+    typeof item.url === "string",
+    item.url?.startsWith("https://"),
+    typeof item.sprite === "string",
+    item.sprite?.startsWith("champions/items/"),
+    !item.sprite?.includes(".."),
+  ].every(Boolean);
+}
+
+function parseReviewedItemSprites(text: string): ReviewedItemSpriteManifest {
+  let parsed: Partial<ReviewedItemSpriteManifest>;
+  try {
+    parsed = JSON.parse(text) as Partial<ReviewedItemSpriteManifest>;
+  } catch {
+    throw new Error("Reviewed Champions item sprites are invalid JSON");
+  }
+  if (!parsed.sources || typeof parsed.sources.pokeApiSprites !== "string" ||
+      !parsed.sources.pokeApiSprites.startsWith("https://"))
+    throw new Error("Reviewed item sprite source is missing");
+  if (!parsed.items || typeof parsed.items !== "object")
+    throw new Error("Reviewed Champions item sprites are missing");
+  for (const [key, source] of Object.entries(parsed.items))
+    if (!isReviewedItemSprite(key, source))
+      throw new Error(`Invalid reviewed Champions item sprite: ${key}`);
+  return parsed as ReviewedItemSpriteManifest;
+}
+
 const FORM_ALIASES: Readonly<Record<string, string>> = {
   aegislash: "aegislash-shield",
   "arcanine-hisuian": "arcanine-hisui",
@@ -89,6 +132,8 @@ async function fetchJson<T>(path: string): Promise<T> {
 async function download(url: string, path: URL): Promise<void> {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Sprite ${url}: HTTP ${response.status}`);
+  if (!response.headers.get("content-type")?.startsWith("image/"))
+    throw new Error(`Sprite ${url}: expected an image`);
   await writeFile(path, new Uint8Array(await response.arrayBuffer()));
 }
 
@@ -135,13 +180,16 @@ function itemKey(name: string): string {
 }
 
 try {
-  const [legalityText, snapshotText, pokemonIndex, itemIndex] = await Promise.all([
+  const [legalityText, snapshotText, reviewedSpritesText, pokemonIndex, itemIndex] = await Promise.all([
     readFile(new URL("legality.json", DATA_DIR), "utf8"),
     readFile(new URL("snapshot.json", DATA_DIR), "utf8"),
+    readFile(new URL("review/champions-item-sprites.json", DATA_DIR), "utf8"),
     fetchJson<{ results: Array<{ name: string }> }>("pokemon?limit=2000"),
     fetchJson<{ results: Array<{ name: string }> }>("item?limit=3000"),
   ]);
   const legality = JSON.parse(legalityText) as { allowedPokemon: string[] };
+  const reviewedSpriteManifest = parseReviewedItemSprites(reviewedSpritesText);
+  const reviewedItemSprites = reviewedSpriteManifest.items;
   const snapshot = JSON.parse(snapshotText) as {
     tournaments: Array<{ teams: Array<{ roster: Array<{ item?: string }> }> }>;
   };
@@ -170,10 +218,11 @@ try {
         ),
       ),
     ),
-  ].sort();
+  ].sort((left, right) => left.localeCompare(right));
   await Promise.all([
     mkdir(new URL("pokemon/", ASSET_DIR), { recursive: true }),
     mkdir(new URL("items/", ASSET_DIR), { recursive: true }),
+    mkdir(new URL("champions/items/", PUBLIC_DIR), { recursive: true }),
   ]);
   const pokemonEntries = await mapLimit([...endpointByKey], 6, async ([key, endpoint]) => {
     const data = await fetchJson<PokeApiPokemon>(`pokemon/${endpoint}`);
@@ -188,21 +237,35 @@ try {
     }] as const;
   });
   const itemEntries = await mapLimit(observedItems, 6, async (name) => {
-    const pokeApiName = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    if (!itemNames.has(pokeApiName))
-      return [itemKey(name), { name, pokeApiName }] as const;
+    const key = itemKey(name);
+    const pokeApiName = key.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const reviewedSprite = reviewedItemSprites[pokeApiName];
+    if (!itemNames.has(pokeApiName)) {
+      const entry: ItemEntry = { name, pokeApiName };
+      if (reviewedSprite) {
+        await download(reviewedSprite.url, new URL(reviewedSprite.sprite, PUBLIC_DIR));
+        entry.sprite = reviewedSprite.sprite;
+      }
+      return [key, entry] as const;
+    }
     const data = await fetchJson<PokeApiItem>(`item/${pokeApiName}`);
-    const sprite = data.sprites.default
-      ? `pokeapi/items/${pokeApiName}.png`
-      : undefined;
-    if (data.sprites.default)
+    const entry: ItemEntry = { name, pokeApiName: data.name };
+    if (data.sprites.default) {
+      entry.sprite = `pokeapi/items/${pokeApiName}.png`;
       await download(data.sprites.default, new URL(`items/${pokeApiName}.png`, ASSET_DIR));
-    return [itemKey(name), { name, pokeApiName: data.name, ...(sprite ? { sprite } : {}) }] as const;
+    } else if (reviewedSprite) {
+      entry.sprite = reviewedSprite.sprite;
+      await download(reviewedSprite.url, new URL(reviewedSprite.sprite, PUBLIC_DIR));
+    }
+    return [key, entry] as const;
   });
   const catalog: PokeApiCatalog = {
     source: {
       api: API,
-      sprites: "https://github.com/PokeAPI/sprites",
+      sprites: reviewedSpriteManifest.sources.pokeApiSprites,
+      reviewedItemSprites: Object.fromEntries(
+        Object.entries(reviewedItemSprites).map(([name, { url }]) => [name, url]),
+      ),
       fetchedAt: new Date().toISOString(),
     },
     pokemon: Object.fromEntries(pokemonEntries),

@@ -42,8 +42,14 @@ test("bundled PokeAPI data covers every exact calculator form and observed item"
       ),
     ),
   );
-  for (const item of observedItems)
-    assert.ok(itemVisual(item), `Missing PokeAPI item record for ${item}`);
+  for (const item of observedItems) {
+    const visual = itemVisual(item);
+    assert.ok(visual, `Missing item record for ${item}`);
+    assert.ok(visual.sprite, `Missing item sprite for ${item}`);
+    assert.ok(existsSync(`public/${visual.sprite}`), `Missing item asset for ${item}`);
+  }
   assert.match(pokemonVisual("Floette Mega")?.sprite ?? "", /floette-mega\.png$/);
   assert.match(itemVisual("Miracle Seed")?.sprite ?? "", /miracle-seed\.png$/);
+  assert.match(itemVisual("Garchompite Z")?.sprite ?? "", /champions\/items\/garchompite-z\.webp$/);
+  assert.match(itemVisual("Raichunite Y")?.sprite ?? "", /champions\/items\/raichunite-y\.webp$/);
 });

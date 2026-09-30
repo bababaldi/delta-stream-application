@@ -96,7 +96,7 @@ npm run preview:pages
 - Invalid or conflicting events are written to `data/quarantine.json`.
 - Any quarantined approved or reviewed event makes `data:build` fail. `npm run data:validate` additionally rejects incomplete/mismatched legality and role catalogs, invalid timestamps, duplicate events and missing team details.
 - The current `data/legality.json` and `data/roles.json` are owner-approved copies of the exact artifacts in `data/review/`; approval hashes and assumptions are in `data/approved-sources.json`. Regenerating a draft is not a new approval. An empty `allowedTeraTypes` list deliberately disables that mechanic. Do not import Scarlet/Violet assumptions as Champions rules.
-- `npm run sprites:sync` stores local PokeAPI base-stat data and sprites in `data/pokeapi.json` and `public/pokeapi/`; the app makes no runtime PokeAPI requests. Forms without exact PokeAPI base stats stay out of the calculator picker, and missing item images keep a named fallback instead of inventing data or art.
+- `npm run sprites:sync` stores local PokeAPI base-stat data plus reviewed Champions item artwork in `data/pokeapi.json` and `public/`; the app makes no runtime requests. Forms without exact PokeAPI base stats stay out of the calculator picker, and unreviewed item images keep a named fallback rather than inventing art.
 - Scrapers use only public HTTPS pages with a small concurrency limit. Do not bypass authentication, rate limits, or technical controls.
 
 ## Ranking formula

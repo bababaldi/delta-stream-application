@@ -2,7 +2,25 @@
   "source": {
     "api": "https://pokeapi.co/api/v2/",
     "sprites": "https://github.com/PokeAPI/sprites",
-    "fetchedAt": "2026-09-28T10:19:43.397Z"
+    "reviewedItemSprites": {
+      "baxcalibrite": "https://pokechampdex.com/uploads/items/baxcalibrite.webp",
+      "delphoxite": "https://pokechampdex.com/uploads/items/delphoxite.webp",
+      "dragoninite": "https://pokechampdex.com/uploads/items/dragoninite.webp",
+      "fairy-feather": "https://img.game8.co/3765263/3445747e8585d28feae9d3a5f1b04cb4.png/show",
+      "floettite": "https://pokechampdex.com/uploads/items/floettite.webp",
+      "froslassite": "https://pokechampdex.com/uploads/items/froslassite.webp",
+      "garchompite-z": "https://pokechampdex.com/uploads/items/garchompite-z.webp",
+      "glimmoranite": "https://pokechampdex.com/uploads/items/glimmoranite.webp",
+      "golisopite": "https://pokechampdex.com/uploads/items/golisopite.webp",
+      "lucarionite-z": "https://pokechampdex.com/uploads/items/lucarionite-z.webp",
+      "meowsticite": "https://pokechampdex.com/uploads/items/meowsticite.webp",
+      "pyroarite": "https://pokechampdex.com/uploads/items/pyroarite.webp",
+      "raichunite-y": "https://pokechampdex.com/uploads/items/raichunite-y.webp",
+      "scovillainite": "https://pokechampdex.com/uploads/items/scovillainite.webp",
+      "staraptite": "https://pokechampdex.com/uploads/items/staraptite.webp",
+      "starminite": "https://pokechampdex.com/uploads/items/starminite.webp"
+    },
+    "fetchedAt": "2026-09-30T07:06:08.247Z"
   },
   "pokemon": {
     "abomasnow": {
@@ -3846,7 +3864,8 @@
     },
     "baxcalibrite": {
       "name": "Baxcalibrite",
-      "pokeApiName": "baxcalibrite"
+      "pokeApiName": "baxcalibrite",
+      "sprite": "champions/items/baxcalibrite.webp"
     },
     "black belt": {
       "name": "Black Belt",
@@ -3905,11 +3924,13 @@
     },
     "delphoxite": {
       "name": "Delphoxite",
-      "pokeApiName": "delphoxite"
+      "pokeApiName": "delphoxite",
+      "sprite": "champions/items/delphoxite.webp"
     },
     "dragoninite": {
       "name": "Dragoninite",
-      "pokeApiName": "dragoninite"
+      "pokeApiName": "dragoninite",
+      "sprite": "champions/items/dragoninite.webp"
     },
     "eject button": {
       "name": "Eject Button",
@@ -3923,11 +3944,13 @@
     },
     "fairy feather": {
       "name": "Fairy Feather",
-      "pokeApiName": "fairy-feather"
+      "pokeApiName": "fairy-feather",
+      "sprite": "champions/items/fairy-feather.png"
     },
     "floettite": {
       "name": "Floettite",
-      "pokeApiName": "floettite"
+      "pokeApiName": "floettite",
+      "sprite": "champions/items/floettite.webp"
     },
     "focus sash": {
       "name": "Focus Sash",
@@ -3936,7 +3959,8 @@
     },
     "froslassite": {
       "name": "Froslassite",
-      "pokeApiName": "froslassite"
+      "pokeApiName": "froslassite",
+      "sprite": "champions/items/froslassite.webp"
     },
     "garchompite": {
       "name": "Garchompite",
@@ -3945,7 +3969,8 @@
     },
     "garchompite z": {
       "name": "Garchompite Z",
-      "pokeApiName": "garchompite-z"
+      "pokeApiName": "garchompite-z",
+      "sprite": "champions/items/garchompite-z.webp"
     },
     "gardevoirite": {
       "name": "Gardevoirite",
@@ -3959,11 +3984,13 @@
     },
     "glimmoranite": {
       "name": "Glimmoranite",
-      "pokeApiName": "glimmoranite"
+      "pokeApiName": "glimmoranite",
+      "sprite": "champions/items/glimmoranite.webp"
     },
     "golisopite": {
       "name": "Golisopite",
-      "pokeApiName": "golisopite"
+      "pokeApiName": "golisopite",
+      "sprite": "champions/items/golisopite.webp"
     },
     "grassy seed": {
       "name": "Grassy Seed",
@@ -4007,7 +4034,8 @@
     },
     "lucarionite z": {
       "name": "Lucarionite Z",
-      "pokeApiName": "lucarionite-z"
+      "pokeApiName": "lucarionite-z",
+      "sprite": "champions/items/lucarionite-z.webp"
     },
     "lum berry": {
       "name": "Lum Berry",
@@ -4021,7 +4049,8 @@
     },
     "meowsticite": {
       "name": "Meowsticite",
-      "pokeApiName": "meowsticite"
+      "pokeApiName": "meowsticite",
+      "sprite": "champions/items/meowsticite.webp"
     },
     "metagrossite": {
       "name": "Metagrossite",
@@ -4055,11 +4084,13 @@
     },
     "pyroarite": {
       "name": "Pyroarite",
-      "pokeApiName": "pyroarite"
+      "pokeApiName": "pyroarite",
+      "sprite": "champions/items/pyroarite.webp"
     },
     "raichunite y": {
       "name": "Raichunite Y",
-      "pokeApiName": "raichunite-y"
+      "pokeApiName": "raichunite-y",
+      "sprite": "champions/items/raichunite-y.webp"
     },
     "rocky helmet": {
       "name": "Rocky Helmet",
@@ -4078,7 +4109,8 @@
     },
     "scovillainite": {
       "name": "Scovillainite",
-      "pokeApiName": "scovillainite"
+      "pokeApiName": "scovillainite",
+      "sprite": "champions/items/scovillainite.webp"
     },
     "shuca berry": {
       "name": "Shuca Berry",
@@ -4092,11 +4124,13 @@
     },
     "staraptite": {
       "name": "Staraptite",
-      "pokeApiName": "staraptite"
+      "pokeApiName": "staraptite",
+      "sprite": "champions/items/staraptite.webp"
     },
     "starminite": {
       "name": "Starminite",
-      "pokeApiName": "starminite"
+      "pokeApiName": "starminite",
+      "sprite": "champions/items/starminite.webp"
     },
     "swampertite": {
       "name": "Swampertite",
