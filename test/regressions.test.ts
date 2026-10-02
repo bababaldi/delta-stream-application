@@ -98,8 +98,15 @@ test("malformed or duplicated spread fields cannot silently produce a printable 
 });
 
 test("missing species catalogs fail closed; Tera is not required unless enabled by regulation", () => {
-  const team = Array.from({ length: 6 }, (_, i) => ({
-    species: `Synthetic ${i}`,
+  const team = [
+    "Pikachu",
+    "Garchomp",
+    "Gholdengo",
+    "Incineroar",
+    "Rillaboom",
+    "Raichu",
+  ].map((species) => ({
+    species,
     ability: "Test",
     nature: "Calm",
     statPoints: { hp: 32 },

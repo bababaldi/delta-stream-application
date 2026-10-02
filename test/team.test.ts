@@ -105,12 +105,12 @@ test("team validation enforces clauses and supplied regulation catalogs", () => 
 
 test("official printable list creates staff and opponent pages without leaking spreads", () => {
   const team = [
-    slot("Alpha", "A"),
-    slot("Bravo", "B"),
-    slot("Charlie", "C"),
-    slot("Delta", "D"),
-    slot("Echo", "E"),
-    slot("Foxtrot", "F"),
+    slot("Pikachu", "A"),
+    slot("Garchomp", "B"),
+    slot("Gholdengo", "C"),
+    slot("Incineroar", "D"),
+    slot("Rillaboom", "E"),
+    slot("Raichu", "F"),
   ];
   const rules = rulesFor(team, "champions-test");
   const sheet = renderTeamSheetHtml(team, rules, {
@@ -123,20 +123,24 @@ test("official printable list creates staff and opponent pages without leaking s
   });
   assert.equal((sheet.match(/class="official-sheet/g) ?? []).length, 2);
   assert.match(sheet, /@page\{size:A4 portrait/);
-  assert.match(sheet, /Page 1 of 2/);
-  assert.match(sheet, /Page 2 of 2/);
+  assert.match(sheet, /1 of 2:/);
+  assert.match(sheet, /2 of 2:/);
   assert.match(sheet, /Pokémon Video Game Team List/);
   assert.match(sheet, /A &lt;B&gt;/);
   assert.match(sheet, /Age Division/);
   assert.match(sheet, /Trainer Name in Game/);
   assert.match(sheet, /Battle Team Number/);
-  assert.match(sheet, /Champions Stat Points/);
-  assert.match(sheet, /32 HP \/ 0 Atk \/ 0 Def \/ 0 SpA \/ 32 SpD \/ 2 Spe/);
+  assert.match(sheet, /Level 50 stats/);
+  assert.match(sheet, /<span>HP<\/span><strong>142<\/strong>/);
+  assert.match(sheet, /<span>Sp\. Def<\/span><strong>112<\/strong>/);
+  assert.doesNotMatch(sheet, /Champions Stat Points/);
+  assert.doesNotMatch(sheet, /32 HP \/ 0 Atk \/ 0 Def \/ 0 SpA \/ 32 SpD \/ 2 Spe/);
   const opponentPage = sheet.slice(sheet.indexOf('class="official-sheet opponent-sheet"'));
   assert.doesNotMatch(opponentPage, /Age Division/);
   assert.doesNotMatch(opponentPage, /Player ID/);
   assert.doesNotMatch(opponentPage, /Calm/);
-  assert.doesNotMatch(opponentPage, /32 HP \/ 0 Atk/);
+  assert.doesNotMatch(opponentPage, /Level 50 stats/);
+  assert.doesNotMatch(opponentPage, /<span>HP<\/span><strong>142<\/strong>/);
   assert.throws(
     () => renderTeamSheetHtml(team.slice(0, 5), rules),
     /exactly six/,
